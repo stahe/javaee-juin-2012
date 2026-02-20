@@ -1,0 +1,1469 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/javaee-juin-2012/version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html">
+      
+      
+        <link rel="prev" href="version-2-architecture-openejb--jpa.html">
+      
+      
+        <link rel="next" href="version-4---client--serveur-dans-une-architecture-de-service-web.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>7. Version 3 : Portage de l'application PAM sur un serveur d'applications Glassfish - Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction à  Java EE avec Netbeans et le serveur d&#39;applications Glassfish" class="md-header__button md-logo" aria-label="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Version 3 : Portage de l'application PAM sur un serveur d'applications Glassfish
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/javaee-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction à  Java EE avec Netbeans et le serveur d&#39;applications Glassfish" class="md-nav__button md-logo" aria-label="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/javaee-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture-dune-application-java-en-couches.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Architecture d'une application Java en couches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-outils-du-document.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Les outils du document
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jpa-en-resume.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. JPA en résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1-architecture-spring--jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Version 1 : Architecture Spring / JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-2-architecture-openejb--jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Version 2 : Architecture OpenEJB / JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Version 3 : Portage de l'application PAM sur un serveur d'applications Glassfish
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Version 3 : Portage de l'application PAM sur un serveur d'applications Glassfish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-la-partie-serveur-de-lapplication-client-serveur-pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. La partie serveur de l&#x27;application client / serveur PAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. La partie serveur de l&#39;application client / serveur PAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-larchitecture-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1. L&#x27;architecture de l&#x27;application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.1. L&#39;architecture de l&#39;application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7111-le-projet-netbeans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1.1. Le projet Netbeans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7112-configuration-de-la-couche-de-persistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1.2. Configuration de la couche de persistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7113-insertion-des-couches-jpa-dao-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1.3. Insertion des couches [jpa, DAO, metier]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7114-configuration-du-serveur-glassfish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1.4. Configuration du serveur Glassfish
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7115-deploiement-du-module-ejb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1.5. Déploiement du module EJB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-client-console-version-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Client console - version 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Client console - version 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-le-projet-du-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1. Le projet du client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-client-console-version-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Client console - version 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-le-client-swing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Le client Swing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-4---client--serveur-dans-une-architecture-de-service-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Version 4 – client / serveur dans une architecture de service web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-a-java-server-faces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Introduction à Java Server Faces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-5---application-pam-web--jsf.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Version 5 - Application PAM Web / JSF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-6---integration-de-la-couche-web-dans-une-architecture-3-couches-jsf--ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Version 6 - Intégration de la couche web dans une architecture 3 couches JSF / EJB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-7---application-web-pam-multi-vues--multi-pages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Version 7 - Application web PAM multi-vues / multi-pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-8-portage-de-lapplication-dans-un-environnement-spring--tomcat.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Version 8 : Portage de l'application dans un environnement Spring / Tomcat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-9-implementation-de-la-couche-web-avec-primefaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Version 9 : Implémentation de la couche web avec Primefaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading87481112820228"></a></p>
+<h1 id="7-version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish">7. Version 3 : Portage de l&#x27;application PAM sur un serveur d&#x27;applications Glassfish</h1>
+<p>On se propose de placer les EJB des couches [metier] et [DAO] de l&#x27;architecture OpenEJB / EclipseLink dans le conteneur d&#x27;un serveur d&#x27;applications Glassfish.</p>
+<p><strong>L&#x27;implémentation actuelle avec OpenEJB / EclipseLink</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D00000105A1899474.png" style="display:inline-block; margin:4px;width:17.106cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D00000105A1899474.png" /></td></tr></table>
+
+<p>Ci-dessus, la couche [ui] utilise l&#x27;interface distante de la couche [metier].</p>
+<p>Nous avons testé deux contextes d&#x27;exécution : <em>local</em> et <em>distant</em>. Dans ce dernier mode, la couche [ui] était cliente de la couche [metier], couche implémentée par des EJB. Pour fonctionner en mode client / serveur, dans lequel le client et le serveur s&#x27;exécutent dans deux JVM différentes, nous allons placer les couches [metier, DAO, jpa] sur le serveur Java EE Glassfish. Ce serveur est livré avec Netbeans.</p>
+<p><strong>L&#x27;implémentation à construire avec le serveur Glassfish</strong></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005070000011F70FB01BD.png" style="display:inline-block; margin:4px;width:17.027cm;height:3.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000005070000011F70FB01BD.png" /></td></tr></table>
+
+<ul>
+<li>la couche [ui] s&#x27;exécutera dans un environnement Java SE (Standard Edition)</li>
+<li>les couches [metier, DAO, JPA] s&#x27;exécuteront dans un environnement Java EE (Enterprise Edition) sur un serveur Glassfish v3</li>
+<li>le client communiquera avec le serveur via un réseau tcp-ip. Les échanges réseau sont transparents pour le développeur, si ce n&#x27;est qu&#x27;il doit être quand même conscient que le client et le serveur s&#x27;échangent des objets sérialisés pour communiquer et non des références d&#x27;objets. Le protocole réseau utilisé pour ces échanges s&#x27;appelle RMI (Remote Method Invocation), un protocole utilisable uniquement entre deux applications Java.</li>
+<li>l&#x27;implémentation JPA utilisée sur le serveur Glassfish sera EclipseLink.</li>
+</ul>
+<p><a id="refheading87483112820228"></a>
+<a id="serveur-ejb-sunas9"></a></p>
+<h2 id="71-la-partie-serveur-de-lapplication-client-serveur-pam">7.1. La partie serveur de l&#x27;application client / serveur PAM</h2>
+<p><a id="refheading87485112820228"></a></p>
+<h3 id="711-larchitecture-de-lapplication">7.1.1. L&#x27;architecture de l&#x27;application</h3>
+<p>Nous étudions ici la partie serveur qui sera hébergée par le conteneur EJB3 du serveur Glassfish :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E0000000D4BD2C2A10.png" style="display:inline-block; margin:4px;width:16.51cm;height:2.805cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E0000000D4BD2C2A10.png" /></td></tr></table>
+
+<p>Il s&#x27;agit de faire un portage vers le serveur Glassfish de ce qui a déjà été fait et testé avec le conteneur OpenEJB. C&#x27;est là l&#x27;intérêt de OpenEJB et en général des conteneurs EJB embarqués : ils nous permettent de tester l&#x27;application dans un environnement d&#x27;exécution simplifié. Lorsque l&#x27;application a été testée, il ne reste plus qu&#x27;à la porter sur un serveur cible, ici le serveur Glassfish.</p>
+<p><a id="refheading87487112820228"></a></p>
+<h4 id="7111-le-projet-netbeans">7.1.1.1. Le projet Netbeans</h4>
+<p>Commençons par créer un nouveau projet Netbeans :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042B00000112DF5EEDFF.png" style="display:inline-block; margin:4px;width:14.116cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/100000000000042B00000112DF5EEDFF.png" /></td></tr></table>
+
+<ul>
+<li>en [1], nouveau projet</li>
+<li>en [2], choisir la catégorie <em>Maven</em> et en [3] le type <em>EJB Module</em>. Il s&#x27;agit en effet de construire un projet qui sera hébergé et exécuté par un conteneur EJB, celui du serveur Glassfish.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B1000000BE212BF282.png" style="display:inline-block; margin:4px;width:15.889cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B1000000BE212BF282.png" /></td></tr></table>
+
+<ul>
+<li>avec le bouton [4a], choisir le dossier parent du dossier du projet ou taper son nom directement en [4b].</li>
+<li>en [5], donner un nom au projet</li>
+<li>en [6], choisir le serveur d&#x27;application sur lequel il sera exécuté. Celui choisi ici est l&#x27;un de ceux visibles dans l&#x27;onglet [Runtime / Servers], ici Glassfish v3.</li>
+<li>en [7], choisir la version de Java EE.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000441000000CF1BC9628C.png" style="display:inline-block; margin:4px;width:14.407cm;height:2.739cm;" class="odt-zoomable" data-zoom-src="images/1000000000000441000000CF1BC9628C.png" /></td></tr></table>
+
+<ul>
+<li>en [1], le nouveau projet. Il diffère d&#x27;un projet Java classique par quelques points :<ul>
+<li>une branche [Other Sources] [2] est automatiquement créée. Elle contiendra notamment le fichier [persistence.xml] qui configure la couche JPA,</li>
+<li>si on construit le projet (Build), on voit apparaître [3] une dépendance [javaee-api-6.0]. Elle est de type <em>provided</em> car elle est fournie à l&#x27;exécution par le conteneur EJB de Glassfish.</li>
+</ul>
+</li>
+</ul>
+<p><a id="refheading87489112820228"></a>
+<a id="creation-jdbc-dbpam-debut"></a></p>
+<h4 id="7112-configuration-de-la-couche-de-persistance">7.1.1.2. Configuration de la couche de persistance</h4>
+<p>Par configuration de la couche de persistance, nous entendons l&#x27;écriture du fichier [persistence.xml] qui définit :</p>
+<ul>
+<li>l&#x27;implémentation JPA à utiliser</li>
+<li>la définition de la source de données exploitée par la couche JPA. Celle-ci sera une source JDBC gérée par le serveur Glassfish.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000001159EE7A0EC.png" style="display:inline-block; margin:4px;width:17.212cm;height:3.665cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000001159EE7A0EC.png" /></td></tr></table>
+
+<p>On pourra procéder comme suit. Tout d&#x27;abord, dans l&#x27;onglet [Runtime / Databases], on créera [1] une connexion sur la base MySQL5 / dbpam_eclipselink :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D50000012002E25FA9.png" style="display:inline-block; margin:4px;width:6.205cm;height:3.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D50000012002E25FA9.png" /></td></tr></table>
+
+<p>Ceci fait, on peut passer à la création de la <a id="ressource-glassfish-jdbc-dbpam-eclipselink"></a>ressource JDBC utilisée par le module EJB :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034F00000170EF770EC6.png" style="display:inline-block; margin:4px;width:11.206cm;height:4.868cm;" class="odt-zoomable" data-zoom-src="images/100000000000034F00000170EF770EC6.png" /></td></tr></table>
+
+<ul>
+<li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération</li>
+<li>en [2], le projet EJB</li>
+<li>en [3], on sélectionne la catégorie [Glassfish]</li>
+<li>en [4], on veut créer une ressource JDBC</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005090000026169D80A60.png" style="display:inline-block; margin:4px;width:17.053cm;height:8.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000005090000026169D80A60.png" /></td></tr></table>
+
+<ul>
+<li>en [5], indiquer que la ressource JDBC va utiliser un nouveau pool de connexions. On rappelle qu&#x27;un  pool de connexions est un  pool de connexions ouvertes qui sert à accélérer les échanges de l&#x27;application avec la base de données.</li>
+<li>en [6], donner un nom JNDI à la ressource JDBC créée. Ce nom peut être quelconque mais il a souvent la forme <em>jdbc/nom</em>. Ce nom JNDI sera utilisé dans le fichier [persistence.xml] pour désigner la source de données que l&#x27;implémentation JPA doit utiliser.</li>
+<li>en [7], donner un nom qui peut être quelconque au pool de connexions qui va être créé</li>
+<li>dans la liste déroulante [8], choisir la connexion JDBC créée précédemment sur la base MySQL / dbpam_eclipselink.</li>
+<li>en [9], un récapitulatif des propriétés du pool de connexions - on ne touche à rien</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044B000002C11F4E266A.png" style="display:inline-block; margin:4px;width:14.54cm;height:9.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000044B000002C11F4E266A.png" /></td></tr></table>
+
+<ul>
+<li>en [10], on peut préciser plusieurs des propriétés du pool de connexions - on laisse les valeurs par défaut</li>
+<li>en [11], à l&#x27;issue de l&#x27;assistant de création d&#x27;une ressource JDBC pour le module EJB, un fichier [glassfish-resources.xml] a été créée dans la branche [Other Sources]. Le contenu de ce fichier est le suivant :</li>
+</ul>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">resources</span> <span style="color:#808080">PUBLIC</span> <span style="color:#008080">&quot;-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN&quot;</span> <span style="color:#3f7f5f">&quot;http://glassfish.org/dtds/glassfish-resources_1_5.dtd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">resources</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">jdbc-resource</span> <span style="color:#7f007f">enabled</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">jndi-name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;jdbc/dbpam_eclipselink&quot;</span> <span style="color:#7f007f">object-type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;user&quot;</span> <span style="color:#7f007f">pool-name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;dbpamEclipselinkConnectionPool&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">description</span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">jdbc-resource</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">jdbc-connection-pool</span> <span style="color:#7f007f">allow-non-component-callers</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">associate-with-thread</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">connection-creation-retry-attempts</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">connection-creation-retry-interval-in-seconds</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;10&quot;</span> <span style="color:#7f007f">connection-leak-reclaim</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">connection-leak-timeout-in-seconds</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">connection-validation-method</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;auto-commit&quot;</span> <span style="color:#7f007f">datasource-classname</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;com.mysql.jdbc.jdbc2.optional.MysqlDataSource&quot;</span> <span style="color:#7f007f">fail-all-connections</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">idle-timeout-in-seconds</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;300&quot;</span> <span style="color:#7f007f">is-connection-validation-required</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">is-isolation-level-guaranteed</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span> <span style="color:#7f007f">lazy-connection-association</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">lazy-connection-enlistment</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">match-connections</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">max-connection-usage-count</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">max-pool-size</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;32&quot;</span> <span style="color:#7f007f">max-wait-time-in-millis</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;60000&quot;</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;dbpamEclipselinkConnectionPool&quot;</span> <span style="color:#7f007f">non-transactional-connections</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span> <span style="color:#7f007f">pool-resize-quantity</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;2&quot;</span> <span style="color:#7f007f">res-type</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;javax.sql.DataSource&quot;</span> <span style="color:#7f007f">statement-timeout-in-seconds</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;-1&quot;</span> <span style="color:#7f007f">steady-pool-size</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;8&quot;</span> <span style="color:#7f007f">validate-atmost-once-period-in-seconds</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;0&quot;</span> <span style="color:#7f007f">wrap-jdbc-objects</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;false&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;URL&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;jdbc:mysql://localhost:3306/dbpam_eclipselink&quot;</span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;User&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;root&quot;</span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;Password&quot;</span> <span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;&quot;</span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">jdbc-connection-pool</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">resources</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p>Le fichier [glassfish-resources.xml] est un fichier XML qui reprend toutes les données collectées par l&#x27;assistant. Il va être utilisé par Netbeans pour, lors du déploiement du module EJB sur le serveur Glassfish, demander la création de la ressource JDBC dont a besoin ce module.</p>
+<p>On peut désormais créer le fichier [persistence.xml] qui va configurer la couche JPA du module EJB :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003590000014335F1E419.png" style="display:inline-block; margin:4px;width:11.338cm;height:4.274cm;" class="odt-zoomable" data-zoom-src="images/10000000000003590000014335F1E419.png" /></td></tr></table>
+
+<ul>
+<li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération</li>
+<li>en [2], le projet EJB</li>
+<li>en [3], on sélectionne la catégorie [Persistence]</li>
+<li>en [4], on veut créer une unité de persistance</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000480000000FE2467F337.png" style="display:inline-block; margin:4px;width:15.24cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/1000000000000480000000FE2467F337.png" /></td></tr></table>
+
+<ul>
+<li>en [5], donner un nom à l&#x27;unité de persistance</li>
+<li>en [6], plusieurs implémentations JPA sont proposées. On choisira ici [EclipseLink]. D&#x27;autres implémentations sont utilisables à condition de mettre les bibliothèques qui les implémentent avec celles du serveur Glassfish.</li>
+<li>dans  la liste déroulante [7], choisir la source de données JDBC [jdbc/dbpam_eclipselink] qui vient d&#x27;être créée.</li>
+<li>en [8], indiquer que les transactions sont gérées par le conteneur EJB</li>
+<li>en [9], indiquer qu&#x27;aucune opération ne doit être faite sur la source de données lors du déploiement du module EJB sur le serveur. En effet, le module EJB va utiliser une base [dbpam_eclipselink] déjà créée.</li>
+<li>à la fin de l&#x27;assistant, un fichier [persistence.xml] a été créé [10]. Son contenu est le suivant :</li>
+</ul>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="odt-code-line"><span style="color:#800080">&lt;persistence</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">2.0</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/persistence</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;persistence-unit</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">mv-pam-ejb-metier-dao-eclipselinkPU</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">transaction-type</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">JTA</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;jta-data-source&gt;</span><span style="color:#000000">jdbc/dbpam_eclipselink</span><span style="color:#800080">&lt;/jta-data-source&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;exclude-unlisted-classes&gt;</span><span style="color:#000000">false</span><span style="color:#800080">&lt;/exclude-unlisted-classes&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;properties/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;/persistence-unit&gt;</span></span>
+<span class="odt-code-line">&lt;/persistence&gt;</span>
+</code></pre></div>
+
+<ul>
+<li>ligne 3 : le nom de l&#x27;unité de persistance [<span style="color: #0000ff">mv-pam-ejb-metier-dao-eclipselinkPU</span>] et le type de transactions (JTA pour un conteneur EJB)</li>
+<li>ligne 5 : le nom JNDI de la source de données utilisée par la couche de persistance : jdbc/dbpam_eclipselink</li>
+<li>ligne 6 : les entités JPA ne sont pas précisées. Elles seront cherchées dans le Classpath du module EJB.</li>
+<li>le nom de l&#x27;implémentation JPA (Hibernate, EclipseLink, ...) utilisée n&#x27;est pas indiquée. Dans ce cas, Glassfish v3 utilise par défaut <em>EclipseLink</em>.</li>
+</ul>
+<p><a id="refheading87491112820228"></a>
+<a id="deploiement-ejb-sun"></a></p>
+<h4 id="7113-insertion-des-couches-jpa-dao-metier">7.1.1.3. Insertion des couches [jpa, DAO, metier]</h4>
+<p>Maintenant que le fichier [persistence.xml] a été défini, nous pouvons passer à l&#x27;insertion dans le projet des couches [metier, dao, jpa] de l&#x27;application d&#x27;entreprise [pam] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F600000110C65D123D.png" style="display:inline-block; margin:4px;width:16.801cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F600000110C65D123D.png" /></td></tr></table>
+
+<p>Ces trois couches sont identiques à ce qu&#x27;elles étaient avec OpenEJB. On peut procéder à un simple copier / coller entre les deux projets. C&#x27;est ce que nous faisons maintenant :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000183000000CCE314B124.png" style="display:inline-block; margin:4px;width:5.121cm;height:2.699cm;" class="odt-zoomable" data-zoom-src="images/1000000000000183000000CCE314B124.png" /></td></tr></table>
+
+<ul>
+<li>en [1], le résultat de la copie des paquetages [jpa, dao, metier, exception] du projet [mv-pam-openejb-eclipselink] dans le module EJB [mv-pam-ejb-metier-dao-jpa-eclipselink]</li>
+</ul>
+<p><a id="refheading87493112820228"></a></p>
+<h4 id="7114-configuration-du-serveur-glassfish">7.1.1.4. Configuration du serveur Glassfish</h4>
+<p>Il nous reste à configurer le serveur Glassfish sur deux points :</p>
+<ul>
+<li>la couche JPA est implémentée par EclipseLink. Il faut nous assurer que  le serveur Glassfish a les bibliothèques de cette implémentation JPA.</li>
+<li>la source de données est une base MySQL. Il faut nous assurer que  le serveur Glassfish a le pilote JDBC de ce SGBD.</li>
+</ul>
+<p>On peut découvrir l&#x27;absence de ces bibliothèques lors du déploiement du module EJB. Voici une façon de procéder parmi d&#x27;autres pour ajouter des bibliothèques manquantes au serveur Glassfish :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F70000026122F484E5.png" style="display:inline-block; margin:4px;width:16.815cm;height:8.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F70000026122F484E5.png" /></td></tr></table>
+
+<ul>
+<li>en [1], visualiser les propriétés du serveur Glassfish</li>
+<li>en [2], noter le dossier des domaines du serveur. Nous le notons par la suite &lt;domains&gt;</li>
+<li>dans le dossier &lt;domains&gt;\domain1\lib, mettre les bibliothèques manquantes. Dans l&#x27;exemple, les bibliothèques d&#x27;Hibernate (lib / hibernate-tools) et le pilote JDBC de MySQL (lib / divers) ont été rajoutés. Par défaut, le serveur Glassfish a les bibliothèques d&#x27;EclipseLink. On ne rajoutera donc que le pilote JDBC de MySQL.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002AD000000D1538BBF7F.png" style="display:inline-block; margin:4px;width:9.063cm;height:2.766cm;" class="odt-zoomable" data-zoom-src="images/10000000000002AD000000D1538BBF7F.png" /></td></tr></table>
+
+<ul>
+<li>en [1], dans l&#x27;onglet [Services], nous lançons le serveur Glassfish v3</li>
+<li>en [2], il est actif</li>
+</ul>
+<p><a id="refheading87495112820228"></a></p>
+<h4 id="7115-deploiement-du-module-ejb">7.1.1.5. Déploiement du module EJB</h4>
+<p>Nous déployons maintenant le module EJB sur le serveur Glassfish :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DF000001981F243F13.png" style="display:inline-block; margin:4px;width:16.498cm;height:5.398cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DF000001981F243F13.png" /></td></tr></table>
+
+<ul>
+<li>en [1], le module EJB est déployé</li>
+<li>en [2], l&#x27;arborescence du serveur Glassfish est rafraîchie</li>
+<li>en [3], après déploiement, le module EJB apparaît dans la branche [Applications] du serveur Glassfish</li>
+<li>en [4], la ressource JDBC [jdbc / dbpam_eclipselink] a été créée sur le serveur Glassfish. On rappelle que nous l&#x27;avions définie paragraphe <a href="#ressource-glassfish-jdbc-dbpam-eclipselink">7.1.1.2</a>.</li>
+</ul>
+<p>Lors du déploiement, le serveur Glassfish logue dans la console des informations intéressantes :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Realm</span><span class="w"> </span><span class="n">admin</span><span class="o">-</span><span class="n">realm</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">classtype</span><span class="w"> </span><span class="n">com</span><span class="p">.</span><span class="na">sun</span><span class="p">.</span><span class="na">enterprise</span><span class="p">.</span><span class="na">security</span><span class="p">.</span><span class="na">auth</span><span class="p">.</span><span class="na">realm</span><span class="p">.</span><span class="na">file</span><span class="p">.</span><span class="na">FileRealm</span><span class="w"> </span><span class="n">successfully</span><span class="w"> </span><span class="n">created</span><span class="p">.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">....</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">IndemniteDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">IndemniteDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">IIndemniteDaoLocal</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">IndemniteDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">IIndemniteDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">IndemniteDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">DAO</span><span class="p">.</span><span class="na">IIndemniteDaoRemote</span><span class="err">#</span><span class="n">DAO</span><span class="p">.</span><span class="na">IIndemniteDaoRemote</span><span class="p">,</span><span class="w"> </span><span class="n">DAO</span><span class="p">.</span><span class="na">IIndemniteDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">...</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">CotisationDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">CotisationDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">ICotisationDaoLocal</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">CotisationDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">ICotisationDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">CotisationDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">DAO</span><span class="p">.</span><span class="na">ICotisationDaoRemote</span><span class="p">,</span><span class="w"> </span><span class="n">DAO</span><span class="p">.</span><span class="na">ICotisationDaoRemote</span><span class="err">#</span><span class="n">DAO</span><span class="p">.</span><span class="na">ICotisationDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierLocal</span><span class="o">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="err">#</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="p">,</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="o">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">...</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">EmployeDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">EmployeDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">IEmployeDaoLocal</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="o">/</span><span class="n">EmployeDao</span><span class="o">!</span><span class="n">DAO</span><span class="p">.</span><span class="na">IEmployeDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">EmployeDao</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">DAO</span><span class="p">.</span><span class="na">IEmployeDaoRemote</span><span class="err">#</span><span class="n">DAO</span><span class="p">.</span><span class="na">IEmployeDaoRemote</span><span class="p">,</span><span class="w"> </span><span class="n">DAO</span><span class="p">.</span><span class="na">IEmployeDaoRemote</span><span class="o">]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nl">INFO</span><span class="p">:</span><span class="w"> </span><span class="n">pam</span><span class="o">-</span><span class="n">serveur</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">jpa</span><span class="o">-</span><span class="n">eclipselink</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">successfully</span><span class="w"> </span><span class="n">deployed</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="mi">891</span><span class="w"> </span><span class="n">milliseconds</span><span class="p">.</span>
+</code></pre></div></td></tr></table></div>
+<p>On notera aux lignes </p>
+<ul>
+<li>3, 6, 8 et 11 les noms portables JNDI des EJB déployés. Java EE 6 a introduit la notion de nom JNDI portable. Cela dénote un nom JNDI reconnu par tous les serveurs Java EE 6. Avec Java EE 5, les noms JNDI sont spécifiques au serveur utilisé.</li>
+<li>4, 7, 9, 12 : les noms JNDI des EJB déployés sous une forme spécifique à Glassfish v3.</li>
+</ul>
+<p>Ces noms seront utiles à l&#x27;application console que nous allons écrire pour utiliser le module EJB déployé.</p>
+<p><a id="refheading87497112820228"></a></p>
+<h2 id="72-client-console-version-1">7.2. Client console - version 1</h2>
+<p>Maintenant que nous avons déployé la partie serveur de notre application client / serveur, nous en venons à étudier la partie client [1] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005000000011C36BF16CA.png" style="display:inline-block; margin:4px;width:16.933cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000005000000011C36BF16CA.png" /></td></tr></table>
+
+<p><a id="refheading87499112820228"></a></p>
+<h3 id="721-le-projet-du-client">7.2.1. Le projet du client</h3>
+<p>Nous créons un nouveau projet Maven de type [Java Application] nommé [mv-pam-client-ejb-metier-dao-eclipselink] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C6000000D896CA4C59.png" style="display:inline-block; margin:4px;width:6.006cm;height:2.858cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C6000000D896CA4C59.png" /></td></tr></table>
+
+<ul>
+<li>en [1], le projet du client</li>
+</ul>
+<p>Dans le fichier [pom.xml], nous ajoutons les dépendances suivantes :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mv-pam-client-ejb-metier-dao-eclipselink</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.0-SNAPSHOT</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">mv-pam-client-ejb-metier-dao-eclipselink</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">http://maven.apache.org</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">http://download.eclipse.org/rt/eclipselink/maven.repo/</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">eclipselink</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span><span style="color:#000000">default</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Repository for library Library[eclipselink]</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">http://repo1.maven.org/maven2/</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">swing-layout</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span><span style="color:#000000">default</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">layout</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Repository for library Library[swing-layout]</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">repositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.glassfish.appclient</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">gf-client</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">3.1.1</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">${project.groupId}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mv-pam-ejb-metier-dao-eclipselink</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">${project.version}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">type</span><span style="color:#008080">&gt;</span><span style="color:#000000">ejb</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">type</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.swinglabs</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">swing-layout</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.0.3</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+<li>lignes 31-35 : la dépendance sur la bibliothèque [gf-client] qui permet à un client Classfish de communiquer avec un serveur distant,</li>
+<li>lignes 36-41 : la dépendance sur le projet Maven du module EJB. Nous voulons récupérer ici les définitions des entités JPA et celles des différentes interfaces ainsi que celle de la classe d&#x27;exception [PamException],</li>
+</ul>
+<p>A partir du projet [mv-pam-openejb-eclipselink], nous copions la classe [MainRemote] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B30000011473145345.png" style="display:inline-block; margin:4px;width:5.756cm;height:3.651cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B30000011473145345.png" /></td></tr></table>
+
+<p>La classe [MainRemote] doit obtenir une référence sur l&#x27;EJB de la couche [metier].  Le code de la classe [MainRemote] évolue de la façon suivante :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line">// c&#x27;est bon - on peut demander la feuille de salaire</span>
+<span class="odt-code-line"><span style="color:#000000">    FeuilleSalaire feuilleSalaire = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    IMetierRemote metier = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#3f7f5f">// contexte JNDI du serveur Glassfish</span></span>
+<span class="odt-code-line"><span style="color:#000000">      InitialContext initialContext = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> InitialContext();</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#3f7f5f">// instanciation couche métier</span></span>
+<span class="odt-code-line"><span style="color:#000000">      metier = (IMetierRemote) initialContext.lookup(</span><span style="color:#2a00ff">&quot;java:global/istia.st_mv-pam-ejb-metier-dao-eclipselink_ejb_1.0-SNAPSHOT/Metier!metier.IMetierRemote&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#3f7f5f">// calcul de la feuille de salaire</span></span>
+<span class="odt-code-line">      feuilleSalaire = metier.calculerFeuilleSalaire(args[0], nbHeuresTravaillées, nbJoursTravaillés);</span>
+<span class="odt-code-line"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (PamException ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      System.err.println(</span><span style="color:#2a00ff">&quot;L&#x27;erreur suivante s&#x27;est produite : &quot;</span></span>
+<span class="odt-code-line">              + ex.getMessage());</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">      System.err.println(</span><span style="color:#2a00ff">&quot;L&#x27;erreur suivante s&#x27;est produite : &quot;</span></span>
+<span class="odt-code-line">              + ex.toString());</span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<ul>
+<li>ligne 6 : initialisation du contexte JNDI du serveur Glassfish.</li>
+<li>ligne 8 : on demande à ce contexte JNDI une référence sur l&#x27;interface distante de la couche [metier]. D&#x27;après les logs de Glassfish, on sait que l&#x27;interface distante de la couche [metier] a deux noms possibles :</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nl">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">EJB5181</span><span class="p">:</span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">istia</span><span class="p">.</span><span class="na">st_mv</span><span class="o">-</span><span class="n">pam</span><span class="o">-</span><span class="n">ejb</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">eclipselink_ejb_1</span><span class="mf">.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierLocal</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">istia</span><span class="p">.</span><span class="na">st_mv</span><span class="o">-</span><span class="n">pam</span><span class="o">-</span><span class="n">ejb</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">eclipselink_ejb_1</span><span class="mf">.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="o">]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nl">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">EJB5182</span><span class="p">:</span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="err">#</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="p">,</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Ligne 1, le nom JNDI utilisable avec tout serveur d&#x27;applications JAVA EE 6. Ligne 2, le nom JNDI spécifique à Glassfish. Dans le code, ligne 9, nous utilisons le nom JNDI portable.</p>
+<ul>
+<li>le reste du code ne change pas</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000168000000EEEA939045.png" style="display:inline-block; margin:4px;width:4.763cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/1000000000000168000000EEEA939045.png" /></td></tr></table>
+
+<p>En [1], on configure le projet pour qu&#x27;il exécute la classe [MainRemote] avec des arguments. Si tout va bien, l&#x27;exécution du projet donne le résultat suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>run:
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Valeurs saisies :
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>N° de sécurité sociale de l&#39;employé : 254104940426058
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>Nombre d&#39;heures travaillées : 150
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>Nombre de jours travaillés : 20
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>Informations Employé : 
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>Nom : Jouveinal
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>Prénom : Marie
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>Adresse : 5 rue des oiseaux
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>Ville : St Corentin
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>Code Postal : 49203
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>Indice : 2
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>Informations Cotisations : 
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>CSGRDS : 3.49 %
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>CSGD : 6.15 %
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>Retraite : 7.88 %
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>Sécurité sociale : 9.39 %
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>Informations Indemnités : 
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>Salaire horaire : 2.1 euro
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>Entretien/jour : 2.1 euro
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>Repas/jour : 3.1 euro
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>Congés Payés : 15.0 %
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>Informations Salaire : 
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>Salaire de base : 362.25 euro
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>Cotisations sociales : 97.48 euro
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>Indemnités d&#39;entretien : 42.0 euro
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>Indemnités de repas : 62.0 euro
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>Salaire net : 368.77 euro
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>BUILD SUCCESSFUL (total time: 2 seconds)
+</code></pre></div></td></tr></table></div>
+<p>Si dans les propriétés, on met un n° de sécurité sociale incorrect, on obtient le résultat suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>run:
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>L&#39;erreur suivante s&#39;est produite : L&#39;employé de n°[254104940426058x] est introuvable
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>BUILD SUCCESSFUL (total time: 2 seconds)
+</code></pre></div></td></tr></table></div>
+<p><a id="refheading87507112820228"></a></p>
+<h2 id="73-client-console-version-2">7.3. Client console - version 2</h2>
+<p>Dans les versions précédentes, l&#x27;environnement JNDI du serveur Glassfish était configuré à partir d&#x27;un fichier [jndi.properties] trouvé quelque part dans les archives du projet. Son contenu par défaut est le suivant :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"># accès JNDI à Sun Application Server</span>
+<span class="odt-code-line"><span style="color:#000000">java.naming.factory.initial=</span><span style="color:#2a00ff">com.sun.enterprise.naming.SerialInitContextFactory</span></span>
+<span class="odt-code-line"><span style="color:#000000">java.naming.factory.url.pkgs=</span><span style="color:#2a00ff">com.sun.enterprise.naming</span></span>
+<span class="odt-code-line"># Required to add a javax.naming.spi.StateFactory for CosNaming that</span>
+<span class="odt-code-line"># supports dynamic RMI-IIOP.</span>
+<span class="odt-code-line"><span style="color:#000000">java.naming.factory.state=</span><span style="color:#2a00ff">com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl</span></span>
+<span class="odt-code-line"><span style="color:#000000">org.omg.CORBA.ORBInitialHost=</span><span style="color:#2a00ff">localhost</span></span>
+<span class="odt-code-line"><span style="color:#000000">org.omg.CORBA.ORBInitialPort=</span><span style="color:#2a00ff">3700</span></span>
+</code></pre></div>
+
+<p>Les lignes 7 et 8 désignent la machine du service JNDI et le port d&#x27;écoute de celui-ci. Ce fichier ne permet pas d&#x27;interroger un serveur JNDI autre que <em>localhost</em> ou travaillant sur un port autre que le port <em>3700</em>. Si on veut changer ces deux paramètres, on peut construire son propre fichier [jndi.properties] ou utiliser une configuration Spring. Nous montrons cette deuxième technnique.</p>
+<p>Nous commençons par créer un nouveau projet à partir du projet [pam-client-metier-dao-jpa-eclipselink] initial.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B000000F5B9DEAA47.png" style="display:inline-block; margin:4px;width:17.503cm;height:3.242cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B000000F5B9DEAA47.png" /></td></tr></table>
+
+<ul>
+<li>en [1], le nouveau projet</li>
+<li>en [2], le fichier [spring-config-client.xml] de configuration de Spring. Son contenu est le suivant :</li>
+</ul>
+<p>Le fichier de configuration de Spring est le suivant :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="odt-code-line"><span style="color:#800080">&lt;beans</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.springframework.org/schema/beans</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xmlns:tx</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.springframework.org/schema/tx</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xmlns:jee</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.springframework.org/schema/jee</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/beans</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/beans/spring-beans-2.0.xsd</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/tx</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/tx/spring-tx-2.0.xsd</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/jee</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/jee/spring-jee-2.0.xsd</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;!--</span><span style="font-style:italic;color:#008000"> métier </span><span style="color:#800080">--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;jee:jndi-lookup</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">id</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">metier</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">jndi-name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">java:global/istia.st_mv-pam-ejb-metier-dao-eclipselink_ejb_1.0-SNAPSHOT/Metier!metier.IMetierRemote</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;jee:environment&gt;</span></span>
+<span class="odt-code-line">      java.naming.factory.initial=com.sun.enterprise.naming.SerialInitContextFactory</span>
+<span class="odt-code-line">      java.naming.factory.url.pkgs=com.sun.enterprise.naming</span>
+<span class="odt-code-line">      java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl</span>
+<span class="odt-code-line">      org.omg.CORBA.ORBInitialHost=localhost</span>
+<span class="odt-code-line">      org.omg.CORBA.ORBInitialPort=3700</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;/jee:environment&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;/jee:jndi-lookup&gt;</span></span>
+<span class="odt-code-line">&lt;/beans&gt;</span>
+</code></pre></div>
+
+<p>Nous utilisons ici une balise &lt;jee&gt; (ligne 14) apparue avec Spring 2.0. L&#x27;usage de cette balise nécessite la définition du schéma auquel elle appartient, lignes 4, 10 et 11.</p>
+<ul>
+<li>ligne 14 : la balise &lt;jee:jndi-lookup&gt; permet d&#x27;obtenir la référence d&#x27;un objet auprès d&#x27;un service JNDI. Ici, on associe le bean nommé &quot; metier &quot; à la ressource JNDI associée à l&#x27;EJB [Metier]. Le nom JNDI utilisé ici est le nom portable (Java EE 6) de l&#x27;EJB.</li>
+<li>le contenu du fichier [jndi.properties] devient le contenu de la balise &lt;jee:environment&gt; (ligne 15) qui sert à définir les paramètres de connexion au service JNDI.</li>
+</ul>
+<p>La classe principale [MainRemote] évolue de la façon suivante :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">...</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="c1">// c&#39;est bon - on peut demander la feuille de salaire</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">FeuilleSalaire</span><span class="w"> </span><span class="n">feuilleSalaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="n">IMetierRemote</span><span class="w"> </span><span class="n">metier</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">      </span><span class="c1">// instanciation couche [metier]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">      </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;spring-config-client.xml&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">      </span><span class="n">metier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">IMetierRemote</span><span class="p">)</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;metier&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">      </span><span class="c1">// calcul de la feuille de salaire</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">      </span><span class="n">feuilleSalaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">calculerFeuilleSalaire</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">nbHeuresTravaillées</span><span class="p">,</span><span class="w"> </span><span class="n">nbJoursTravaillés</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">PamException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;L&#39;erreur suivante s&#39;est produite : &quot;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">              </span><span class="o">+</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;L&#39;erreur suivante s&#39;est produite : &quot;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">              </span><span class="o">+</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p><span style="color: #000000">Lignes 7-8, la référence de type [IMetierRemote] sur la couche [metier] est demandée à Spring. Cette solution amène de la souplesse dans notre architecture. En effet, si l&#x27;EJB de la couche [metier] devenait local, c.a.d. exécuté dans la même JVM que notre client [MainRemote], le code de celui-ci ne changerait pas. Seul le contenu du fichier [spring-config-client.xml] changerait. On retrouverait alors une configuration analogue à l&#x27;architecture Spring / JPA étudiée au paragraphe </span><span style="color: #000000"><a href="version-1-architecture-spring--jpa.html#console-spring-jpa">5.11</a></span><span style="color: #000000">.</span></p>
+<p><span style="color: #000000">Le lecteur est invité à tester cette nouvelle version.</span></p>
+<p><a id="refheading87513112820228"></a></p>
+<h2 id="74-le-client-swing">7.4. Le client Swing</h2>
+<p>Nous construisons maintenant le client <em>swing</em> de notre application client / serveur EJB.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C3000000AE156E2FE1.png" style="display:inline-block; margin:4px;width:5.967cm;height:2.302cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C3000000AE156E2FE1.png" /></td></tr></table>
+
+<p>Le fichier [pom.xml] doit avoir la dépendance nécessaire aux applications swing :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.swinglabs</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">swing-layout</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.0.3</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p>Ci-dessus, la classe [PamJFrame] avait été écrite initialement pour s&#x27;exécuter dans un environnement Spring / JPA :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005540000010AEE65C792.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.508cm;" class="odt-zoomable" data-zoom-src="images/10000000000005540000010AEE65C792.png" /></td></tr></table>
+
+<p>Maintenant cette classe doit devenir le client distant d&#x27;un EJB déployé sur le serveur Glassfish.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F80000011639F3F420.png" style="display:inline-block; margin:4px;width:16.828cm;height:3.678cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000011639F3F420.png" /></td></tr></table>
+
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Travail pratique</strong> : en suivant l&#x27;exemple du client console [ui.console.MainRemote] du projet, modifier la façon utilisée par la méthode [doMyInit] (cf paragraphe <a href="version-1-architecture-spring--jpa.html#client-swing-domyinit">5.12.4</a>) de la classe [PamJFrame] pour acquérir une référence sur la couche [metier] qui est maintenant distante.</p>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
+        Partage dans les Mêmes Conditions 3.0 non transposé</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

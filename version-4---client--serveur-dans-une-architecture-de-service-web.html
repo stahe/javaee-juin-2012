@@ -1,0 +1,1625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/javaee-juin-2012/version-4---client--serveur-dans-une-architecture-de-service-web.html">
+      
+      
+        <link rel="prev" href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html">
+      
+      
+        <link rel="next" href="introduction-a-java-server-faces.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>8. Version 4 – client / serveur dans une architecture de service web - Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-version-4-client-serveur-dans-une-architecture-de-service-web" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction à  Java EE avec Netbeans et le serveur d&#39;applications Glassfish" class="md-header__button md-logo" aria-label="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8. Version 4 – client / serveur dans une architecture de service web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/javaee-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction à  Java EE avec Netbeans et le serveur d&#39;applications Glassfish" class="md-nav__button md-logo" aria-label="Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction à  Java EE avec Netbeans et le serveur d'applications Glassfish
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/javaee-juin-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture-dune-application-java-en-couches.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Architecture d'une application Java en couches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-outils-du-document.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Les outils du document
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jpa-en-resume.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. JPA en résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1-architecture-spring--jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Version 1 : Architecture Spring / JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-2-architecture-openejb--jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Version 2 : Architecture OpenEJB / JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Version 3 : Portage de l'application PAM sur un serveur d'applications Glassfish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Version 4 – client / serveur dans une architecture de service web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="version-4---client--serveur-dans-une-architecture-de-service-web.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Version 4 – client / serveur dans une architecture de service web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-service-web-implemente-par-un-ejb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Service web implémenté par un EJB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1. Service web implémenté par un EJB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#811-la-partie-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.1. La partie serveur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1.1. La partie serveur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8111-le-projet-netbeans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.1.1. Le projet Netbeans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#812-la-partie-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2. La partie cliente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1.2. La partie cliente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8121-le-projet-netbeans-du-client-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2.1. Le projet Netbeans du client console
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8122-le-client-console-du-service-web-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.2.2. Le client console du service web Metier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#813-le-client-swing-du-service-web-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.3. Le client swing du service web Metier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-service-web-implemente-par-une-application-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Service web implémenté par une application web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Service web implémenté par une application web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821-la-partie-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.1. La partie serveur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-la-partie-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.2. La partie cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-service-web-implemente-avec-spring-et-tomcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Service web implémenté avec Spring et Tomcat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3. Service web implémenté avec Spring et Tomcat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831-la-partie-serveur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1. La partie serveur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832-la-partie-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2. La partie cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-a-java-server-faces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Introduction à Java Server Faces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-5---application-pam-web--jsf.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Version 5 - Application PAM Web / JSF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-6---integration-de-la-couche-web-dans-une-architecture-3-couches-jsf--ejb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Version 6 - Intégration de la couche web dans une architecture 3 couches JSF / EJB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-7---application-web-pam-multi-vues--multi-pages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Version 7 - Application web PAM multi-vues / multi-pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-8-portage-de-lapplication-dans-un-environnement-spring--tomcat.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Version 8 : Portage de l'application dans un environnement Spring / Tomcat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-9-implementation-de-la-couche-web-avec-primefaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Version 9 : Implémentation de la couche web avec Primefaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading87517112820228"></a></p>
+<h1 id="8-version-4-client-serveur-dans-une-architecture-de-service-web">8. Version 4 – client / serveur dans une architecture de service web</h1>
+<p>Dans cette nouvelle version, l&#x27;application [Pam] va s&#x27;exécuter en mode client / serveur dans une architecture de service web. Revenons sur l&#x27;architecture de l&#x27;application précédente :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053C0000011A932F7170.png" style="display:inline-block; margin:4px;width:17.727cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/100000000000053C0000011A932F7170.png" /></td></tr></table>
+
+<p><span style="color: #000000">Ci-dessus, une couche de communication [C, RMI, S] permettait une communication transparente entre le client [ui] et la couche distante [metier]. Nous allons utiliser une architecture analogue, où la couche de communication [C, RMI, S] sera remplacée par une couche [C, HTTP / SOAP, S] :</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F30000011394858AF0.png" style="display:inline-block; margin:4px;width:16.762cm;height:3.639cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F30000011394858AF0.png" /></td></tr></table>
+
+<p><span style="color: #000000">Le protocole HTTP / SOAP a l&#x27;avantage sur le protocole RMI / EJB précédent d&#x27;être multi-plateformes. Ainsi le service web peut être écrit en Java et déployé sur le serveur Glassfish alors que le client lui, pourrait être un client .NET ou PHP.</span></p>
+<p><span style="color: #000000">Nous allons développer cette architecture selon trois modes différents :</span></p>
+<ol>
+<li><span style="color: #000000">le service web sera assuré par l&#x27;EJB [Metier]</span></li>
+<li><span style="color: #000000">le service web sera assuré par une application web utilisant l&#x27;EJB [Metier]</span></li>
+<li><span style="color: #000000">le service web sera assuré par une application web utilisant Spring</span></li>
+</ol>
+<p>Un service web peut être implémenté de diverses façons au sein d&#x27;un serveur Java EE :</p>
+<ul>
+<li>par une classe annotée <strong>@WebService</strong> qui s&#x27;exécute dans un conteneur web</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CC000000B3A8B20B4F.png" style="display:inline-block; margin:4px;width:16.245cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CC000000B3A8B20B4F.png" /></td></tr></table>
+
+<ul>
+<li>par un EJB annoté <strong>@WebService</strong> qui s&#x27;exécute dans un conteneur EJB</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D2000000AF7BB87BD5.png" style="display:inline-block; margin:4px;width:16.325cm;height:2.316cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D2000000AF7BB87BD5.png" /></td></tr></table>
+
+<p><span style="color: #000000">Nous commençons par cette dernière architecture.</span></p>
+<p><a id="refheading87519112820228"></a>
+<a id="serviceweb-ejb"></a></p>
+<h2 id="81-service-web-implemente-par-un-ejb">8.1. Service web implémenté par un EJB</h2>
+<p><a id="refheading87521112820228"></a></p>
+<h3 id="811-la-partie-serveur">8.1.1. La partie serveur</h3>
+<p><a id="refheading87523112820228"></a></p>
+<h4 id="8111-le-projet-netbeans">8.1.1.1. Le projet Netbeans</h4>
+<p>Commençons par créer un nouveau projet maven copie du projet EJB [mv-pam-ejb-metier-dao-jpa-eclipselink] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FA0000009790D04311.png" style="display:inline-block; margin:4px;width:4.63cm;height:2.799cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FA0000009790D04311.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>Dans l&#x27;architecture suivante :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FE00000113EDA3AEBA.png" style="display:inline-block; margin:4px;width:16.907cm;height:3.639cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE00000113EDA3AEBA.png" /></td></tr></table>
+
+<p>la couche [metier] va être le service web contacté par la couche [ui]. Cette classe n&#x27;a pas besoin d&#x27;implémenter une interface. Ce sont des annotations qui transforment un POJO (Plain Ordinary Java Object) en service web. La classe [Metier] qui implémente la couche [metier] ci-dessus, est transformée de la façon suivante :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> metier;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">@WebService</span>
+<span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">Stateless()</span></span>
+<span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">TransactionAttribute(TransactionAttributeType.REQUIRED)</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Metier </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IMetierLocal,IMetierRemote {</span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// références sur les couches [DAO]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">EJB</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> ICotisationDaoLocal cotisationDao = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">EJB</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IEmployeDaoLocal employeDao=</span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">EJB</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IIndemniteDaoLocal indemniteDao=</span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// obtenir la feuille de salaire</span></span>
+<span class="odt-code-line">@WebMethod</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> FeuilleSalaire calculerFeuilleSalaire(String SS,</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// liste des employés</span></span>
+<span class="odt-code-line">@WebMethod</span>
+<span class="odt-code-line"><span style="color:#000000">   </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Employe&gt; findAllEmployes() {</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">// important - pas de getters et setters pour les EJB</span>
+<span class="odt-code-line"> }</span>
+</code></pre></div>
+
+<ul>
+<li>ligne 4, l&#x27;annotation <strong>@WebService</strong> fait de la classe [Metier] un service web. Un service web expose des méthodes à ses clients. Celles-ci doivent être annotées par l&#x27;attribut <strong>@WebMethod</strong>.</li>
+<li>lignes 19 et 25 : les deux méthodes de la classe [Metier] deviennent des méthodes du service web.</li>
+<li>ligne 29 : il est important que les getters et setters soient supprimés sinon ils seront exposés dans le service web et cela cause des erreurs de sécurité.</li>
+</ul>
+<p>L&#x27;ajout de ces annotations est détecté par Netbeans qui fait alors évoluer la nature du projet :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051C0000015A7A298DB9.png" style="display:inline-block; margin:4px;width:17.304cm;height:4.577cm;" class="odt-zoomable" data-zoom-src="images/100000000000051C0000015A7A298DB9.png" /></td></tr></table>
+
+<p>En [1], une arborescence [Web Services] est apparue dans le projet. On y trouve le service web <strong>Metier</strong> et ses deux méthodes. L&#x27;application serveur peut être déployée [2]. Le serveur MySQL soit être lancé et sa base [dbpam_eclipselink] exister et être remplie. Il peut être nécessaire auparavant de supprimer [3] les EJB du projet client / serveur EJB étudié précédemment pour éviter des conflits de noms. En effet, notre nouveau projet amène avec lui les mêmes EJB que ceux du projet précédent.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002780000008C275F58B9.png" style="display:inline-block; margin:4px;width:8.361cm;height:1.852cm;" class="odt-zoomable" data-zoom-src="images/10000000000002780000008C275F58B9.png" /></td></tr></table>
+
+<p>En [1], nous voyons notre application <em>serveur</em> déployée sur le serveur Glassfish. Une fois le service web déployé, il peut être testé :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052000000245F53A84B7.png" style="display:inline-block; margin:4px;width:17.357cm;height:7.687cm;" class="odt-zoomable" data-zoom-src="images/100000000000052000000245F53A84B7.png" /></td></tr></table>
+
+<ul>
+<li>en [1], dans le projet courant, nous testons le service web [Metier]</li>
+<li>le service web est accessible via différentes URL. L&#x27;URL [2] permet de tester le service web</li>
+<li>en [3], un lien sur le fichier XML définissant le service web. Les clients du service web ont besoin de connaître l&#x27;URL de ce fichier. C&#x27;est à partir de lui qu&#x27;est générée la couche cliente (stubs) du service web.</li>
+<li>en [4,5], un formulaire permettant de tester les méthodes exposées par le service web. Celles-ci sont présentées avec leurs paramètres que l&#x27;utilisateur peut définir.</li>
+</ul>
+<p>Par exemple, testons la méthode [findAllEmployes] qui n&#x27;a besoin d&#x27;aucun paramètre :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017500000050E1C8E03D.png" style="display:inline-block; margin:4px;width:6.909cm;height:1.48cm;" class="odt-zoomable" data-zoom-src="images/100000000000017500000050E1C8E03D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>Ci-dessus, nous testons la méthode. Nous recevons alors la réponse ci-dessous (vue partielle). Nous y retrouvons bien les deux employés avec leurs indemnités. Le lecteur est invité à tester de la même façon la méthode [4] en lui passant les trois paramètres qu&#x27;elle attend.</p>
+<p><img src="images/100000000000023D000003196E08CA67.png" style="width:10.61cm;height:14.69cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023D000003196E08CA67.png" /></p>
+<p><a id="refheading87525112820228"></a></p>
+<h3 id="812-la-partie-cliente">8.1.2. La partie cliente</h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F7000001055B20EA52.png" style="display:inline-block; margin:4px;width:16.815cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F7000001055B20EA52.png" /></td></tr></table>
+
+<p><a id="refheading87527112820228"></a>
+<a id="client-console-wsejb"></a></p>
+<h4 id="8121-le-projet-netbeans-du-client-console">8.1.2.1. Le projet Netbeans du client console</h4>
+<p>Nous créons maintenant un projet Java de type [Java Application] pour la partie <em>client</em> de l&#x27;application. <strong>Il n&#x27;a pas été possible (juin 2012) de créer un projet Maven pour ce client</strong>. Une erreur survient, semble connue sur le net mais reste non résolue.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015700000054C31B9CEB.png" style="display:inline-block; margin:4px;width:6.35cm;height:1.559cm;" class="odt-zoomable" data-zoom-src="images/100000000000015700000054C31B9CEB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B600000053B4DBCF2D.png" style="display:inline-block; margin:4px;width:3.371cm;height:1.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B600000053B4DBCF2D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>Une fois le projet créé, nous indiquons qu&#x27;il sera client du service web que nous venons de déployer sur le serveur Glassfish :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050C0000016DB8F8994A.png" style="display:inline-block; margin:4px;width:17.092cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/100000000000050C0000016DB8F8994A.png" /></td></tr></table>
+
+<ul>
+<li>en [2], nous sélectionnons le nouveau projet et activons le bouton [New File]</li>
+<li>en [3], nous indiquons que nous voulons créer un client de service web</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BE000000E7345262D9.png" style="display:inline-block; margin:4px;width:16.06cm;height:3.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BE000000E7345262D9.png" /></td></tr></table>
+
+<ul>
+<li>avec [4], nous allons désigner le projet Netbeans du service web</li>
+<li>dans la fenêtre [5], sont listés tous les projets ayant une branche [Web Services], ici uniquement le projet [mv-pam-ws-metier-dao-eclipselink].</li>
+<li>un projet peut déployer plusieurs services web. En [6], nous désignons le service web auquel on veut se connecter.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048A00000226EFB439F8.png" style="display:inline-block; margin:4px;width:15.372cm;height:7.276cm;" class="odt-zoomable" data-zoom-src="images/100000000000048A00000226EFB439F8.png" /></td></tr></table>
+
+<ul>
+<li>en [7], est affichée l&#x27;URL de définition du service web. Cette URL est utilisée par les outils logiciels qui génèrent la couche cliente qui va s&#x27;interfacer avec le service web.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FF0000011C93164D93.png" style="display:inline-block; margin:4px;width:16.921cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FF0000011C93164D93.png" /></td></tr></table>
+
+<ul>
+<li>la couche cliente [C] [1] qui va être générée est constituée d&#x27;un ensemble de classes Java qui vont être mises dans un même paquetage. Le nom de celui-ci est fixé en [8].</li>
+<li>une fois l&#x27;assistant de création du client du service web terminé avec le bouton [Finish], la couche [C] ci-dessus est créée.</li>
+</ul>
+<p>Ceci est reflété par un certain nombre de changements dans le projet :</p>
+<ul>
+<li>en [10] ci-dessus, apparaît une arborescence [Generated Sources] qui contient les classes de la couche [C] qui permettent au client [3] de communiquer avec le service web. Cette couche permet au client [3] de communiquer avec la couche [metier] [4] comme si elle était locale et non distante.</li>
+<li>en [11], apparaît une arborescence [Web Service References] qui liste les services web pour lesquels une couche cliente a été générée.</li>
+</ul>
+<p>On notera que dans la couche [C] [10] générée, nous retrouvons des classes qui ont été déployées côté serveur : <strong>Indemnite</strong>, <strong>Cotisation</strong>, <strong>Employe</strong>, <strong>FeuilleSalaire</strong>, <strong>ElementsSalaire</strong>, <strong>Metier</strong>. <strong>Metier</strong> est le service web et les autres classes sont des classes nécessaires à ce service. On pourra avoir la curiosité de consulter leur code. On verra que la définition des classes qui, instanciées, représentent des objets manipulés par le service, consiste en la définition des champs de la classe et de leurs accesseurs ainsi qu&#x27;à l&#x27;ajout d&#x27;annotations permettant la sérialisation de la classe en flux XML. La classe <strong>Metier</strong> est devenue une <strong>interface</strong> avec dedans les deux méthodes qui ont été annotées @<em>WebMethod</em>. Chacune de celles-ci donne naissance à deux classes, par exemple [CalculerFeuilleSalaire.java] et [CalculerFeuilleSalaireResponse.java], où l&#x27;une encapsule l&#x27;appel à la méthode et l&#x27;autre son résultat. Enfin, la classe <strong>MetierService</strong> est la classe qui permet au client d&#x27;avoir une référence sur le service web <strong>Metier</strong> distant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">    </span><span class="nd">@WebEndpoint</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MetierPort&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Metier</span><span class="w"> </span><span class="nf">getMetierPort</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getPort</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">QName</span><span class="p">(</span><span class="s">&quot;http://metier/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MetierPort&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Metier</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>La méthode <strong>getMetierPort</strong> de la ligne 2 permet d&#x27;obtenir une référence sur le service web <strong>Metier</strong> distant.</p>
+<p><a id="refheading87529112820228"></a></p>
+<h4 id="8122-le-client-console-du-service-web-metier">8.1.2.2. Le client console du service web Metier</h4>
+<p>Il ne nous reste plus qu&#x27;à écrire le client du service web <strong>Metier</strong>. Nous recopions la classe [MainRemote] du projet [mv-pam-client-metier-dao-jpa-eclipselink] qui était un client d&#x27;un serveur EJB, dans le nouveau projet.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C000002145C989357.png" style="display:inline-block; margin:4px;width:15.61cm;height:7.038cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C000002145C989357.png" /></td></tr></table>
+
+<ul>
+<li>en [1], la classe du client du service web. La classe [MainRemote] présente des erreurs. Pour les corriger, on commencera par supprimer toutes les instructions [import] existantes dans la classe et on les régènerera par l&#x27;option [Fix Imports]. En effet, certaines des classes utilisées par la classe [MainRemote] font désormais partie du package [client] généré.</li>
+<li>en [3], le morceau de code où la couche [metier] est instanciée [3]. Elle l&#x27;est avec du code JNDI pour obtenir une référence sur un EJB distant.</li>
+</ul>
+<p>Nous faisons évoluer le code de la façon suivante :</p>
+<ul>
+<li>le code JNDI est supprimé</li>
+<li>la classe [PamException] n&#x27;existant pas côté client, nous supprimons le <em>catch</em> associé pour ne garder que le <em>catch</em> sur la classe mère [Exception].</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CE00000153F55481E4.png" style="display:inline-block; margin:4px;width:16.272cm;height:4.486cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CE00000153F55481E4.png" /></td></tr></table>
+
+<ul>
+<li>en [4], il nous reste à obtenir une référence sur la service web distant [Metier] afin de pouvoir appeler sa méthode [calculerFeuilleSalaire].</li>
+<li>en [5], avec la souris, nous tirons (drag) la méthode [calculerFeuilleSalaire] du service web [Metier] pour la déposer (drop) en [4]. Du code est généré [6]. Ce code générique peut être ensuite adapté par le développeur.</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F8000000B1907F3DB4.png" style="display:inline-block; margin:4px;width:16.828cm;height:2.342cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F8000000B1907F3DB4.png" /></td></tr></table>
+
+<ul>
+<li>ligne 112, on voit que [calculerFeuilleSalaire] est une méthode de la classe [client.Metier] (ligne 111). Maintenant que nous savons comment obtenir la couche [metier], le code précédent peut être réécrit de la façon suivante :</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">...</span><span class="w">    </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">// c&#39;est bon - on peut demander la feuille de salaire</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">FeuilleSalaire</span><span class="w"> </span><span class="n">feuilleSalaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">Metier</span><span class="w"> </span><span class="n">metier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">      </span><span class="c1">// instanciation couche [metier]</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">      </span><span class="n">metier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MetierService</span><span class="p">().</span><span class="na">getMetierPort</span><span class="p">();</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">      </span><span class="c1">// calcul de la feuille de salaire</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">      </span><span class="n">feuilleSalaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">calculerFeuilleSalaire</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">nbHeuresTravaillées</span><span class="p">,</span><span class="w"> </span><span class="n">nbJoursTravaillés</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Throwable</span><span class="w"> </span><span class="n">th</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">      </span><span class="c1">// chaîne des exceptions</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Chaîne des exceptions --------------------------------------&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">th</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">th</span><span class="p">.</span><span class="na">getCause</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="na">getCause</span><span class="p">();</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">th</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span><span class="c1">// affichage rapide</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>La ligne 7 récupère une référence sur le service web <strong>Metier</strong>. Ceci fait, le code de la classe ne change pas, si ce n&#x27;est quand même qu&#x27;en ligne 10, ce n&#x27;est pas l&#x27;exception de type [Exception] qui est gérée mais le type plus général <em>Throwable</em>, la classe parent de la classe <em>Exception</em>. S&#x27;il y a exception, nous affichons toutes les causes imbriquées de celle-ci jusqu&#x27;à la cause originelle.</p>
+<p>Nous sommes prêts pour les tests :</p>
+<ul>
+<li>s&#x27;assurer que le SGBD MySQL5 est lancé, que la base <em>dbpam_eclipselink</em> est créée et initialisée</li>
+<li>s&#x27;assurer que le service web est déployé sur le serveur Glassfish</li>
+<li>construire le client (Clean and Build)</li>
+<li>configurer l&#x27;exécution du client</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F3000000787F2C9D7A.png" style="display:inline-block; margin:4px;width:4.5cm;height:2.221cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F3000000787F2C9D7A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+<li>exécuter le client</li>
+</ul>
+<p>Les résultats dans la console sont les suivants :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>...
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Valeurs saisies :
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>N° de sécurité sociale de l&#39;employé : 254104940426058
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>Nombre d&#39;heures travaillées : 150
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>Nombre de jours travaillés : 20
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>Informations Employé : 
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>Nom : Jouveinal
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>Prénom : Marie
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>Adresse : 5 rue des oiseaux
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>...
+</code></pre></div></td></tr></table></div>
+<p>Avec la configuration suivante :</p>
+<p><img src="images/10000000000000DF00000077930F229C.png" style="width:4.129cm;height:2.2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DF00000077930F229C.png" /></p>
+<p>on obtient les résultats suivants :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Chaîne des exceptions --------------------------------------
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>javax.xml.ws.soap.SOAPFaultException:L&#39;employé de n°[xx] est introuvable
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>com.sun.xml.internal.ws.developer.ServerSideException:L&#39;employé de n°[xx] est introuvable
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Java Result: 1
+</code></pre></div></td></tr></table></div>
+<p>On notera qu&#x27;alors que le service web [Metier] envoie une exception de type [PamException] l&#x27;exception reçue par le client est de type [SOAPFaultException]. Même dans la chaîne des exceptions, on ne voit pas apparaître le type [PamException].</p>
+<p><a id="refheading87531112820228"></a></p>
+<h3 id="813-le-client-swing-du-service-web-metier">8.1.3. Le client swing du service web Metier</h3>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Travail à faire</strong> : porter le client swing du projet [mv-pam-client-ejb-metier-dao-jpa-eclipselink] dans le nouveau projet afin que lui aussi soit client du service web déployé sur le serveur Glassfish.</p>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><a id="refheading87533112820228"></a>
+<a id="serviceweb-web-ejb"></a></p>
+<h2 id="82-service-web-implemente-par-une-application-web">8.2. Service web implémenté par une application web</h2>
+<p>Nous nous plaçons maintenant dans le cadre de l&#x27;architecture suivante :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C9000000BC79878111.png" style="display:inline-block; margin:4px;width:16.207cm;height:2.487cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C9000000BC79878111.png" /></td></tr></table>
+
+<p>Le service web est assuré par une application web exécutée au sein du conteneur web du serveur Glassfish. Ce service web va s&#x27;appuyer sur l&#x27;EJB [Metier] déployé lui dans le conteneur EJB3.</p>
+<p><a id="refheading87535112820228"></a></p>
+<h3 id="821-la-partie-serveur">8.2.1. La partie serveur</h3>
+<p>Nous créons une application web :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005270000011066BA55EB.png" style="display:inline-block; margin:4px;width:17.45cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/10000000000005270000011066BA55EB.png" /></td></tr></table>
+
+<ul>
+<li>en [1], nous créons un nouveau projet</li>
+<li>en [2], ce projet est de type [Web Application]</li>
+<li>en [3], nous lui donnons le nom [mv-pam-ws-ejb-metier-dao-eclipselink]</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B2000000DACA25A4CE.png" style="display:inline-block; margin:4px;width:15.901cm;height:2.884cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B2000000DACA25A4CE.png" /></td></tr></table>
+
+<ul>
+<li>en [4], nous choisissons la version Java EE 6</li>
+<li>en [6], le projet créé</li>
+</ul>
+<p>Sur le schéma ci-dessous, l&#x27;application web créée va s&#x27;exécuter dans le conteneur web. Elle va utiliser l&#x27;EJB [Metier] qui lui, sera déployé dans le conteneur EJB du serveur.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DB000000B28C048F11.png" style="display:inline-block; margin:4px;width:16.445cm;height:2.355cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DB000000B28C048F11.png" /></td></tr></table>
+
+<p>Pour que l&#x27;application web créée ait accès aux classes associées à l&#x27;EJB [Metier], nous ajoutons aux bibliothèques de l&#x27;application web [mv-pam-ws-ejb-metier-dao-eclipselink], la dépendance du serveur EJB [mv-pam-ejb-metier-dao-eclipselink] déjà étudié.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B700000174D78DC043.png" style="display:inline-block; margin:4px;width:15.968cm;height:4.921cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B700000174D78DC043.png" /></td></tr></table>
+
+<ul>
+<li>en [1], on ajoute un projet aux dépendances du projet web,</li>
+<li>en [2], on sélectionne le projet [mv-pam-ejb-metier-dao-eclipselink],</li>
+<li>en [3], le type de la dépendance est <em>ejb</em>,</li>
+<li>en [4], la portée de la dépendance est <em>provided</em>, c&#x27;est à dire qu&#x27;elle sera fournie par l&#x27;environnement d&#x27;exécution,</li>
+<li>en [5], la dépendance a été ajoutée.</li>
+</ul>
+<p>Pour créer le même service web que précédemment, il nous faut :</p>
+<ul>
+<li>créer une classe taguée <em>@Webservice</em></li>
+<li>avec deux méthodes <em>calculerFeuilleSalaire</em> et <em>findAllEmployes</em> taguées @<em>WebMethod</em></li>
+</ul>
+<p>Nous créons une classe [PamWsEjbMetier] dans un package [pam.ws] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018D000000CBB80D1730.png" style="display:inline-block; margin:4px;width:5.253cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/100000000000018D000000CBB80D1730.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010E000000838DA66CAD.png" style="display:inline-block; margin:4px;width:5.001cm;height:2.431cm;" class="odt-zoomable" data-zoom-src="images/100000000000010E000000838DA66CAD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>La classe [PamWsEjbMetier] est la suivante :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pam.ws</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.ejb.EJB</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.jws.WebMethod</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.jws.WebService</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">jpa.Employe</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">metier.FeuilleSalaire</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">metier.IMetier</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">metier.IMetierLocal</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nd">@WebService</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PamWsEjbMetier</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMetier</span><span class="p">{</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">  </span><span class="nd">@EJB</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">IMetierLocal</span><span class="w"> </span><span class="n">metier</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="nd">@WebMethod</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">FeuilleSalaire</span><span class="w"> </span><span class="nf">calculerFeuilleSalaire</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">SS</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">nbHeuresTravaillées</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nbJoursTravaillés</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">calculerFeuilleSalaire</span><span class="p">(</span><span class="n">SS</span><span class="p">,</span><span class="w"> </span><span class="n">nbHeuresTravaillées</span><span class="p">,</span><span class="w"> </span><span class="n">nbJoursTravaillés</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">  </span><span class="nd">@WebMethod</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Employe</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAllEmployes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">findAllEmployes</span><span class="p">();</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>lignes 7-10 : la classe importe des classes du module EJB [pam-serveurws-metier-dao-jpa-eclipselink] dont le projet Maven a été ajouté aux dépendances du projet.</li>
+<li>ligne 12 : la classe est un service web</li>
+<li>ligne 13 : elle implémente l&#x27;interface <em>IMetier</em> définie dans le module EJB</li>
+<li>lignes 18-19 : la méthode <em>calculerFeuilleSalaire</em> est exposée comme méthode du service web</li>
+<li>lignes 23-24 : la méthode <em>findAllEmployes</em> est exposée comme méthode du service web</li>
+<li>lignes 15-16 : l&#x27;interface locale de l&#x27;EJB [Metier] est injectée dans le champ de la ligne 16. Nous utilisons l&#x27;interface locale car l&#x27;application web et le module EJB s&#x27;exécutent dans la même JVM.</li>
+<li>lignes 20 et 25 : les méthodes <em>calculerFeuilleSalaire</em> et <em>findAllEmployes</em> délèguent leur traitement aux méthodes de même nom de l&#x27;EJB [Metier]. La classe ne sert donc qu&#x27;à exposer à des clients distants les méthodes de l&#x27;EJB [Metier] comme des méthodes d&#x27;un service web.</li>
+</ul>
+<p>Dans Netbeans, l&#x27;application web est reconnue comme exposant un service web :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000528000000CFD9D948D5.png" style="display:inline-block; margin:4px;width:17.463cm;height:2.739cm;" class="odt-zoomable" data-zoom-src="images/1000000000000528000000CFD9D948D5.png" /></td></tr></table>
+
+<p>Pour déployer le service web sur le serveur Glassfish, il nous faut à la fois déployer :</p>
+<ul>
+<li>le module web dans le conteneur web du serveur</li>
+<li>le module EJB dans le conteneur EJB du serveur</li>
+</ul>
+<p>Pour cela, nous avons besoin de créer une application de type [Enterprise Application] qui va déployer les deux modules en même temps. Pour ce faire, il faut que les deux projets soient chargés dans Netbeans [2].</p>
+<p>Ceci fait, nous créons un nouveau projet [3].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000492000000D5B56F9F84.png" style="display:inline-block; margin:4px;width:15.478cm;height:2.819cm;" class="odt-zoomable" data-zoom-src="images/1000000000000492000000D5B56F9F84.png" /></td></tr></table>
+
+<ul>
+<li>en [4], nous choisissons un projet de type [Enterprise Application].</li>
+<li>en [5], nous donnons un nom au projet</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E0000000FB447DF287.png" style="display:inline-block; margin:4px;width:16.51cm;height:3.321cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E0000000FB447DF287.png" /></td></tr></table>
+
+<ul>
+<li>en [6], nous configurons le projet. La version de Java EE sera Java EE 6. Un projet d&#x27;entreprise peut être créé avec deux modules : un module EJB et un module Web. Ici, le projet d&#x27;entreprise va encapsuler le module Web et le module EJB déjà créés et chargés dans Netbeans. Donc nous ne demandons pas la création de nouveaux modules.</li>
+<li>en [7], le projet d&#x27;entreprise [mv-pam-webapp-ear] ainsi créé. Un autre projet Maven a été créé en même temps [mv-pam-webapp]. Nous ne nous en occuperons pas.</li>
+<li>en [8], nous ajoutons des dépendances au projet d&#x27;entreprise</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004070000017EC5C22964.png" style="display:inline-block; margin:4px;width:13.64cm;height:5.054cm;" class="odt-zoomable" data-zoom-src="images/10000000000004070000017EC5C22964.png" /></td></tr></table>
+
+<ul>
+<li>en [9], on ajoute le projet web de type war,</li>
+<li>en [10], on ajoute le projet EJB de type ejb,</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028B000000B061EBEB8F.png" style="display:inline-block; margin:4px;width:8.613cm;height:2.328cm;" class="odt-zoomable" data-zoom-src="images/100000000000028B000000B061EBEB8F.png" /></td></tr></table>
+
+<ul>
+<li>en [11], le projet d&#x27;entreprise avec ses deux dépendances.</li>
+</ul>
+<p>Nous construisons le projet d&#x27;entreprise par un <em>Clean and Build</em>. Nous sommes quasiment prêts à le déployer sur le serveur Glassfish. Auparavant il peut être nécessaire de décharger les applications déjà chargées sur le serveur afin d&#x27;éviter d&#x27;éventuels conflits de noms d&#x27;EJB [11] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051800000156BF35BFB2.png" style="display:inline-block; margin:4px;width:17.251cm;height:4.524cm;" class="odt-zoomable" data-zoom-src="images/100000000000051800000156BF35BFB2.png" /></td></tr></table>
+
+<p>Le serveur MySQL doit être lancé et la base [dbpam_eclipselink] disponible et remplie. Ceci fait, l&#x27;application d&#x27;entreprise peut être déployée [12]. En [13], on peut voir qu&#x27;elle a bien été déployée sur le serveur Glassfish.</p>
+<p>Nous pouvons tester le service web qui vient d&#x27;être déployé :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D000001F4986C6214.png" style="display:inline-block; margin:4px;width:17.106cm;height:6.615cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D000001F4986C6214.png" /></td></tr></table>
+
+<ul>
+<li>en [1], nous demandons à tester le service web [PamWsEjbMetier]</li>
+<li>en [2], la page de test. Nous laissons au lecteur le soin de conduire les tests.</li>
+</ul>
+<p><a id="refheading87537112820228"></a></p>
+<h3 id="822-la-partie-cliente">8.2.2. La partie cliente</h3>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Travail à faire</strong> : en suivant la démarche décrite au paragraphe <a href="#client-console-wsejb">8.1.2.1</a>, construire un client console du service web précédent.</p>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><a id="refheading87539112820228"></a></p>
+<h2 id="83-service-web-implemente-avec-spring-et-tomcat">8.3. Service web implémenté avec Spring et Tomcat</h2>
+<p>Nous nous plaçons maintenant dans le cadre de l&#x27;architecture suivante :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000414000000BE6BCDD591.png" style="display:inline-block; margin:4px;width:13.811cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/1000000000000414000000BE6BCDD591.png" /></td></tr></table>
+
+<p>Le service web est assuré par une application web exécutée au sein du conteneur web du serveur Tomcat. L&#x27;architecture de l&#x27;application sera la suivante :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047D00000109F0CE9BF7.png" style="display:inline-block; margin:4px;width:15.201cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/100000000000047D00000109F0CE9BF7.png" /></td></tr></table>
+
+<p>Nous nous appuierons sur le projet [mv-pam-spring-hibernate] construit au paragraphe <a href="version-1-architecture-spring--jpa.html#pam-console-spring-hibernate">5.11</a> :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AA000000FF7275C3CC.png" style="display:inline-block; margin:4px;width:3.15cm;height:4.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AA000000FF7275C3CC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="refheading875351128202281"></a></p>
+<h3 id="831-la-partie-serveur">8.3.1. La partie serveur</h3>
+<p>Nous créons une application Maven de type web nommée [mv-pam-ws-spring-tomcat] [1]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002FA0000015F33EBFA27.png" style="display:inline-block; margin:4px;width:10.081cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000002FA0000015F33EBFA27.png" /></td></tr></table>
+
+<p>Nous modifions le fichier [pom.xml] pour y inclure les dépendances [2] suivantes :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">${project.groupId}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mv-pam-spring-hibernate</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">${project.version}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f5fbf">&lt;!-- Apache CXF dependencies --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.cxf</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">cxf-rt-frontend-jaxws</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.2.12</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.cxf</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">cxf-rt-transports-http</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.2.12</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+<li>lignes 3-7 : la dépendance sur le projet [spring-pam-jpa-hibernate],</li>
+<li>lignes 8-17 : les dépendances sur le framework Apache CXF [http://cxf.apache.org/]. Celui-ci facilite la création de services web.</li>
+</ul>
+<p>Ce fichier [pom.xml] amène de nombreuses dépendances [2].</p>
+<p>Revenons à l&#x27;architecture de l&#x27;application :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B000000108B7CFCD39.png" style="display:inline-block; margin:4px;width:15.875cm;height:3.493cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B000000108B7CFCD39.png" /></td></tr></table>
+
+<p>Les appels au service web que nous allons construire sont gérés par une servlet du framework CXF. Cela se traduit dans le fichier [WEB-INF / web.xml] de la façon  suivante :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;2.5&quot;</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/xml/ns/javaee&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">mv-pam-ws-spring-tomcat</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">listener</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">listener-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.web.context.ContextLoaderListener</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">listener-class</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">listener</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">&lt;!--  Configuration de CXF --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">CXFServlet</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.cxf.transport.servlet.CXFServlet</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-class</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">load-on-startup</span><span style="color:#008080">&gt;</span><span style="color:#000000">1</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">load-on-startup</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">CXFServlet</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url-pattern</span><span style="color:#008080">&gt;</span><span style="color:#000000">/ws/*</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url-pattern</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">session-config</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">session-timeout</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">      30</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">session-timeout</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">session-config</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">welcome-file-list</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">welcome-file</span><span style="color:#008080">&gt;</span><span style="color:#000000">index.jsp</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">welcome-file</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">welcome-file-list</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">web-app</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+<li>le framework CXF a une dépendance sur Spring. Lignes 4-6 : un listener est déclaré. La classe correspondante va être chargée en même temps que l&#x27;application web. Elle va exploiter le fichier de configuration de Spring [WEB-INF / applicationContext.xml] :</li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000DE42FA5EF3.png" style="display:inline-block; margin:4px;width:4.313cm;height:2.937cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000DE42FA5EF3.png" /></td></tr></table>
+
+<ul>
+<li>lignes 8-12 : la servlet CXF qui va gérer les appels au service web que nous allons créer,</li>
+<li>lignes 13-16 : les URL traitées par la servlet CXF seront du type /ws/*. Les autres ne seront pas traitées par CXF.</li>
+</ul>
+<p>Pour définir le service web, nous définissons une interface et son implémentattion :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000134000000DE737F936F.png" style="display:inline-block; margin:4px;width:4.075cm;height:2.937cm;" class="odt-zoomable" data-zoom-src="images/1000000000000134000000DE737F936F.png" /></td></tr></table>
+
+<p>L&#x27;interface [IWsMetier] sera la suivante :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> pam.ws;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.jws.WebService;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> metier.IMetier;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">WebService</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> IWsMetier </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> IMetier{</span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+<li>ligne 7 : l&#x27;interface [IWsMetier] dérive de l&#x27;interface [IMetier] de la couche [métier] du projet [mv-pam-spring-hibernate],</li>
+<li>ligne 6 : l&#x27;interface [IWsMetier] est celle d&#x27;un service web.</li>
+</ul>
+<p>La classe d&#x27;implémentation de cette interface est la suivante :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> pam.ws;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.List;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.jws.WebMethod;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.jws.WebService;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> jpa.Employe;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> metier.FeuilleSalaire;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> metier.IMetier;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">WebService</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> PamWsMetier </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IWsMetier {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// couche métier</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IMetier metier;</span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// constructeur</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> PamWsMetier(){</span></span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">WebMethod</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> FeuilleSalaire calculerFeuilleSalaire(String SS, </span><span style="font-weight:bold;color:#7f0055">double</span><span style="color:#000000"> nbHeuresTravaillees, </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> nbJoursTravailles) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> metier.calculerFeuilleSalaire(SS, nbHeuresTravaillees, nbJoursTravailles);</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">WebMethod</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Employe&gt; findAllEmployes() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> metier.findAllEmployes();</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// getters et setters</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> setMetier(IMetier metier) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.metier = metier;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+<li>ligne 11 : la classe [PamWsMetier] implémente l&#x27;interface définie précédemment,</li>
+<li>ligne 10 : définit la classe comme un service web,</li>
+<li>ligne 14 : la couche [métier] sera injectée par Spring,</li>
+<li>lignes 21, 26 : l&#x27;annotation @WebMethod fait d&#x27;une méthode, une méthode exposée par le service web,</li>
+<li>lignes 23, 28 : les méthodes sont implémentées à l&#x27;aide de la couche [métier].</li>
+</ul>
+<p>Il nous reste à définir le contenu du fichier de configuration de Spring [applicationContext.xml] :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000148000000DC6030EEF4.png" style="display:inline-block; margin:4px;width:4.339cm;height:2.91cm;" class="odt-zoomable" data-zoom-src="images/1000000000000148000000DC6030EEF4.png" /></td></tr></table>
+
+<p>Son contenu est le suivant :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="odt-code-line"><span style="color:#800080">&lt;beans</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.springframework.org/schema/beans</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xmlns:tx</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.springframework.org/schema/tx</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xmlns:jaxws</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://cxf.apache.org/jaxws</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://www.springframework.org/schema/beans </span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/beans/spring-beans-2.0.xsd </span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/tx </span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://www.springframework.org/schema/tx/spring-tx-2.0.xsd</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://cxf.apache.org/jaxws</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">       </span><span style="color:#0000ff">http://cxf.apache.org/schemas/jaxws.xsd</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;!--</span><span style="font-style:italic;color:#008000"> Apache CXF </span><span style="color:#800080">--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;import</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">resource</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">classpath:META-INF/cxf/cxf.xml</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#800080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;import</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">resource</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">classpath:META-INF/cxf/cxf-extension-soap.xml</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#800080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;import</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">resource</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">classpath:META-INF/cxf/cxf-servlet.xml</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#800080">/&gt;</span><span style="color:#000000">  </span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;!--</span><span style="font-style:italic;color:#008000"> couches basses </span><span style="color:#800080">--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;import</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">resource</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">classpath:spring-config-metier-dao.xml</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#800080">/&gt;</span><span style="color:#000000">  </span></span>
+<span class="odt-code-line">  </span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;!--</span><span style="font-style:italic;color:#008000"> service web </span><span style="color:#800080">--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;bean</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">id</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">wsMetier</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">class</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">pam.ws.PamWsMetier</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;property</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">metier</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">ref</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">metier</span><span style="color:#800080">&quot;/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;/bean&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;jaxws:endpoint</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">id</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">wsmetier</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">                  </span><span style="color:#808000">implementor</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">#wsMetier</span><span style="color:#800080">&quot;</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#008080">                  </span><span style="color:#808000">address</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">/metier</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;/jaxws:endpoint&gt;</span><span style="color:#000000">  </span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;/beans&gt;</span>
+</code></pre></div>
+
+<ul>
+<li>lignes 13-15 : on importe des fichiers de configuration Apache CXF. Ceux-ci sont cherchés dans le <em>Classpath</em> du projet (attribut classpath:),</li>
+<li>lignes 4, 9, 10 : des espaces de noms spécifiques à Apache CXF sont déclarés,</li>
+<li>ligne 18 : on importe le fichier de configuration Spring du projet [mv-pam-spring-hibernate],</li>
+<li>lignes 21-23 : définissent le bean du service web avec sa dépendance sur la couche [métier] (ligne 22),</li>
+<li>lignes 24-27 : définissent le service web lui-même,<ul>
+<li>ligne 25 : le bean Spring implémentant le service web est celui défini ligne 21 ;</li>
+<li>ligne 26 : définit l&#x27;URL à laquelle le service web sera disponible, ici /metier. Combinée à la forme que doivent avoir les URL traitées par Apache CXF (cf fichier web.xml), cette URL devient /ws/metier.</li>
+</ul>
+</li>
+</ul>
+<p>Notre projet est prêt à être exécuté. Nous l&#x27;exécutons (Run) et demandons l&#x27;URL [http://localhost:8080/mv-pam-ws-spring-tomcat/ws] dans un navigateur :</p>
+<p><img src="images/100000000000032F000000F061A608F9.png" style="width:15.09cm;height:4.45cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000032F000000F061A608F9.png" /></p>
+<p>La page liste tous les services web déployés. Ici, il n&#x27;y en a qu&#x27;un. Nous suivons le lien WSDL :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046900000328392B7390.png" style="display:inline-block; margin:4px;width:14.937cm;height:10.689cm;" class="odt-zoomable" data-zoom-src="images/100000000000046900000328392B7390.png" /></td></tr></table>
+
+<p>Le texte affiché [1] est celui d&#x27;un fichier XML qui définit les fonctionnalités du service web, comment l&#x27;appeler et quelles réponses il envoie. On notera l&#x27;URL [2] de ce fichier WSDL. Tous les clients du service web ont besoin de la connaître.</p>
+<p><a id="refheading875371128202281"></a></p>
+<h3 id="832-la-partie-cliente">8.3.2. La partie cliente</h3>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Travail à faire</strong> : en suivant la démarche décrite au paragraphe <a href="#client-console-wsejb">8.1.2.1</a>, construire un client console du service web précédent.</p>
+<hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><strong>Note </strong>: pour indiquer l&#x27;URL du fichier WSDL du service web, on procèdera comme suit :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E00000014409F91F1E.png" style="display:inline-block; margin:4px;width:13.123cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E00000014409F91F1E.png" /></td></tr></table>
+
+<p>On mettra en [3], l&#x27;URL notée précédemment en [2].</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
+        Partage dans les Mêmes Conditions 3.0 non transposé</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
