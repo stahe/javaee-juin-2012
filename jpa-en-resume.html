@@ -1113,8 +1113,8 @@
 <p>La couche [DAO] dialogue avec la spécification JPA. Quelque soit le produit qui implémente celle-ci, l&#x27;interface de la couche JPA présentée à la couche [DAO] reste la même. Nous présentons dans la suite quelques exemples tirés de [<strong>ref1</strong>] qui nous permettront de construire notre propre couche JPA.</p>
 <p><a id="refheading2816951991350288"></a></p>
 <h2 id="42-jpa-exemples">4.2. JPA - exemples</h2>
-<p><a id="ex1-hb-personne"></a>
-<a id="refheading2816971991350288"></a></p>
+<p><a id="refheading2816971991350288"></a>
+<a id="ex1-hb-personne"></a></p>
 <h3 id="421-exemple-1-representation-objet-dune-table-unique">4.2.1. Exemple 1 - Représentation objet d&#x27;une table unique</h3>
 <p><a id="refheading2816991991350288"></a></p>
 <h4 id="4211-la-table-personne">4.2.1.1. La table [personne]</h4>
@@ -1700,8 +1700,8 @@
 </code></pre></div>
 <p>Si une ligne de la table[RV] a la valeur (JOUR1, ID_CRENEAU1) pour les colonnes (JOUR, ID_CRENEAU), cette valeur ne peut se retrouver nulle part ailleurs. Sinon, cela signifierait que deux RV ont été pris au même moment pour le même médecin. D&#x27;un point de vue programmation Java, le pilote JDBC de la base lance une <em>SQLException</em> lorsque ce cas se produit.</p>
 <p>La ligne d&#x27;<em>id</em> égal à 3 (cf [1] ci-dessus) signifie qu&#x27;un RV a été pris pour le créneau n° 20 et le client n° 4 le 23/08/2006. La table [CRENEAUX] nous apprend que le créneau n° 20 correspond au créneau horaire 16 h 20 - 16 h 40 et appartient au médecin n° 1 (Mme Marie PELISSIER). La table [CLIENTS] nous apprend que le client n° 4 est Melle Brigitte BISTROU.</p>
-<p><a id="refheading73516604163464"></a>
-<a id="creation-bd1"></a></p>
+<p><a id="creation-bd1"></a>
+<a id="refheading73516604163464"></a></p>
 <h3 id="445-generation-de-la-base">4.4.5. Génération de la base</h3>
 <p>Pour créer les tables et les remplir on pourra utiliser le script [dbrdvmedecins2.sql]. Avec [WampServer], on pourra procéder comme suit :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000398000001CEFFA63581.png" style="display:inline-block; margin:4px;width:12.171cm;height:6.112cm;" class="odt-zoomable" data-zoom-src="images/1000000000000398000001CEFFA63581.png" /></td></tr></table>
@@ -1734,15 +1734,15 @@
 <li>en [14], le contenu de la table.</li>
 </ul>
 <p>Par la suite, nous ne reviendrons plus sur cette base. Mais le lecteur est invité à suivre son évolution au fil des programmes surtout lorsque ça ne marche pas.</p>
-<p><a id="generationautomatique"></a>
-<a id="refheading73522604163464"></a></p>
+<p><a id="refheading73522604163464"></a>
+<a id="generationautomatique"></a></p>
 <h3 id="446-la-couche-jpa">4.4.6. La couche [JPA]</h3>
 <p>Revenons à l&#x27;architecture de l&#x27;exemple :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043F000000A71F2E4E01.png" style="display:inline-block; margin:4px;width:14.381cm;height:2.21cm;" class="odt-zoomable" data-zoom-src="images/100000000000043F000000A71F2E4E01.png" /></td></tr></table>
 
 <p>Nous construisons maintenant le projet Maven de la couche [JPA].</p>
-<p><a id="maven-ejb-dao"></a>
-<a id="refheading74289604163464"></a></p>
+<p><a id="refheading74289604163464"></a>
+<a id="maven-ejb-dao"></a></p>
 <h3 id="447-le-projet-netbeans">4.4.7. Le projet Netbeans</h3>
 <p>C&#x27;est le suivant :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AD0000015C64A1FE16.png" style="display:inline-block; margin:4px;width:15.836cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AD0000015C64A1FE16.png" /></td></tr></table>
@@ -1762,8 +1762,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044D000000AAAB546FB7.png" style="display:inline-block; margin:4px;width:14.566cm;height:2.249cm;" class="odt-zoomable" data-zoom-src="images/100000000000044D000000AAAB546FB7.png" /></td></tr></table>
 
 <p>Avec Netbeans, il est possible de générer automatiquement la couche [JPA] . Il est intéressant de connaître ces méthodes de génération automatique car le code généré donne de précieuses indications sur la façon d&#x27;écrire des entités JPA.</p>
-<p><a id="refheading74293604163464"></a>
-<a id="connexionnetbeans"></a></p>
+<p><a id="connexionnetbeans"></a>
+<a id="refheading74293604163464"></a></p>
 <h3 id="449-creation-dune-connexion-netbeans-a-la-base-de-donnees">4.4.9. Création d&#x27;une connexion Netbeans à la base de données</h3>
 <ul>
 <li>lancer le SGBD MySQL 5 afin que la BD soit disponible,</li>
