@@ -1327,87 +1327,90 @@
 <p><a id="refheading87351112820228"></a></p>
 <h2 id="51-bdla-base-de-donnees">5.1. BDLa base de données</h2>
 <p>Les données statiques utiles pour construire la fiche de paie seront placées dans une base de données que nous désignerons par la suite <a id="dbpam"></a><strong>dbpam</strong>. Cette base de données pourrait avoir les tables suivantes :</p>
-<p>Table <strong>EMPLOYES</strong> : rassemble des informations sur les différentes assistantes maternelles</p>
+<div style="margin:0 0 0.75em 0; background-color:#cccccc; padding:0.35em 0.6em">Table <b>EMPLOYES</b> : rassemble des informations sur les différentes assistantes maternelles</div>
+
 <p><strong>Structure</strong> :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">clé primaire</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clé primaire</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">n° de version – augmente à chaque modification de la ligne</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">n° de version – augmente à chaque modification de la ligne</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">numéro de sécurité sociale de l&#x27;employé - unique</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">numéro de sécurité sociale de l&#x27;employé - unique</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>NOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">nom de l&#x27;employé</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nom de l&#x27;employé</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>prenom
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">son prénom</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">son prénom</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ADRESSE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">son adresse</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">son adresse</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>VILLE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">sa ville</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">sa ville</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CODEPOSTAL
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">son code postal</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">son code postal</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>INDEMNITE_ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">clé étrangère sur le champ [ID] de la table [INDEMNITES]</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clé étrangère sur le champ [ID] de la table [INDEMNITES]</div></td></tr></table>
 
 <p>Son contenu pourrait être le suivant :</p>
 <p><img src="images/10000000000003290000005A7A2F8F71.png" style="width:14.981cm;height:1.67cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003290000005A7A2F8F71.png" /></p>
-<p>Table <strong>COTISATIONS</strong> : rassemble des pourcentages nécessaires au calcul des cotisations sociales</p>
+<div style="margin:0 0 0.75em 0; background-color:#cccccc; padding:0.35em 0.6em">Table <b>COTISATIONS</b> : rassemble des pourcentages nécessaires au calcul des cotisations sociales</div>
+
 <p><strong>Structure</strong> :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">clé primaire</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clé primaire</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">n° de version – augmente à chaque modification de la ligne</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">n° de version – augmente à chaque modification de la ligne</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>CSGRDS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">pourcentage : contribution sociale généralisée + contribution au remboursement de la dette sociale</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pourcentage : contribution sociale généralisée + contribution au remboursement de la dette sociale</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>CSGD
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">pourcentage : contribution sociale généralisée déductible</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pourcentage : contribution sociale généralisée déductible</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>SECU
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">pourcentage : sécurité sociale, veuvage, vieillesse</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pourcentage : sécurité sociale, veuvage, vieillesse</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>RETRAITE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">pourcentage : retraite complémentaire + assurance chômage </p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pourcentage : retraite complémentaire + assurance chômage </div></td></tr></table>
 
 <p>Son contenu pourrait être le suivant :</p>
 <p><img src="images/10000000000001820000004455B7B537.png" style="width:7.151cm;height:1.259cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001820000004455B7B537.png" /></p>
 <p>Les taux des cotisations sociales sont indépendants du salarié. La table précédente n&#x27;a qu&#x27;une ligne.</p>
-<p>Table <strong>INDEMNITES</strong> : rassemble les éléments permettant le calcul du salaire à payer.</p>
+<div style="margin:0 0 0.75em 0; background-color:#cccccc; padding:0.35em 0.6em">Table <b>INDEMNITES</b> : rassemble les éléments permettant le calcul du salaire à payer.</div>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">clé primaire</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clé primaire</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">n° de version – augmente à chaque modification de la ligne</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">n° de version – augmente à chaque modification de la ligne</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>INDICE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">indice de traitement - unique</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">indice de traitement - unique</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>BASEHEURE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">prix net en euro d’une heure de garde</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">prix net en euro d’une heure de garde</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ENTRETIENJOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">indemnité d’entretien en euro par jour de garde</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">indemnité d’entretien en euro par jour de garde</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>REPASJOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">indemnité de repas en euro par jour de garde</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">indemnité de repas en euro par jour de garde</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>INDEMNITESCP
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">indemnité de congés payés. C&#x27;est un pourcentage à appliquer au salaire de base.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" colspan="2">&nbsp;</td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">indemnité de congés payés. C&#x27;est un pourcentage à appliquer au salaire de base.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" colspan="2">&nbsp;</td></tr></table>
 
 <p>Son contenu pourrait être le suivant :</p>
 <p><img src="images/10000000000002B900000058BF2B5FE8.png" style="width:12.91cm;height:1.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B900000058BF2B5FE8.png" /></p>
@@ -1416,17 +1419,18 @@
 <a id="mode-calcul-salaire"></a></p>
 <h2 id="52-mode-de-calcul-du-salaire-dune-assistante-maternelle">5.2. Mode de calcul du salaire d&#x27;une assistante maternelle</h2>
 <p>Nous présentons maintenant le mode de calcul du salaire mensuel d&#x27;une assistante maternelle. Il ne prétend pas être celui utilisé dans la réalité. Nous prenons pour exemple, le salaire de Mme Marie Jouveinal qui a travaillé 150 h sur 20 jours pendant le mois à payer.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Les éléments suivants sont pris en compte :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Les éléments suivants sont pris en compte :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">[<span style="background-color:#ffcc99">TOTALHEURES</span>]: total des heures</span>
 <span class="odt-code-line">travaillées dans le mois</span>
-</code></pre></div><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">[<span style="background-color:#ffcc99">TOTALJOURS</span>]: total des jours travaillés</span>
 <span class="odt-code-line">dans le mois</span>
 </code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>[TOTALHEURES]=150
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>[TOTALJOURS]= 20
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Le salaire de base de l&#x27;assistante maternelle</p><p style="margin:0;">est donné par la formule suivante :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Le salaire de base de l&#x27;assistante maternelle</div><div style="margin:0 0 0.5em 0">est donné par la formule suivante :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[SALAIREBASE]=([TOTALHEURES]
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>*[BASEHEURE])*(1+
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>[INDEMNITESCP]/100)
@@ -1435,34 +1439,40 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>[SALAIREBASE]=
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>(150*[2.1])*(1+0.15)= 362,25
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Un certain nombre de cotisations sociales</p><p style="margin:0;">doivent être prélevées sur ce salaire de</p><p style="margin:0;">base :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Un certain nombre de cotisations sociales</div><div style="margin:0 0 0.5em 0">doivent être prélevées sur ce salaire de</div><div style="margin:0 0 0.5em 0">base :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Contribution sociale généralisée et</span>
 <span class="odt-code-line">contribution au remboursement de la</span>
 <span class="odt-code-line">dette sociale :</span>
 <span class="odt-code-line"> <span style="background-color:#ffcc99">[SALAIREBASE]*[CSGRDS/100]</span></span>
-</code></pre></div><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Contribution sociale généralisée déductible :</span>
 <span class="odt-code-line"> <span style="background-color:#ffcc99">[SALAIREBASE]*[CSGD/100]</span></span>
-</code></pre></div><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Sécurité sociale, veuvage, vieillesse :</span>
 <span class="odt-code-line"> <span style="background-color:#ffcc99">[SALAIREBASE]*[SECU/100]</span></span>
-</code></pre></div><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Retraite Complémentaire + AGPF +</span>
 <span class="odt-code-line">Assurance Chômage :</span>
 <span class="odt-code-line"> <span style="background-color:#ffcc99">[SALAIREBASE]*[RETRAITE/100]</span></span>
 </code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>CSGRDS : 12,64
 </code></pre></div>
-</div><div markdown="block">
+</div>
+<div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>CSGD : 22,28
 </code></pre></div>
-</div><div markdown="block">
+</div>
+<div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Sécurité sociale : 34,02
 </code></pre></div>
-</div><div markdown="block">
+</div>
+<div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Retraite : 28,55
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Total des cotisations sociales :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Total des cotisations sociales :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>[COTISATIONSSOCIALES]=
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>[SALAIREBASE]*(CSGRDS+CSGD
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>+SECU+RETRAITE)/100
@@ -1470,13 +1480,13 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>[COTISATIONSSOCIALES]=97,48
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Par ailleurs, l&#x27;assistante maternelle a droit, chaque jour travaillé, à une indemnité d&#x27;entretien ainsi qu&#x27;à une indemnité de repas. A ce titre elle reçoit les indemnités suivantes :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Par ailleurs, l&#x27;assistante maternelle a droit, chaque jour travaillé, à une indemnité d&#x27;entretien ainsi qu&#x27;à une indemnité de repas. A ce titre elle reçoit les indemnités suivantes :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="background-color:#ffcc99">[</span><span style="background-color:#ffcc99">Indemnités</span><span style="background-color:#ffcc99">]=[TOTALJOURS]</span></span>
 <span class="odt-code-line">*(ENTRETIENJOUR+REPASJOUR)</span>
 </code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>[INDEMNITES]=104
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Au final, le salaire net à payer à l&#x27;assistante maternelle est le suivant :</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Au final, le salaire net à payer à l&#x27;assistante maternelle est le suivant :</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>[SALAIREBASE]-[COTISATIONSSOCIALES]+[INDEMNITÉS]
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -1556,17 +1566,26 @@
 </code></pre></div></td></tr></table></div>
 <p>On écrira un programme qui recevra les informations suivantes :</p>
 <ol>
-<li>n° de sécurité sociale de l&#x27;assistante maternelle ( 254104940426058  dans l&#x27;exemple - ligne 1)</li>
-<li>nombre total d&#x27;heures travaillées (150 dans l&#x27;exemple - ligne 1)</li>
-<li>nombre total de jours travaillés (20 dans l&#x27;exemple - ligne 1)</li>
+  <li>n° de sécurité sociale de l&#x27;assistante maternelle ( 254104940426058  dans l&#x27;exemple - ligne 1)
+  </li>
+  <li>nombre total d&#x27;heures travaillées (150 dans l&#x27;exemple - ligne 1)
+  </li>
+  <li>nombre total de jours travaillés (20 dans l&#x27;exemple - ligne 1)
+  </li>
 </ol>
+
 <p>On voit que :</p>
 <ul>
-<li>lignes 9-14 : affichent les informations concernant l&#x27;employé dont on a donné le n° de sécurité sociale</li>
-<li>lignes 17-20 : affichent les taux des différentes cotisations</li>
-<li>lignes 23-26 : affichent les indemnités associées à l&#x27;indice de traitement de l&#x27;employé (ici l&#x27;indice 2)</li>
-<li>lignes 29-33 : affichent les éléments constitutifs du salaire à payer</li>
+  <li>lignes 9-14 : affichent les informations concernant l&#x27;employé dont on a donné le n° de sécurité sociale
+  </li>
+  <li>lignes 17-20 : affichent les taux des différentes cotisations
+  </li>
+  <li>lignes 23-26 : affichent les indemnités associées à l&#x27;indice de traitement de l&#x27;employé (ici l&#x27;indice 2)
+  </li>
+  <li>lignes 29-33 : affichent les éléments constitutifs du salaire à payer
+  </li>
 </ul>
+
 <p>L&#x27;application signale les erreurs éventuelles :</p>
 <p>Appel sans paramètres :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1593,10 +1612,14 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000487000003043252F45B.png" style="display:inline-block; margin:4px;width:15.333cm;height:10.213cm;" class="odt-zoomable" data-zoom-src="images/1000000000000487000003043252F45B.png" /></td></tr></table>
 
 <ul>
-<li>les informations passées en paramètres au programme console, sont maintenant saisies au moyen des champs de saisie [1, 2, 3].</li>
-<li>le bouton [4] demande le calcul du salaire</li>
-<li>le formulaire affiche les différents éléments du salaire jusqu&#x27;au salaire net à payer [5]</li>
+  <li>les informations passées en paramètres au programme console, sont maintenant saisies au moyen des champs de saisie [1, 2, 3].
+  </li>
+  <li>le bouton [4] demande le calcul du salaire
+  </li>
+  <li>le formulaire affiche les différents éléments du salaire jusqu&#x27;au salaire net à payer [5]
+  </li>
 </ul>
+
 <p>La liste déroulante [1, 6] ne présente pas les n°s SS des employés mais les noms et prénoms de ceux-ci. On fait ici l&#x27;hypothèse qu&#x27;il n&#x27;y a pas deux employés de mêmes nom et prénom.</p>
 <p><a id="refheading2817271991350288"></a>
 <a id="creation-bd"></a></p>
@@ -1605,31 +1628,44 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000328000001D54A846CF0.png" style="display:inline-block; margin:4px;width:10.689cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000328000001D54A846CF0.png" /></td></tr></table>
 
 <ul>
-<li>en [2], on prend l&#x27;option [Bases de données],</li>
+  <li>en [2], on prend l&#x27;option [Bases de données],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000495000000F077498ACF.png" style="display:inline-block; margin:4px;width:15.519cm;height:3.175cm;" class="odt-zoomable" data-zoom-src="images/1000000000000495000000F077498ACF.png" /></td></tr></table>
 
 <ul>
-<li>en [3], on crée une base de données [dbpam_hibernate],</li>
-<li>en [4], la base créée. On la sélectionne,</li>
+  <li>en [3], on crée une base de données [dbpam_hibernate],
+  </li>
+  <li>en [4], la base créée. On la sélectionne,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003770000011E2B5D14FA.png" style="display:inline-block; margin:4px;width:11.735cm;height:3.784cm;" class="odt-zoomable" data-zoom-src="images/10000000000003770000011E2B5D14FA.png" /></td></tr></table>
 
 <ul>
-<li>en [5], on veut importer un script SQL,</li>
-<li>en [6], on utilise le bouton [Parcourir] pour désigner le fichier,</li>
+  <li>en [5], on veut importer un script SQL,
+  </li>
+  <li>en [6], on utilise le bouton [Parcourir] pour désigner le fichier,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E20000012A0659C4B3.png" style="display:inline-block; margin:4px;width:16.536cm;height:3.942cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E20000012A0659C4B3.png" /></td></tr></table>
 
 <ul>
-<li>en [7,8], on sélectionne le script SQL,</li>
-<li>en [9], on l&#x27;exécute,</li>
+  <li>en [7,8], on sélectionne le script SQL,
+  </li>
+  <li>en [9], on l&#x27;exécute,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000160000001853C075171.png" style="display:inline-block; margin:4px;width:4.657cm;height:5.147cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000001853C075171.png" /></td></tr></table>
 
 <ul>
-<li>en [10], les tables ont été créées. Leur contenu est le suivant :</li>
+  <li>en [10], les tables ont été créées. Leur contenu est le suivant :
+  </li>
 </ul>
+
 <p><u><strong>table EMPLOYES</strong></u></p>
 <p><img src="images/100000000000032A0000005CE484EB60.png" style="width:15cm;height:1.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000032A0000005CE484EB60.png" /></p>
 <p><u><strong>table INDEMNITES</strong></u></p>
@@ -1645,70 +1681,104 @@
 
 <p>Un programme console travaillera avec la base de données. Pour cela, il faut :</p>
 <ul>
-<li>avoir une base de données,</li>
-<li>avoir le pilote JDBC du SGBD, ici MySQL,</li>
-<li>implémenter la couche JPA avec Hibernate,</li>
-<li>écrire le programme console.</li>
+  <li>avoir une base de données,
+  </li>
+  <li>avoir le pilote JDBC du SGBD, ici MySQL,
+  </li>
+  <li>implémenter la couche JPA avec Hibernate,
+  </li>
+  <li>écrire le programme console.
+  </li>
 </ul>
+
 <p>Nous créons le projet Maven [mv-pam-jpa-hibernate] [1] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011300000103DBC1A38A.png" style="display:inline-block; margin:4px;width:3.639cm;height:3.427cm;" class="odt-zoomable" data-zoom-src="images/100000000000011300000103DBC1A38A.png" /></td></tr></table>
 
 <p>Dans l&#x27;architecture de notre application il nous faut les éléments suivants :</p>
 <ul>
-<li>la base de données,</li>
-<li>le pilote JDBC du SGBD MySQL,</li>
-<li>la couche JPA / Hibernate (entités et configuration),</li>
-<li>le programme console de test.</li>
+  <li>la base de données,
+  </li>
+  <li>le pilote JDBC du SGBD MySQL,
+  </li>
+  <li>la couche JPA / Hibernate (entités et configuration),
+  </li>
+  <li>le programme console de test.
+  </li>
 </ul>
+
 <p><a id="refheading2817291991350288"></a></p>
 <h4 id="5611-la-base-de-donnees">5.6.1.1. La base de données</h4>
 <p>Créons tout d&#x27;abord la base de données vide. Nous lançons WampServer et utilisons l&#x27;outil PhpMyAdmin [1] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000331000001DA3C8DC45A.png" style="display:inline-block; margin:4px;width:10.809cm;height:6.271cm;" class="odt-zoomable" data-zoom-src="images/1000000000000331000001DA3C8DC45A.png" /></td></tr></table>
 
 <ul>
-<li>en [2], on prend l&#x27;option [Bases de données],</li>
+  <li>en [2], on prend l&#x27;option [Bases de données],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048B000000F22A4A50BB.png" style="display:inline-block; margin:4px;width:15.386cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/100000000000048B000000F22A4A50BB.png" /></td></tr></table>
 
 <ul>
-<li>en [3], on crée une base de données [dbpam_hibernate],</li>
-<li>en [4], la base créée.</li>
+  <li>en [3], on crée une base de données [dbpam_hibernate],
+  </li>
+  <li>en [4], la base créée.
+  </li>
 </ul>
+
 <p><a id="refheading2817311991350288"></a></p>
 <h4 id="5612-configuration-de-la-couche-jpa">5.6.1.2. Configuration de la couche JPA</h4>
 <p>La  liaison entre la couche JDBC et la base de données se fait dans le fichier [persistence.xml] qui configure la couche JPA. Ce fichier peut être construit avec Netbeans :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000394000002110F8673A4.png" style="display:inline-block; margin:4px;width:12.118cm;height:6.999cm;" class="odt-zoomable" data-zoom-src="images/1000000000000394000002110F8673A4.png" /></td></tr></table>
 
 <ul>
-<li>dans l&#x27;onglet [services] [1], on se connecte à la base de données avec le pilote JDBC de MySQL [2],</li>
-<li>en [3], le nom de la base de données à laquelle on veut se connecter.</li>
-<li>en [4], l&#x27;URL JDBC de la base,</li>
-<li>en [5], on se connecte en tant que <em>root</em> sans mot de passe,</li>
-<li>en [6], on peut tester la connexion,</li>
-<li>en [7], la connexion a réussi.</li>
+  <li>dans l&#x27;onglet [services] [1], on se connecte à la base de données avec le pilote JDBC de MySQL [2],
+  </li>
+  <li>en [3], le nom de la base de données à laquelle on veut se connecter.
+  </li>
+  <li>en [4], l&#x27;URL JDBC de la base,
+  </li>
+  <li>en [5], on se connecte en tant que <i>root</i> sans mot de passe,
+  </li>
+  <li>en [6], on peut tester la connexion,
+  </li>
+  <li>en [7], la connexion a réussi.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EF000001E82AC63FC3.png" style="display:inline-block; margin:4px;width:16.709cm;height:6.456cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EF000001E82AC63FC3.png" /></td></tr></table>
 
 <ul>
-<li>la connexion apparaît en [8] et en [9],</li>
-<li>en [10], on ajoute un nouvel élément au projet,</li>
+  <li>la connexion apparaît en [8] et en [9],
+  </li>
+  <li>en [10], on ajoute un nouvel élément au projet,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050F000001668F54551E.png" style="display:inline-block; margin:4px;width:17.133cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/100000000000050F000001668F54551E.png" /></td></tr></table>
 
 <ul>
-<li>en [11] on choisit la catégorie [Persistence] et en [12] l&#x27;élément [Persistence Unit],</li>
-<li>en [13], on donne un nom à cette unité de persistance,</li>
-<li>en [14], on choisit une implémentation Hibernate,</li>
-<li>en [15], on désigne la connexion que nous venons de créer vers la base MySQL,</li>
-<li>en [16], on indique qu&#x27;à l&#x27;instanciation de la couche JPA, celle-ci doit construire (create) les tables correspondant aux entités JPA du projet.</li>
+  <li>en [11] on choisit la catégorie [Persistence] et en [12] l&#x27;élément [Persistence Unit],
+  </li>
+  <li>en [13], on donne un nom à cette unité de persistance,
+  </li>
+  <li>en [14], on choisit une implémentation Hibernate,
+  </li>
+  <li>en [15], on désigne la connexion que nous venons de créer vers la base MySQL,
+  </li>
+  <li>en [16], on indique qu&#x27;à l&#x27;instanciation de la couche JPA, celle-ci doit construire (create) les tables correspondant aux entités JPA du projet.
+  </li>
 </ul>
+
 <p>La fin de l&#x27;assistant génère le fichier [persistence.xml] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030D00000169ED01AFDB.png" style="display:inline-block; margin:4px;width:10.333cm;height:4.777cm;" class="odt-zoomable" data-zoom-src="images/100000000000030D00000169ED01AFDB.png" /></td></tr></table>
 
 <ul>
-<li>le fichier apparaît dans une nouvelle branche du projet, dans un dossier [META-INF] [1],</li>
-<li>qui correspond au dossier [src/main/resources] du projet [2,3] .</li>
+  <li>le fichier apparaît dans une nouvelle branche du projet, dans un dossier [META-INF] [1],
+  </li>
+  <li>qui correspond au dossier [src/main/resources] du projet [2,3] .
+  </li>
 </ul>
+
 <p>Son contenu est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -1728,11 +1798,16 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 3 : le nom de l&#x27;unité de persistance et le type de transactions. RESOURCE_LOCAL indique que le projet gère lui-même les transactions. C&#x27;est ici le programme console qui devra le faire,</li>
-<li>ligne 4 : l&#x27;implémentation JPA utilisée est Hibernate,</li>
-<li>lignes 6-9 : les caractéristiques JDBC de la connexion à la base de données,</li>
-<li>ligne 11 : demande la création des tables correspondant aux entités JPA. En fait, Netbeans génère ici une configuration erreonée. La configuration doit être la suivante :</li>
+  <li>ligne 3 : le nom de l&#x27;unité de persistance et le type de transactions. RESOURCE_LOCAL indique que le projet gère lui-même les transactions. C&#x27;est ici le programme console qui devra le faire,
+  </li>
+  <li>ligne 4 : l&#x27;implémentation JPA utilisée est Hibernate,
+  </li>
+  <li>lignes 6-9 : les caractéristiques JDBC de la connexion à la base de données,
+  </li>
+  <li>ligne 11 : demande la création des tables correspondant aux entités JPA. En fait, Netbeans génère ici une configuration erreonée. La configuration doit être la suivante :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#800080">&lt;property</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">hibernate.hbm2ddl.auto</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">value</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">create</span><span style="color:#800080">&quot;/&gt;</span></span>
 </code></pre></div>
@@ -1820,10 +1895,14 @@
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><strong>Notes</strong> :</p>
 <ul>
-<li>les entités feront partie d&#x27;un paquetage nommé [jpa],</li>
-<li>chaque entité aura un n° de version,</li>
-<li>si deux entités sont liées par une relation, seule la relation principale @<em>ManyToOne</em> sera construite. La relation inverse @<em>OneToMany</em> ne le sera pas.</li>
+  <li>les entités feront partie d&#x27;un paquetage nommé [jpa],
+  </li>
+  <li>chaque entité aura un n° de version,
+  </li>
+  <li>si deux entités sont liées par une relation, seule la relation principale @<i>ManyToOne</i> sera construite. La relation inverse @<i>OneToMany</i> ne le sera pas.
+  </li>
 </ul>
+
 <p><a id="refheading2817351991350288"></a></p>
 <h4 id="5615-le-code-de-la-classe-principale">5.6.1.5. Le code de la classe principale</h4>
 <p>Nous incluons dans le projet les entités JPA développées précédemment [1] :</p>
@@ -1851,8 +1930,10 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 10 : on crée l&#x27;<em>EntityManagerFactory</em> de l&#x27;unité de persistance nommée [<span style="color: #2a00ff">mv-pam-jpa-hibernatePU</span>]. Ce nom vient du fichier [persistence.xml] :</li>
+  <li>ligne 10 : on crée l&#x27;<i>EntityManagerFactory</i> de l&#x27;unité de persistance nommée [<span style="color: #2a00ff">mv-pam-jpa-hibernatePU</span>]. Ce nom vient du fichier [persistence.xml] :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;persistence-unit</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">mv-pam-jpa-hibernatePU</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">transaction-type</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">RESOURCE_LOCAL</span><span style="color:#800080">&quot;&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">...</span></span>
@@ -1860,9 +1941,12 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 12 : on crée l&#x27;<em>EntityManager</em>. Cette création crée la couche JPA. Le fichier [persistence.xml] va être exploité et donc les tables de la base de données vont être créées,</li>
-<li>lignes 14-15 : on libère les ressources.</li>
+  <li>ligne 12 : on crée l&#x27;<i>EntityManager</i>. Cette création crée la couche JPA. Le fichier [persistence.xml] va être exploité et donc les tables de la base de données vont être créées,
+  </li>
+  <li>lignes 14-15 : on libère les ressources.
+  </li>
 </ul>
+
 <p><a id="refheading873631128202281"></a></p>
 <h4 id="5616-tests">5.6.1.6. Tests</h4>
 <p>Revenons à l&#x27;architecture de notre projet :</p>
@@ -2084,13 +2168,20 @@
 </code></pre></div></td></tr></table></div>
 <p>On trouve dans la console uniquement des logs d&#x27;Hibernate puisque le programme exécuté ne fait rien en-dehors d&#x27;instancier la couche JPA. On notera les points suivants :</p>
 <ul>
-<li>ligne 43 : Hibernate essaie de supprimer la clé étrangère de la table [EMPLOYES],</li>
-<li>lignes 51-55 : suppression des trois tables,</li>
-<li>ligne 57 : création de la table [COTISATIONS],</li>
-<li>ligne 67 : création de la table [EMPLOYES],</li>
-<li>ligne 80 : création de la table [INDEMNITES],</li>
-<li>ligne 91 : création de la clé étrangère de la table [EMPLOYES].</li>
+  <li>ligne 43 : Hibernate essaie de supprimer la clé étrangère de la table [EMPLOYES],
+  </li>
+  <li>lignes 51-55 : suppression des trois tables,
+  </li>
+  <li>ligne 57 : création de la table [COTISATIONS],
+  </li>
+  <li>ligne 67 : création de la table [EMPLOYES],
+  </li>
+  <li>ligne 80 : création de la table [INDEMNITES],
+  </li>
+  <li>ligne 91 : création de la clé étrangère de la table [EMPLOYES].
+  </li>
 </ul>
+
 <p>Dans Netbeans, on peut voir les tables dans la connexion qui a été créée précédemment :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000001E7F6969703.png" style="display:inline-block; margin:4px;width:4.313cm;height:6.443cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000001E7F6969703.png" /></td></tr></table>
 
@@ -2102,12 +2193,18 @@
 
 <p>On suivra la démarche du paragraphe précédent :</p>
 <ol>
-<li>créer une base MySQL [dbpam_eclipselink]. On utilisera le script [dbpam_eclipselink.sql] pour la générer,</li>
-<li>créer le fichier [persistence.xml] du projet. Prendre l&#x27;implémentation JPA 2.0 EclipseLink,</li>
-<li>ajouter dans les dépendances générées la dépendance du pilote JDBC de MySQL,</li>
-<li>ajouter les entités JPA et le programme console,</li>
-<li>faire les tests.</li>
+  <li>créer une base MySQL [dbpam_eclipselink]. On utilisera le script [dbpam_eclipselink.sql] pour la générer,
+  </li>
+  <li>créer le fichier [persistence.xml] du projet. Prendre l&#x27;implémentation JPA 2.0 EclipseLink,
+  </li>
+  <li>ajouter dans les dépendances générées la dépendance du pilote JDBC de MySQL,
+  </li>
+  <li>ajouter les entités JPA et le programme console,
+  </li>
+  <li>faire les tests.
+  </li>
 </ol>
+
 <p>Le fichier [persistence.xml] sera le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -2131,10 +2228,14 @@
 </code></pre></div>
 
 <ul>
-<li>les propriétés 9-13 ont été générées par l&#x27;assistant Netbeans,</li>
-<li>ligne 14 : cette propriété nous permet de fixer le niveu de logs d&#x27;EclipseLink. Le niveau FINE nous permet de connaître les ordres SQL qu&#x27;EclipseLink va émettre sur la base de données,</li>
-<li>ligne 15 : à l&#x27;instanciation de la couche JPA / EclipseLink, les tables des entités JPA seront détruites puis créées.</li>
+  <li>les propriétés 9-13 ont été générées par l&#x27;assistant Netbeans,
+  </li>
+  <li>ligne 14 : cette propriété nous permet de fixer le niveu de logs d&#x27;EclipseLink. Le niveau FINE nous permet de connaître les ordres SQL qu&#x27;EclipseLink va émettre sur la base de données,
+  </li>
+  <li>ligne 15 : à l&#x27;instanciation de la couche JPA / EclipseLink, les tables des entités JPA seront détruites puis créées.
+  </li>
 </ul>
+
 <p>Les résultats console obtenus sont les suivants :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-36-2"> 2</a></span>
@@ -2261,37 +2362,59 @@
 <a id="__codelineno-36-62" name="__codelineno-36-62"></a><span class="k">Final</span><span class="w"> </span><span class="n">Memory</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="n">M</span><span class="o">/</span><span class="mi">153</span><span class="n">M</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 26-30 : connexion à la base de données MySQL,</li>
-<li>lignes 31-34 : confirmation que la connexion a réussi,</li>
-<li>ligne 36 : suppression de la clé étrangère de la table [EMPLOYES],</li>
-<li>ligne 37 : suppression de la table [COTISATIONS],</li>
-<li>ligne 38 : création de la table [COTISATIONS]. On notera avec intérêt, que la clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <strong>auto_increment</strong>. Cela veut dire que ce n&#x27;est pas MySQL qui génère les valeurs de la clé primaire,</li>
-<li>ligne 39 : suppression de la table [EMPLOYES],</li>
-<li>ligne 40 : création de la table [EMPLOYES]. Sa clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <strong>auto_increment</strong>,</li>
-<li>ligne 41 : suppression de la table [INDEMNITES],</li>
-<li>ligne 42 : création de la table [INDEMNITES]. Sa clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <strong>auto_increment</strong>,</li>
-<li>ligne 43 : création de la clé étrangère de la table [EMPLOYES] vers la table [INDEMNITES],</li>
-<li>ligne 44 : création d&#x27;une table [SEQUENCE]. Elle sera utilisée pour générer les clés primaires des trois tables précédentes,</li>
-<li>ligne 47 : on a une exception car cette table existait déjà,</li>
-<li>lignes 51-53 : initialisation de la table [SEQUENCE].</li>
+  <li>lignes 26-30 : connexion à la base de données MySQL,
+  </li>
+  <li>lignes 31-34 : confirmation que la connexion a réussi,
+  </li>
+  <li>ligne 36 : suppression de la clé étrangère de la table [EMPLOYES],
+  </li>
+  <li>ligne 37 : suppression de la table [COTISATIONS],
+  </li>
+  <li>ligne 38 : création de la table [COTISATIONS]. On notera avec intérêt, que la clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <b>auto_increment</b>. Cela veut dire que ce n&#x27;est pas MySQL qui génère les valeurs de la clé primaire,
+  </li>
+  <li>ligne 39 : suppression de la table [EMPLOYES],
+  </li>
+  <li>ligne 40 : création de la table [EMPLOYES]. Sa clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <b>auto_increment</b>,
+  </li>
+  <li>ligne 41 : suppression de la table [INDEMNITES],
+  </li>
+  <li>ligne 42 : création de la table [INDEMNITES]. Sa clé primaire ID n&#x27;a pas l&#x27;attribut MySQL <b>auto_increment</b>,
+  </li>
+  <li>ligne 43 : création de la clé étrangère de la table [EMPLOYES] vers la table [INDEMNITES],
+  </li>
+  <li>ligne 44 : création d&#x27;une table [SEQUENCE]. Elle sera utilisée pour générer les clés primaires des trois tables précédentes,
+  </li>
+  <li>ligne 47 : on a une exception car cette table existait déjà,
+  </li>
+  <li>lignes 51-53 : initialisation de la table [SEQUENCE].
+  </li>
 </ul>
+
 <p>L&#x27;existence des tables générées peut être vérifiée dans Netbeans [1] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016B000001F541A604A1.png" style="display:inline-block; margin:4px;width:4.803cm;height:6.629cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B000001F541A604A1.png" /></td></tr></table>
 
 <p>Donc, à partir des mêmes entités JPA, les implémentations JPA <em>Hibernate</em> et <em>EclipseLink</em> ne génèrent pas les mêmes tables. Dans la suite du document, lorsque l&#x27;implémentation JPA utilisée est :</p>
 <ul>
-<li><em>Hibernate</em>, on utilisera la base de données [dbpam_hibernate],</li>
-<li><em>EclipseLink</em>, on utilisera la base de données [dbpam_eclipselink].</li>
+  <li><i>Hibernate</i>, on utilisera la base de données [dbpam_hibernate],
+  </li>
+  <li><i>EclipseLink</i>, on utilisera la base de données [dbpam_eclipselink].
+  </li>
 </ul>
+
 <p><a id="refheading2817391991350288"></a></p>
 <h3 id="563-travail-a-faire">5.6.3. Travail à faire</h3>
 <p>En suivant la même démarche que précédemment,</p>
 <ol>
-<li>créer et tester un projet [mv-pam-jpa-hibernate-oracle] utilisant une implémentation JPA Hibernate et un SGBD Oracle,</li>
-<li>créer et tester un projet [mv-pam-jpa-hibernate-mssql] utilisant une implémentation JPA Hibernate et un SGBD SQL server,</li>
-<li>créer et tester un projet [mv-pam-jpa-eclipselink-oracle] utilisant une implémentation JPA EclipseLink et un SGBD Oracle,</li>
-<li>créer et tester un projet [mv-pam-jpa-eclipselink-mssql] utilisant une implémentation JPA EclipseLink et un SGBD SQL server,</li>
+  <li>créer et tester un projet [mv-pam-jpa-hibernate-oracle] utilisant une implémentation JPA Hibernate et un SGBD Oracle,
+  </li>
+  <li>créer et tester un projet [mv-pam-jpa-hibernate-mssql] utilisant une implémentation JPA Hibernate et un SGBD SQL server,
+  </li>
+  <li>créer et tester un projet [mv-pam-jpa-eclipselink-oracle] utilisant une implémentation JPA EclipseLink et un SGBD Oracle,
+  </li>
+  <li>créer et tester un projet [mv-pam-jpa-eclipselink-mssql] utilisant une implémentation JPA EclipseLink et un SGBD SQL server,
+  </li>
 </ol>
+
 <p><a id="refheading2817411991350288"></a></p>
 <h3 id="564-lazy-ou-eager">5.6.4. Lazy ou Eager ?</h3>
 <p>Revenons à une définition possible de l&#x27;entité [Employe] :</p>
@@ -2331,30 +2454,44 @@
 
 <p>Les lignes 27-29 définissent la clé étrangère de la table [EMPLOYES] vers la table [INDEMNITES]. L&#x27;attribut <strong>fetch</strong> de la ligne 27 définit la stratégie de recherche du champ <em>indemnite</em> de la ligne 29. Il y a deux modes :</p>
 <ul>
-<li><strong><span style="color: #000000">FetchType.LAZY</span></strong><span style="color: #000000"> : lorsqu&#x27;un employé est cherché, l&#x27;indemnité qui lui correspond n&#x27;est pas ramenée. Elle le sera lorsque le champ </span><em><span style="color: #000000">[Employe].indemnite</span></em><span style="color: #000000"> sera référencé pour la première fois.</span></li>
-<li><strong><span style="color: #000000">FetchType.EAGER</span></strong><span style="color: #000000"> : lorsqu&#x27;un employé est cherché, l&#x27;indemnité qui lui correspond est ramenée. C&#x27;est le mode par défaut lorsqu&#x27;aucun mode n&#x27;est précisé.</span></li>
+  <li><b><span style="color: #000000">FetchType.LAZY</span></b><span style="color: #000000"> : lorsqu&#x27;un employé est cherché, l&#x27;indemnité qui lui correspond n&#x27;est pas ramenée. Elle le sera lorsque le champ </span><i><span style="color: #000000">[Employe].indemnite</span></i><span style="color: #000000"> sera référencé pour la première fois.</span>
+  </li>
+  <li><b><span style="color: #000000">FetchType.EAGER</span></b><span style="color: #000000"> : lorsqu&#x27;un employé est cherché, l&#x27;indemnité qui lui correspond est ramenée. C&#x27;est le mode par défaut lorsqu&#x27;aucun mode n&#x27;est précisé.</span>
+  </li>
 </ul>
+
 <p>Pour comprendre l&#x27;intérêt de l&#x27;option <em><span style="color: #000000">FetchType.LAZY</span></em>, on peut prendre l&#x27;exemple suivant. Une liste d&#x27;employés sans les indemnités est présentée dans une page web avec un lien [Details]. Un clic sur ce lien présente alors les indemnités de l&#x27;employé sélectionné. On voit que :</p>
 <ul>
-<li>pour afficher la première page on n&#x27;a pas besoin des employés avec leurs indemnités. Le mode <em><span style="color: #000000">FetchType.LAZY</span></em><span style="color: #000000"> convient alors,</span></li>
-<li><span style="color: #000000">pour afficher la seconde page avec les détails, une requête supplémentaire doit être faite à la base de données pour  avoir </span>les indemnités de l&#x27;employé sélectionné.</li>
+  <li>pour afficher la première page on n&#x27;a pas besoin des employés avec leurs indemnités. Le mode <i><span style="color: #000000">FetchType.LAZY</span></i><span style="color: #000000"> convient alors,</span>
+  </li>
+  <li><span style="color: #000000">pour afficher la seconde page avec les détails, une requête supplémentaire doit être faite à la base de données pour  avoir </span>les indemnités de l&#x27;employé sélectionné.
+  </li>
 </ul>
+
 <p>Le mode <em><span style="color: #000000">FetchType.LAZY</span></em><span style="color: #000000"> évite de ramener trop de données dont l&#x27;application n&#x27;a pas besoin tout de suite. Voyons un exemple.</span></p>
 <p><span style="color: #000000">Le projet [mv-pam-jpa-hibernate] est dupliqué :</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005140000033922966238.png" style="display:inline-block; margin:4px;width:17.198cm;height:10.915cm;" class="odt-zoomable" data-zoom-src="images/10000000000005140000033922966238.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">en [1], on copie le projet,</span></li>
-<li><span style="color: #000000">en [2], on indique le dossier de la copie et en [3] son nom,</span></li>
-<li><span style="color: #000000">en [4], le nouveau projet porte le même nom que l&#x27;ancien. Nous changeons cela :</span></li>
+  <li><span style="color: #000000">en [1], on copie le projet,</span>
+  </li>
+  <li><span style="color: #000000">en [2], on indique le dossier de la copie et en [3] son nom,</span>
+  </li>
+  <li><span style="color: #000000">en [4], le nouveau projet porte le même nom que l&#x27;ancien. Nous changeons cela :</span>
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FB00000307DA3A7AEA.png" style="display:inline-block; margin:4px;width:16.868cm;height:10.253cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FB00000307DA3A7AEA.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">en [1], on renomme le projet,</span></li>
-<li><span style="color: #000000">en [2], on renomme le projet et son <em>artifactId</em>,</span></li>
-<li><span style="color: #000000">en [3], le nouveau projet.</span></li>
+  <li><span style="color: #000000">en [1], on renomme le projet,</span>
+  </li>
+  <li><span style="color: #000000">en [2], on renomme le projet et son <i>artifactId</i>,</span>
+  </li>
+  <li><span style="color: #000000">en [3], le nouveau projet.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous modifions le programme [Main.java] de la façon suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> main;</span></span>
@@ -2400,12 +2537,18 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 15 : on crée l&#x27;</span><em><span style="color: #000000">EntityManagerFactory</span></em><span style="color: #000000"> de la couche JPA,</span></li>
-<li><span style="color: #000000">ligne 17 : on obtient l&#x27;</span><em><span style="color: #000000">EntityManager</span></em><span style="color: #000000"> qui nous permet de dialoguer avec la couche JPA,</span></li>
-<li><span style="color: #000000">ligne 18 : on demande l&#x27;employé de nom </span><em><span style="color: #000000">Jouveinal</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">ligne 19 : on ferme l&#x27;</span><em><span style="color: #000000">EntityManager</span></em><span style="color: #000000">. Cela a pour effet de fermer le contexte de persistence.</span></li>
-<li><span style="color: #000000">ligne 22 : on affiche l&#x27;employé reçu.</span></li>
+  <li><span style="color: #000000">ligne 15 : on crée l&#x27;</span><i><span style="color: #000000">EntityManagerFactory</span></i><span style="color: #000000"> de la couche JPA,</span>
+  </li>
+  <li><span style="color: #000000">ligne 17 : on obtient l&#x27;</span><i><span style="color: #000000">EntityManager</span></i><span style="color: #000000"> qui nous permet de dialoguer avec la couche JPA,</span>
+  </li>
+  <li><span style="color: #000000">ligne 18 : on demande l&#x27;employé de nom </span><i><span style="color: #000000">Jouveinal</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">ligne 19 : on ferme l&#x27;</span><i><span style="color: #000000">EntityManager</span></i><span style="color: #000000">. Cela a pour effet de fermer le contexte de persistence.</span>
+  </li>
+  <li><span style="color: #000000">ligne 22 : on affiche l&#x27;employé reçu.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La classe [Employe] est la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> jpa;</span></span>
@@ -2462,17 +2605,26 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 27 : le champ </span><em><span style="color: #000000">indemnite</span></em><span style="color: #000000"> est ramené en mode LAZY,</span></li>
-<li><span style="color: #000000">ligne 47 : utilise le champ </span><em><span style="color: #000000">indemnite</span></em><span style="color: #000000">. Si la méthode </span><em><span style="color: #000000">toString</span></em><span style="color: #000000"> est appelée alors que le champ </span><em><span style="color: #000000">indemnite</span></em><span style="color: #000000"> n&#x27;a pas été encore ramené, il le sera à ce moment là. Sauf si le contexte de persistance a été fermé comme dans l&#x27;exemple.</span></li>
+  <li><span style="color: #000000">ligne 27 : le champ </span><i><span style="color: #000000">indemnite</span></i><span style="color: #000000"> est ramené en mode LAZY,</span>
+  </li>
+  <li><span style="color: #000000">ligne 47 : utilise le champ </span><i><span style="color: #000000">indemnite</span></i><span style="color: #000000">. Si la méthode </span><i><span style="color: #000000">toString</span></i><span style="color: #000000"> est appelée alors que le champ </span><i><span style="color: #000000">indemnite</span></i><span style="color: #000000"> n&#x27;a pas été encore ramené, il le sera à ce moment là. Sauf si le contexte de persistance a été fermé comme dans l&#x27;exemple.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Revenons au code du [Main] :</span></p>
 <ul>
-<li><span style="color: #000000">lignes 21-25 : on devrait avoir une exception. En effet, la méthode </span><em><span style="color: #000000">toString</span></em><span style="color: #000000"> va être appelée. Elle va utiliser le champ </span><em><span style="color: #000000">indemnite</span></em><span style="color: #000000">. Celui-ci va être cherché. Comme le contexte de persistance a été fermé, l&#x27;entité [Employe] ramenée n&#x27;existe plus d&#x27;où l&#x27;exception.</span></li>
-<li><span style="color: #000000">ligne 27 : on crée un nouveau </span><em><span style="color: #000000">EntityManager</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">ligne 28 : on demande l&#x27;employé </span><em><span style="color: #000000">Jouveinal</span></em><span style="color: #000000"> en demandant explicitement dans la requête JPQL l&#x27;indemnité qui va avec. Cette demande explicite est nécessaire parce que le mode de recherche de cette indemnité est </span><em><span style="color: #000000">LAZY</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">ligne 30 : on ferme l&#x27;</span><em><span style="color: #000000">EntityManager</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">lignes 32-36 : on réaffiche l&#x27;employé. Il ne devrait pas y avoir d&#x27;exception.</span></li>
+  <li><span style="color: #000000">lignes 21-25 : on devrait avoir une exception. En effet, la méthode </span><i><span style="color: #000000">toString</span></i><span style="color: #000000"> va être appelée. Elle va utiliser le champ </span><i><span style="color: #000000">indemnite</span></i><span style="color: #000000">. Celui-ci va être cherché. Comme le contexte de persistance a été fermé, l&#x27;entité [Employe] ramenée n&#x27;existe plus d&#x27;où l&#x27;exception.</span>
+  </li>
+  <li><span style="color: #000000">ligne 27 : on crée un nouveau </span><i><span style="color: #000000">EntityManager</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">ligne 28 : on demande l&#x27;employé </span><i><span style="color: #000000">Jouveinal</span></i><span style="color: #000000"> en demandant explicitement dans la requête JPQL l&#x27;indemnité qui va avec. Cette demande explicite est nécessaire parce que le mode de recherche de cette indemnité est </span><i><span style="color: #000000">LAZY</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">ligne 30 : on ferme l&#x27;</span><i><span style="color: #000000">EntityManager</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">lignes 32-36 : on réaffiche l&#x27;employé. Il ne devrait pas y avoir d&#x27;exception.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Pour exécuter le projet, on a besoin d&#x27;une base de données remplie. On la créera en suivant la démarche du paragraphe </span><span style="color: #000000"><a href="#creation-bd">5.5</a></span><span style="color: #000000">. Par ailleurs, le fichier [persistence.xml] doit être modifié :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -2494,18 +2646,24 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">on a enlevé l&#x27;option qui créait les tables. La base de données ici existe déjà et est remplie,</span></li>
-<li><span style="color: #000000">on a enlevé les options qui faisaient qu&#x27;Hibernate loguait les ordres SQL qu&#x27;il émettait vers la base de données.</span></li>
+  <li><span style="color: #000000">on a enlevé l&#x27;option qui créait les tables. La base de données ici existe déjà et est remplie,</span>
+  </li>
+  <li><span style="color: #000000">on a enlevé les options qui faisaient qu&#x27;Hibernate loguait les ordres SQL qu&#x27;il émettait vers la base de données.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">L&#x27;exécution du projet donne les deux affichages suivants dans la console :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
 <span class="normal"><a href="#__codelineno-37-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a>org.hibernate.LazyInitializationException: could not initialize proxy - no Session
 <a id="__codelineno-37-2" name="__codelineno-37-2"></a>jpa.Employe[id=31,version=0,SS=254104940426058,nom=Jouveinal,prenom=Marie,adresse=5 rue des oiseaux,ville=St Corentin,code postal=49203,indice=2]
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">ligne 1 : l&#x27;exception qui s&#x27;est produite lorsqu&#x27;il a fallu chercher l&#x27;indemnité qui manquait alors que la session était fermée. On voit que l&#x27;indemnité n&#x27;avait pas été ramenée à cause du mode </span><em><span style="color: #000000">LAZY</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">ligne 2 : l&#x27;employé avec son indemnité obtenue par une requête qui a contourné le mode </span><em><span style="color: #000000">LAZY</span></em><span style="color: #000000">.</span></li>
+  <li><span style="color: #000000">ligne 1 : l&#x27;exception qui s&#x27;est produite lorsqu&#x27;il a fallu chercher l&#x27;indemnité qui manquait alors que la session était fermée. On voit que l&#x27;indemnité n&#x27;avait pas été ramenée à cause du mode </span><i><span style="color: #000000">LAZY</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">ligne 2 : l&#x27;employé avec son indemnité obtenue par une requête qui a contourné le mode </span><i><span style="color: #000000">LAZY</span></i><span style="color: #000000">.</span>
+  </li>
 </ul>
+
 <p><a id="refheading2817431991350288"></a></p>
 <h3 id="565-travail-a-faire">5.6.5. Travail à faire</h3>
 <p><span style="color: #000000">En suivant une démarche analogue à celle qui vient d&#x27;être suivie, créez un projet [mv-pam-pa-eclipselink-lazy] qui montre le comportement d&#x27;EclipseLink face au mode LAZY.</span></p>
@@ -2531,8 +2689,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051900000331E4C9523B.png" style="display:inline-block; margin:4px;width:17.265cm;height:10.809cm;" class="odt-zoomable" data-zoom-src="images/100000000000051900000331E4C9523B.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">puis on renomme le nouveau projet [4, 5, 6].</span></li>
+  <li><span style="color: #000000">puis on renomme le nouveau projet [4, 5, 6].</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">On changera les dépendances du nouveau projet. Le fichier [pom.xml] devient le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -2621,18 +2781,28 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">lignes 25-31 : la dépendance pour les tests JUnit,</span></li>
-<li><span style="color: #000000">lignes 32-41 : les dépendances pour le pool de connexions Apache DBCP,</span></li>
-<li><span style="color: #000000">lignes 42-65 : les dépendances pour le framework Spring,</span></li>
-<li><span style="color: #000000">lignes 67-71 : les dépendances pour l&#x27;implémentation JPA / Hibernate,</span></li>
-<li><span style="color: #000000">lignes 72-76 : la dépendance pour le pilote JDBC de MySQL,</span></li>
-<li><span style="color: #000000">lignes 77-81 : la dépendance pour l&#x27;interface Swing. Celle-ci est automatiquement ajoutée par Netbeans lorsqu&#x27;on ajoute une interface Swing au projet.</span></li>
+  <li><span style="color: #000000">lignes 25-31 : la dépendance pour les tests JUnit,</span>
+  </li>
+  <li><span style="color: #000000">lignes 32-41 : les dépendances pour le pool de connexions Apache DBCP,</span>
+  </li>
+  <li><span style="color: #000000">lignes 42-65 : les dépendances pour le framework Spring,</span>
+  </li>
+  <li><span style="color: #000000">lignes 67-71 : les dépendances pour l&#x27;implémentation JPA / Hibernate,</span>
+  </li>
+  <li><span style="color: #000000">lignes 72-76 : la dépendance pour le pilote JDBC de MySQL,</span>
+  </li>
+  <li><span style="color: #000000">lignes 77-81 : la dépendance pour l&#x27;interface Swing. Celle-ci est automatiquement ajoutée par Netbeans lorsqu&#x27;on ajoute une interface Swing au projet.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Par ailleurs, on génèrera les deux bases MySQL :</span></p>
 <ul>
-<li><span style="color: #000000">[dbpam_hibernate] à partir du script [dbpam_hibernate.sql],</span></li>
-<li><span style="color: #000000">[dbpam_eclipselink] à partir du script [dbpam_eclipselink.sql],</span></li>
+  <li><span style="color: #000000">[dbpam_hibernate] à partir du script [dbpam_hibernate.sql],</span>
+  </li>
+  <li><span style="color: #000000">[dbpam_eclipselink] à partir du script [dbpam_eclipselink.sql],</span>
+  </li>
 </ul>
+
 <p><a id="refheading87371112820228"></a>
 <a id="pam-interfaces"></a></p>
 <h2 id="57-les-interfaces-des-couches-metier-et-dao">5.7. Les interfaces des couches [metier] et [DAO]</h2>
@@ -2691,25 +2861,40 @@
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;application reçoit trois informations de l&#x27;utilisateur (cf ligne 1 ci-dessus)</p>
 <ul>
-<li>le n° de sécurité sociale de l&#x27;assistante maternelle</li>
-<li>le nombre d&#x27;heures travaillées dans le mois</li>
-<li>le nombre de jours travaillés dans le mois</li>
+  <li>le n° de sécurité sociale de l&#x27;assistante maternelle
+  </li>
+  <li>le nombre d&#x27;heures travaillées dans le mois
+  </li>
+  <li>le nombre de jours travaillés dans le mois
+  </li>
 </ul>
+
 <p>A partir de ces information et d&#x27;autres enregistrées dans des fichiers de configuration, l&#x27;application affiche les informations suivantes :</p>
 <ul>
-<li>lignes 4-6 : les valeurs saisies</li>
-<li>lignes 8-10 : les informations liées à l&#x27;employé dont on a donné le n° de sécurité sociale</li>
-<li>lignes 12-14 : les taux des différentes cotisations sociales</li>
-<li>lignes 16-17 : les différentes indemnités versées à l&#x27;assistante maternelle</li>
-<li>lignes 19-24 : les éléments de la feuille de salaire de l&#x27;assistante maternelle</li>
+  <li>lignes 4-6 : les valeurs saisies
+  </li>
+  <li>lignes 8-10 : les informations liées à l&#x27;employé dont on a donné le n° de sécurité sociale
+  </li>
+  <li>lignes 12-14 : les taux des différentes cotisations sociales
+  </li>
+  <li>lignes 16-17 : les différentes indemnités versées à l&#x27;assistante maternelle
+  </li>
+  <li>lignes 19-24 : les éléments de la feuille de salaire de l&#x27;assistante maternelle
+  </li>
 </ul>
+
 <p>Un certain nombre d&#x27;informations doivent être fournies par la couche [metier] à la couche [ui] :</p>
 <ol>
-<li>les informations liées à une assistante maternelle identifiée par son n° de sécurité sociale. On trouve ces informations dans la table [EMPLOYES]. Cela permet d&#x27;afficher les lignes 6-8.</li>
-<li>les montants des divers taux de cotisations sociales à prélever sur le salaire brut. On trouve ces informations dans la table [COTISATIONS]. Cela permet d&#x27;afficher les lignes 10-12.</li>
-<li>les montants des diverses indemnités liées à la fonction d&#x27;assistante maternelle. On trouve ces informations dans la table [INDEMNITES]. Cela permet d&#x27;afficher les lignes 14-15.</li>
-<li>les éléments constitutifs du salaire affichés lignes 18-22.</li>
+  <li>les informations liées à une assistante maternelle identifiée par son n° de sécurité sociale. On trouve ces informations dans la table [EMPLOYES]. Cela permet d&#x27;afficher les lignes 6-8.
+  </li>
+  <li>les montants des divers taux de cotisations sociales à prélever sur le salaire brut. On trouve ces informations dans la table [COTISATIONS]. Cela permet d&#x27;afficher les lignes 10-12.
+  </li>
+  <li>les montants des diverses indemnités liées à la fonction d&#x27;assistante maternelle. On trouve ces informations dans la table [INDEMNITES]. Cela permet d&#x27;afficher les lignes 14-15.
+  </li>
+  <li>les éléments constitutifs du salaire affichés lignes 18-22.
+  </li>
 </ol>
+
 <p>De ceci, on pourrait décider d&#x27;une première écriture de l&#x27;interface [IMetier] présentée par la couche [metier] à la couche [ui] :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
 <span class="normal"><a href="#__codelineno-40-2">2</a></span>
@@ -2724,9 +2909,12 @@
 <a id="__codelineno-40-6" name="__codelineno-40-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 1 : les éléments de la couche [metier] sont mis dans le paquetage [metier]</li>
-<li>ligne 5 : la méthode [ calculerFeuilleSalaire ] prend pour paramètres les trois informations acquises par la couche [ui] et rend un objet de type [FeuilleSalaire] contenant les informations que la couche [ui] affichera sur la console. La classe [<a id="pam-feuillesalaire-1"></a>FeuilleSalaire] pourrait être la suivante :</li>
+  <li>ligne 1 : les éléments de la couche [metier] sont mis dans le paquetage [metier]
+  </li>
+  <li>ligne 5 : la méthode [ calculerFeuilleSalaire ] prend pour paramètres les trois informations acquises par la couche [ui] et rend un objet de type [FeuilleSalaire] contenant les informations que la couche [ui] affichera sur la console. La classe [<a id="pam-feuillesalaire-1"></a>FeuilleSalaire] pourrait être la suivante :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
@@ -2756,11 +2944,16 @@
 <a id="__codelineno-41-14" name="__codelineno-41-14"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 9 : l&#x27;employé concerné par la feuille de salaire - information n° 1 affichée par la couche [ui]</li>
-<li>ligne 10 : les différents taux de cotisation - information n° 2 affichée par la couche [ui]</li>
-<li>ligne 11 : les différentes indemnités liées à l&#x27;indice de l&#x27;employé - information n° 3 affichée par la couche [ui]</li>
-<li>ligne 12 : les éléments constitutifs de son salaire - information n° 4 affichée par la couche [ui]</li>
+  <li>ligne 9 : l&#x27;employé concerné par la feuille de salaire - information n° 1 affichée par la couche [ui]
+  </li>
+  <li>ligne 10 : les différents taux de cotisation - information n° 2 affichée par la couche [ui]
+  </li>
+  <li>ligne 11 : les différentes indemnités liées à l&#x27;indice de l&#x27;employé - information n° 3 affichée par la couche [ui]
+  </li>
+  <li>ligne 12 : les éléments constitutifs de son salaire - information n° 4 affichée par la couche [ui]
+  </li>
 </ul>
+
 <p>Un second cas d&#x27;usage de la couche [métier] apparaît avec l&#x27;interface graphique :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000001082F4002BB.png" style="display:inline-block; margin:4px;width:15.942cm;height:3.493cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000001082F4002BB.png" /></td></tr></table>
 
@@ -2788,8 +2981,10 @@
 <a id="__codelineno-42-11" name="__codelineno-42-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne [10] : la méthode qui va permettre à la couche [ui] de demander la liste de tous les employés à la couche [métier].</li>
+  <li>ligne [10] : la méthode qui va permettre à la couche [ui] de demander la liste de tous les employés à la couche [métier].
+  </li>
 </ul>
+
 <p>La couche [metier] ne peut initialiser les champs [Employe, Cotisation, Indemnite] de l&#x27;objet [FeuilleSalaire] ci-dessus qu&#x27;en questionnant la couche [DAO] car ces informations sont dans les tables de la base de données. Il en est de même pour obtenir la liste de tous les employés. On peut créer une interface [DAO] unique gérant l&#x27;accès aux trois entités [Employe, Cotisation, Indemnite]. Nous décidons plutôt ici de créer une interface [DAO] par entité.</p>
 <p>L&#x27;interface [DAO] pour les accès aux entités [Cotisation] de la table [COTISATIONS] sera la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1"> 1</a></span>
@@ -2829,13 +3024,20 @@
 <a id="__codelineno-43-18" name="__codelineno-43-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 6, l&#x27;interface [ICotisationDao] gère les accès à l&#x27;entité [Cotisation] et donc à la table [COTISATIONS] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [COTISATIONS]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.</li>
-<li>ligne 8 : la méthode [create] crée une nouvelle entité [Cotisation]</li>
-<li>ligne 10 : la méthode [edit] modifie une entité [Cotisation] existante</li>
-<li>ligne 12 : la méthode [destroy] supprime une entité [Cotisation] existante</li>
-<li>ligne 14 : la méthode [find] permet de retrouver une entité [Cotisation] existante via son identifiant id</li>
-<li>ligne 16 : la méthode [findAll] rend dans une liste toutes les entités [Cotisation] existantes</li>
+  <li>ligne 6, l&#x27;interface [ICotisationDao] gère les accès à l&#x27;entité [Cotisation] et donc à la table [COTISATIONS] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [COTISATIONS]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.
+  </li>
+  <li>ligne 8 : la méthode [create] crée une nouvelle entité [Cotisation]
+  </li>
+  <li>ligne 10 : la méthode [edit] modifie une entité [Cotisation] existante
+  </li>
+  <li>ligne 12 : la méthode [destroy] supprime une entité [Cotisation] existante
+  </li>
+  <li>ligne 14 : la méthode [find] permet de retrouver une entité [Cotisation] existante via son identifiant id
+  </li>
+  <li>ligne 16 : la méthode [findAll] rend dans une liste toutes les entités [Cotisation] existantes
+  </li>
 </ul>
+
 <p>Attardons-nous sur la signature de la méthode [create] :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
 <span class="normal"><a href="#__codelineno-44-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a>      // créer une nouvelle cotisation
@@ -2856,20 +3058,29 @@
 <p>Ci-dessus, la couche [metier] s&#x27;exécute dans la JVM 1 et la couche [DAO] dans la JVM 2 sur deux machines différentes. Les deux couches ne communiquent pas directement. Entre-elles  s&#x27;intercale une couche qu&#x27;on appellera couche de communication [1]. Celle-ci est composée d&#x27;une couche d&#x27;émission [2] et d&#x27;une couche de réception [3]. Le développeur n&#x27;a en général pas à écrire ces couches de communication. Elles sont générées automatiquement par des outils logiciels. La couche [metier] est écrite comme si elle s&#x27;exécutait dans la même JVM que la couche [DAO]. Il n&#x27;y a donc aucune modification de code.</p>
 <p>Le mécanisme de communication entre la couche [metier] et la couche [DAO] est le suivant :</p>
 <ul>
-<li>la couche [metier] fait appel à la méthode <em>create</em> de la couche [DAO] en lui passant le paramètre [Cotisation <em>cotisation1</em>]</li>
-<li>ce paramètre est en fait passé à la couche d&#x27;émission [2]. Celle-ci va transmettre sur le réseau, la <strong>valeur</strong> du paramètre <em>cotisation1</em> et non sa <strong>référence</strong>. La forme exacte de cette valeur dépend du protocole de communication utilisé.</li>
-<li>la couche de réception [3] va récupérer cette valeur et reconstruire à partir d&#x27;elle un objet [Cotisation <em>cotisation2</em>] image du paramètre initial envoyé par la couche [metier]. On a maintenant deux objets identiques (au sens de contenu) dans deux JVM différentes : <em>cotisation1</em> et <em>cotisation2</em>.</li>
-<li>la couche de réception va passer l&#x27;objet <em>cotisation2</em> à la méthode <em>create</em> de la couche [DAO] qui va le persister en base de données. Après cette opération, le champ <em>id</em> de l&#x27;objet <em>cotisation2</em> a été initialisé par la clé primaire de l&#x27;enregistrement ajouté à la table [COTISATIONS]. Ce n&#x27;est pas le cas de l&#x27;objet <em>cotisation1</em> sur lequel la couche [metier] a une référence. Si on veut que la couche [metier] ait une référence sur l&#x27;objet <em>cotisation2</em>, il faut le lui envoyer. Aussi est-on amenés à changer la signature de la méthode <em>create</em> de la couche [DAO] :</li>
+  <li>la couche [metier] fait appel à la méthode <i>create</i> de la couche [DAO] en lui passant le paramètre [Cotisation <i>cotisation1</i>]
+  </li>
+  <li>ce paramètre est en fait passé à la couche d&#x27;émission [2]. Celle-ci va transmettre sur le réseau, la <b>valeur</b> du paramètre <i>cotisation1</i> et non sa <b>référence</b>. La forme exacte de cette valeur dépend du protocole de communication utilisé.
+  </li>
+  <li>la couche de réception [3] va récupérer cette valeur et reconstruire à partir d&#x27;elle un objet [Cotisation <i>cotisation2</i>] image du paramètre initial envoyé par la couche [metier]. On a maintenant deux objets identiques (au sens de contenu) dans deux JVM différentes : <i>cotisation1</i> et <i>cotisation2</i>.
+  </li>
+  <li>la couche de réception va passer l&#x27;objet <i>cotisation2</i> à la méthode <i>create</i> de la couche [DAO] qui va le persister en base de données. Après cette opération, le champ <i>id</i> de l&#x27;objet <i>cotisation2</i> a été initialisé par la clé primaire de l&#x27;enregistrement ajouté à la table [COTISATIONS]. Ce n&#x27;est pas le cas de l&#x27;objet <i>cotisation1</i> sur lequel la couche [metier] a une référence. Si on veut que la couche [metier] ait une référence sur l&#x27;objet <i>cotisation2</i>, il faut le lui envoyer. Aussi est-on amenés à changer la signature de la méthode <i>create</i> de la couche [DAO] :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span>
 <span class="normal"><a href="#__codelineno-46-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a>      // créer une nouvelle cotisation
 <a id="__codelineno-46-2" name="__codelineno-46-2"></a>Cotisation create(Cotisation cotisation);
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>avec cette nouvelle signature, la méthode <em>create</em> va rendre comme résultat l&#x27;objet persisté <em>cotisation2</em>. Ce résultat est rendu à la couche de réception [3] qui avait appelé la couche [DAO]. Celle-ci va rendre la <strong>valeur</strong> (et non la <strong>référence</strong>) de <em>cotisation2</em> à la couche d&#x27;émission [2].</li>
-<li>la couche d&#x27;émission [2] va récupérer cette valeur et reconstruire à partir d&#x27;elle un objet [Cotisation <em>cotisation3</em>] image du résultat rendu par la méthode <em>create</em> de la couche [DAO].</li>
-<li>l&#x27;objet [Cotisation <em>cotisation3</em>] est rendu à la méthode de la couche [metier] dont l&#x27;appel à la méthode <em>create</em> de la couche [DAO] avait initié tout ce mécanisme. La couche [metier] peut donc connaître la valeur de clé primaire donné à l&#x27;objet [Cotisation <em>cotisation1</em>] dont elle avait demandé la persistance : c&#x27;est la valeur du champ <em>id</em> de <em>cotisation3</em>.</li>
+  <li>avec cette nouvelle signature, la méthode <i>create</i> va rendre comme résultat l&#x27;objet persisté <i>cotisation2</i>. Ce résultat est rendu à la couche de réception [3] qui avait appelé la couche [DAO]. Celle-ci va rendre la <b>valeur</b> (et non la <b>référence</b>) de <i>cotisation2</i> à la couche d&#x27;émission [2].
+  </li>
+  <li>la couche d&#x27;émission [2] va récupérer cette valeur et reconstruire à partir d&#x27;elle un objet [Cotisation <i>cotisation3</i>] image du résultat rendu par la méthode <i>create</i> de la couche [DAO].
+  </li>
+  <li>l&#x27;objet [Cotisation <i>cotisation3</i>] est rendu à la méthode de la couche [metier] dont l&#x27;appel à la méthode <i>create</i> de la couche [DAO] avait initié tout ce mécanisme. La couche [metier] peut donc connaître la valeur de clé primaire donné à l&#x27;objet [Cotisation <i>cotisation1</i>] dont elle avait demandé la persistance : c&#x27;est la valeur du champ <i>id</i> de <i>cotisation3</i>.
+  </li>
 </ul>
+
 <p>L&#x27;architecture précédente n&#x27;est pas la plus courante. On trouve plus fréquemment les couches [metier] et [DAO] dans la même JVM :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000000EC73955327.png" style="display:inline-block; margin:4px;width:14.552cm;height:3.122cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000000EC73955327.png" /></td></tr></table>
 
@@ -2880,9 +3091,12 @@
 </code></pre></div></td></tr></table></div>
 <p>nous permet de ne pas faire d&#x27;hypothèses sur l&#x27;architecture réellement mise en place. Utiliser des signatures qui fonctionneront quelque soit l&#x27;architecture retenue, locale ou distante, implique que dans le cas où une méthode appelée modifie certains de ses paramètres :</p>
 <ul>
-<li>ceux-ci doivent faire également partie du résultat de la méthode appelée</li>
-<li>la méthode appelante doit utiliser le résultat de la méthode appelée et non les références des paramètres modifiés qu&#x27;elle a transmis à la méthode appelée.</li>
+  <li>ceux-ci doivent faire également partie du résultat de la méthode appelée
+  </li>
+  <li>la méthode appelante doit utiliser le résultat de la méthode appelée et non les références des paramètres modifiés qu&#x27;elle a transmis à la méthode appelée.
+  </li>
 </ul>
+
 <p>On se laisse ainsi la possibilité de passer une couche d&#x27;une architecture <em>locale</em> à une architecture <em>distante</em> sans modification de code. Réexaminons, à cette lumière, l&#x27;interface [ICotisationDao] :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-48-2"> 2</a></span>
@@ -2921,12 +3135,18 @@
 <a id="__codelineno-48-18" name="__codelineno-48-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 8 : le cas de la méthode <em>create</em> a été traité</li>
-<li>ligne 10 : la méthode <em>edit</em> utilise son paramètre [Cotisation <em>cotisation1</em>] pour mettre à jour l&#x27;enregistrement de la table [COTISATIONS] ayant la même clé primaire que l&#x27;objet <em>cotisation</em>. Elle rend comme résultat l&#x27;objet <em>cotisation2</em> image de l&#x27;enregistrement modifié. Le paramètre <em>cotisation1</em> n&#x27;est lui pas modifié. La méthode doit rendre <em>cotisation2</em> comme résultat qu&#x27;on soit dans le cadre d&#x27;une architecture <em>distante</em> ou <em>locale</em>.</li>
-<li>ligne 12 : la méthode <em>destroy</em> supprime l&#x27;enregistrement de la table [COTISATIONS] ayant la même clé primaire que l&#x27;objet <em>cotisation</em> passé en paramètre. Celui-ci n&#x27;est pas modifié. Il n&#x27;a donc pas à être rendu.</li>
-<li>ligne 14 : le paramètre <em>id</em> de la méthode <em>find</em> n&#x27;est pas modifié par la méthode. Il n&#x27;a pas à faire partie du résultat.</li>
-<li>ligne 16 : la méthode <em>findAll</em> n&#x27;a pas de paramètres. On n&#x27;a donc pas à l&#x27;étudier.</li>
+  <li>ligne 8 : le cas de la méthode <i>create</i> a été traité
+  </li>
+  <li>ligne 10 : la méthode <i>edit</i> utilise son paramètre [Cotisation <i>cotisation1</i>] pour mettre à jour l&#x27;enregistrement de la table [COTISATIONS] ayant la même clé primaire que l&#x27;objet <i>cotisation</i>. Elle rend comme résultat l&#x27;objet <i>cotisation2</i> image de l&#x27;enregistrement modifié. Le paramètre <i>cotisation1</i> n&#x27;est lui pas modifié. La méthode doit rendre <i>cotisation2</i> comme résultat qu&#x27;on soit dans le cadre d&#x27;une architecture <i>distante</i> ou <i>locale</i>.
+  </li>
+  <li>ligne 12 : la méthode <i>destroy</i> supprime l&#x27;enregistrement de la table [COTISATIONS] ayant la même clé primaire que l&#x27;objet <i>cotisation</i> passé en paramètre. Celui-ci n&#x27;est pas modifié. Il n&#x27;a donc pas à être rendu.
+  </li>
+  <li>ligne 14 : le paramètre <i>id</i> de la méthode <i>find</i> n&#x27;est pas modifié par la méthode. Il n&#x27;a pas à faire partie du résultat.
+  </li>
+  <li>ligne 16 : la méthode <i>findAll</i> n&#x27;a pas de paramètres. On n&#x27;a donc pas à l&#x27;étudier.
+  </li>
 </ul>
+
 <p>Au final, seule la signature de la méthode <em>create</em> doit être adaptée pour être utilisable dans le cadre d&#x27;une architecture <em>distante</em>. Les raisonnements précédents seront valables pour les autres interfaces [DAO]. Nous ne les répèterons pas et utiliserons directement des signatures utilisables aussi bien dans le cadre d&#x27;une architecture <em>distante</em> que <em>locale</em>.</p>
 <p>L&#x27;interface [DAO] pour les accès aux entités [Indemnite] de la table [INDEMNITES] sera la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1"> 1</a></span>
@@ -2966,13 +3186,20 @@
 <a id="__codelineno-49-18" name="__codelineno-49-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 6, l&#x27;interface [IIndemniteDao] gère les accès à l&#x27;entité [Indemnite] et donc à la table [INDEMNITES] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [INDEMNITES]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.</li>
-<li>ligne 8 : la méthode [create] crée une nouvelle entité [Indemnite]</li>
-<li>ligne 10 : la méthode [edit] modifie une entité [Indemnite] existante</li>
-<li>ligne 12 : la méthode [destroy] supprime une entité [Indemnite] existante</li>
-<li>ligne 14 : la méthode [find] permet de retrouver une entité [Indemnite] existante via son identifiant <em>id</em></li>
-<li>ligne 16 : la méthode [findAll] rend dans une liste toutes les entités [Indemnite] existantes</li>
+  <li>ligne 6, l&#x27;interface [IIndemniteDao] gère les accès à l&#x27;entité [Indemnite] et donc à la table [INDEMNITES] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [INDEMNITES]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.
+  </li>
+  <li>ligne 8 : la méthode [create] crée une nouvelle entité [Indemnite]
+  </li>
+  <li>ligne 10 : la méthode [edit] modifie une entité [Indemnite] existante
+  </li>
+  <li>ligne 12 : la méthode [destroy] supprime une entité [Indemnite] existante
+  </li>
+  <li>ligne 14 : la méthode [find] permet de retrouver une entité [Indemnite] existante via son identifiant <i>id</i>
+  </li>
+  <li>ligne 16 : la méthode [findAll] rend dans une liste toutes les entités [Indemnite] existantes
+  </li>
 </ul>
+
 <p>L&#x27;interface [DAO] pour les accès aux entités [Employe] de la table [EMPLOYES] sera la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-50-2"> 2</a></span>
@@ -3013,34 +3240,52 @@
 <a id="__codelineno-50-19" name="__codelineno-50-19"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 6, l&#x27;interface [IEmployeDao] gère les accès à l&#x27;entité [Employe] et donc à la table [EMPLOYES] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [EMPLOYES]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.</li>
-<li>ligne 8 : la méthode [create] crée une nouvelle entité [Employe]</li>
-<li>ligne 10 : la méthode [edit] modifie une entité [Employe] existante</li>
-<li>ligne 12 : la méthode [destroy] supprime une entité [Employe] existante</li>
-<li>ligne 14 : la méthode [find] permet de retrouver une entité [Employe] existante via son identifiant <em>id</em></li>
-<li>ligne 16 : la méthode [find(String SS)] permet de retrouver une entité [Employe] existante via son n° SS. Nous avons vu que cette méthode était nécessaire à l&#x27;application console.</li>
-<li>ligne 18 : la méthode [findAll] rend dans une liste toutes les entités [Employe] existantes. Nous avons vu que cette méthode était nécessaire à l&#x27;application graphique.</li>
+  <li>ligne 6, l&#x27;interface [IEmployeDao] gère les accès à l&#x27;entité [Employe] et donc à la table [EMPLOYES] de la base de données. Notre application n&#x27;a besoin que de la méthode [findAll] de la ligne 16 qui permet de retrouver tout le contenu de la table [EMPLOYES]. On a voulu ici se mettre dans un cas plus général où toutes les opérations CRUD (Create, Read, Update, Delete) sont effectuées sur l&#x27;entité.
+  </li>
+  <li>ligne 8 : la méthode [create] crée une nouvelle entité [Employe]
+  </li>
+  <li>ligne 10 : la méthode [edit] modifie une entité [Employe] existante
+  </li>
+  <li>ligne 12 : la méthode [destroy] supprime une entité [Employe] existante
+  </li>
+  <li>ligne 14 : la méthode [find] permet de retrouver une entité [Employe] existante via son identifiant <i>id</i>
+  </li>
+  <li>ligne 16 : la méthode [find(String SS)] permet de retrouver une entité [Employe] existante via son n° SS. Nous avons vu que cette méthode était nécessaire à l&#x27;application console.
+  </li>
+  <li>ligne 18 : la méthode [findAll] rend dans une liste toutes les entités [Employe] existantes. Nous avons vu que cette méthode était nécessaire à l&#x27;application graphique.
+  </li>
 </ul>
+
 <p><a id="refheading87373112820228"></a></p>
 <h2 id="58-la-classe-pamexception">5.8. La classe [PamException]</h2>
 <p>La couche [DAO] va travailler avec l&#x27;API JDBC de Java. Cette API lance des exceptions contrôlées de type [SQLException] qui présentent deux inconvénients :</p>
 <ul>
-<li>elles alourdissent le code qui doit obligatoirement gérer ces exceptions avec des try / catch.</li>
-<li>elles doivent être déclarées dans la signature des méthodes de l&#x27;interface [IDao] par un &quot;throws SQLException&quot;. Ceci a pour conséquence d&#x27;empêcher l&#x27;implémentation de cette interface par des classes qui lanceraient une exception contrôlée d&#x27;un type différent de [SQLException].</li>
+  <li>elles alourdissent le code qui doit obligatoirement gérer ces exceptions avec des try / catch.
+  </li>
+  <li>elles doivent être déclarées dans la signature des méthodes de l&#x27;interface [IDao] par un &quot;throws SQLException&quot;. Ceci a pour conséquence d&#x27;empêcher l&#x27;implémentation de cette interface par des classes qui lanceraient une exception contrôlée d&#x27;un type différent de [SQLException].
+  </li>
 </ul>
+
 <p>Pour remédier à ce problème, la couche [DAO] ne &quot;remontera&quot; que des exceptions non contrôlées de type [PamException].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA00000156C1BCC2C5.png" style="display:inline-block; margin:4px;width:16.431cm;height:4.524cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA00000156C1BCC2C5.png" /></td></tr></table>
 
 <ul>
-<li>la couche [JDBC] lance des exceptions de type [SQLException]</li>
-<li>la couche [JPA]  lance des exceptions propres à l&#x27;implémentation JPA utilisée</li>
-<li>la couche [DAO] lance des exceptions de type [PamException] non contrôlées</li>
+  <li>la couche [JDBC] lance des exceptions de type [SQLException]
+  </li>
+  <li>la couche [JPA]  lance des exceptions propres à l&#x27;implémentation JPA utilisée
+  </li>
+  <li>la couche [DAO] lance des exceptions de type [PamException] non contrôlées
+  </li>
 </ul>
+
 <p>Ceci a deux conséquences :</p>
 <ul>
-<li>la couche [metier] n&#x27;aura pas l&#x27;obligation de gérer les exceptions de la couche [DAO] avec des try / catch. Elle pourra simplement les laisser remonter jusqu&#x27;à la couche [ui].</li>
-<li>les méthodes de l&#x27;interface [IDao] n&#x27;ont pas à mettre dans leur signature la nature de l&#x27;exception [PamException], ce qui laisse la possiblité d&#x27;implémenter cette interface avec des classes qui lanceraient un autre type d&#x27;exception non contrôlée.</li>
+  <li>la couche [metier] n&#x27;aura pas l&#x27;obligation de gérer les exceptions de la couche [DAO] avec des try / catch. Elle pourra simplement les laisser remonter jusqu&#x27;à la couche [ui].
+  </li>
+  <li>les méthodes de l&#x27;interface [IDao] n&#x27;ont pas à mettre dans leur signature la nature de l&#x27;exception [PamException], ce qui laisse la possiblité d&#x27;implémenter cette interface avec des classes qui lanceraient un autre type d&#x27;exception non contrôlée.
+  </li>
 </ul>
+
 <p>La classe [PamException] sera placée dans le paquetage [exception] du projet Netbeans :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001420000011AFBAADF97.png" style="display:inline-block; margin:4px;width:4.26cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000001420000011AFBAADF97.png" /></td></tr></table>
 
@@ -3124,15 +3369,22 @@
 <a id="__codelineno-51-39" name="__codelineno-51-39"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 4 : [PamException] dérive de [RuntimeException]. C&#x27;est donc un type d&#x27;exceptions que le compilateur ne nous oblige pas à gérer par un try / catch ou à mettre dans la signature des méthodes. C&#x27;est pour cette raison, que [PamException] n&#x27;est pas dans la signature des méthodes de l&#x27;interface [IDao]. Cela permet à cette interface d&#x27;être implémentée par une classe lançant un autre type d&#x27;exceptions, pourvu que celui-ci dérive également de [RuntimeException].</li>
-<li>pour différencier les erreurs qui peuvent se produire, on utilise le code erreur de la ligne 7. Les trois constructeurs des lignes 14, 19 et 24 sont ceux de la classe parente [RuntimeException] auxquels on a rajouté un paramètre : celui du code d&#x27;erreur qu&#x27;on veut donner à l&#x27;exception.</li>
+  <li>ligne 4 : [PamException] dérive de [RuntimeException]. C&#x27;est donc un type d&#x27;exceptions que le compilateur ne nous oblige pas à gérer par un try / catch ou à mettre dans la signature des méthodes. C&#x27;est pour cette raison, que [PamException] n&#x27;est pas dans la signature des méthodes de l&#x27;interface [IDao]. Cela permet à cette interface d&#x27;être implémentée par une classe lançant un autre type d&#x27;exceptions, pourvu que celui-ci dérive également de [RuntimeException].
+  </li>
+  <li>pour différencier les erreurs qui peuvent se produire, on utilise le code erreur de la ligne 7. Les trois constructeurs des lignes 14, 19 et 24 sont ceux de la classe parente [RuntimeException] auxquels on a rajouté un paramètre : celui du code d&#x27;erreur qu&#x27;on veut donner à l&#x27;exception.
+  </li>
 </ul>
+
 <p>Le fonctionnement de l&#x27;application, du point de vue des exceptions, sera le suivant :</p>
 <ul>
-<li>la couche [DAO] encapsulera toute exception rencontrée, dans une exception de type [PamException], et relancera cette dernière pour la couche [métier].</li>
-<li>la couche [métier] laissera remonter les exceptions lancées par la couche [DAO]. Elle encapsulera toute exception survenant dans la couche [métier], dans une exception de type [PamException] et relancera cette dernière pour la couche [ui].</li>
-<li>la couche [ui] intercepte toutes les exceptions qui remontent des couches [métier] et [DAO]. Elle se contentera d&#x27;afficher l&#x27;exception sur la console ou l&#x27;interface graphique.</li>
+  <li>la couche [DAO] encapsulera toute exception rencontrée, dans une exception de type [PamException], et relancera cette dernière pour la couche [métier].
+  </li>
+  <li>la couche [métier] laissera remonter les exceptions lancées par la couche [DAO]. Elle encapsulera toute exception survenant dans la couche [métier], dans une exception de type [PamException] et relancera cette dernière pour la couche [ui].
+  </li>
+  <li>la couche [ui] intercepte toutes les exceptions qui remontent des couches [métier] et [DAO]. Elle se contentera d&#x27;afficher l&#x27;exception sur la console ou l&#x27;interface graphique.
+  </li>
 </ul>
+
 <p>Examinons maintenant successivement l&#x27;implémentation des couches [DAO] et [metier].</p>
 <p><a id="refheading87375112820228"></a></p>
 <h2 id="59-la-couche-dao-de-lapplication-pam">5.9. La couche [DAO] de l&#x27;application [PAM]</h2>
@@ -3155,7 +3407,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D50000019CA14B608C.png" style="display:inline-block; margin:4px;width:6.205cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D50000019CA14B608C.png" /></td></tr></table>
 
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>Question</strong> : écrire le contenu de ces deux fichiers. On supposera que la base de données utilisée est la base MySQL5 [dbpam_hibernate] générée par le script SQL [dbpam_hibernate.sql]. Le fichier Spring définira les trois beans suivants : <em>employeDao</em> de type <em>EmployeDao, indemniteDao</em> de type <em>IndemniteDao, cotisationDao </em>de type <em>CotisationDao. </em>Par ailleurs, l&#x27;implémentation JPA utilisée sera <em>Hibernate</em>.</p>
+<p><strong>Question</strong> : écrire le contenu de ces deux fichiers. On supposera que la base de données utilisée est la base MySQL5 [dbpam_hibernate] générée par le script SQL [dbpam_hibernate.sql]. Le fichier Spring définira les trois beans suivants : <em>employeDao</em> de type <em>EmployeDao, indemniteDao</em> de type <em>IndemniteDao, cotisationDao</em> de type <em>CotisationDao.</em> Par ailleurs, l&#x27;implémentation JPA utilisée sera <em>Hibernate</em>.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><a id="refheading87381112820228"></a></p>
 <h3 id="593-tests">5.9.3. Tests</h3>
@@ -3171,9 +3423,12 @@
 <p>Les classes placées dans la branche [Test Packages] ont connaissance des classes présentes dans la branche [Source Packages] ainsi que des bibliothèques de classes du projet. Si les tests ont besoin de bibliothèques autres que celles du projet, celles-ci doivent être déclarées dans la branche [Test Libraries] [2].</p>
 <p>Les classes de tests utilisent l&#x27;outil de tests unitaires <strong>JUnit</strong> :</p>
 <ul>
-<li>[JUnitInitDB] ne fait aucun test. Elle remplit la base de données avec quelques enregistrements et affiche ensuite ceux-ci sur la console.</li>
-<li>[JUnitDao] fait une série de tests dont elle vérifie le résultat.</li>
+  <li>[JUnitInitDB] ne fait aucun test. Elle remplit la base de données avec quelques enregistrements et affiche ensuite ceux-ci sur la console.
+  </li>
+  <li>[JUnitDao] fait une série de tests dont elle vérifie le résultat.
+  </li>
 </ul>
+
 <p>Le squelette de la classe [JUnitInitDB] est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-52-2"> 2</a></span>
@@ -3244,10 +3499,14 @@
 <a id="__codelineno-52-34" name="__codelineno-52-34"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>la méthode [init] est exécutée avant le début de la série des tests (annotation @BeforeClass). Elle instancie la couche [DAO].</li>
-<li>la méthode [clean] est exécutée avant chaque test (annotation @Before). Elle vide la base de données.</li>
-<li>la méthode [initDB] est un test (annotation @Test). C&#x27;est le seul. Un test doit contenir des  instructions d&#x27;assertion <strong>Assert.assertCondition</strong>. Ici il n&#x27;y en aura aucune. La méthode est donc un faux test. Elle a pour rôle de remplir la base de données avec quelques lignes puis d&#x27;afficher le contenu de la base sur la console. Ce sont les méthodes <em>create</em> et <em>findAll</em> des couches [DAO] qui sont ici utilisées.</li>
+  <li>la méthode [init] est exécutée avant le début de la série des tests (annotation @BeforeClass). Elle instancie la couche [DAO].
+  </li>
+  <li>la méthode [clean] est exécutée avant chaque test (annotation @Before). Elle vide la base de données.
+  </li>
+  <li>la méthode [initDB] est un test (annotation @Test). C&#x27;est le seul. Un test doit contenir des  instructions d&#x27;assertion <b>Assert.assertCondition</b>. Ici il n&#x27;y en aura aucune. La méthode est donc un faux test. Elle a pour rôle de remplir la base de données avec quelques lignes puis d&#x27;afficher le contenu de la base sur la console. Ce sont les méthodes <i>create</i> et <i>findAll</i> des couches [DAO] qui sont ici utilisées.
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Question</strong> : compléter le code de la classe [JUnitInitDB]. On s&#x27;aidera de l&#x27;exemple du paragraphe 3.1.6 de [<a href="http://tahe.developpez.com/java/jpa"><strong>ref1</strong></a>]. Le code génèrera le contenu présenté au paragraphe <a href="#dbpam">5.1</a>.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -3258,15 +3517,21 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000498000001A3674C9AE5.png" style="display:inline-block; margin:4px;width:15.558cm;height:5.544cm;" class="odt-zoomable" data-zoom-src="images/1000000000000498000001A3674C9AE5.png" /></td></tr></table>
 
 <ul>
-<li>les classes [1], les fichiers de configuration [2] et les classes de test de la couche [DAO] [3]sont mis en place,</li>
+  <li>les classes [1], les fichiers de configuration [2] et les classes de test de la couche [DAO] [3]sont mis en place,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051200000230ED1415FF.png" style="display:inline-block; margin:4px;width:17.171cm;height:7.408cm;" class="odt-zoomable" data-zoom-src="images/100000000000051200000230ED1415FF.png" /></td></tr></table>
 
 <ul>
-<li>le projet est construit [4]</li>
-<li>la classe [JUnitInitDB] est exécutée [5]. Le SGBD MySQL5 est lancé avec une base [dbpam_hibernate] existante,</li>
-<li>la fenêtre [Test Results] [6] dit que les tests ont été réussis. Ce message n&#x27;est pas significatif ici, car le programme [JUnitInitDB] ne contient aucune instruction d&#x27;assertion <strong>Assert</strong>.<strong>assertCondition</strong>, qui pourrait provoquer l&#x27;échec du test. Néanmoins, cela montre qu&#x27;il n&#x27;y a pas eu d&#x27;exception à l&#x27;exécution du test.</li>
+  <li>le projet est construit [4]
+  </li>
+  <li>la classe [JUnitInitDB] est exécutée [5]. Le SGBD MySQL5 est lancé avec une base [dbpam_hibernate] existante,
+  </li>
+  <li>la fenêtre [Test Results] [6] dit que les tests ont été réussis. Ce message n&#x27;est pas significatif ici, car le programme [JUnitInitDB] ne contient aucune instruction d&#x27;assertion <b>Assert</b>.<b>assertCondition</b>, qui pourrait provoquer l&#x27;échec du test. Néanmoins, cela montre qu&#x27;il n&#x27;y a pas eu d&#x27;exception à l&#x27;exécution du test.
+  </li>
 </ul>
+
 <p>La fenêtre [Output] contient les logs de l&#x27;exécution, ceux de Spring et ceux du test lui-même. Les affichages faits par la classe [JUnitInitDB] sont les suivants :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-53-2"> 2</a></span>
@@ -3292,9 +3557,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005090000010FCAE38361.png" style="display:inline-block; margin:4px;width:17.053cm;height:3.586cm;" class="odt-zoomable" data-zoom-src="images/10000000000005090000010FCAE38361.png" /></td></tr></table>
 
 <ul>
-<li>en [1], dans l&#x27;onglet [services], on visualise les données de la table [employes] de la connexion [dbpam_hibernate] [2],</li>
-<li>en [3] le résultat.</li>
+  <li>en [1], dans l&#x27;onglet [services], on visualise les données de la table [employes] de la connexion [dbpam_hibernate] [2],
+  </li>
+  <li>en [3] le résultat.
+  </li>
 </ul>
+
 <p><a id="refheading87389112820228"></a></p>
 <p><a id="refheading87391112820228"></a>
 <a id="tests-dao-testngdao"></a></p>
@@ -3688,9 +3956,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004760000020DB17B873F.png" style="display:inline-block; margin:4px;width:15.108cm;height:6.946cm;" class="odt-zoomable" data-zoom-src="images/10000000000004760000020DB17B873F.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on exécute la classe de tests</li>
-<li>en [2], les résultats des tests dans la fenêtre [Test Results]</li>
+  <li>en [1], on exécute la classe de tests
+  </li>
+  <li>en [2], les résultats des tests dans la fenêtre [Test Results]
+  </li>
 </ul>
+
 <p>Provoquons une erreur pour voir comment cela est signalé dans la page des résultats :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-55-2"> 2</a></span>
@@ -3734,9 +4005,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002250000015A5AC811F1.png" style="display:inline-block; margin:4px;width:7.264cm;height:4.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000002250000015A5AC811F1.png" /></td></tr></table>
 
 <ul>
-<li>la page des résultats [1] montre maintenant qu&#x27;il y a eu des tests non réussis.</li>
-<li>en [2], un résumé de l&#x27;exception qui a fait échouer le test. On y trouve le n° de la ligne du code Java où s&#x27;est produite l&#x27;exception.</li>
+  <li>la page des résultats [1] montre maintenant qu&#x27;il y a eu des tests non réussis.
+  </li>
+  <li>en [2], un résumé de l&#x27;exception qui a fait échouer le test. On y trouve le n° de la ligne du code Java où s&#x27;est produite l&#x27;exception.
+  </li>
 </ul>
+
 <p><a id="refheading87395112820228"></a></p>
 <h2 id="510-la-couche-metier-de-lapplication-pam">5.10. La couche [metier] de l&#x27;application [PAM]</h2>
 <p>Maintenant que la couche [DAO] a été écrite, nous passons à l&#x27;étude de la couche métier [2] :</p>
@@ -3837,15 +4111,24 @@
 <a id="__codelineno-57-31" name="__codelineno-57-31"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 7 : la classe implémente l&#x27;interface <em>Serializable</em> parce que ses instances sont susceptibles d&#x27;être échangées sur le réseau.</li>
-<li>ligne 9 : l&#x27;employé concerné par la feuille de salaire</li>
-<li>ligne 10 : les différents taux de cotisation</li>
-<li>ligne 11 : les différentes indemnités liées à l&#x27;indice de l&#x27;employé</li>
-<li>ligne 12 : les éléments constitutifs de son salaire</li>
-<li>lignes 14-22 : les deux constructeurs de la classe</li>
-<li>lignes 25-27 : méthode [toString] identifiant un objet [FeuilleSalaire] particulier</li>
-<li>lignes 29 et au-delà : les accesseurs publics aux champs privés de la classe</li>
+  <li>ligne 7 : la classe implémente l&#x27;interface <i>Serializable</i> parce que ses instances sont susceptibles d&#x27;être échangées sur le réseau.
+  </li>
+  <li>ligne 9 : l&#x27;employé concerné par la feuille de salaire
+  </li>
+  <li>ligne 10 : les différents taux de cotisation
+  </li>
+  <li>ligne 11 : les différentes indemnités liées à l&#x27;indice de l&#x27;employé
+  </li>
+  <li>ligne 12 : les éléments constitutifs de son salaire
+  </li>
+  <li>lignes 14-22 : les deux constructeurs de la classe
+  </li>
+  <li>lignes 25-27 : méthode [toString] identifiant un objet [FeuilleSalaire] particulier
+  </li>
+  <li>lignes 29 et au-delà : les accesseurs publics aux champs privés de la classe
+  </li>
 </ul>
+
 <p>La classe [ElementsSalaire] référencée ligne 11 de la classe [FeuilleSalaire] ci-dessus, rassemble les éléments constituant une fiche de paie. Sa définition est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-58-2"> 2</a></span>
@@ -3918,16 +4201,26 @@
 <a id="__codelineno-58-35" name="__codelineno-58-35"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 3 : la classe implémente l&#x27;interface <em>Serializable</em> parce qu&#x27;elle est un composant de la classe <em>FeuilleSalaire</em> qui doit être sérialisable.</li>
-<li>ligne 6 : le salaire de base</li>
-<li>ligne 7 : les cotisations sociales payées sur ce salaire de base</li>
-<li>ligne 8 : les indemnités journalières d&#x27;entretien de l&#x27;enfant</li>
-<li>ligne 9 : les indemnités journalières de repas de l&#x27;enfant</li>
-<li>ligne 10 : le salaire net à payer à l&#x27;assistante maternelle</li>
-<li>lignes 12-24 : les constructeurs de la classe</li>
-<li>lignes 27-31 : méthode [toString] identifiant un objet [ElementsSalaire] particulier</li>
-<li>lignes 34 et au-delà : les accesseurs publics aux champs privés de la classe</li>
+  <li>ligne 3 : la classe implémente l&#x27;interface <i>Serializable</i> parce qu&#x27;elle est un composant de la classe <i>FeuilleSalaire</i> qui doit être sérialisable.
+  </li>
+  <li>ligne 6 : le salaire de base
+  </li>
+  <li>ligne 7 : les cotisations sociales payées sur ce salaire de base
+  </li>
+  <li>ligne 8 : les indemnités journalières d&#x27;entretien de l&#x27;enfant
+  </li>
+  <li>ligne 9 : les indemnités journalières de repas de l&#x27;enfant
+  </li>
+  <li>ligne 10 : le salaire net à payer à l&#x27;assistante maternelle
+  </li>
+  <li>lignes 12-24 : les constructeurs de la classe
+  </li>
+  <li>lignes 27-31 : méthode [toString] identifiant un objet [ElementsSalaire] particulier
+  </li>
+  <li>lignes 34 et au-delà : les accesseurs publics aux champs privés de la classe
+  </li>
 </ul>
+
 <p><a id="refheading87401112820228"></a></p>
 <h3 id="5103-la-classe-dimplementation-metier-de-la-couche-metier">5.10.3. La classe d&#x27;implémentation [Metier] de la couche [metier]</h3>
 <p>La classe d&#x27;implémentation [Metier] de la couche [metier] pourrait être la suivante :</p>
@@ -3984,12 +4277,18 @@
 <a id="__codelineno-59-26" name="__codelineno-59-26"></a><span class="w"> </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 5 : l&#x27;annotation Spring <strong>@Transactional</strong> fait que chaque méthode de la classe se déroulera au sein d&#x27;une transaction.</li>
-<li>lignes 9-10 : les référence sur les couches [DAO] des entités [Cotisation, Employe, Indemnite]</li>
-<li>lignes 14-17 : la méthode [calculerFeuilleSalaire]</li>
-<li>lignes 20-22 : la méthode [findAllEmployes]</li>
-<li>ligne 24 et au-delà : les accesseurs publics des champs privés de la classe</li>
+  <li>ligne 5 : l&#x27;annotation Spring <b>@Transactional</b> fait que chaque méthode de la classe se déroulera au sein d&#x27;une transaction.
+  </li>
+  <li>lignes 9-10 : les référence sur les couches [DAO] des entités [Cotisation, Employe, Indemnite]
+  </li>
+  <li>lignes 14-17 : la méthode [calculerFeuilleSalaire]
+  </li>
+  <li>lignes 20-22 : la méthode [findAllEmployes]
+  </li>
+  <li>ligne 24 et au-delà : les accesseurs publics des champs privés de la classe
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Question</strong> : écrire le code de la méthode [findAllEmployes].</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -3998,9 +4297,12 @@
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>On notera les points suivants :</p>
 <ul>
-<li>le mode de calcul du salaire a été expliqué au paragraphe <a href="#mode-calcul-salaire">5.2</a>.</li>
-<li>si le paramètre [SS] ne correspond à aucun employé (la couche [DAO] a renvoyé un pointeur <em>null</em>), la méthode lancera une exception de type [PamException] avec un code d&#x27;erreur approprié.</li>
+  <li>le mode de calcul du salaire a été expliqué au paragraphe <a href="#mode-calcul-salaire">5.2</a>.
+  </li>
+  <li>si le paramètre [SS] ne correspond à aucun employé (la couche [DAO] a renvoyé un pointeur <i>null</i>), la méthode lancera une exception de type [PamException] avec un code d&#x27;erreur approprié.
+  </li>
 </ul>
+
 <p><a id="refheading87403112820228"></a>
 <a id="testng-metier"></a></p>
 <h3 id="5104-tests-de-la-couche-metier">5.10.4. Tests de la couche [metier]</h3>
@@ -4139,12 +4441,16 @@
 <a id="__codelineno-61-7" name="__codelineno-61-7"></a>Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3,234 sec
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 4 : la feuille de salaire de <em>Justine Laverti</em></li>
-<li>ligne 5 : la feuille de salaire de <em>Marie Jouveinal</em></li>
-<li>ligne 6 : l&#x27;exception due au fait que l&#x27;employé de n° SS &#x27;xx&#x27; n&#x27;existe pas.</li>
+  <li>ligne 4 : la feuille de salaire de <i>Justine Laverti</i>
+  </li>
+  <li>ligne 5 : la feuille de salaire de <i>Marie Jouveinal</i>
+  </li>
+  <li>ligne 6 : l&#x27;exception due au fait que l&#x27;employé de n° SS &#x27;xx&#x27; n&#x27;existe pas.
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>Question </strong>: la ligne 17 de [JUnitMetier_1] utilise le bean Spring nommé <em>metier</em>. Donner la définition de ce bean dans le fichier [spring-config-metier-dao.xml].</p>
+<p><strong>Question</strong> : la ligne 17 de [JUnitMetier_1] utilise le bean Spring nommé <em>metier</em>. Donner la définition de ce bean dans le fichier [spring-config-metier-dao.xml].</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>La classe [JUnitMetier_2] pourrait être la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-62-1"> 1</a></span>
@@ -4197,7 +4503,7 @@
 </code></pre></div></td></tr></table></div>
 <p>La classe [JUnitMetier_2] est une copie de la classe [JUnitMetier_1] où cette fois, des assertions ont été placées dans la méthode <em>test01</em>.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>Question </strong>: écrire la méthode <em>test01</em>.</p>
+<p><strong>Question</strong> : écrire la méthode <em>test01</em>.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>Lors de l&#x27;exécution de la classe [JUnitMetier_2], on obtient les résultats suivants si tout va bien :</p>
 <p><img src="images/10000000000000E70000007666DEC9A1.png" style="width:4.279cm;height:2.191cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E70000007666DEC9A1.png" /></p>
@@ -4412,13 +4718,20 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D4000004292C094C0A.png" style="display:inline-block; margin:4px;width:16.351cm;height:14.09cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D4000004292C094C0A.png" /></td></tr></table>
 
 <ul>
-<li>en [1], sélectionner les propriétés du projet,</li>
-<li>en [2], sélectionner la propriété [Run] du projet,</li>
-<li>utiliser le bouton [3] pour désigner la classe (dite classe principale) à exécuter,</li>
-<li>sélectionner la classe [4],</li>
-<li>la classe apparaît en [5]. Celle-ci a besoin de trois arguments pour s&#x27;exécuter (n° SS, nombre d&#x27;heures travaillées, nombre de jours travaillés). Ces arguments sont placés en [6],</li>
-<li>ceci fait, on peut exécuter le projet [7]. La configuration précédente fait que c&#x27;est la classe [ui.console.Main] qui va être exécutée.</li>
+  <li>en [1], sélectionner les propriétés du projet,
+  </li>
+  <li>en [2], sélectionner la propriété [Run] du projet,
+  </li>
+  <li>utiliser le bouton [3] pour désigner la classe (dite classe principale) à exécuter,
+  </li>
+  <li>sélectionner la classe [4],
+  </li>
+  <li>la classe apparaît en [5]. Celle-ci a besoin de trois arguments pour s&#x27;exécuter (n° SS, nombre d&#x27;heures travaillées, nombre de jours travaillés). Ces arguments sont placés en [6],
+  </li>
+  <li>ceci fait, on peut exécuter le projet [7]. La configuration précédente fait que c&#x27;est la classe [ui.console.Main] qui va être exécutée.
+  </li>
 </ul>
+
 <p>Les résultats de l&#x27;exécution sont obtenus dans la fenêtre [output] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000197000000F28B284017.png" style="display:inline-block; margin:4px;width:7.541cm;height:4.48cm;" class="odt-zoomable" data-zoom-src="images/1000000000000197000000F28B284017.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F0000015038370396.png" style="display:inline-block; margin:4px;width:5.02cm;height:6.219cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F0000015038370396.png" /></td></tr></table>
 
@@ -4430,53 +4743,79 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D0000002EFE78E35E1.png" style="display:inline-block; margin:4px;width:16.298cm;height:9.936cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D0000002EFE78E35E1.png" /></td></tr></table>
 
 <ul>
-<li>en [1], la classe [PamJFrame] de l&#x27;interface graphique</li>
-<li>en[2] : l&#x27;interface graphique</li>
+  <li>en [1], la classe [PamJFrame] de l&#x27;interface graphique
+  </li>
+  <li>en[2] : l&#x27;interface graphique
+  </li>
 </ul>
+
 <p><a id="refheading87413112820228"></a></p>
 <h3 id="5121-un-rapide-tutoriel">5.12.1. Un rapide tutoriel</h3>
 <p>Pour créer l&#x27;interface graphique, on pourra procéder de la façon suivante :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A8000000F31ACCAB6B.png" style="display:inline-block; margin:4px;width:15.769cm;height:3.216cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A8000000F31ACCAB6B.png" /></td></tr></table>
 
 <ul>
-<li>[1] : on crée un nouveau fichier avec le bouton [1] [New File...]</li>
-<li>[2] : on choisit la catégorie du fichier [Swing GUI Forms], c.a.d. formulaires graphiques</li>
-<li>[3] : on choisit le type [JFrame Form], un type de formulaire vide</li>
+  <li>[1] : on crée un nouveau fichier avec le bouton [1] [New File...]
+  </li>
+  <li>[2] : on choisit la catégorie du fichier [Swing GUI Forms], c.a.d. formulaires graphiques
+  </li>
+  <li>[3] : on choisit le type [JFrame Form], un type de formulaire vide
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003AE0000015AD56B26B9.png" style="display:inline-block; margin:4px;width:12.462cm;height:4.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000003AE0000015AD56B26B9.png" /></td></tr></table>
 
 <ul>
-<li>[5] : on donne un nom au formulaire qui sera aussi une classe</li>
-<li>[6] : on place le formulaire dans un paquetage</li>
-<li>[8] : le formulaire est ajouté à l&#x27;arborescence du projet</li>
-<li>[9] : le formulaire est accessible selon deux perspectives : [Design] [9] qui permet de dessiner les différents composants du formulaire, [Source] [10 ci-dessous] qui donne accès au code Java du formulaire. Au final, un formulaire est une classe Java comme une autre. La perspective [Design] est une facilité pour dessiner le formulaire. A chaque ajout de composant en mode [Design], du code Java est ajouté dans la perspective [Source] pour le prendre en compte. </li>
+  <li>[5] : on donne un nom au formulaire qui sera aussi une classe
+  </li>
+  <li>[6] : on place le formulaire dans un paquetage
+  </li>
+  <li>[8] : le formulaire est ajouté à l&#x27;arborescence du projet
+  </li>
+  <li>[9] : le formulaire est accessible selon deux perspectives : [Design] [9] qui permet de dessiner les différents composants du formulaire, [Source] [10 ci-dessous] qui donne accès au code Java du formulaire. Au final, un formulaire est une classe Java comme une autre. La perspective [Design] est une facilité pour dessiner le formulaire. A chaque ajout de composant en mode [Design], du code Java est ajouté dans la perspective [Source] pour le prendre en compte. 
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048E00000148309FD571.png" style="display:inline-block; margin:4px;width:15.425cm;height:4.339cm;" class="odt-zoomable" data-zoom-src="images/100000000000048E00000148309FD571.png" /></td></tr></table>
 
 <ul>
-<li>[11] : la liste des composants Swing disponibles pour un formulaire est trouvée dans la fenêtre [Palette].</li>
-<li>[12] : la fenêtre [Inspector] présente l&#x27;arborescence des composants du formulaire. Les composants ayant une représentation visuelle se retrouveront dans la branche [JFrame], les autres dans la branche [Other Components].</li>
+  <li>[11] : la liste des composants Swing disponibles pour un formulaire est trouvée dans la fenêtre [Palette].
+  </li>
+  <li>[12] : la fenêtre [Inspector] présente l&#x27;arborescence des composants du formulaire. Les composants ayant une représentation visuelle se retrouveront dans la branche [JFrame], les autres dans la branche [Other Components].
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C4000001404645DF40.png" style="display:inline-block; margin:4px;width:16.14cm;height:4.233cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C4000001404645DF40.png" /></td></tr></table>
 
 <ul>
-<li>en [13], nous sélectionnons un composant [JLabel] par un clic simple</li>
-<li>en [14], nous le déposons sur le formulaire en mode [Design]</li>
-<li>en [15], nous définissons les propriétés du JLabel (text, font).</li>
+  <li>en [13], nous sélectionnons un composant [JLabel] par un clic simple
+  </li>
+  <li>en [14], nous le déposons sur le formulaire en mode [Design]
+  </li>
+  <li>en [15], nous définissons les propriétés du JLabel (text, font).
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AB000000CB7A008CCF.png" style="display:inline-block; margin:4px;width:15.81cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AB000000CB7A008CCF.png" /></td></tr></table>
 
 <ul>
-<li>en [16], le résultat obtenu.</li>
-<li>en [17], on demande la prévisualisation du formulaire</li>
-<li>en [18], le résultat</li>
-<li>en [19], le label [JLabel1] a été ajouté à l&#x27;arborescence des composants dans la fenêtre [Inspector]</li>
+  <li>en [16], le résultat obtenu.
+  </li>
+  <li>en [17], on demande la prévisualisation du formulaire
+  </li>
+  <li>en [18], le résultat
+  </li>
+  <li>en [19], le label [JLabel1] a été ajouté à l&#x27;arborescence des composants dans la fenêtre [Inspector]
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA000002F8DC41D2CC.png" style="display:inline-block; margin:4px;width:16.431cm;height:10.054cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA000002F8DC41D2CC.png" /></td></tr></table>
 
 <ul>
-<li>en [20] et [21] : dans la perspective [Source] du formulaire, du code Java a été ajouté pour gérer le JLabel ajouté.</li>
+  <li>en [20] et [21] : dans la perspective [Source] du formulaire, du code Java a été ajouté pour gérer le JLabel ajouté.
+  </li>
 </ul>
+
 <p>Un tutoriel sur la construction de formulaires avec Netbeans est disponible à l&#x27;url [<a href="http://www.netbeans.org/kb/trails/matisse.html">http://www.netbeans.org/kb/trails/matisse.html</a>].</p>
 <p><a id="refheading87415112820228"></a></p>
 <h3 id="5122-linterface-graphique-pamjframe">5.12.2. L&#x27;interface graphique [PamJFrame]</h3>
@@ -4484,9 +4823,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B8000002FA2DEEFF9D.png" style="display:inline-block; margin:4px;width:15.981cm;height:10.081cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B8000002FA2DEEFF9D.png" /></td></tr></table>
 
 <ul>
-<li>en [1], l&#x27;interface graphique</li>
-<li>en [2], l&#x27;arborescence de ses composants : un JLabel et six conteneurs JPanel</li>
+  <li>en [1], l&#x27;interface graphique
+  </li>
+  <li>en [2], l&#x27;arborescence de ses composants : un JLabel et six conteneurs JPanel
+  </li>
 </ul>
+
 <p><strong>JLabel1</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000950000006F5EDC6E35.png" style="display:inline-block; margin:4px;width:2.76cm;height:2.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000000950000006F5EDC6E35.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028D00000050324379E5.png" style="display:inline-block; margin:4px;width:8.229cm;height:1.007cm;" class="odt-zoomable" data-zoom-src="images/100000000000028D00000050324379E5.png" /></td></tr></table>
 
@@ -4654,13 +4996,20 @@
 <a id="__codelineno-69-42" name="__codelineno-69-42"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 29-35 : la méthode statique [main] qui lance l&#x27;application</li>
-<li>ligne 32 : une instance de l&#x27;interface graphique [PamJFrame] est créée et rendue visible.</li>
-<li>lignes 7-9 : le constructeur de l&#x27;interface graphique.</li>
-<li>ligne 8 : appel à la méthode [initComponents] définie ligne 17. Cette méthode est auto-générée à partir du travail fait en mode [Design]. On ne doit pas y toucher.</li>
-<li>ligne 21 : la méthode qui va gérer le déplacement du curseur de saisie dans le champ [jTextFieldHT]</li>
-<li>ligne 25 : la méthode qui va gérer le clic sur le bouton [jButtonSalaire]</li>
+  <li>lignes 29-35 : la méthode statique [main] qui lance l&#x27;application
+  </li>
+  <li>ligne 32 : une instance de l&#x27;interface graphique [PamJFrame] est créée et rendue visible.
+  </li>
+  <li>lignes 7-9 : le constructeur de l&#x27;interface graphique.
+  </li>
+  <li>ligne 8 : appel à la méthode [initComponents] définie ligne 17. Cette méthode est auto-générée à partir du travail fait en mode [Design]. On ne doit pas y toucher.
+  </li>
+  <li>ligne 21 : la méthode qui va gérer le déplacement du curseur de saisie dans le champ [jTextFieldHT]
+  </li>
+  <li>ligne 25 : la méthode qui va gérer le clic sur le bouton [jButtonSalaire]
+  </li>
 </ul>
+
 <p>Pour ajouter au code précédent nos propres initialisations, nous pouvons procéder comme suit :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-70-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-70-2"> 2</a></span>
@@ -4747,8 +5096,10 @@
 <a id="__codelineno-70-42" name="__codelineno-70-42"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 4 : on appelle une méthode propriétaire pour faire nos propres initialisations. Celles-ci sont définies par le code des lignes 10-42</li>
+  <li>ligne 4 : on appelle une méthode propriétaire pour faire nos propres initialisations. Celles-ci sont définies par le code des lignes 10-42
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Question</strong> : en vous aidant des commentaires, compléter le code de la procédure [doMyInit].</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -4766,8 +5117,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000027C0000012BE9F9DEDD.png" style="display:inline-block; margin:4px;width:8.414cm;height:3.956cm;" class="odt-zoomable" data-zoom-src="images/100000000000027C0000012BE9F9DEDD.png" /></td></tr></table>
 
 <ul>
-<li>en [1], mettre la classe de l&#x27;interface graphique</li>
+  <li>en [1], mettre la classe de l&#x27;interface graphique
+  </li>
 </ul>
+
 <p>Le projet doit être complet avec ses fichiers de configuration (persistence.xml, spring-config-metier-dao.xml) et la classe de l&#x27;interface graphique. On lancera Le SGBD cible avant d&#x27;exécuter le projet.</p>
 <p><a id="refheading87425112820228"></a>
 <a id="swing-metier-dao-jpa-spring-toplink"></a></p>
@@ -4781,22 +5134,33 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045D0000032B461F0D21.png" style="display:inline-block; margin:4px;width:14.778cm;height:10.73cm;" class="odt-zoomable" data-zoom-src="images/100000000000045D0000032B461F0D21.png" /></td></tr></table>
 
 <ul>
-<li>en [1] : après un clic droit sur le projet Hibernate, choisir <em>Copy</em></li>
-<li>à l&#x27;aide du bouton [2], choisir le dossier parent du nouveau projet. Le nom du dossier apparaît en [3].</li>
-<li>en [4], donner un nom au nouveau projet</li>
-<li>en [5], le nom du dossier du projet</li>
+  <li>en [1] : après un clic droit sur le projet Hibernate, choisir <i>Copy</i>
+  </li>
+  <li>à l&#x27;aide du bouton [2], choisir le dossier parent du nouveau projet. Le nom du dossier apparaît en [3].
+  </li>
+  <li>en [4], donner un nom au nouveau projet
+  </li>
+  <li>en [5], le nom du dossier du projet
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EE000002F65267DAB2.png" style="display:inline-block; margin:4px;width:16.695cm;height:10.028cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EE000002F65267DAB2.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le nouveau projet a été créé. Il porte le même nom que l&#x27;original,</li>
-<li>en [2] et [3], on le renomme [mv-pam-spring-eclipselink].</li>
+  <li>en [1], le nouveau projet a été créé. Il porte le même nom que l&#x27;original,
+  </li>
+  <li>en [2] et [3], on le renomme [mv-pam-spring-eclipselink].
+  </li>
 </ul>
+
 <p>Le projet doit être modifié en deux points pour l&#x27;adapter à la nouvelle couche JPA / EclipseLink :</p>
 <ol>
-<li>en [4], les fichiers de configuration de Spring doivent être modifiés. On y trouve en effet la configuration de la couche JPA.</li>
-<li>en [5], les bibliothèques du projet doivent être modifiées : celles d&#x27;Hibernate doivent être remplacées par celles de EclipseLink.</li>
+  <li>en [4], les fichiers de configuration de Spring doivent être modifiés. On y trouve en effet la configuration de la couche JPA.
+  </li>
+  <li>en [5], les bibliothèques du projet doivent être modifiées : celles d&#x27;Hibernate doivent être remplacées par celles de EclipseLink.
+  </li>
 </ol>
+
 <p>Commençons par ce dernier point. Le fichier [pom.xml] pour le nouveau projet sera celui-ci :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -4896,9 +5260,12 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 73-82 : les dépendances pour l&#x27;implémentation JPA EclipseLink,</li>
-<li>lignes 19-24 : le dépôt Maven pour EclipseLink.</li>
+  <li>lignes 73-82 : les dépendances pour l&#x27;implémentation JPA EclipseLink,
+  </li>
+  <li>lignes 19-24 : le dépôt Maven pour EclipseLink.
+  </li>
 </ul>
+
 <p>Les fichiers de configuration de Spring doivent être modifiés pour indiquer que l&#x27;implémentation JPA a changé. Dans les deux fichiers, seule la section configurant la couche JPA change. Par exemple dans [spring-config-metier-dao.xml] on a :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-71-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-71-2"> 2</a></span>
@@ -5035,11 +5402,16 @@
 <a id="__codelineno-72-18" name="__codelineno-72-18"></a><span class="s">&lt;/bean&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 5 : l&#x27;implémentation JPA utilisée est EclipseLink</li>
-<li>ligne 9 : la propriété <em>databasePlatform</em> fixe le SGBD cible, ici MySQL</li>
-<li>ligne 11 : pour générer les tables de la base de données lorsque la couche JPA est instanciée. Ici, la propriété est en commentaires.</li>
-<li>ligne 7 : pour visualiser sur la console les ordres SQL émis par la couche JPA. Ici, la propriété est en commentaires.</li>
+  <li>ligne 5 : l&#x27;implémentation JPA utilisée est EclipseLink
+  </li>
+  <li>ligne 9 : la propriété <i>databasePlatform</i> fixe le SGBD cible, ici MySQL
+  </li>
+  <li>ligne 11 : pour générer les tables de la base de données lorsque la couche JPA est instanciée. Ici, la propriété est en commentaires.
+  </li>
+  <li>ligne 7 : pour visualiser sur la console les ordres SQL émis par la couche JPA. Ici, la propriété est en commentaires.
+  </li>
 </ul>
+
 <p>Par ailleurs, la base de données cible devient [dbpam_eclipselink] (ligne 4 ci-dessous) :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-73-1">1</a></span>
 <span class="normal"><a href="#__codelineno-73-2">2</a></span>
@@ -5063,9 +5435,12 @@
 <h3 id="5132-mise-en-oeuvre-des-tests">5.13.2. Mise en oeuvre des tests</h3>
 <p>Avant de tester l&#x27;application entière, il est bon de vérifier si les tests JUnit passent avec la nouvelle implémentation JPA. Avant de les faire, on commencera par supprimer les tables de la base de données. Pour cela, dans l&#x27;onglet [Runtime] de Netbeans, si besoin est, on créera une  connexion sur la base <em>dbpam_eclipselink</em> / MySQL5. Une fois connecté à  la base <em>dbpam_eclipselink</em> / MySQL5, on pourra procéder à la suppression des tables comme montré ci-dessous :</p>
 <ul>
-<li>[1] : avant la suppression</li>
-<li>[2] : après la suppression</li>
+  <li>[1] : avant la suppression
+  </li>
+  <li>[2] : après la suppression
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000432000001690DBDC56C.png" style="display:inline-block; margin:4px;width:14.208cm;height:4.777cm;" class="odt-zoomable" data-zoom-src="images/1000000000000432000001690DBDC56C.png" /></td></tr></table>
 
 <p>Ceci fait, on peut exécuter le premier test sur la couche [DAO] : <em>InitDB</em> qui remplit la base. Pour que les tables détruites précédemment soient recréées par l&#x27;application, il faut s&#x27;assurer que dans la configuration JPA / EclipseLink de Spring la ligne :</p>
@@ -5076,9 +5451,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C0000020F47584DC3.png" style="display:inline-block; margin:4px;width:14.552cm;height:6.973cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C0000020F47584DC3.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le test <em>InitDB</em> est exécuté.</li>
-<li>en [2], il échoue. L&#x27;exception est lancée par Spring et non par un test qui aurait échoué. </li>
+  <li>en [1], le test <i>InitDB</i> est exécuté.
+  </li>
+  <li>en [2], il échoue. L&#x27;exception est lancée par Spring et non par un test qui aurait échoué. 
+  </li>
 </ul>
+
 <p><em>Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#x27;entityManagerFactory&#x27; defined in class path resource [spring-config-DAO.xml]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Must start with Java agent to use InstrumentationLoadTimeWeaver. See Spring documentation.</em></p>
 <p>Spring indique qu&#x27;il y a un problème de configuration. Le message n&#x27;est pas clair. La raison de l&#x27;exception a été expliquée au paragraphe 3.1.9 de [<a href="http://tahe.developpez.com/java/jpa"><strong>ref1</strong></a>]. Pour que la configuration Spring / EclipseLink fonctionne, la JVM qui exécute l&#x27;application doit être lancée avec un paramètre particulier, un agent Java. La forme de ce paramètre est la suivante :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>-javaagent:C:\...\spring-agent.jar
@@ -5088,10 +5466,14 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D7000002FBEAFA3ADE.png" style="display:inline-block; margin:4px;width:16.392cm;height:10.095cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D7000002FBEAFA3ADE.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on accède aux propriétés du projet</li>
-<li>en [2], les propriété du <em>Run</em></li>
-<li>en [3], on passe le paramètre -<em>javaagent</em> à la JVM</li>
+  <li>en [1], on accède aux propriétés du projet
+  </li>
+  <li>en [2], les propriété du <i>Run</i>
+  </li>
+  <li>en [3], on passe le paramètre -<i>javaagent</i> à la JVM
+  </li>
 </ul>
+
 <p><a id="refheading87433112820228"></a>
 <a id="initdb-spring-jpa-toplink"></a></p>
 <h3 id="5133-initdb">5.13.3. InitDB</h3>
@@ -5099,16 +5481,23 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051D00000106EA91B80C.png" style="display:inline-block; margin:4px;width:17.318cm;height:3.466cm;" class="odt-zoomable" data-zoom-src="images/100000000000051D00000106EA91B80C.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le test a été réussi</li>
-<li>en [2], dans l&#x27;onglet [Services], on rafraîchit la connexion qu&#x27;a Netbeans avec la base [dbpam_eclipselink]</li>
-<li>en [3], quatre tables ont été créées</li>
+  <li>en [1], le test a été réussi
+  </li>
+  <li>en [2], dans l&#x27;onglet [Services], on rafraîchit la connexion qu&#x27;a Netbeans avec la base [dbpam_eclipselink]
+  </li>
+  <li>en [3], quatre tables ont été créées
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CC000000E63D2860EB.png" style="display:inline-block; margin:4px;width:16.245cm;height:3.043cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CC000000E63D2860EB.png" /></td></tr></table>
 
 <ul>
-<li>en [5], on visualise le contenu de la table [employes]</li>
-<li>en [6], le résultat.</li>
+  <li>en [5], on visualise le contenu de la table [employes]
+  </li>
+  <li>en [6], le résultat.
+  </li>
 </ul>
+
 <p><a id="refheading87435112820228"></a></p>
 <h3 id="5134-junitdao">5.13.4. JUnitDao</h3>
 <p>L&#x27;exécution de la classe de tests [JUnitDao] peut échouer, même si avec l&#x27;implémentation JPA / Hibernate, elle avait réussi. Pour comprendre pourquoi, analysons un exemple.</p>
@@ -5164,8 +5553,10 @@
 <a id="__codelineno-76-25" name="__codelineno-76-25"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 15-22 : la méthode testée</li>
+  <li>lignes 15-22 : la méthode testée
+  </li>
 </ul>
+
 <p>La méthode de test est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold">package</span><span style="color:#008080"> </span><span style="color:#000000">dao;</span></span>

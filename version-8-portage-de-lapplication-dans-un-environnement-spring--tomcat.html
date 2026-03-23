@@ -704,7 +704,7 @@
 <p><a id="refheading344871813040411"></a></p>
 <h1 id="13-version-8-portage-de-lapplication-dans-un-environnement-spring-tomcat">13. Version 8 : Portage de l&#x27;application dans un environnement Spring / Tomcat</h1>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><span style="color: #000000"><strong>Question </strong>: En suivant l&#x27;exemple &quot; Application exemple – 02 : rdvmedecins-jsf2-spring &quot; de [<a href="http://tahe.developpez.com/java/primefaces"><strong>ref3</strong></a>], portez l&#x27;application précédente dans un environnement Spring / Tomcat / Hibernate.</span></p>
+<p><span style="color: #000000"><strong>Question</strong> : En suivant l&#x27;exemple &quot; Application exemple – 02 : rdvmedecins-jsf2-spring &quot; de [<a href="http://tahe.developpez.com/java/primefaces"><strong>ref3</strong></a>], portez l&#x27;application précédente dans un environnement Spring / Tomcat / Hibernate.</span></p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F000000045E51CB947.png" style="display:inline-block; margin:4px;width:4.45cm;height:1.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F000000045E51CB947.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -712,20 +712,34 @@
 <p><img src="images/10000000000002200000011E684A0FF3.png" style="width:10.081cm;height:5.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002200000011E684A0FF3.png" /></p>
 <p><span style="color: #000000">Voici une démarche possible :</span></p>
 <ul>
-<li><span style="color: #000000">créer un projet Maven de type [Java Application] nommé [mv-pam-spring-metier],</span></li>
-<li><span style="color: #000000">ajouter les dépendances nécessaires,</span></li>
-<li><span style="color: #000000">copier les éléments du projet EJB précédent dans le nouveau projet Spring,</span></li>
-<li><span style="color: #000000">corriger les erreurs qui apparaissent dans le projet Spring,</span></li>
-<li><span style="color: #000000">créer le fichier [persistence.xml] qui configure la couche JPA,</span></li>
-<li><span style="color: #000000">créer le fichier de configuration de Spring. A ce stade, le projet [mv-pam-spring-metier] doit être correct. Imaginez un test JUnit qui en apporte la preuve,</span></li>
-<li><span style="color: #000000">créer un projet Maven de type [Web Application],</span></li>
-<li><span style="color: #000000">ajouter les dépendances nécessaires (JSF et la couche [métier]),</span></li>
-<li><span style="color: #000000">copier les éléments du projet JSF / EJB de la version précédente dans le nouveau projet JSF / Spring,</span></li>
-<li><span style="color: #000000">corriger les erreurs qui apparaissent,</span></li>
-<li><span style="color: #000000">copier le fichier de configuration de Spring du projet [mv-pam-spring-metier] dans le projet web,</span></li>
-<li><span style="color: #000000">ajouter au bean [ApplicationData] le code permettant d&#x27;instancier les beans Spring,</span></li>
-<li><span style="color: #000000">compléter le fichier de configuration [faces-config.xml],</span></li>
-<li><span style="color: #000000">tester l&#x27;application web.</span></li>
+  <li><span style="color: #000000">créer un projet Maven de type [Java Application] nommé [mv-pam-spring-metier],</span>
+  </li>
+  <li><span style="color: #000000">ajouter les dépendances nécessaires,</span>
+  </li>
+  <li><span style="color: #000000">copier les éléments du projet EJB précédent dans le nouveau projet Spring,</span>
+  </li>
+  <li><span style="color: #000000">corriger les erreurs qui apparaissent dans le projet Spring,</span>
+  </li>
+  <li><span style="color: #000000">créer le fichier [persistence.xml] qui configure la couche JPA,</span>
+  </li>
+  <li><span style="color: #000000">créer le fichier de configuration de Spring. A ce stade, le projet [mv-pam-spring-metier] doit être correct. Imaginez un test JUnit qui en apporte la preuve,</span>
+  </li>
+  <li><span style="color: #000000">créer un projet Maven de type [Web Application],</span>
+  </li>
+  <li><span style="color: #000000">ajouter les dépendances nécessaires (JSF et la couche [métier]),</span>
+  </li>
+  <li><span style="color: #000000">copier les éléments du projet JSF / EJB de la version précédente dans le nouveau projet JSF / Spring,</span>
+  </li>
+  <li><span style="color: #000000">corriger les erreurs qui apparaissent,</span>
+  </li>
+  <li><span style="color: #000000">copier le fichier de configuration de Spring du projet [mv-pam-spring-metier] dans le projet web,</span>
+  </li>
+  <li><span style="color: #000000">ajouter au bean [ApplicationData] le code permettant d&#x27;instancier les beans Spring,</span>
+  </li>
+  <li><span style="color: #000000">compléter le fichier de configuration [faces-config.xml],</span>
+  </li>
+  <li><span style="color: #000000">tester l&#x27;application web.</span>
+  </li>
 </ul>
 
 

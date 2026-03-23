@@ -788,29 +788,43 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000497000002C7D3111BD5.png" style="display:inline-block; margin:4px;width:15.545cm;height:9.407cm;" class="odt-zoomable" data-zoom-src="images/1000000000000497000002C7D3111BD5.png" /></td></tr></table>
 
 <ul>
-<li>[1] : on copie le nouveau projet et on le colle dans l&#x27;onglet [Projects],</li>
-<li>[2] : on lui donne un nom et on fixe son dossier,</li>
-<li>[3] : le projet créé,</li>
+  <li>[1] : on copie le nouveau projet et on le colle dans l&#x27;onglet [Projects],
+  </li>
+  <li>[2] : on lui donne un nom et on fixe son dossier,
+  </li>
+  <li>[3] : le projet créé,
+  </li>
 </ul>
+
 <p>Le nouveau projet porte le même nom que l&#x27;ancien. Nous changeons cela :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000431000002E43405DF57.png" style="display:inline-block; margin:4px;width:14.196cm;height:9.79cm;" class="odt-zoomable" data-zoom-src="images/1000000000000431000002E43405DF57.png" /></td></tr></table>
 
 <ul>
-<li>[4] : nous renommons le projet,</li>
-<li>[5] : on change son nom ainsi que celui de l&#x27;artifactID.</li>
+  <li>[4] : nous renommons le projet,
+  </li>
+  <li>[5] : on change son nom ainsi que celui de l&#x27;artifactID.
+  </li>
 </ul>
+
 <p>Nous avons peu de modifications à faire pour adapter cette couche web à son nouvel environnement : la couche [metier] simulée doit être remplacée par la couche [metier, DAO, jpa] du serveur construit au paragraphe <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html#serveur-ejb-sunas9">7.1</a>. Pour cela, nous faisons deux choses :</p>
 <ul>
-<li>nous supprimons les paquetages [exception, metier, jpa] qui étaient présents dans le précédent projet.</li>
-<li>pour compenser cette suppression, nous ajoutons aux dépendances du projet web, le projet du serveur EJB construit au paragraphe <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html#serveur-ejb-sunas9">7.1</a>.</li>
+  <li>nous supprimons les paquetages [exception, metier, jpa] qui étaient présents dans le précédent projet.
+  </li>
+  <li>pour compenser cette suppression, nous ajoutons aux dépendances du projet web, le projet du serveur EJB construit au paragraphe <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html#serveur-ejb-sunas9">7.1</a>.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B0000017B70B2923F.png" style="display:inline-block; margin:4px;width:17.503cm;height:5.015cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B0000017B70B2923F.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on ajoute une dépendance au projet,</li>
-<li>en [2], on sélectionne le projet Maven de la couche [métier]. En [3], on précise son type et en [4] sa portée. Celle-ci est <em>provided</em> pour indiquer que celui-ci sera fourni (<em>provided</em>) au module web par son environnement de travail. Nous verrons prochainement qu&#x27;il lui sera fourni par une application d&#x27;entreprise,</li>
-<li>en [5], la dépendance a été ajoutée.</li>
+  <li>en [1], on ajoute une dépendance au projet,
+  </li>
+  <li>en [2], on sélectionne le projet Maven de la couche [métier]. En [3], on précise son type et en [4] sa portée. Celle-ci est <i>provided</i> pour indiquer que celui-ci sera fourni (<i>provided</i>) au module web par son environnement de travail. Nous verrons prochainement qu&#x27;il lui sera fourni par une application d&#x27;entreprise,
+  </li>
+  <li>en [5], la dépendance a été ajoutée.
+  </li>
 </ul>
+
 <p>Le fichier [pom.xml] est alors le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
@@ -874,38 +888,57 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F6000001564302CEC5.png" style="display:inline-block; margin:4px;width:16.801cm;height:4.524cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000001564302CEC5.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on crée un nouveau projet</li>
-<li>en [2], on choisit la catégorie [Maven]</li>
-<li>en [3], on choisit le type [Enterprise Application]</li>
-<li>en [4], on donne un nom au projet</li>
+  <li>en [1], on crée un nouveau projet
+  </li>
+  <li>en [2], on choisit la catégorie [Maven]
+  </li>
+  <li>en [3], on choisit le type [Enterprise Application]
+  </li>
+  <li>en [4], on donne un nom au projet
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D100000108978FF955.png" style="display:inline-block; margin:4px;width:9.539cm;height:3.493cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D100000108978FF955.png" /></td></tr></table>
 
 <ul>
-<li>en [5], nous choisissons Java EE 6</li>
-<li>en [6], un projet d&#x27;entreprise peut comprendre jusqu&#x27;à deux types de modules :<ul>
-<li>un module <strong>EJB</strong></li>
-<li>un module <strong>web</strong></li>
+  <li>en [5], nous choisissons Java EE 6
+  </li>
+  <li>en [6], un projet d&#x27;entreprise peut comprendre jusqu&#x27;à deux types de modules :
+    <ul>
+      <li>un module <b>EJB</b>
+      </li>
+      <li>un module <b>web</b>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>On peut demander en même temps que la création du projet d&#x27;entreprise, la création de ces deux modules qui seront vides au départ. Un projet d&#x27;entreprise ne sert qu&#x27;au déploiement des modules qui en font partie. En-dehors de ça, c&#x27;est une coquille vide. Ici, nous voulons déployer :</p>
 <ul>
-<li>un module web existant [mv-pam-jsf2-alone]. Il est donc inutile de créer un nouveau module web.</li>
-<li>un module EJB existant [mv-pam-ejb-metier-dao-eclipselink]. Là également, il est inutile d&#x27;en créer un nouveau.</li>
+  <li>un module web existant [mv-pam-jsf2-alone]. Il est donc inutile de créer un nouveau module web.
+  </li>
+  <li>un module EJB existant [mv-pam-ejb-metier-dao-eclipselink]. Là également, il est inutile d&#x27;en créer un nouveau.
+  </li>
 </ul>
+
 <p>En [6], nous créons un projet d&#x27;entreprise sans modules. Nous allons lui ajouter ses modules <strong>web</strong> et <strong>ejb</strong> ultérieurement.</p>
 <ul>
-<li>en [7], deux projets Maven ont été créés. Le projet d&#x27;entreprise est celui qui a le suffixe <strong>ear</strong>. L&#x27;autre projet est un projet Maven parent du précédent. Nous ne nous en occuperons pas.</li>
+  <li>en [7], deux projets Maven ont été créés. Le projet d&#x27;entreprise est celui qui a le suffixe <b>ear</b>. L&#x27;autre projet est un projet Maven parent du précédent. Nous ne nous en occuperons pas.
+  </li>
 </ul>
+
 <p>Nous ajoutons le module web et le module EJB au projet d&#x27;entreprise :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B00000170E5139430.png" style="display:inline-block; margin:4px;width:17.503cm;height:4.868cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B00000170E5139430.png" /></td></tr></table>
 
 <ul>
-<li>en [1], ajout d&#x27;une nouvelle dépendance,</li>
-<li>en [2], ajout du projet EJB [mv-pam-ejb-metier-dao-eclipselink]. On notera son type <em>ejb</em>,</li>
-<li>en [3], ajout du projet web [mv-pam-jsf2-ejb]. On notera son type <em>war</em>.</li>
+  <li>en [1], ajout d&#x27;une nouvelle dépendance,
+  </li>
+  <li>en [2], ajout du projet EJB [mv-pam-ejb-metier-dao-eclipselink]. On notera son type <i>ejb</i>,
+  </li>
+  <li>en [3], ajout du projet web [mv-pam-jsf2-ejb]. On notera son type <i>war</i>.
+  </li>
 </ul>
+
 <p>Le fichier [pom.xml] est alors le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
@@ -928,16 +961,22 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000323000001764610323D.png" style="display:inline-block; margin:4px;width:10.624cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/1000000000000323000001764610323D.png" /></td></tr></table>
 
 <ul>
-<li>en [1], l&#x27;application d&#x27;entreprise est déployée</li>
-<li>en [2], l&#x27;application d&#x27;entreprise [mv-pam-webapp-ear] a bien été déployée.</li>
+  <li>en [1], l&#x27;application d&#x27;entreprise est déployée
+  </li>
+  <li>en [2], l&#x27;application d&#x27;entreprise [mv-pam-webapp-ear] a bien été déployée.
+  </li>
 </ul>
+
 <p><span style="color: #000000">Dans le navigateur, on obtient la page suivante :</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003AC000001AA2F665EA3.png" style="display:inline-block; margin:4px;width:12.435cm;height:5.636cm;" class="odt-zoomable" data-zoom-src="images/10000000000003AC000001AA2F665EA3.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">en [1], l&#x27;URL demandée</span></li>
-<li><span style="color: #000000">en [2], la liste des employés a été remplie avec les éléments de la table [Employes] de la base </span><em><span style="color: #000000">dbpam</span></em><span style="color: #000000">.</span></li>
+  <li><span style="color: #000000">en [1], l&#x27;URL demandée</span>
+  </li>
+  <li><span style="color: #000000">en [2], la liste des employés a été remplie avec les éléments de la table [Employes] de la base </span><i><span style="color: #000000">dbpam</span></i><span style="color: #000000">.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Le lecteur est invité à refaire les tests de la version web n° 1. Voici un exemple d&#x27;exécution :</span></p>
 <p><img src="images/100000000000024A00000388510FAAC0.png" style="width:10.85cm;height:16.739cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024A00000388510FAAC0.png" /></p>
 

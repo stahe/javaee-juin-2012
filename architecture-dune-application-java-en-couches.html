@@ -708,31 +708,43 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E80000011C9BFD876E.png" style="display:inline-block; margin:4px;width:17.999cm;height:2.891cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E80000011C9BFD876E.png" /></td></tr></table>
 
 <ul>
-<li>la couche [1], appelée ici [ui] (User Interface) est la couche qui dialogue avec l&#x27;utilisateur, via une interface graphique Swing, une interface console ou une interface web. Elle a pour rôle de fournir des données provenant de l&#x27;utilisateur à la couche [2] ou bien de présenter à l&#x27;utilisateur des données fournies par la couche [2].</li>
-<li>la couche [2], appelée ici [metier] est la couche qui applique les règles dites métier, c.a.d. la logique spécifique de l&#x27;application, sans se préoccuper de savoir d&#x27;où viennent les données qu&#x27;on lui donne, ni où vont les résultats qu&#x27;elle produit.</li>
-<li>la couche [3], appelée ici [DAO] (Data Access Object) est la couche qui fournit à la couche [2] des données pré-enregistrées (fichiers, bases de données, ...) et qui enregistre certains des résultats fournis par la couche [2].</li>
+  <li>la couche [1], appelée ici [ui] (User Interface) est la couche qui dialogue avec l&#x27;utilisateur, via une interface graphique Swing, une interface console ou une interface web. Elle a pour rôle de fournir des données provenant de l&#x27;utilisateur à la couche [2] ou bien de présenter à l&#x27;utilisateur des données fournies par la couche [2].
+  </li>
+  <li>la couche [2], appelée ici [metier] est la couche qui applique les règles dites métier, c.a.d. la logique spécifique de l&#x27;application, sans se préoccuper de savoir d&#x27;où viennent les données qu&#x27;on lui donne, ni où vont les résultats qu&#x27;elle produit.
+  </li>
+  <li>la couche [3], appelée ici [DAO] (Data Access Object) est la couche qui fournit à la couche [2] des données pré-enregistrées (fichiers, bases de données, ...) et qui enregistre certains des résultats fournis par la couche [2].
+  </li>
 </ul>
+
 <p>Il existe différentes possibilités pour implémenter la couche [DAO]. Examinons-en quelques-unes :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074E000001438203730E.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.108cm;" class="odt-zoomable" data-zoom-src="images/100000000000074E000001438203730E.png" /></td></tr></table>
 
 <p>La couche [JDBC] ci-dessus est la couche standard utilisée en Java pour accéder à des bases de données. Elle isole la couche [DAO] du SGBD qui gère la base de données. On peut théoriquement changer de SGBD sans changer le code de la couche [DAO]. Malgré cet avantage, l&#x27;API JDBC présente certains inconvénients :</p>
 <ul>
-<li>toutes les opérations sur le SGBD sont susceptibles de lancer l&#x27;exception contrôlée (checked) SQLException. Ceci oblige le code appelant (la couche [DAO] ici) à les entourer par des try / catch rendant ainsi le code assez lourd.</li>
-<li>la couche [DAO] n&#x27;est pas complètement insensible au SGBD. Ceux-ci ont par exemple des méthodes propriétaires quant à la génération automatique de valeurs de clés primaires que la couche [DAO] ne peut ignorer. Ainsi lors de l&#x27;insertion d&#x27;un enregistrement :<ul>
-<li>avec Oracle, la couche [DAO] doit d&#x27;abord obtenir une valeur pour la clé primaire de l&#x27;enregistrement puis insérer celui-ci.</li>
-<li>avec SQL Server, la couche [DAO] insère l&#x27;enregistrement qui se voit donner automatiquement une valeur de clé primaire par le SGBD, valeur rendue à la couche [DAO].</li>
+  <li>toutes les opérations sur le SGBD sont susceptibles de lancer l&#x27;exception contrôlée (checked) SQLException. Ceci oblige le code appelant (la couche [DAO] ici) à les entourer par des try / catch rendant ainsi le code assez lourd.
+  </li>
+  <li>la couche [DAO] n&#x27;est pas complètement insensible au SGBD. Ceux-ci ont par exemple des méthodes propriétaires quant à la génération automatique de valeurs de clés primaires que la couche [DAO] ne peut ignorer. Ainsi lors de l&#x27;insertion d&#x27;un enregistrement :
+    <ul>
+      <li>avec Oracle, la couche [DAO] doit d&#x27;abord obtenir une valeur pour la clé primaire de l&#x27;enregistrement puis insérer celui-ci.
+      </li>
+      <li>avec SQL Server, la couche [DAO] insère l&#x27;enregistrement qui se voit donner automatiquement une valeur de clé primaire par le SGBD, valeur rendue à la couche [DAO].
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>Ces différences peuvent être gommées via l&#x27;utilisation de procédures stockées. Dans l&#x27;exemple précédent, la couche [DAO] appellera une procédure stockée dans Oracle ou SQL Server qui prendra en compte les particularités du SGBD. Celles-ci seront cachées à la couche [DAO]. Néanmoins, si changer de SGBD n&#x27;impliquera pas de réécrire la couche [DAO], cela implique quand même de réécrire les procédures stockées. Cela peut ne pas être considéré comme rédhibitoire.</p>
 <p>De multiples efforts ont été faits pour isoler la couche [DAO] des aspects propriétaires des SGBD. Une solution qui a eu un vrai succès dans ce domaine ces dernières années, est celle d&#x27;<strong>Hibernate</strong> :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000074F0000011BD92904A5.png" style="display:inline-block; margin:4px;width:17.999cm;height:2.722cm;" class="odt-zoomable" data-zoom-src="images/100000000000074F0000011BD92904A5.png" /></td></tr></table>
 
 <p>La couche [Hibernate] vient se placer entre la couche [DAO] écrite par le développeur et la couche [JDBC]. Hibernate est un ORM (Object Relational Mapper), un outil qui fait le pont entre le monde relationnel des bases de données et celui des objets manipulés par Java. Le développeur de la couche [DAO] ne voit plus la couche [JDBC] ni les tables de la base de données dont il veut exploiter le contenu. Il ne voit que l&#x27;image objet de la base de données, image objet fournie par la couche [Hibernate]. Le pont entre les tables de la base de données et les objets manipulés par la couche [DAO] est fait principalement de deux façons :</p>
 <ul>
-<li>par des fichiers de configuration de type XML</li>
-<li>par des annotations Java dans le code, technique disponible seulement depuis le JDK 1.5</li>
+  <li>par des fichiers de configuration de type XML
+  </li>
+  <li>par des annotations Java dans le code, technique disponible seulement depuis le JDK 1.5
+  </li>
 </ul>
+
 <p>La couche [Hibernate] est une couche d&#x27;abstraction qui se veut la plus transparente possible. L&#x27;idéal visé est que le développeur de la couche [DAO] puisse ignorer totalement qu&#x27;il travaille avec une base de données. C&#x27;est envisageable si ce n&#x27;est pas lui qui écrit la configuration qui fait le pont entre le monde relationnel et le monde objet. La configuration de ce pont est assez délicate et nécessite une certaine habitude.</p>
 <p>La couche [4] des objets, image de la BD est appelée &quot;contexte de persistance&quot;. Une couche [DAO] s&#x27;appuyant sur Hibernate fait des actions de persistance (CRUD, create - read - update - delete) sur les objets du contexte de persistance, actions traduites par Hibernate en ordres SQL exécutés par la couche JDBC. Pour les actions d&#x27;interrogation de la base (le SQL Select), Hibernate fournit au développeur, un langage HQL (Hibernate Query Language) pour interroger le contexte de persistance [4] et non la BD elle-même.</p>
 <p>Hibernate est populaire mais complexe à maîtriser. La courbe d&#x27;apprentissage souvent présentée comme facile est en fait assez raide. Dès qu&#x27;on a une base de données avec des tables ayant des relations un-à-plusieurs ou plusieurs-à-plusieurs, la configuration du pont relationnel / objets n&#x27;est pas à la portée du premier débutant venu. Des erreurs de configuration peuvent conduire à des applications peu performantes.</p>
@@ -753,14 +765,17 @@
 <p>Java EE5 a été conçu pour corriger les lacunes de la spécification EJB2. Les EJB 2.x sont devenus les EJB3. Ceux-ci sont des POJOs tagués par des annotations qui en font des objets particuliers lorsqu&#x27;ils sont au sein d&#x27;un conteneur EJB3. Dans celui-ci, l&#x27;EJB3 va pouvoir bénéficier des services du conteneur (pool de connexions, gestionnaire de transactions, ...). En-dehors du conteneur EJB3, l&#x27;EJB3 devient un objet Java normal. Ses annotations EJB sont ignorées.</p>
 <p>Ci-dessus, nous avons représenté Spring et un conteneur EJB3 comme infrastructure (framework) possible de notre architecture multi-couches. C&#x27;est cette infrastructure qui délivrera les services dont nous avons besoin : un pool de connexions et un gestionnaire de transactions.</p>
 <ul>
-<li>avec Spring, les couches seront implémentées avec des POJOs. Ceux-ci auront accès aux services de Spring (pool de connexions, gestionnaire de transaction) par injection de dépendances dans ces POJOs : lors de la construction de ceux-ci, Spring leur injecte des références sur les services dont il vont avoir besoin.</li>
-<li>
-<p>avec le conteneur EJB3, les couches seront implémentées avec des EJB. Une architecture en couches implémentées avec des EJB3 est peu différente de celles implémentées avec des POJO instanciés par Spring. Nous trouverons beaucoup de ressemblances.</p>
-</li>
-<li>
-<p>pour terminer, nous présenterons un exemple d&#x27;application web multi-couches :</p>
-</li>
+  <li>avec Spring, les couches seront implémentées avec des POJOs. Ceux-ci auront accès aux services de Spring (pool de connexions, gestionnaire de transaction) par injection de dépendances dans ces POJOs : lors de la construction de ceux-ci, Spring leur injecte des références sur les services dont il vont avoir besoin.
+  </li>
+  <li>avec le conteneur EJB3, les couches seront implémentées avec des EJB. Une architecture en couches implémentées avec des EJB3 est peu différente de celles implémentées avec des POJO instanciés par Spring. Nous trouverons beaucoup de ressemblances.
+  </li>
 </ul>
+
+<ul>
+  <li>pour terminer, nous présenterons un exemple d&#x27;application web multi-couches :
+  </li>
+</ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082A000001A616D6D841.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.634cm;" class="odt-zoomable" data-zoom-src="images/100000000000082A000001A616D6D841.png" /></td></tr></table>
 
 

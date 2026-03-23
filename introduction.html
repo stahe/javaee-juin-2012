@@ -703,7 +703,7 @@
 
 <h1 id="1-introduction">1. Introduction</h1>
 <p>Le PDF de ce document est disponible |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQClQ5LDYG2sTKDkjMNhGjWJAYzYW4xcpFN7PXPqZxtZJXk?e=KGC2M6">ICI</a>|.</p>
-<p>Les exemples du document sont disponibles |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQBIvK_cfN8VS7jNhgbFw4VjAQ-H4YnMBZ1OKDoUgKgJKoc?e=Ccn4cq">ICI</a>|.</p>
+<p>Les exemples du document sont disponibles |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCZ95LuIXSNRYCSJdUFCeF9AdLszsH4OfSPdDqWA9LmYt0?e=wKRJRw">ICI</a>|.</p>
 <p>Ce document reprend un précédent document écrit en 2010 et intitulé &quot;Introduction à Java EE avec Netbeans 6.8 et le serveur Glassfish v3&quot;. Celui-ci amène principalement les changements suivants :</p>
 <ul>
 <li>la partie JSF (Java Server Faces) est traitée dans un document à part : &quot; Introduction à Java Server Faces, Primefaces et Primefaces mobile &quot; disponible à l&#x27;URL [<a href="http://tahe.developpez.com/java/primefaces">http://tahe.developpez.com/java/primefaces</a>]. On y utilise des caractéristiques de la version 2 de JSF,</li>
@@ -720,25 +720,30 @@
 <p>Une application web avec les technologies suivantes :</p>
 <ul>
 <li><strong>Java Server Faces</strong> : pour la couche web</li>
-<li><strong>EJB3</strong> ou <strong>Spring </strong>: pour la couche métier</li>
+<li><strong>EJB3</strong> ou <strong>Spring</strong> : pour la couche métier</li>
 <li><strong>EJB3</strong> ou <strong>Spring, JPA/Hibernate, JPA/EclipseLink</strong> : pour créer différentes couches d&#x27;accès aux données</li>
 </ul>
 <p>Une application client / serveur avec les technologies suivantes :</p>
 <ul>
 <li><strong>Swing</strong> : pour la couche graphique cliente avec un support <strong>Spring</strong></li>
-<li><strong>EJB3</strong> ou <strong>service web </strong>: pour la couche serveur</li>
+<li><strong>EJB3</strong> ou <strong>service web</strong> : pour la couche serveur</li>
 </ul>
 <p>Certaines technologies Java EE ne sont pas présentées telles les <strong>MDB</strong> (Message Driven Bean) ou les <strong>EJB3 stateful</strong>. Pour les découvrir, on lira les livres d&#x27;Antonio Goncalves.</p>
 <p>Il existe d&#x27;autres technologies Open Source disponibles pour créer des applications trois couches. Une tandem très populaire est <strong>Spring</strong> (http://www.springframework.org/) / <strong>Hibernate</strong> (http://www.hibernate.org/). Afin de permettre au lecteur de comparer les technologies <strong>EJB3</strong> et <strong>Spring</strong>, l&#x27;application précédente a des versions où <strong>Spring</strong> remplace les <strong>EJB3</strong>.</p>
-<p>Ce document est un TD (Travail Dirigé)<strong> </strong>utilisé en 5ième année de l&#x27;école d&#x27;ingénieurs ISTIA de l&#x27;université d&#x27;Angers [http://www.istia.univ-angers.fr]. Ce TD décrit l&#x27;application à construire, les technologies Java à utiliser, les endroits où trouver de l&#x27;information. La solution proposée est souvent très cadrée. Le TD pose des questions dont il ne donne pas les réponses. C&#x27;est à l&#x27;étudiant de les trouver.</p>
-<p>L&#x27;apprentissage Java EE proposé ici nécessite un investissement du lecteur estimé entre 50 et 100<strong> </strong>heures. Le document contient beaucoup de code rendant possible le copier / coller. Par ailleurs, tous les projets Netbeans sont décrits dans le détail. Globalement, le document donne les squelettes des solutions et il est demandé à l&#x27;étudiant d&#x27;en donner certains détails. Le document peut être utile même à quelqu&#x27;un ne pouvant ou ne voulant pas s&#x27;investir autant. On peut s&#x27;intéresser uniquement aux architectures décrites et délaisser la partie code qui fait l&#x27;objet des questions.</p>
+<p>Ce document est un TD (Travail Dirigé) utilisé en 5ième année de l&#x27;école d&#x27;ingénieurs ISTIA de l&#x27;université d&#x27;Angers [http://www.istia.univ-angers.fr]. Ce TD décrit l&#x27;application à construire, les technologies Java à utiliser, les endroits où trouver de l&#x27;information. La solution proposée est souvent très cadrée. Le TD pose des questions dont il ne donne pas les réponses. C&#x27;est à l&#x27;étudiant de les trouver.</p>
+<p>L&#x27;apprentissage Java EE proposé ici nécessite un investissement du lecteur estimé entre 50 et 100 heures. Le document contient beaucoup de code rendant possible le copier / coller. Par ailleurs, tous les projets Netbeans sont décrits dans le détail. Globalement, le document donne les squelettes des solutions et il est demandé à l&#x27;étudiant d&#x27;en donner certains détails. Le document peut être utile même à quelqu&#x27;un ne pouvant ou ne voulant pas s&#x27;investir autant. On peut s&#x27;intéresser uniquement aux architectures décrites et délaisser la partie code qui fait l&#x27;objet des questions.</p>
 <p>Pour développer et exécuter l&#x27;application, nous utilisons l&#x27;IDE Netbeans. Netbeans est un produit assez lourd : prévoir 1 Go de Ram pour travailler confortablement. On peut le télécharger à l&#x27;url <a href="http://www.netbeans.org/%5D">[http://www.netbeans.org/]</a>.</p>
 <p>Le document fait référence aux cours suivants :</p>
 <ol>
 <li><strong>Persistance Java 5 par la pratique</strong> : [<a href="http://tahe.developpez.com/java/jpa">http://tahe.developpez.com/java/jpa</a>] - donne les outils pour construire la couche d&#x27;accès aux données avec <strong>JPA</strong> (Java Persistence API)</li>
-<li><strong>Introduction au langage Java</strong> [<a href="http://tahe.developpez.com/java/cours">http://tahe.developpez.com/java/cours</a>] - pour les débutants</li>
-<li><strong>Introduction par l&#x27;exemple à Java Server Faces, Primefaces et Primefaces mobile</strong> [<a href="http://tahe.developpez.com/java/primefaces">http://tahe.developpez.com/java/primefaces</a>]</li>
 </ol>
+<ol start="2">
+  <li><b>Introduction au langage Java</b> [<a href="http://tahe.developpez.com/java/cours">http://tahe.developpez.com/java/cours</a>] - pour les débutants
+  </li>
+  <li><b>Introduction par l&#x27;exemple à Java Server Faces, Primefaces et Primefaces mobile</b> [<a href="http://tahe.developpez.com/java/primefaces">http://tahe.developpez.com/java/primefaces</a>]
+  </li>
+</ol>
+
 <p>Ces supports de cours sont par la suite référencés [<strong>ref1</strong>] [<strong>ref2</strong>] et [<strong>ref3</strong>].</p>
 <p>Serge Tahé, juin 2012.</p>
 

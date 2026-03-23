@@ -1033,18 +1033,30 @@
 
 <p>Une application JSF est de type MVC (Modèle Vue Contrôleur) :</p>
 <ul>
-<li>la servlet [Faces Servlet] est le contrôleur générique fourni par JSF. Ce contrôleur est étendu par les gestionnaires d&#x27;événements spécifiques à l&#x27;application. Les gestionnaires d&#x27;événements rencontrés jusqu&#x27;ici étaient des méthodes des classes servant de modèles aux pages JSF</li>
-<li>les pages JSF envoient les réponses au navigateur client. Ce sont les vues de l&#x27;application.</li>
-<li>les pages JSF comportent des éléments dynamiques qu&#x27;on appelle le modèle de la page. On rappelle que pour certains auteurs, le modèle recouvre les entités manipulées par l&#x27;application, telles par exemple les classes <em>FeuilleSalaire</em> ou <em>Employe</em>. Pour distinguer ces deux modèles, on pourra parler de modèle de l&#x27;application et modèle d&#x27;une page JSF.</li>
+  <li>la servlet [Faces Servlet] est le contrôleur générique fourni par JSF. Ce contrôleur est étendu par les gestionnaires d&#x27;événements spécifiques à l&#x27;application. Les gestionnaires d&#x27;événements rencontrés jusqu&#x27;ici étaient des méthodes des classes servant de modèles aux pages JSF
+  </li>
+  <li>les pages JSF envoient les réponses au navigateur client. Ce sont les vues de l&#x27;application.
+  </li>
+  <li>les pages JSF comportent des éléments dynamiques qu&#x27;on appelle le modèle de la page. On rappelle que pour certains auteurs, le modèle recouvre les entités manipulées par l&#x27;application, telles par exemple les classes <i>FeuilleSalaire</i> ou <i>Employe</i>. Pour distinguer ces deux modèles, on pourra parler de modèle de l&#x27;application et modèle d&#x27;une page JSF.
+  </li>
 </ul>
+
 <p>Dans l&#x27;architecture JSF, le passage d&#x27;une page JSFi à une page JSFj peut être problématique.</p>
 <ul>
-<li>la page JSFi a été affichée. A partir de cette page, l&#x27;utilisateur provoque un POST par un événement quelconque [1]</li>
-<li>en JSF, ce POST sera traité [2a,2b] en général par une méthode C du modèle Mi de la page JSFi. On peut dire que la méthode C est un contrôleur secondaire.</li>
-<li>si à l&#x27;issue de cette méthode, la page JSFj doit être affichée, le contrôleur C doit :</li>
-<li>mettre à jour [2c] le modèle Mj de la page JSFj</li>
-<li>rendre [2a] au contrôleur principal, la clé de navigation qui permettra l&#x27;affichage de la page JSFj</li>
+  <li>la page JSFi a été affichée. A partir de cette page, l&#x27;utilisateur provoque un POST par un événement quelconque [1]
+  </li>
+  <li>en JSF, ce POST sera traité [2a,2b] en général par une méthode C du modèle Mi de la page JSFi. On peut dire que la méthode C est un contrôleur secondaire.
+  </li>
+  <li>si à l&#x27;issue de cette méthode, la page JSFj doit être affichée, le contrôleur C doit :
+  </li>
 </ul>
+<ol>
+  <li>mettre à jour [2c] le modèle Mj de la page JSFj
+  </li>
+  <li>rendre [2a] au contrôleur principal, la clé de navigation qui permettra l&#x27;affichage de la page JSFj
+  </li>
+</ol>
+
 <p>L&#x27;étape 1 nécessite que le modèle Mi de la page JSFi ait une référence sur modèle Mj de la page JSFj. Cela complique un peu les choses rendant les modèles Mi dépendant les uns des autres. En effet, le gestionnaire C du modèle Mi qui met à jour le modèle Mj doit connaître celui-ci. Si on est amené à changer le modèle Mj, on sera alors amené à changer le gestionnaire C du modèle Mi.</p>
 <p>Il existe un cas où la dépendance des modèles entre-eux peut être évitée : celui où il y a un unique modèle M qui sert à toutes les pages JSF. Cette architecture n&#x27;est utilisable que dans les applications n&#x27;ayant que quelques vues mais elle se révèle alors très simple d&#x27;usage. C&#x27;est celle que nous utilisons maintenant.</p>
 <p>Dans ce contexte, l&#x27;architecture de l&#x27;application est la suivante :</p>
@@ -1072,8 +1084,10 @@
 </ul>
 <p><img src="images/10000000000001B600000089238CC36A.png" style="width:8.11cm;height:2.54cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B600000089238CC36A.png" /></p>
 <ul>
-<li>la vue [VueErreur] qui indique une ou plusieurs erreurs :</li>
+  <li>la vue [VueErreur] qui indique une ou plusieurs erreurs :
+  </li>
 </ul>
+
 <p><img src="images/10000000000001B7000000E270DECD6C.png" style="width:8.13cm;height:4.189cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B7000000E270DECD6C.png" /></p>
 <p><a id="refheading87579112820228"></a></p>
 <h2 id="122-le-projet-netbeans-de-la-couche-web">12.2. Le projet Netbeans de la couche [web]</h2>
@@ -1081,14 +1095,22 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F40000025444FA9605.png" style="display:inline-block; margin:4px;width:16.775cm;height:7.885cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F40000025444FA9605.png" /></td></tr></table>
 
 <ul>
-<li>en [1], les fichiers de configuration,</li>
-<li>en [2], les pages JSF,</li>
-<li>en [3], la feuille de style et l&#x27;image de fond des vues,</li>
-<li>en [4], les classes de la couche [web],</li>
-<li>en [5], les couches basses de l&#x27;application,</li>
-<li>en [6], le fichier des messages pour l&#x27;internationalisation de l&#x27;application,</li>
-<li>en [7], les dépendances du projet.</li>
+  <li>en [1], les fichiers de configuration,
+  </li>
+  <li>en [2], les pages JSF,
+  </li>
+  <li>en [3], la feuille de style et l&#x27;image de fond des vues,
+  </li>
+  <li>en [4], les classes de la couche [web],
+  </li>
+  <li>en [5], les couches basses de l&#x27;application,
+  </li>
+  <li>en [6], le fichier des messages pour l&#x27;internationalisation de l&#x27;application,
+  </li>
+  <li>en [7], les dépendances du projet.
+  </li>
 </ul>
+
 <p>Nous passons en revue certains de ces éléments.</p>
 <p><a id="refheading87581112820228"></a></p>
 <h3 id="1221-les-fichiers-de-configuration">12.2.1. Les fichiers de configuration</h3>
@@ -1105,8 +1127,10 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 4-6 : la page d&#x27;accueil est la page [saisie.xhtml]</li>
+  <li>lignes 4-6 : la page d&#x27;accueil est la page [saisie.xhtml]
+  </li>
 </ul>
+
 <p><a id="refheading87583112820228"></a></p>
 <h3 id="1222-la-feuille-de-style">12.2.2. La feuille de style</h3>
 <p>Le fichier [styles.css] est le suivant :</p>
@@ -1319,15 +1343,24 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 8 : la liste des employés</li>
-<li>ligne 7 : la même liste sous forme de dictionnaire indexé par le n° SS des employés</li>
-<li>lignes 24-39 : la méthode <em><span style="color: #000000">findAllEmployes</span></em><span style="color: #000000"> </span>qui rend la liste des employés. Cette méthode crée une liste en dur et la référence par le champ <em>employés</em> de la ligne 8.</li>
-<li>lignes 27-33 : une liste et un dictionnaire de deux employés sont créés</li>
-<li>ligne 35 : un employé est ajouté à la liste <strong>employes</strong> (ligne 8) mais pas au dictionnaire <strong>hashEmployes</strong> (ligne 7). Ceci pour qu&#x27;il apparaisse dans le combo des employés mais qu&#x27;ensuite il ne soit pas reconnu par la méthode <strong><span style="color: #000000">calculerFeuilleSalaire</span></strong><span style="color: #000000"> (ligne 14) afin que celle-ci lance une exception (ligne 17).</span></li>
-<li><span style="color: #000000">lignes 11-21 : la méthode </span><strong><span style="color: #000000">calculerFeuilleSalaire</span></strong></li>
-<li><span style="color: #000000">ligne 14 : l&#x27;employé est cherché dans le dictionnaire </span><strong>hashEmployes</strong> via son n° SS. S&#x27;il n&#x27;est pas trouvé, une exception est lancée (lignes 16-18). Ainsi aurons-nous une exception pour l&#x27;employé de n° SS <strong>X</strong> ajouté ligne 35 dans la liste <strong>employés</strong> mais pas dans le dictionnaire <strong>hashEmployes</strong>.</li>
-<li>ligne 20, une feuille de salaire fictive est créée et rendue.</li>
+  <li>ligne 8 : la liste des employés
+  </li>
+  <li>ligne 7 : la même liste sous forme de dictionnaire indexé par le n° SS des employés
+  </li>
+  <li>lignes 24-39 : la méthode <i><span style="color: #000000">findAllEmployes</span></i><span style="color: #000000"> </span>qui rend la liste des employés. Cette méthode crée une liste en dur et la référence par le champ <i>employés</i> de la ligne 8.
+  </li>
+  <li>lignes 27-33 : une liste et un dictionnaire de deux employés sont créés
+  </li>
+  <li>ligne 35 : un employé est ajouté à la liste <b>employes</b> (ligne 8) mais pas au dictionnaire <b>hashEmployes</b> (ligne 7). Ceci pour qu&#x27;il apparaisse dans le combo des employés mais qu&#x27;ensuite il ne soit pas reconnu par la méthode <b><span style="color: #000000">calculerFeuilleSalaire</span></b><span style="color: #000000"> (ligne 14) afin que celle-ci lance une exception (ligne 17).</span>
+  </li>
+  <li><span style="color: #000000">lignes 11-21 : la méthode </span><b><span style="color: #000000">calculerFeuilleSalaire</span></b>
+  </li>
+  <li><span style="color: #000000">ligne 14 : l&#x27;employé est cherché dans le dictionnaire </span><b>hashEmployes</b> via son n° SS. S&#x27;il n&#x27;est pas trouvé, une exception est lancée (lignes 16-18). Ainsi aurons-nous une exception pour l&#x27;employé de n° SS <b>X</b> ajouté ligne 35 dans la liste <b>employés</b> mais pas dans le dictionnaire <b>hashEmployes</b>.
+  </li>
+  <li>ligne 20, une feuille de salaire fictive est créée et rendue.
+  </li>
 </ul>
+
 <p><a id="refheading217532813040411"></a></p>
 <h2 id="123-les-beans-de-lapplication">12.3. Les beans de l&#x27;application</h2>
 <p>Il y aura trois beans de trois portées différentes :</p>
@@ -1335,7 +1368,7 @@
 
 <p><a id="refheading217534813040411"></a></p>
 <h3 id="1231-le-bean-applicationdata">12.3.1. Le bean ApplicationData</h3>
-<p>Le bean <strong>ApplicationData</strong> sera de portée <em>application </em>:</p>
+<p>Le bean <strong>ApplicationData</strong> sera de portée <em>application</em> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> web.beans.application;</span></span>
 <span class="odt-code-line"></span>
@@ -1374,14 +1407,20 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 11 : l&#x27;annotation @<strong>Named</strong> fait de la classe un bean managé. On notera qu&#x27;à la différence du projet précédent, on n&#x27;a pas utilisé l&#x27;annotation @<strong>ManagedBean</strong>. La raison en est que la référence de cette classe doit être injectée dans une autre classe à l&#x27;aide de l&#x27;annotation @<strong>Inject</strong> et que celle-ci n&#x27;injecte que des classes avec l&#x27;annotation @<strong>Named</strong>.</li>
-<li>ligne 12 : l&#x27;annotation @<strong>ApplicationScoped</strong> fait de la classe, un objet de portée <strong>application</strong>. On notera que la classe de l&#x27;annotation est [<span style="color: #000000">javax.enterprise.context.ApplicationScoped] (ligne 6) et non [javax.faces.bean.ApplicationScoped] comme dans les beans du projet précédent.</span></li>
+  <li>ligne 11 : l&#x27;annotation @<b>Named</b> fait de la classe un bean managé. On notera qu&#x27;à la différence du projet précédent, on n&#x27;a pas utilisé l&#x27;annotation @<b>ManagedBean</b>. La raison en est que la référence de cette classe doit être injectée dans une autre classe à l&#x27;aide de l&#x27;annotation @<b>Inject</b> et que celle-ci n&#x27;injecte que des classes avec l&#x27;annotation @<b>Named</b>.
+  </li>
+  <li>ligne 12 : l&#x27;annotation @<b>ApplicationScoped</b> fait de la classe, un objet de portée <b>application</b>. On notera que la classe de l&#x27;annotation est [<span style="color: #000000">javax.enterprise.context.ApplicationScoped] (ligne 6) et non [javax.faces.bean.ApplicationScoped] comme dans les beans du projet précédent.</span>
+  </li>
 </ul>
+
 <p>Le bean <strong>ApplicationData</strong> sert à deux choses :</p>
 <ul>
-<li>ligne 16 : maintenir une référence sur la couche [métier],</li>
-<li>lignes 18-19 : définir un logueur qui pourra être utilisé par les autres beans pour faire des logs sur la console de Glassfish.</li>
+  <li>ligne 16 : maintenir une référence sur la couche [métier],
+  </li>
+  <li>lignes 18-19 : définir un logueur qui pourra être utilisé par les autres beans pour faire des logs sur la console de Glassfish.
+  </li>
 </ul>
+
 <p><a id="refheading217536813040411"></a></p>
 <h3 id="1232-le-bean-sessiondata">12.3.2. Le bean SessionData</h3>
 <p>Le bean <strong>SessionData</strong> sera de portée session :</p>
@@ -1447,20 +1486,30 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 13 : la classe <strong>SessionData</strong> est un bean managé (@Named) qui pourra être injecté dans d&#x27;autres beans managés,</li>
-<li>ligne 14 : il est de portée <strong>session</strong> (@SessionScoped),</li>
-<li>lignes 18-19 : une référence sur le bean <strong>ApplicationData</strong> lui est injecté (@Inject),</li>
-<li>lignes 21-32 : les données de l&#x27;application qui doivent être maintenues au fil des sessions.</li>
-<li>ligne 21 : la liste des simulations faites par l&#x27;utilisateur,</li>
-<li>ligne 22 : le n° de la dernière simulation enregistrée,</li>
-<li>ligne 23 : la dernière simulation qui a été faite,</li>
-<li>lignes 25-30 : les options du menu,</li>
-<li>ligne 32 : la locale de l&#x27;application.</li>
+  <li>ligne 13 : la classe <b>SessionData</b> est un bean managé (@Named) qui pourra être injecté dans d&#x27;autres beans managés,
+  </li>
+  <li>ligne 14 : il est de portée <b>session</b> (@SessionScoped),
+  </li>
+  <li>lignes 18-19 : une référence sur le bean <b>ApplicationData</b> lui est injecté (@Inject),
+  </li>
+  <li>lignes 21-32 : les données de l&#x27;application qui doivent être maintenues au fil des sessions.
+  </li>
+  <li>ligne 21 : la liste des simulations faites par l&#x27;utilisateur,
+  </li>
+  <li>ligne 22 : le n° de la dernière simulation enregistrée,
+  </li>
+  <li>ligne 23 : la dernière simulation qui a été faite,
+  </li>
+  <li>lignes 25-30 : les options du menu,
+  </li>
+  <li>ligne 32 : la locale de l&#x27;application.
+  </li>
 </ul>
+
 <p>Lignes 39-44, la méthode <strong>init</strong> est exécutée après instanciation de la classe (@PostConstruct). Ici, elle n&#x27;est utilisée que pour laisser une trace de son exécution. On doit pouvoir vérifier qu&#x27;elle n&#x27;est exécutée qu&#x27;une fois par utilisateur puisque la classe est de portée session. Ligne 42, la méthode utilise le logueur défini dans la classe <strong>ApplicationData</strong>. C&#x27;est pour cette raison qu&#x27;on avait besoin d&#x27;injecter une référence sur ce bean (lignes 18-19).</p>
 <p><a id="refheading217538813040411"></a></p>
 <h3 id="1233-le-bean-form">12.3.3. Le bean Form</h3>
-<p>Le bean <strong>Form</strong> est de portée <em>requête </em>:</p>
+<p>Le bean <strong>Form</strong> est de portée <em>requête</em> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> web.beans.request;</span></span>
 <span class="odt-code-line"></span>
@@ -1542,11 +1591,16 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 17, la classe est un bean managé (@Named),</li>
-<li>ligne 18, de portée requête (@RequestScoped),</li>
-<li>lignes 24-25 : injection d&#x27;une référence sur le bean de portée application <strong>ApplicationData</strong>,</li>
-<li>lignes 26-27 : injection d&#x27;une référence sur le bean de portée session <strong>SessionData.</strong></li>
+  <li>ligne 17, la classe est un bean managé (@Named),
+  </li>
+  <li>ligne 18, de portée requête (@RequestScoped),
+  </li>
+  <li>lignes 24-25 : injection d&#x27;une référence sur le bean de portée application <b>ApplicationData</b>,
+  </li>
+  <li>lignes 26-27 : injection d&#x27;une référence sur le bean de portée session <b>SessionData.</b>
+  </li>
 </ul>
+
 <p><a id="refheading217540813040411"></a></p>
 <h2 id="124-les-pages-de-lapplication">12.4. Les pages de l&#x27;application</h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E600000101812299B6.png" style="display:inline-block; margin:4px;width:4.26cm;height:4.761cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E600000101812299B6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -1592,18 +1646,26 @@
 
 <p>Toute vue est constituée des éléments suivants :</p>
 <ul>
-<li>un entête affiché par le fragment [entete.xhtml] (ligne 24),</li>
-<li>un corps formé de deux fragments appelés <strong>part1</strong> (lignes 26-28) et <strong>part2</strong> (ligne 29),</li>
-<li>ligne 8 : l&#x27;attribut <strong>locale</strong> assure l&#x27;internationalisation des pages. Ici il n&#x27;y en aura qu&#x27;une : <strong>fr_FR</strong>,</li>
-<li>lignes 14-19 : un code Javascript.</li>
+  <li>un entête affiché par le fragment [entete.xhtml] (ligne 24),
+  </li>
+  <li>un corps formé de deux fragments appelés <b>part1</b> (lignes 26-28) et <b>part2</b> (ligne 29),
+  </li>
+  <li>ligne 8 : l&#x27;attribut <b>locale</b> assure l&#x27;internationalisation des pages. Ici il n&#x27;y en aura qu&#x27;une : <b>fr_FR</b>,
+  </li>
+  <li>lignes 14-19 : un code Javascript.
+  </li>
 </ul>
+
 <p>L&#x27;affichage de la page [layout.xhtml] est le suivant :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003680000017280519B63.png" style="display:inline-block; margin:4px;width:11.536cm;height:4.895cm;" class="odt-zoomable" data-zoom-src="images/10000000000003680000017280519B63.png" /></td></tr></table>
 
 <ul>
-<li>en [1], l&#x27;entête [entete.xhtml],</li>
-<li>en [2], le fragment <strong>part1</strong>.</li>
+  <li>en [1], l&#x27;entête [entete.xhtml],
+  </li>
+  <li>en [2], le fragment <b>part1</b>.
+  </li>
 </ul>
+
 <p><a id="refheading217544813040411"></a></p>
 <h3 id="1242-lentete-entetexhtml">12.4.2. L&#x27;entête [entete.xhtml]</h3>
 <p>Le code de la page [entete.xhtml] est le suivant :</p>
@@ -1638,11 +1700,16 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 12 : le titre de l&#x27;application,</li>
-<li>lignes 16-21 : les six liens correspondant aux six actions que peut faire l&#x27;utilisateur. Ces liens sont contrôlés (attribut <strong>rendered</strong>) par des booléens du bean <strong>SessionData</strong>,</li>
-<li>ligne 17 : un clic sur le lien [Effacer la simulation] provoque l&#x27;exécution de la fonction Javascript <strong>raz</strong>. Celle-ci a été définie dans le modèle [layout.xhtml],</li>
-<li>ligne 18 : l&#x27;attribut <strong>immediate=true</strong> fait que la validité des données n&#x27;est pas vérifiée avant exécution de la méthode <em>[Form].enregistrerSimulation</em>. C&#x27;est voulu. On peut vouloir enregistrer la dernière simulation faite il y a une minute même si les données saisies depuis dans le formulaire (mais pas encore validées)  ne sont pas valides. Il est fait de même pour les actions [Voir les simulations], [Effacer la simulation], [Retour au simulateur] et [Terminer la session].</li>
+  <li>ligne 12 : le titre de l&#x27;application,
+  </li>
+  <li>lignes 16-21 : les six liens correspondant aux six actions que peut faire l&#x27;utilisateur. Ces liens sont contrôlés (attribut <b>rendered</b>) par des booléens du bean <b>SessionData</b>,
+  </li>
+  <li>ligne 17 : un clic sur le lien [Effacer la simulation] provoque l&#x27;exécution de la fonction Javascript <b>raz</b>. Celle-ci a été définie dans le modèle [layout.xhtml],
+  </li>
+  <li>ligne 18 : l&#x27;attribut <b>immediate=true</b> fait que la validité des données n&#x27;est pas vérifiée avant exécution de la méthode <i>[Form].enregistrerSimulation</i>. C&#x27;est voulu. On peut vouloir enregistrer la dernière simulation faite il y a une minute même si les données saisies depuis dans le formulaire (mais pas encore validées)  ne sont pas valides. Il est fait de même pour les actions [Voir les simulations], [Effacer la simulation], [Retour au simulateur] et [Terminer la session].
+  </li>
 </ul>
+
 <p><a id="refheading87591112820228"></a></p>
 <h2 id="125-les-cas-dutilisation-de-lapplication">12.5. Les cas d&#x27;utilisation de l&#x27;application</h2>
 <p><a id="refheading87599112820228"></a></p>
@@ -1665,9 +1732,12 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 8 : elle s&#x27;affiche à l&#x27;intérieur de la page [layout.xhtml],</li>
-<li>ligne 9 : à la place du fragment nommé <strong>part1</strong>. Dans ce fragment, on affiche la page [saisie2.xhtml] :</li>
+  <li>ligne 8 : elle s&#x27;affiche à l&#x27;intérieur de la page [layout.xhtml],
+  </li>
+  <li>ligne 9 : à la place du fragment nommé <b>part1</b>. Dans ce fragment, on affiche la page [saisie2.xhtml] :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&#x27;1.0&#x27;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&#x27;UTF-8&#x27;</span> <span style="color:#008080">?&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">html</span> <span style="color:#808080">PUBLIC</span> <span style="color:#008080">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> <span style="color:#3f7f5f">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span style="color:#008080">&gt;</span></span>
@@ -1820,10 +1890,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 8, la page [simulation.xhtml] s&#x27;insére dans la page [layout.xhtml],</li>
-<li>lignes 9-11 : la zone des saisies est affichée dans le fragment <strong>part1</strong> de la page <strong>layout</strong>,</li>
-<li>lignes 12-91 : la simulation est affichée dans le fragment <strong>part2</strong> de la page <strong>layout</strong>.</li>
+  <li>ligne 8, la page [simulation.xhtml] s&#x27;insére dans la page [layout.xhtml],
+  </li>
+  <li>lignes 9-11 : la zone des saisies est affichée dans le fragment <b>part1</b> de la page <b>layout</b>,
+  </li>
+  <li>lignes 12-91 : la simulation est affichée dans le fragment <b>part2</b> de la page <b>layout</b>.
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Question</strong> : écrire la méthode [faireSimulation] de la classe [Form]. La simulation sera enregistrée dans le bean <strong>SessionData</strong>.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -1892,11 +1966,16 @@
 <p>Les erreurs seront des exceptions dont on mémorise le nom de la classe dans le champ <strong>classe</strong> et le message dans le champ <strong>message</strong>.</p>
 <p>La liste des erreurs construite dans la méthode [faireSimulation] est constituée de :</p>
 <ul>
-<li>l&#x27;exception initiale <strong>th</strong> de type <em>Throwable</em> qui s&#x27;est produite,</li>
-<li>de sa cause <strong>th.getCause()</strong> si elle en a une,</li>
-<li>de la cause de la cause <strong>h.getCause().getCause()</strong> si elle existe.</li>
-<li>...</li>
+  <li>l&#x27;exception initiale <b>th</b> de type <i>Throwable</i> qui s&#x27;est produite,
+  </li>
+  <li>de sa cause <b>th.getCause()</b> si elle en a une,
+  </li>
+  <li>de la cause de la cause <b>h.getCause().getCause()</b> si elle existe.
+  </li>
+  <li>...
+  </li>
 </ul>
+
 <p>Voici un exemple de liste d&#x27;erreurs :</p>
 <p><img src="images/10000000000001B7000000B18985D8D2.png" style="width:8.17cm;height:3.281cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B7000000B18985D8D2.png" /></p>
 <p>Ci-dessus, l&#x27;employé [Z Y] n&#x27;existe pas dans le dictionnaire des employés utilisé par la couche [métier] simulée. Dans ce cas, la couche [métier] simulée lance une exception (ligne 6 ci-dessous) :</p>
@@ -1977,9 +2056,12 @@
 
 <p>Les lignes 4-6 changent les valeurs postées. On notera que </p>
 <ul>
-<li>les valeurs postées sont des valeurs valides, c.a.d. qu&#x27;elles passeront  les tests de validation des champs de saisie <em>heuresTravaillees</em> et <em>joursTravailles</em>.</li>
-<li>la fonction <em>raz</em> ne poste pas le formulaire. En effet, celui-ci va être posté par le lien <em>cmdEffacerSimulation</em>. Ce <em>post</em> se fera après exécution de la fonction Javascript <em>raz</em>.</li>
+  <li>les valeurs postées sont des valeurs valides, c.a.d. qu&#x27;elles passeront  les tests de validation des champs de saisie <i>heuresTravaillees</i> et <i>joursTravailles</i>.
+  </li>
+  <li>la fonction <i>raz</i> ne poste pas le formulaire. En effet, celui-ci va être posté par le lien <i>cmdEffacerSimulation</i>. Ce <i>post</i> se fera après exécution de la fonction Javascript <i>raz</i>.
+  </li>
 </ul>
+
 <p>Au cours du <em>post</em>, les valeurs postées vont suivre un cheminement normal : validation puis affectation aux champs du modèle. Ceux-ci sont les suivants dans la classe [Form] :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// le modèle des vues</span></span>
@@ -2053,16 +2135,21 @@
 
 <p>Cette classe permet de mémoriser une simulation faite par l&#x27;utilisateur :</p>
 <ul>
-<li>ligne 11 : le n° de la simulation,</li>
-<li>ligne 12 : la feuille de salaire qui a été calculée,</li>
-<li>ligne 13 : le nombre d&#x27;heures travaillées,</li>
-<li>ligne 14 : le nombre de jours travaillés.</li>
+  <li>ligne 11 : le n° de la simulation,
+  </li>
+  <li>ligne 12 : la feuille de salaire qui a été calculée,
+  </li>
+  <li>ligne 13 : le nombre d&#x27;heures travaillées,
+  </li>
+  <li>ligne 14 : le nombre de jours travaillés.
+  </li>
 </ul>
+
 <p>Voici un exemple d&#x27;enregistrement :</p>
 <p><img src="images/10000000000001CB000001432BAB5A77.png" style="width:8.5cm;height:5.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000001432BAB5A77.png" /></p>
 <p>A partir de la page précédente, on obtient le résultat qui suit :</p>
 <p><img src="images/1000000000000271000000C731BC79CF.png" style="width:11.569cm;height:3.679cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000271000000C731BC79CF.png" /></p>
-<p>Le n° de la simulation est un nombre incrémenté à chaque nouvel enregistrement. Il appartient au bean <strong>SessionData </strong>:</p>
+<p>Le n° de la simulation est un nombre incrémenté à chaque nouvel enregistrement. Il appartient au bean <strong>SessionData</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// simulations</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;Simulation&gt; simulations = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Simulation&gt;();</span></span>
@@ -2071,14 +2158,20 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 2 : le n° de la dernière simulation faite.</li>
+  <li>ligne 2 : le n° de la dernière simulation faite.
+  </li>
 </ul>
+
 <p>La méthode [enregistrerSimulation] peut procéder ainsi :</p>
 <ul>
-<li>récupérer le n° de la dernière simulation dans le bean [SessionData] et l&#x27;incrémenter,</li>
-<li>ajouter la nouvelle simulation à la liste des simulations maintenue par la classe [SessionData],</li>
-<li>faire afficher le tableau des simulations :</li>
+  <li>récupérer le n° de la dernière simulation dans le bean [SessionData] et l&#x27;incrémenter,
+  </li>
+  <li>ajouter la nouvelle simulation à la liste des simulations maintenue par la classe [SessionData],
+  </li>
+  <li>faire afficher le tableau des simulations :
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000041700000147F2E4F9A0.png" style="display:inline-block; margin:4px;width:13.852cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000041700000147F2E4F9A0.png" /></td></tr></table>
 
 <p>Le tableau des simulations est affiché par la page [simulations.xhtml] :</p>
@@ -2161,10 +2254,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 8, la page [simulations.xhtml] s&#x27;insère à l&#x27;intérieur de la page [layout.xhtml],</li>
-<li>ligne 9, à la place du fragment nommé <strong>part1</strong>,</li>
-<li>ligne 11, la balise &lt;<strong>h:dataTable</strong>&gt; utilise le champ #{sessionData.simulations} comme source de données, c.a.d. le champ suivant :</li>
+  <li>ligne 8, la page [simulations.xhtml] s&#x27;insère à l&#x27;intérieur de la page [layout.xhtml],
+  </li>
+  <li>ligne 9, à la place du fragment nommé <b>part1</b>,
+  </li>
+  <li>ligne 11, la balise &lt;<b>h:dataTable</b>&gt; utilise le champ #{sessionData.simulations} comme source de données, c.a.d. le champ suivant :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// simulations</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;Simulation&gt; simulations;</span></span>
@@ -2195,25 +2292,34 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 2-4 : la balise &lt;<strong>f:facet name=&quot;header&quot;</strong>&gt; définit le titre de la colonne</li>
-<li>ligne 5 : le nom de l&#x27;employé est écrit :<ul>
-<li><strong>simulation</strong> fait référence à l&#x27;attribut <strong>var</strong> de la balise &lt;<strong>h:dataTable</strong> ...&gt; :</li>
+  <li>lignes 2-4 : la balise &lt;<b>f:facet name=&quot;header&quot;</b>&gt; définit le titre de la colonne
+  </li>
+  <li>ligne 5 : le nom de l&#x27;employé est écrit :
+    <ul>
+      <li><b>simulation</b> fait référence à l&#x27;attribut <b>var</b> de la balise &lt;<b>h:dataTable</b> ...&gt; :
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:dataTable </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span>&quot;#{sessionData.simulations}&quot;<span style="color:#000000"> </span><span style="color:#7f007f">var</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;simulation&quot; ...&gt;</span></span>
 </code></pre></div>
 
 <p><strong>simulation</strong> désigne la simulation courante de la liste des simulations : d&#x27;abord la 1ère, puis la 2ème, …</p>
 <ul>
-<li>(suite)<ul>
-<li><strong>simulation.feuilleSalaire</strong> fait référence au champ <strong>feuilleSalaire</strong> de la simulation courante</li>
-<li><strong>simulation.feuilleSalaire.employe</strong> fait référence au champ <strong>employe</strong> du champ <strong>feuilleSalaire</strong></li>
-<li><strong>simulation.feuilleSalaire.employe.nom</strong> fait référence au champ <strong>nom</strong> du champ <strong>employe</strong></li>
+  <li>(suite)
+    <ul>
+      <li><b>simulation.feuilleSalaire</b> fait référence au champ <b>feuilleSalaire</b> de la simulation courante
+      </li>
+      <li><b>simulation.feuilleSalaire.employe</b> fait référence au champ <b>employe</b> du champ <b>feuilleSalaire</b>
+      </li>
+      <li><b>simulation.feuilleSalaire.employe.nom</b> fait référence au champ <b>nom</b> du champ <b>employe</b>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>La même technique est répétée pour toutes les colonnes du tableau. Il y a une difficulté pour la colonne <strong>Indemnités</strong> qui est générée avec le code suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h:column</span><span style="color:#008080">&gt;</span></span>
@@ -2299,8 +2405,10 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 5 : le lien [Retirer] est associé à la méthode [retirerSimulation] de la classe [Form]. Cette méthode a besoin de connaître le n° de la simulation à retirer. Celui-ci lui est fourni par la balise &lt;f<strong>:setPropertyActionListener</strong>&gt; de la ligne 8. Cette balise a deux attributs <strong>target</strong> et <strong>value</strong> : l&#x27;attribut <strong>target</strong> désigne un champ du modèle auquel la valeur de l&#x27;attribut <strong>value</strong> sera affectée. Ici le n° de la simulation à retirer <strong>#{simulation.num}</strong> sera affectée au champ  <strong>numSimulationToDelete</strong> de la classe [Form] :</span></li>
+  <li><span style="color: #000000">ligne 5 : le lien [Retirer] est associé à la méthode [retirerSimulation] de la classe [Form]. Cette méthode a besoin de connaître le n° de la simulation à retirer. Celui-ci lui est fourni par la balise &lt;f<b>:setPropertyActionListener</b>&gt; de la ligne 8. Cette balise a deux attributs <b>target</b> et <b>value</b> : l&#x27;attribut <b>target</b> désigne un champ du modèle auquel la valeur de l&#x27;attribut <b>value</b> sera affectée. Ici le n° de la simulation à retirer <b>#{simulation.num}</b> sera affectée au champ  <b>numSimulationToDelete</b> de la classe [Form] :</span>
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// le modèle des vues</span></span>
 <span class="odt-code-line">  ...</span>

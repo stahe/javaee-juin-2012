@@ -814,10 +814,14 @@
 <h1 id="3-les-outils-du-document">3. Les outils du document</h1>
 <p>Les exemples du document ont été testés avec les outils suivants :</p>
 <ul>
-<li>Netbeans de la version 6.8 à la version 7.1.2. L&#x27;installation de Netbeans est décrite dans [<strong>ref3</strong>] au paragraphe 1.3.1.</li>
-<li>Wampserver version 2.2. L&#x27;installation de WampServer est  est décrite dans [<strong>ref3</strong>] au paragraphe 1.3.3 ;</li>
-<li>Maven est intégré à Netbeans. Nous décrivons maintenant cet outil.</li>
+  <li>Netbeans de la version 6.8 à la version 7.1.2. L&#x27;installation de Netbeans est décrite dans [<b>ref3</b>] au paragraphe 1.3.1.
+  </li>
+  <li>Wampserver version 2.2. L&#x27;installation de WampServer est  est décrite dans [<b>ref3</b>] au paragraphe 1.3.3 ;
+  </li>
+  <li>Maven est intégré à Netbeans. Nous décrivons maintenant cet outil.
+  </li>
 </ul>
+
 <p><a id="refheading2816871991350288"></a></p>
 <h2 id="31-maven">3.1. Maven</h2>
 <p><a id="refheading2816891991350288"></a></p>
@@ -825,12 +829,18 @@
 <p>Maven est disponible à l&#x27;URL [http://maven.apache.org/index.html ]. Selon ses créateurs :</p>
 <p><em>Maven&#x27;s primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time. In order to attain this goal there are several areas of concern that Maven attempts to deal with:</em></p>
 <ul>
-<li><em>Making the build process easy</em></li>
-<li><em>Providing a uniform build system</em></li>
-<li><em>Providing quality project information</em></li>
-<li><em>Providing guidelines for best practices development</em></li>
-<li><em>Allowing transparent migration to new features</em></li>
+  <li>Making the build process easy
+  </li>
+  <li>Providing a uniform build system
+  </li>
+  <li>Providing quality project information
+  </li>
+  <li>Providing guidelines for best practices development
+  </li>
+  <li>Allowing transparent migration to new features
+  </li>
 </ul>
+
 <p>Maven est intégré dans Netbeans et nous allons l&#x27;utiliser pour une seule de ses caractéristiques : la gestion des bibliothèques d&#x27;un projet. Celles-ci sont formées de l&#x27;ensemble des archives <em>jars</em> qui doivent être dans le <em>Classpath</em> du projet. Elles peuvent être très nombreuses. Par exemple, nos projets futurs vont utiliser l&#x27;ORM (Object Relational Mapper) Hibernate. Cet ORM est composé de dizaines d&#x27;archives <em>jar</em>. L&#x27;intérêt de Maven est qu&#x27;il nous affranchit de les connaître toutes. Il nous suffit d&#x27;indiquer dans notre projet que nous avons besoin d&#x27;Hibernate en donnant toutes les informations utiles pour trouver l&#x27;archive principale de cet ORM. Maven télécharge alors également toutes les bibliothèques nécessaires à Hibernate. On appelle cela les dépendances d&#x27;Hibernate. Une bibliothèque nécessaire à Hibernate peut elle même dépendre d&#x27;autres archives. Celles-ci seront également téléchargées. Toutes ces bibliothèques sont placées dans un dossier appelé le dépôt local de Maven.</p>
 <p>Un projet Maven est facilement partageable. Si on le transfère d&#x27;un poste à un autre et que les dépendances du projet ne sont pas présentes dans le dépôt local du nouveau poste, elles seront téléchargées.</p>
 <p>Maven peut être utilisé seul ou intégré à un EDI (Environnement de Développement Intégré) tel Netbeans ou Eclipse.</p>
@@ -838,35 +848,52 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006BA000001C16218D84F.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.694cm;" class="odt-zoomable" data-zoom-src="images/10000000000006BA000001C16218D84F.png" /></td></tr></table>
 
 <ul>
-<li>en [1], créer un nouveau projet,</li>
-<li>en [2], choisir la catégorie [Maven] et le type de projet [Java Application],</li>
+  <li>en [1], créer un nouveau projet,
+  </li>
+  <li>en [2], choisir la catégorie [Maven] et le type de projet [Java Application],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007A300000285390C8C74.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.937cm;" class="odt-zoomable" data-zoom-src="images/10000000000007A300000285390C8C74.png" /></td></tr></table>
 
 <ul>
-<li>en [3], désigner le dossier parent du dossier du nouveau projet,</li>
-<li>en [4], donner un nom au projet,</li>
-<li>en [5], le projet généré.</li>
+  <li>en [3], désigner le dossier parent du dossier du nouveau projet,
+  </li>
+  <li>en [4], donner un nom au projet,
+  </li>
+  <li>en [5], le projet généré.
+  </li>
 </ul>
+
 <p>Examinons les éléments du projet et explicitons le rôle de chacun.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CA00000180F878D1CB.png" style="display:inline-block; margin:4px;width:6.059cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CA00000180F878D1CB.png" /></td></tr></table>
 
 <ul>
-<li>en [1] : les différentes branches du projet :<ul>
-<li>[Source packages] : les classes Java du projet ;</li>
-<li>[Test packages] : les classes de test du projet ;</li>
-<li>[Dependencies] : les archives .jar nécessaires au projet et gérées par Maven ;</li>
-<li>[Test Dependencies] : les archives .jar nécessaires aux tests du projet et gérées par Maven ;</li>
-<li>[Java Dependencies] : les archives .jar nécessaires au projet et non gérées par Maven ;</li>
-<li>[Project Files] : fichiers de configuration de Maven et Netbeans,</li>
+  <li>en [1] : les différentes branches du projet :
+    <ul>
+      <li>[Source packages] : les classes Java du projet ;
+      </li>
+      <li>[Test packages] : les classes de test du projet ;
+      </li>
+      <li>[Dependencies] : les archives .jar nécessaires au projet et gérées par Maven ;
+      </li>
+      <li>[Test Dependencies] : les archives .jar nécessaires aux tests du projet et gérées par Maven ;
+      </li>
+      <li>[Java Dependencies] : les archives .jar nécessaires au projet et non gérées par Maven ;
+      </li>
+      <li>[Project Files] : fichiers de configuration de Maven et Netbeans,
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002010000012997DAE6A6.png" style="display:inline-block; margin:4px;width:6.787cm;height:3.93cm;" class="odt-zoomable" data-zoom-src="images/10000000000002010000012997DAE6A6.png" /></td></tr></table>
 
 <ul>
-<li>en [3], la branche [Source Packages],</li>
+  <li>en [3], la branche [Source Packages],
+  </li>
 </ul>
+
 <p>Cette branche contient les codes source des classes Java du projet. Netbeans a généré une classe par défaut :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.mvexemple;</span></span>
@@ -885,9 +912,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023B000001DA33128D4F.png" style="display:inline-block; margin:4px;width:7.555cm;height:6.271cm;" class="odt-zoomable" data-zoom-src="images/100000000000023B000001DA33128D4F.png" /></td></tr></table>
 
 <ul>
-<li>en [4], la branche [Test Packages] qui contient les codes source des classes de test du projet,</li>
-<li>en [5], la bibliothèque JUnit 3.8 nécessaire à l&#x27;exécution des tests,</li>
+  <li>en [4], la branche [Test Packages] qui contient les codes source des classes de test du projet,
+  </li>
+  <li>en [5], la bibliothèque JUnit 3.8 nécessaire à l&#x27;exécution des tests,
+  </li>
 </ul>
+
 <p>Netbeans a généré une classe par défaut :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.mvexemple;</span></span>
@@ -930,19 +960,25 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BB00000187E9483491.png" style="display:inline-block; margin:4px;width:5.861cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BB00000187E9483491.png" /></td></tr></table>
 
 <ul>
-<li>en [6], la branche [Dependencies] est ici vide,</li>
+  <li>en [6], la branche [Dependencies] est ici vide,
+  </li>
 </ul>
+
 <p>Cette branche affiche toute les bibliothèques nécessaires au projet et gérées par Maven. Toutes les bibliothèques listées ici sont automatiquement téléchargées par Maven. C&#x27;est pourquoi un projet Maven a besoin d&#x27;un accès Internet. Les bibliothèques téléchargées vont être stockées en local. Si un autre projet a besoin d&#x27;une bibliothèque déjà présente en local, celle-ci ne sera alors pas téléchargée. Nous verrons que cette liste de bibliothèques ainsi que les dépôts où on peut les trouver sont définis dans le fichier de configuration du projet Maven.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D9000001875A238B9C.png" style="display:inline-block; margin:4px;width:6.258cm;height:5.173cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D9000001875A238B9C.png" /></td></tr></table>
 
 <ul>
-<li>en [7], les bibliothèques nécessaires au projet et non gérées par Maven,</li>
+  <li>en [7], les bibliothèques nécessaires au projet et non gérées par Maven,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022100000199FA529CF0.png" style="display:inline-block; margin:4px;width:7.211cm;height:5.412cm;" class="odt-zoomable" data-zoom-src="images/100000000000022100000199FA529CF0.png" /></td></tr></table>
 
 <ul>
-<li>en [7], le fichier [pom.xml] de configuration du projet Maven. POM signifie <strong>P</strong>roject <strong>O</strong>bject <strong>M</strong>odel. On sera amené à intervenir directement sur ce fichier.</li>
+  <li>en [7], le fichier [pom.xml] de configuration du projet Maven. POM signifie <b>P</b>roject <b>O</b>bject <b>M</b>odel. On sera amené à intervenir directement sur ce fichier.
+  </li>
 </ul>
+
 <p>Le fichier [pom.xml] généré est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -973,17 +1009,24 @@
 </code></pre></div>
 
 <ul>
-<li>les lignes 5-8 définissent l&#x27;objet (artifact) Java qui va être créé par le projet Maven. Ces informations proviennent de l&#x27;assistant qui a été utilisé lors de la création du projet :</li>
+  <li>les lignes 5-8 définissent l&#x27;objet (artifact) Java qui va être créé par le projet Maven. Ces informations proviennent de l&#x27;assistant qui a été utilisé lors de la création du projet :
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035800000224D7ECA1C9.png" style="display:inline-block; margin:4px;width:11.324cm;height:7.25cm;" class="odt-zoomable" data-zoom-src="images/100000000000035800000224D7ECA1C9.png" /></td></tr></table>
 
 <p>Un objet Maven est défini par quatre propriétés :</p>
 <ul>
-<li>[<strong>groupId</strong>] : une information qui ressemble à un nom de package. Ainsi les bibliothèques du framework Spring ont groupId=<em>org.springframework</em>, celles du framework JSF ont groupId=<em>javax.faces,</em></li>
-<li>[<strong>artifactId</strong>] : le nom de l&#x27;objet Maven. Dans le groupe [org.springframework] on trouve ainsi les artifactId suivants : <em>spring-context</em>, <em>spring-core</em>, <em>spring-beans</em>, ... Dans le groupe [javax.faces], on trouve l&#x27;artifactId <em>jsf-api,</em></li>
-<li>[<strong>version</strong>] : n° de version de l&#x27;artifact Maven. Ainsi l&#x27;artifact <em>org.springframework.spring-core</em> a les versions suivantes : 2.5.4, 2.5.5, 2.5.6, 2.5.6.SECO1, ...</li>
-<li>[<strong>packaging</strong>] : la forme prise par l&#x27;artifact, le plus souvent <em>war</em> ou <em>jar</em>.</li>
+  <li>[<b>groupId</b>] : une information qui ressemble à un nom de package. Ainsi les bibliothèques du framework Spring ont groupId=<i>org.springframework</i>, celles du framework JSF ont groupId=<i>javax.faces,</i>
+  </li>
+  <li>[<b>artifactId</b>] : le nom de l&#x27;objet Maven. Dans le groupe [org.springframework] on trouve ainsi les artifactId suivants : <i>spring-context</i>, <i>spring-core</i>, <i>spring-beans</i>, ... Dans le groupe [javax.faces], on trouve l&#x27;artifactId <i>jsf-api,</i>
+  </li>
+  <li>[<b>version</b>] : n° de version de l&#x27;artifact Maven. Ainsi l&#x27;artifact <i>org.springframework.spring-core</i> a les versions suivantes : 2.5.4, 2.5.5, 2.5.6, 2.5.6.SECO1, ...
+  </li>
+  <li>[<b>packaging</b>] : la forme prise par l&#x27;artifact, le plus souvent <i>war</i> ou <i>jar</i>.
+  </li>
 </ul>
+
 <p>Notre projet Maven va générer un [jar] (ligne 8) dans le groupe [istia.st] (ligne 5), nommé [mv-exemple] (ligne 6) et de version [1.0-SNAPSHOT] (ligne 7). Ces quatre informations doivent définir de façon unique un artifact Maven.</p>
 <p>Les lignes 17-24 listent les dépendances du projet Maven, c&#x27;est à dire la liste des bibliothèques nécessaires au projet. Chaque bibliothèque est définie par les quatre informations (groupId, artifactId, version, packaging). Lorsque l&#x27;information <em>packaging</em> est absente comme ici, le <em>packaging</em> <strong>jar</strong> est utilisé. On y ajoute une autre information, <strong>scope</strong> qui fixe à quels moments de la vie du projet on a besoin de la bibliothèque. La valeur par défaut est <strong>compile</strong> qui indique que la bibliothèque est nécessaire à la compilation et à l&#x27;exécution. La valeur <strong>test</strong> signifie que la bibliothèque est nécessaire lors des test du projet. C&#x27;est le cas ici avec la bibliothèque JUnit 3.8.1. Si cette bibliothèque n&#x27;est pas présente dans le dépôt local du poste, elle est téléchargée.</p>
 <p><a id="refheading1433261675182081"></a></p>
@@ -1056,30 +1099,45 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000754000002E748365BA1.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.128cm;" class="odt-zoomable" data-zoom-src="images/1000000000000754000002E748365BA1.png" /></td></tr></table>
 
 <ul>
-<li>[1] : le système de fichiers du projet est dans l&#x27;onglet [Files],</li>
-<li>[2] : les sources Java sont dans le dossier [src / main / java],</li>
-<li>[3] : les sources Java des tests sont dans le dossier [src / test / java],</li>
-<li>[4] : le dossier [target] est créé par la construction (build) du projet,</li>
-<li>[5] : ici, la construction du projet a créé une archive [mv-exemple-1.0-SNAPSHOT.jar].</li>
+  <li>[1] : le système de fichiers du projet est dans l&#x27;onglet [Files],
+  </li>
+  <li>[2] : les sources Java sont dans le dossier [src / main / java],
+  </li>
+  <li>[3] : les sources Java des tests sont dans le dossier [src / test / java],
+  </li>
+  <li>[4] : le dossier [target] est créé par la construction (build) du projet,
+  </li>
+  <li>[5] : ici, la construction du projet a créé une archive [mv-exemple-1.0-SNAPSHOT.jar].
+  </li>
 </ul>
+
 <p><a id="refheading1433341675182081"></a></p>
 <h3 id="314-le-depot-maven-local">3.1.4. Le dépôt Maven local</h3>
 <p>Nous avons dit que Maven téléchargeait les dépendances nécessaires au projet et les stockait localement. On peut explorer ce dépôt local :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007A70000043F4F3E10B8.png" style="display:inline-block; margin:4px;width:17.999cm;height:9.987cm;" class="odt-zoomable" data-zoom-src="images/10000000000007A70000043F4F3E10B8.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on choisit l&#x27;option [Window / Other / Maven Repository Browser],</li>
-<li>en [2], un onglet [Maven Repositories] s&#x27;ouvre,</li>
-<li>en [3], il contient deux branches, une pour le dépôt local, l&#x27;autre pour le dépôt central. Ce dernier est gigantesque. Pour visualiser son contenu, il faut mettre à jour son index [4]. Cette mise à jour dure plusieurs dizaines de minutes.</li>
+  <li>en [1], on choisit l&#x27;option [Window / Other / Maven Repository Browser],
+  </li>
+  <li>en [2], un onglet [Maven Repositories] s&#x27;ouvre,
+  </li>
+  <li>en [3], il contient deux branches, une pour le dépôt local, l&#x27;autre pour le dépôt central. Ce dernier est gigantesque. Pour visualiser son contenu, il faut mettre à jour son index [4]. Cette mise à jour dure plusieurs dizaines de minutes.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000815000002BA0D37DF31.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.071cm;" class="odt-zoomable" data-zoom-src="images/1000000000000815000002BA0D37DF31.png" /></td></tr></table>
 
 <ul>
-<li>en [5], les bibliothèques du dépôt local,</li>
-<li>en [6], on y trouve une branche [istia.st] qui correspond au [groupId] de notre projet,</li>
-<li>en [7], on accède aux propriétés du dépôt local,</li>
-<li>en [8], on a le chemin du dépôt local. Il est utile de le connaître car parfois (rarement) Maven n&#x27;utilise plus la dernière version du projet. On fait des modifications et on constate qu&#x27;elles ne sont pas prises en compte. On peut alors supprimer manuellement la branche du dépôt local correspondant à notre [groupId]. Cela force Maven à recréer la branche à partir de la dernière version du projet.</li>
+  <li>en [5], les bibliothèques du dépôt local,
+  </li>
+  <li>en [6], on y trouve une branche [istia.st] qui correspond au [groupId] de notre projet,
+  </li>
+  <li>en [7], on accède aux propriétés du dépôt local,
+  </li>
+  <li>en [8], on a le chemin du dépôt local. Il est utile de le connaître car parfois (rarement) Maven n&#x27;utilise plus la dernière version du projet. On fait des modifications et on constate qu&#x27;elles ne sont pas prises en compte. On peut alors supprimer manuellement la branche du dépôt local correspondant à notre [groupId]. Cela force Maven à recréer la branche à partir de la dernière version du projet.
+  </li>
 </ul>
+
 <p><a id="refheading1433361675182081"></a></p>
 <h3 id="315-chercher-un-artifact-avec-maven">3.1.5. Chercher un artifact avec Maven</h3>
 <p>Apprenons maintenant à chercher un artifact avec Maven. Partons de la liste des dépendances actuelles du fichier [pom.xml] :</p>
@@ -1140,12 +1198,18 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000082E000001D4BB7B95DB.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.022cm;" class="odt-zoomable" data-zoom-src="images/100000000000082E000001D4BB7B95DB.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on ajoute une dépendance au projet,</li>
-<li>en [2], on doit préciser des informations sur l&#x27;artifact cherché (groupId, artifactId, version, packaging (Type) et scope). Nous commençons par préciser le [groupId] [3],</li>
-<li>en [4], nous tapons [espace] pour faire afficher la liste des artifacts possibles. Ici [junit] et [jnit-dep]. Nous choisissons [junit],</li>
-<li>en [5], en procédant de la même façon, on choisit la version la plus récente. Le type de packaging est <em>jar,</em></li>
-<li>en [6], nous choisissons la portée <strong>test</strong> pour indiquer que la dépendance n&#x27;est nécessaire qu&#x27;aux tests.</li>
+  <li>en [1], on ajoute une dépendance au projet,
+  </li>
+  <li>en [2], on doit préciser des informations sur l&#x27;artifact cherché (groupId, artifactId, version, packaging (Type) et scope). Nous commençons par préciser le [groupId] [3],
+  </li>
+  <li>en [4], nous tapons [espace] pour faire afficher la liste des artifacts possibles. Ici [junit] et [jnit-dep]. Nous choisissons [junit],
+  </li>
+  <li>en [5], en procédant de la même façon, on choisit la version la plus récente. Le type de packaging est <i>jar,</i>
+  </li>
+  <li>en [6], nous choisissons la portée <b>test</b> pour indiquer que la dépendance n&#x27;est nécessaire qu&#x27;aux tests.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000206000001D16C4BB7E2.png" style="display:inline-block; margin:4px;width:6.853cm;height:6.152cm;" class="odt-zoomable" data-zoom-src="images/1000000000000206000001D16C4BB7E2.png" /></td></tr></table>
 
 <p>En [6], les dépendances ajoutées apparaissent dans le projet. Le fichier [pom.xml] reflète ces changements :</p>
@@ -1186,10 +1250,14 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000848000004EAACD32F77.png" style="display:inline-block; margin:4px;width:17.999cm;height:10.68cm;" class="odt-zoomable" data-zoom-src="images/1000000000000848000004EAACD32F77.png" /></td></tr></table>
 
 <ul>
-<li>en [2], choisissons le [groupId] <em>org.hibernate</em> et l&#x27;[artifactId] <em>hibernate-core</em>,</li>
-<li>en [3], choisissons la version <em>4.1.2-Final</em>,</li>
-<li>en [4], nous obtenons le code Maven à coller dans le fichier [pom.xml]. Nous le faisons.</li>
+  <li>en [2], choisissons le [groupId] <i>org.hibernate</i> et l&#x27;[artifactId] <i>hibernate-core</i>,
+  </li>
+  <li>en [3], choisissons la version <i>4.1.2-Final</i>,
+  </li>
+  <li>en [4], nous obtenons le code Maven à coller dans le fichier [pom.xml]. Nous le faisons.
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
 <span class="odt-code-line">         <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
@@ -1228,8 +1296,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002ED0000029F4FD0C729.png" style="display:inline-block; margin:4px;width:9.91cm;height:8.878cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED0000029F4FD0C729.png" /></td></tr></table>
 
 <ul>
-<li>en [5], la dépendance [hibernate-core-4.1.2-Final]. Dans le dépôt où il a été trouvé, cet [artifactId] est lui aussi décrit par un fichier [pom.xml]. Ce fichier a été lu et Maven a découvert que l&#x27;[artifactId] avait des dépendances. Il les télécharge également. Il fera cela pour chaque [artifactId] téléchargé. Au final, on trouve en [6] des dépendances qu&#x27;on n&#x27;avait pas demandées directement. Elles sont signalées par une icône différente de celle de l&#x27;[artifactId] principal.</li>
+  <li>en [5], la dépendance [hibernate-core-4.1.2-Final]. Dans le dépôt où il a été trouvé, cet [artifactId] est lui aussi décrit par un fichier [pom.xml]. Ce fichier a été lu et Maven a découvert que l&#x27;[artifactId] avait des dépendances. Il les télécharge également. Il fera cela pour chaque [artifactId] téléchargé. Au final, on trouve en [6] des dépendances qu&#x27;on n&#x27;avait pas demandées directement. Elles sont signalées par une icône différente de celle de l&#x27;[artifactId] principal.
+  </li>
 </ul>
+
 <p>Dans ce document, nous utilisons Maven principalement pour cette caractéristique. Cela nous évite de connaître toutes les dépendances d&#x27;une bibliothèque que l&#x27;on veut utiliser. On laisse Maven les gérer. Par ailleurs, en partageant un fichier [pom.xml] entre développeurs, on est assuré que chaque développeur utilise bien les mêmes bibliothèques.</p>
 <p>Dans les exemples qui suivront, nous nous conterons de donner le fichier [pom.xml] utilisé. Le lecteur n&#x27;aura qu&#x27;à l&#x27;utiliser pour se trouver dans les mêmes conditions que le document. Par ailleurs les projets Maven sont reconnus par les principaux IDE Java (Eclipse, Netbeans, IntelliJ, JDeveloper). Aussi le lecteur pourra-t-il utiliser son IDE favori pour tester les exemples.</p>
 

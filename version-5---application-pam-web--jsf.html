@@ -902,9 +902,12 @@
 
 <p>Dans cette version, le serveur Glassfish hébergera la totalité des couches de l&#x27;application :</p>
 <ul>
-<li>la couche [web] est hébergée par le conteneur de servlets du serveur (1 ci-dessous)</li>
-<li>les autres couches [metier, DAO, jpa] sont hébergées par le conteneur EJB3 du serveur (2 ci-dessous)</li>
+  <li>la couche [web] est hébergée par le conteneur de servlets du serveur (1 ci-dessous)
+  </li>
+  <li>les autres couches [metier, DAO, jpa] sont hébergées par le conteneur EJB3 du serveur (2 ci-dessous)
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CE000000B0EAA6A0E4.png" style="display:inline-block; margin:4px;width:16.272cm;height:2.328cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CE000000B0EAA6A0E4.png" /></td></tr></table>
 
 <p>Les éléments [metier, DAO] de l&#x27;application s&#x27;exécutant dans le conteneur EJB3 ont déjà été écrits dans l&#x27;application client / serveur étudiée au paragraphe <a href="version-3-portage-de-lapplication-pam-sur-un-serveur-dapplications-glassfish.html#serveur-ejb-sunas9">7.1</a>, et dont l&#x27;architecture était la suivante :</p>
@@ -923,30 +926,46 @@
 <p>Cette architecture implémente le <em>Design Pattern</em> <strong>MVC</strong> (Modèle, Vue, Contrôleur). Le traitement d&#x27;une demande d&#x27;un client se déroule de la façon suivante :</p>
 <p>Si la demande est faite avec un <strong>GET</strong>, les deux étapes suivantes sont exécutées :</p>
 <ol>
-<li><strong>demande</strong> - le client navigateur fait une demande au contrôleur [<strong>Faces Servlet</strong>]. Celui-ci voit passer toutes les demandes des clients. C&#x27;est la porte d&#x27;entrée de l&#x27;application. C&#x27;est le <strong>C</strong> de MVC.</li>
-<li><strong>réponse</strong> - le contrôleur <strong>C</strong> demande à la page JSF choisie de s&#x27;afficher. C&#x27;est la vue, le <strong>V</strong> de MVC. La page JSF utilise un modèle <strong>M</strong> pour initialiser les parties dynamiques de la réponse qu&#x27;elle doit envoyer au client. Ce modèle est une classe Java qui peut faire appel à la couche [métier] [4a] pour fournir à la vue <strong>V</strong> les données dont elle a besoin.</li>
+  <li><b>demande</b> - le client navigateur fait une demande au contrôleur [<b>Faces Servlet</b>]. Celui-ci voit passer toutes les demandes des clients. C&#x27;est la porte d&#x27;entrée de l&#x27;application. C&#x27;est le <b>C</b> de MVC.
+  </li>
+  <li><b>réponse</b> - le contrôleur <b>C</b> demande à la page JSF choisie de s&#x27;afficher. C&#x27;est la vue, le <b>V</b> de MVC. La page JSF utilise un modèle <b>M</b> pour initialiser les parties dynamiques de la réponse qu&#x27;elle doit envoyer au client. Ce modèle est une classe Java qui peut faire appel à la couche [métier] [4a] pour fournir à la vue <b>V</b> les données dont elle a besoin.
+  </li>
 </ol>
+
 <p>Si la demande est faite avec un <strong>POST</strong>, deux étapes supplémentaires s&#x27;insèrent entre la demande et la réponse :</p>
 <ol>
-<li><strong>demande</strong> - le client navigateur fait une demande au contrôleur [<strong>Faces Servlet</strong>].</li>
-<li><strong>traitement</strong> - le contrôleur <strong>C</strong> traite cette demande. En effet, une demande POST est accompagnée de données qu&#x27;il faut traiter. Pour ce faire, le contrôleur se fait aider par des gestionnaires d&#x27;événements spécifiques à l&#x27;application écrite [2a]. Ces gestionnaires peuvent avoir besoin de la couche métier [2b]. Le gestionnaire de l&#x27;événement peut être amené à mettre à jour certains modèles M [2c]. Une fois la demande du client traitée, celle-ci peut appeler diverses réponses. Un exemple classique est :<ul>
-<li>une page d&#x27;erreurs si la demande n&#x27;a pu être traitée correctement</li>
-<li>une page de confirmation sinon</li>
-</ul>
-</li>
+  <li><b>demande</b> - le client navigateur fait une demande au contrôleur [<b>Faces Servlet</b>].
+  </li>
+  <li><b>traitement</b> - le contrôleur <b>C</b> traite cette demande. En effet, une demande POST est accompagnée de données qu&#x27;il faut traiter. Pour ce faire, le contrôleur se fait aider par des gestionnaires d&#x27;événements spécifiques à l&#x27;application écrite [2a]. Ces gestionnaires peuvent avoir besoin de la couche métier [2b]. Le gestionnaire de l&#x27;événement peut être amené à mettre à jour certains modèles M [2c]. Une fois la demande du client traitée, celle-ci peut appeler diverses réponses. Un exemple classique est :
+    <ul>
+      <li>une page d&#x27;erreurs si la demande n&#x27;a pu être traitée correctement
+      </li>
+      <li>une page de confirmation sinon
+      </li>
+    </ul>
+  </li>
 </ol>
+
 <p>Le gestionnaire d&#x27;événement rend au contrôleur [Faces Servlet] un résultat de type chaîne de caractères appelée <strong>clé de navigation</strong>.</p>
 <ol>
-<li><strong>navigation</strong> - le contrôleur choisit la page JSF (= vue) à envoyer au client. Ce choix se fait à partir de la clé de navigation rendue par le gestionnaire d&#x27;événement.</li>
-<li><strong>réponse</strong> - la page JSF choisie va envoyer la réponse au client. Elle utilise son modèle <strong>M</strong> pour initialiser ses parties dynamiques. Ce modèle peut lui aussi faire appel à la couche [métier] [4a] pour fournir à la page JSF les données dont elle a besoin.</li>
+  <li><b>navigation</b> - le contrôleur choisit la page JSF (= vue) à envoyer au client. Ce choix se fait à partir de la clé de navigation rendue par le gestionnaire d&#x27;événement.
+  </li>
+  <li><b>réponse</b> - la page JSF choisie va envoyer la réponse au client. Elle utilise son modèle <b>M</b> pour initialiser ses parties dynamiques. Ce modèle peut lui aussi faire appel à la couche [métier] [4a] pour fournir à la page JSF les données dont elle a besoin.
+  </li>
 </ol>
+
 <p>Dans un projet JSF :</p>
 <ul>
-<li>le contrôleur <strong>C</strong> est la servlet [javax.faces.webapp.FacesServlet]. On trouve celle-ci dans la bibliothèque [jsf-api.jar].</li>
-<li>les vues <strong>V</strong> sont implémentées par des pages JSF.</li>
-<li>les modèles <strong>M</strong> et les <strong>gestionnaires d&#x27;événements</strong> sont implémentés par des classes Java souvent appelées &quot;backing beans&quot;.</li>
-<li>dans les version JSF 1.x la définition des beans ainsi que les <strong>règles de navigation</strong> d&#x27;une page à l&#x27;autre sont définies dans le fichier [faces-config.xml]. On y trouve la liste des vues et les règles de transition de l&#x27;une à l&#x27;autre. A partir de la version JSF 2, les définitions des beans peuvent se faire à l&#x27;aide d&#x27;annotations et les transitions entre pages peuvent se faire en &quot; dur &quot; dans le code des beans.</li>
+  <li>le contrôleur <b>C</b> est la servlet [javax.faces.webapp.FacesServlet]. On trouve celle-ci dans la bibliothèque [jsf-api.jar].
+  </li>
+  <li>les vues <b>V</b> sont implémentées par des pages JSF.
+  </li>
+  <li>les modèles <b>M</b> et les <b>gestionnaires d&#x27;événements</b> sont implémentés par des classes Java souvent appelées &quot;backing beans&quot;.
+  </li>
+  <li>dans les version JSF 1.x la définition des beans ainsi que les <b>règles de navigation</b> d&#x27;une page à l&#x27;autre sont définies dans le fichier [faces-config.xml]. On y trouve la liste des vues et les règles de transition de l&#x27;une à l&#x27;autre. A partir de la version JSF 2, les définitions des beans peuvent se faire à l&#x27;aide d&#x27;annotations et les transitions entre pages peuvent se faire en &quot; dur &quot; dans le code des beans.
+  </li>
 </ul>
+
 <p><a id="refheading87545112820228"></a></p>
 <h2 id="102-fonctionnement-de-lapplication">10.2. Fonctionnement de l&#x27;application</h2>
 <p>Lorsque l&#x27;application est demandée la première fois, on obtient la page suivante :</p>
@@ -975,13 +994,20 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EA00000268048BD977.png" style="display:inline-block; margin:4px;width:16.642cm;height:8.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EA00000268048BD977.png" /></td></tr></table>
 
 <ul>
-<li>en [1], les fichiers de configuration</li>
-<li>en [2], les pages XHTML et la feuille de style</li>
-<li>en [3], les classes de la couche [web]</li>
-<li>en [4], les objets échangés entre la couche [web] et la couche [métier] et la couche [métier] elle-même</li>
-<li>en [5], le fichier des messages pour l&#x27;internationalisation de l&#x27;application</li>
-<li>en [6], les dépendances de l&#x27;application</li>
+  <li>en [1], les fichiers de configuration
+  </li>
+  <li>en [2], les pages XHTML et la feuille de style
+  </li>
+  <li>en [3], les classes de la couche [web]
+  </li>
+  <li>en [4], les objets échangés entre la couche [web] et la couche [métier] et la couche [métier] elle-même
+  </li>
+  <li>en [5], le fichier des messages pour l&#x27;internationalisation de l&#x27;application
+  </li>
+  <li>en [6], les dépendances de l&#x27;application
+  </li>
 </ul>
+
 <p>Nous passons en revue certains de ces éléments.</p>
 <p><a id="refheading87549112820228"></a></p>
 <h3 id="1031-les-fichiers-de-configuration">10.3.1. Les fichiers de configuration</h3>
@@ -1067,9 +1093,12 @@
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="nt">&lt;/web-app&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 30 : [index.html] est la page d&#x27;accueil de l&#x27;application</li>
-<li>lignes 32-39 : configuration de la page d&#x27;exception</li>
+  <li>ligne 30 : [index.html] est la page d&#x27;accueil de l&#x27;application
+  </li>
+  <li>lignes 32-39 : configuration de la page d&#x27;exception
+  </li>
 </ul>
+
 <p>La page [exception.html] est tirée de [<strong>ref3</strong>]. Son code est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1167,9 +1196,12 @@
 </code></pre></div></td></tr></table></div>
 <p>On notera les points suivants :</p>
 <ul>
-<li>lignes 9-14 : le fichier [messages.properties] sera utilisé pour l&#x27;internationalisation des pages. Il sera accessible dans les pages XHTML via la clé <strong>msg</strong>.</li>
-<li>ligne 15 : définit le fichier [messages.properties] comme devant être exploré en priorité pour les messages d&#x27;erreur affichés par les balises &lt;h:messages&gt; et &lt;h:message&gt;. Cela permet de redéfinir certains messages d&#x27;erreur par défaut de JSF. Cette possibilité n&#x27;est pas utilisée ici.</li>
+  <li>lignes 9-14 : le fichier [messages.properties] sera utilisé pour l&#x27;internationalisation des pages. Il sera accessible dans les pages XHTML via la clé <b>msg</b>.
+  </li>
+  <li>ligne 15 : définit le fichier [messages.properties] comme devant être exploré en priorité pour les messages d&#x27;erreur affichés par les balises &lt;h:messages&gt; et &lt;h:message&gt;. Cela permet de redéfinir certains messages d&#x27;erreur par défaut de JSF. Cette possibilité n&#x27;est pas utilisée ici.
+  </li>
 </ul>
+
 <p><a id="refheading87551112820228"></a></p>
 <h3 id="1032-la-feuille-de-style">10.3.2. La feuille de style</h3>
 <p>Le fichier [styles.css] est le suivant :</p>
@@ -1256,7 +1288,7 @@
 <p>Ces messages sont tous utilisés dans la page [index.xhtml] à l&#x27;exception de ceux des lignes 11-15 utilisés dans la page [exception.xhtml].</p>
 <p><a id="refheading217526813040411"></a></p>
 <h3 id="1034-la-portee-des-beans">10.3.4. La portée des beans</h3>
-<p>Le bean [web.forms.Form] aura une portée <strong>request </strong>:</p>
+<p>Le bean [web.forms.Form] aura une portée <strong>request</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.io.Serializable;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.faces.bean.ManagedBean;</span></span>
@@ -1267,7 +1299,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Form </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> Serializable {</span></span>
 </code></pre></div>
 
-<p>Le bean [web.utils.ChangeLocale] aura une portée <strong>application </strong>:</p>
+<p>Le bean [web.utils.ChangeLocale] aura une portée <strong>application</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> web.utils;</span></span>
 <span class="odt-code-line"></span>
@@ -1371,11 +1403,16 @@
 <p>Nous construisons maintenant la page XHTML du formulaire ainsi que son modèle.</p>
 <p><strong>Lectures conseillées</strong> dans [<a href="http://tahe.developpez.com/java/primefaces"><strong>ref3</strong></a>] : </p>
 <ul>
-<li>exemple n° 3 (mv-jsf2-03) pour la listes des balises utilisables dans un formulaire</li>
-<li>exemple n° 4 (mv-jsf2-04) pour les listes déroulantes remplies par le modèle</li>
-<li>exemple n° 6 (mv-jsf2-06) pour la validation des saisies</li>
-<li>exemple n° 7 (mv-jsf2-07) pour la gestion du bouton [Raz]</li>
+  <li>exemple n° 3 (mv-jsf2-03) pour la listes des balises utilisables dans un formulaire
+  </li>
+  <li>exemple n° 4 (mv-jsf2-04) pour les listes déroulantes remplies par le modèle
+  </li>
+  <li>exemple n° 6 (mv-jsf2-06) pour la validation des saisies
+  </li>
+  <li>exemple n° 7 (mv-jsf2-07) pour la gestion du bouton [Raz]
+  </li>
 </ul>
+
 <p><a id="refheading87559112820228"></a></p>
 <h3 id="1041-etape-1">10.4.1. étape 1</h3>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
@@ -1387,31 +1424,35 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>n°
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>id</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>type JSF</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>modèle</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>rôle</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>id</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>type JSF</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>modèle</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>rôle</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">comboEmployes</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&lt;h:selectOneMenu&gt;</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">String comboEmployesValue</p><p style="margin:0;">List&lt;Employe&gt; getEmployes()</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">contient la liste des employés sous la forme</p><p style="margin:0;"> &quot;prénom nom&quot;.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">comboEmployes</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;h:selectOneMenu&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">String comboEmployesValue</div><div style="margin:0 0 0.5em 0">List&lt;Employe&gt; getEmployes()</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">contient la liste des employés sous la forme</div><div style="margin:0 0 0.5em 0"> &quot;prénom nom&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>2
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">heuresTravaillees</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&lt;h:inputText&gt;</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">String heuresTravaillées</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">nombre d&#x27;heures travaillées - nombre réel</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">heuresTravaillees</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;h:inputText&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">String heuresTravaillées</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nombre d&#x27;heures travaillées - nombre réel</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>3
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">joursTravailles</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&lt;h:inputText&gt;</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">String joursTravaillés</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">nombre de jours travaillés - nombre entier</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">joursTravailles</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;h:inputText&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">String joursTravaillés</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nombre de jours travaillés - nombre entier</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>4
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">btnSalaire</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&lt;h:commandButton&gt;</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">lance le calcul du salaire</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">btnSalaire</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;h:commandButton&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">lance le calcul du salaire</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>5
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">btnRaz</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&lt;h:commandButton&gt;</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">remet le formulaire dans son état premier</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">btnRaz</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;h:commandButton&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">remet le formulaire dans son état premier</div></td></tr></table>
 
 <ul>
-<li>la méthode <em>getEmployes</em> rendra une liste d&#x27;employés qu&#x27;elle obtiendra auprès de la couche [métier]. Les objets affichés par le combo auront pour attribut <strong>itemValue</strong>, le n° SS de l&#x27;employé et pour attribut <strong>itemLabel</strong>, une chaîne constituée du prénom et du nom de l&#x27;employé.</li>
-<li>les boutons [Salaire] et [Raz] ne seront pour l&#x27;instant pas connectés à des gestionnaires d&#x27;événement.</li>
-<li>la validité des saisies sera vérifiée.</li>
+  <li>la méthode <i>getEmployes</i> rendra une liste d&#x27;employés qu&#x27;elle obtiendra auprès de la couche [métier]. Les objets affichés par le combo auront pour attribut <b>itemValue</b>, le n° SS de l&#x27;employé et pour attribut <b>itemLabel</b>, une chaîne constituée du prénom et du nom de l&#x27;employé.
+  </li>
+  <li>les boutons [Salaire] et [Raz] ne seront pour l&#x27;instant pas connectés à des gestionnaires d&#x27;événement.
+  </li>
+  <li>la validité des saisies sera vérifiée.
+  </li>
 </ul>
+
 <p><img src="images/1000000000000284000000AF4366AC4B.png" style="width:11.929cm;height:3.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000284000000AF4366AC4B.png" /></p>
 <p>Testez cette version. Vérifiez notamment que les erreurs de saisie sont bien signalées.</p>
-<p><strong>Note </strong>: il est important que les attributs <strong>id</strong> des composants de la page <strong>ne comportent pas de caractères accentués</strong>. Avec Glassfish 3.1.2, ça plante l&#x27;application.</p>
+<p><strong>Note</strong> : il est important que les attributs <strong>id</strong> des composants de la page <strong>ne comportent pas de caractères accentués</strong>. Avec Glassfish 3.1.2, ça plante l&#x27;application.</p>
 <p><a id="refheading87561112820228"></a></p>
 <h3 id="1042-etape-2">10.4.2. étape 2</h3>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
@@ -1455,9 +1496,12 @@
 
 <p>mais avec la locale <em>en_GB</em> (Anglais GB) on continuerait à avoir un affichage en euros alors qu&#x27;il faudrait utiliser la livre £. La balise &lt;<strong>h:outputFormat</strong>&gt; permet d&#x27;afficher des informations en fonction de la <em>locale</em> de la page JSF affichée :</p>
 <ul>
-<li>ligne 1 : affiche le paramètre {0} qui est un nombre (number) représentant une somme d&#x27;argent (currency)</li>
-<li>ligne 2 : la balise &lt;<strong>f:param</strong>&gt; donne une valeur au paramètre {0}. Une deuxième balise &lt;f:param&gt; donnerait une valeur au paramètre noté {1} et ainsi de suite.</li>
+  <li>ligne 1 : affiche le paramètre {0} qui est un nombre (number) représentant une somme d&#x27;argent (currency)
+  </li>
+  <li>ligne 2 : la balise &lt;<b>f:param</b>&gt; donne une valeur au paramètre {0}. Une deuxième balise &lt;f:param&gt; donnerait une valeur au paramètre noté {1} et ainsi de suite.
+  </li>
 </ul>
+
 <p><a id="refheading87565112820228"></a></p>
 <h3 id="1044-etape-4">10.4.4. étape 4</h3>
 <p><strong>Lectures conseillées</strong> : exemple n° 7 (mv-jsf2-07) dans [<a href="http://tahe.developpez.com/java/primefaces"><strong>ref3</strong></a>].</p>

@@ -998,15 +998,21 @@
 <p><a id="refheading87445112820228"></a></p>
 <h3 id="612-les-bibliotheques-des-projets">6.1.2. Les bibliothèques des projets</h3>
 <ul>
-<li>les couches [DAO] et [metier] ne sont plus instanciées par <strong>Spring</strong>. Elles le sont par le conteneur <strong>OpenEJB</strong>.</li>
-<li>les bibliothèques du conteneur Spring et sa configuration disparaissent au profit des bibliothèques du conteneur OpenEJB et sa configuration.</li>
-<li>les bibliothèques de la couche <strong>JPA / Hibernate</strong> sont remplacées par celles de la couche <strong>JPA / EclipseLink</strong></li>
+  <li>les couches [DAO] et [metier] ne sont plus instanciées par <b>Spring</b>. Elles le sont par le conteneur <b>OpenEJB</b>.
+  </li>
+  <li>les bibliothèques du conteneur Spring et sa configuration disparaissent au profit des bibliothèques du conteneur OpenEJB et sa configuration.
+  </li>
+  <li>les bibliothèques de la couche <b>JPA / Hibernate</b> sont remplacées par celles de la couche <b>JPA / EclipseLink</b>
+  </li>
 </ul>
+
 <p><a id="refheading87447112820228"></a></p>
 <h3 id="613-configuration-de-la-couche-jpa-eclipselink-openejb">6.1.3. Configuration de la couche JPA / EclipseLink / OpenEJB</h3>
 <ul>
-<li>le fichier [META-INF/persistence.xml] configurant la couche JPA devient le suivant :</li>
+  <li>le fichier [META-INF/persistence.xml] configurant la couche JPA devient le suivant :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1038,12 +1044,18 @@
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="nt">&lt;/persistence&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 3 : les transactions dans un conteneur EJB sont de type <strong>JTA</strong> (Java Transaction API). Elles étaient de type <strong>RESOURCE_LOCAL</strong> avec Spring.</li>
-<li>ligne 9 : l&#x27;implémentation JPA utilisée est <strong>EclipseLink</strong></li>
-<li>lignes 5-7 : les entités gérées par la couche JPA</li>
-<li>lignes 11-13 : propriétés du provider <strong>EclipseLink</strong></li>
-<li>ligne 12 : à chaque exécution, les tables seront créées</li>
+  <li>ligne 3 : les transactions dans un conteneur EJB sont de type <b>JTA</b> (Java Transaction API). Elles étaient de type <b>RESOURCE_LOCAL</b> avec Spring.
+  </li>
+  <li>ligne 9 : l&#x27;implémentation JPA utilisée est <b>EclipseLink</b>
+  </li>
+  <li>lignes 5-7 : les entités gérées par la couche JPA
+  </li>
+  <li>lignes 11-13 : propriétés du provider <b>EclipseLink</b>
+  </li>
+  <li>ligne 12 : à chaque exécution, les tables seront créées
+  </li>
 </ul>
+
 <p>Les caractéristiques JDBC de la source de données JTA utilisée par le conteneur OpenEJB seront précisées par le fichier de configuration [conf/openejb.conf] suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1062,14 +1074,19 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nt">&lt;/openejb&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 3 : on utilise l&#x27;id  <strong>Default JDBC Database</strong> lorsqu&#x27;on travaille avec un conteneur OpenEJB embarqué (embedded) dans l&#x27;application elle-même.</li>
-<li>ligne 5 : nous utilisons une base MySQL [dbpam_eclipselink]</li>
+  <li>ligne 3 : on utilise l&#x27;id  <b>Default JDBC Database</b> lorsqu&#x27;on travaille avec un conteneur OpenEJB embarqué (embedded) dans l&#x27;application elle-même.
+  </li>
+  <li>ligne 5 : nous utilisons une base MySQL [dbpam_eclipselink]
+  </li>
 </ul>
+
 <p><a id="refheading87449112820228"></a></p>
 <h3 id="614-implementation-de-la-couche-dao-par-des-ejb">6.1.4. Implémentation de la couche [DAO] par des EJB</h3>
 <ul>
-<li>Les classes implémentant la couche [DAO] deviennent des <strong>EJB</strong>. Prenons l&#x27;exemple de la classe [CotisationDao] :</li>
+  <li>Les classes implémentant la couche [DAO] deviennent des <b>EJB</b>. Prenons l&#x27;exemple de la classe [CotisationDao] :
+  </li>
 </ul>
+
 <p>L&#x27;interface [ICotisationDao] dans la version Spring était la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1124,9 +1141,12 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 6 : l&#x27;interface [ICotisationDaoLocal] hérite de l&#x27;interface [ICotisationDao] pour en reprendre toutes les méthodes. Elle n&#x27;en ajoute pas de nouvelles.</li>
-<li>ligne 5 : l&#x27;annotation @<strong>Local</strong> en fait une interface locale pour l&#x27;EJB qui l&#x27;implémentera.</li>
+  <li>ligne 6 : l&#x27;interface [ICotisationDaoLocal] hérite de l&#x27;interface [ICotisationDao] pour en reprendre toutes les méthodes. Elle n&#x27;en ajoute pas de nouvelles.
+  </li>
+  <li>ligne 5 : l&#x27;annotation @<b>Local</b> en fait une interface locale pour l&#x27;EJB qui l&#x27;implémentera.
+  </li>
 </ul>
+
 <p>L&#x27;interface <strong>distante</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -1143,9 +1163,12 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 6 : l&#x27;interface [ICotisationDaoRemote] hérite de l&#x27;interface [ICotisationDao] pour en reprendre toutes les méthodes. Elle n&#x27;en ajoute pas de nouvelles.</li>
-<li>ligne 5 : l&#x27;annotation @<strong>Remote</strong> en fait une interface distante pour l&#x27;EJB qui l&#x27;implémentera.</li>
+  <li>ligne 6 : l&#x27;interface [ICotisationDaoRemote] hérite de l&#x27;interface [ICotisationDao] pour en reprendre toutes les méthodes. Elle n&#x27;en ajoute pas de nouvelles.
+  </li>
+  <li>ligne 5 : l&#x27;annotation @<b>Remote</b> en fait une interface distante pour l&#x27;EJB qui l&#x27;implémentera.
+  </li>
 </ul>
+
 <p>La couche [DAO] est implémentée par un EJB implémentant les deux interfaces (ce n&#x27;est pas obligatoire) :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
@@ -1160,10 +1183,14 @@
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">EntityManager</span><span class="w"> </span><span class="n">em</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 1 : l&#x27;annotation @<strong>Stateless</strong> qui fait de la classe un EJB</li>
-<li>ligne 2 : l&#x27;annotation @<strong>TransactionAttribute</strong> qui fait que chaque méthode de la classe s&#x27;exécutera au sein d&#x27;une transaction.</li>
-<li>ligne 5 : l&#x27;annotation @<strong>PersistenceContext</strong> qui injecte dans la classe [CotisationDao] l&#x27;EntityManager de la couche JPA. Elle est identique à ce qu&#x27;on avait dans la version Spring.</li>
+  <li>ligne 1 : l&#x27;annotation @<b>Stateless</b> qui fait de la classe un EJB
+  </li>
+  <li>ligne 2 : l&#x27;annotation @<b>TransactionAttribute</b> qui fait que chaque méthode de la classe s&#x27;exécutera au sein d&#x27;une transaction.
+  </li>
+  <li>ligne 5 : l&#x27;annotation @<b>PersistenceContext</b> qui injecte dans la classe [CotisationDao] l&#x27;EntityManager de la couche JPA. Elle est identique à ce qu&#x27;on avait dans la version Spring.
+  </li>
 </ul>
+
 <p>Lorsque l&#x27;interface <strong>locale</strong> de la couche [DAO] est utilisée, le client de cette interface s&#x27;exécute dans la même JVM.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000453000000EC9E69FC87.png" style="display:inline-block; margin:4px;width:14.646cm;height:3.122cm;" class="odt-zoomable" data-zoom-src="images/1000000000000453000000EC9E69FC87.png" /></td></tr></table>
 
@@ -1175,8 +1202,10 @@
 <p><a id="refheading87451112820228"></a></p>
 <h3 id="615-implementation-de-la-couche-metier-par-un-ejb">6.1.5. Implémentation de la couche [metier] par un EJB</h3>
 <ul>
-<li>La classe implémentant la couche [metier] devient elle aussi un <strong>EJB</strong> implémentant une interface <strong>locale</strong> et <strong>distante</strong>. L&#x27;interface initiale [IMetier] était la suivante :</li>
+  <li>La classe implémentant la couche [metier] devient elle aussi un <b>EJB</b> implémentant une interface <b>locale</b> et <b>distante</b>. L&#x27;interface initiale [IMetier] était la suivante :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1252,11 +1281,16 @@
 <a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">IIndemniteDaoLocal</span><span class="w"> </span><span class="n">indemniteDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 1-2 : définissent un EJB dont chaque méthode s&#x27;exécute dans une transaction.</li>
-<li>ligne 7 : une référence sur l&#x27;interface <strong>locale</strong> de l&#x27;EJB [CotisationDao].</li>
-<li>ligne 6 : l&#x27;annotation @EJB demande à ce que le conteneur EJB injecte une référence sur l&#x27;interface locale de l&#x27;EJB [CotisationDao].</li>
-<li>lignes 8-11 : on refait la même chose pour les interfaces locales des EJB [EmployeDao] et [IndemniteDao].</li>
+  <li>lignes 1-2 : définissent un EJB dont chaque méthode s&#x27;exécute dans une transaction.
+  </li>
+  <li>ligne 7 : une référence sur l&#x27;interface <b>locale</b> de l&#x27;EJB [CotisationDao].
+  </li>
+  <li>ligne 6 : l&#x27;annotation @EJB demande à ce que le conteneur EJB injecte une référence sur l&#x27;interface locale de l&#x27;EJB [CotisationDao].
+  </li>
+  <li>lignes 8-11 : on refait la même chose pour les interfaces locales des EJB [EmployeDao] et [IndemniteDao].
+  </li>
 </ul>
+
 <p>Au final, lorsque l&#x27;EJB [Metier] sera instancié, les champs des lignes 7, 9 et 11 seront initialisés avec des références sur les interfaces <strong>locales</strong> des trois EJB de la couche [DAO]. On fait donc ici l&#x27;hypothèse que les couches [metier] et [DAO] s&#x27;exécuteront dans la même JVM.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046A000000F91384B2B9.png" style="display:inline-block; margin:4px;width:14.949cm;height:3.295cm;" class="odt-zoomable" data-zoom-src="images/100000000000046A000000F91384B2B9.png" /></td></tr></table>
 
@@ -1288,14 +1322,20 @@
 <a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="n">indemniteDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">IIndemniteDaoLocal</span><span class="p">)</span><span class="w"> </span><span class="n">initialContext</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;IndemniteDaoLocal&quot;</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 2-5 : le conteneur OpenEJB est initialisé.</li>
-<li>ligne 5 : on a un contexte JNDI (Java Naming and Directory Interface) qui permet d&#x27;obtenir des références sur les EJB. Chaque EJB est désigné par un nom JNDI :</li>
-<li>(suite)<ul>
-<li>pour l&#x27;interface locale on ajoute <strong>Local</strong> au nom de l&#x27;EJB (lignes 7-9)</li>
-<li>pour l&#x27;interface distante on ajoute <strong>Remote</strong> au nom de l&#x27;EJB</li>
+  <li>lignes 2-5 : le conteneur OpenEJB est initialisé.
+  </li>
+  <li>ligne 5 : on a un contexte JNDI (Java Naming and Directory Interface) qui permet d&#x27;obtenir des références sur les EJB. Chaque EJB est désigné par un nom JNDI :
+  </li>
+  <li>(suite)
+    <ul>
+      <li>pour l&#x27;interface locale on ajoute <b>Local</b> au nom de l&#x27;EJB (lignes 7-9)
+      </li>
+      <li>pour l&#x27;interface distante on ajoute <b>Remote</b> au nom de l&#x27;EJB
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>Avec Java EE 5, ces règles changent selon le conteneur EJB. C&#x27;est une difficulté. Java EE 6 a introduit une notation JNDI portable sur tous les serveurs d&#x27;applications.</p>
 <p>Le code précédent récupère des références sur les interfaces locales des EJB via leurs noms JNDI. Nous avons dit précédemment que celles-ci pouvaient également être obtenues via l&#x27;annotation @EJB. On pourrait donc vouloir écrire :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nd">@EJB</span>
@@ -1336,15 +1376,21 @@
 <p><a id="refheading87459112820228"></a></p>
 <h3 id="622-configuration-initiale-du-projet-netbeans">6.2.2. Configuration initiale du projet Netbeans</h3>
 <ul>
-<li>charger le projet Maven [mv-pam-spring-hibernate]</li>
-<li>créer un nouveau projet Maven Java [mv-pam-openejb-eclipselink] [1]</li>
+  <li>charger le projet Maven [mv-pam-spring-hibernate]
+  </li>
+  <li>créer un nouveau projet Maven Java [mv-pam-openejb-eclipselink] [1]
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D50000011A8DC2E285.png" style="display:inline-block; margin:4px;width:12.979cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D50000011A8DC2E285.png" /></td></tr></table>
 
 <ul>
-<li>dans l&#x27;onglet [Files] [2], créer un dossier [conf] [3] sous la racine du projet</li>
-<li>placer dans ce dossier, le fichier [openejb.conf] [4] suivant :</li>
+  <li>dans l&#x27;onglet [Files] [2], créer un dossier [conf] [3] sous la racine du projet
+  </li>
+  <li>placer dans ce dossier, le fichier [openejb.conf] [4] suivant :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -1364,9 +1410,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E400000173A7004D2A.png" style="display:inline-block; margin:4px;width:9.79cm;height:4.909cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E400000173A7004D2A.png" /></td></tr></table>
 
 <ul>
-<li>créer le dossier [src / main/ resources/ META-INF] [5]</li>
-<li>y mettre le fichier [persistence.xml] [6] suivant :</li>
+  <li>créer le dossier [src / main/ resources/ META-INF] [5]
+  </li>
+  <li>y mettre le fichier [persistence.xml] [6] suivant :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="odt-code-line"><span style="color:#800080">&lt;persistence</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">1.0</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/persistence</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/persistence              http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span>
@@ -1387,10 +1436,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 12 : on demande des logs fins à EclipseLink,</li>
-<li>ligne 13 : les tables seront créées à l&#x27;instanciation de la couche JPA,</li>
-<li>ajouter les bibliothèques <em>OpenEJB</em>, <em>EclipseLink</em> ainsi que le pilote JDBC de MySQL au fichier [pom.xml] du projet :</li>
+  <li>ligne 12 : on demande des logs fins à EclipseLink,
+  </li>
+  <li>ligne 13 : les tables seront créées à l&#x27;instanciation de la couche JPA,
+  </li>
+  <li>ajouter les bibliothèques <i>OpenEJB</i>, <i>EclipseLink</i> ainsi que le pilote JDBC de MySQL au fichier [pom.xml] du projet :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
 <span class="odt-code-line">         <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
@@ -1456,16 +1509,22 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 18-22 : la dépendance OpenEJB,</li>
-<li>lignes 30-39 : les dépendances EclipseLink,</li>
-<li>lignes 41-44 : la dépendance du pilote JDBC de MySQL</li>
+  <li>lignes 18-22 : la dépendance OpenEJB,
+  </li>
+  <li>lignes 30-39 : les dépendances EclipseLink,
+  </li>
+  <li>lignes 41-44 : la dépendance du pilote JDBC de MySQL
+  </li>
 </ul>
+
 <p><a id="refheading87461112820228"></a></p>
 <h3 id="623-portage-de-la-couche-dao">6.2.3. Portage de la couche [DAO]</h3>
 <p>Nous allons faire le portage de la couche [DAO] par copie de paquetages du projet [mv-pam-spring-hibernate] vers le projet [mv-pam-openejb-eclipselink].</p>
 <ul>
-<li>copier les packages [dao, exception, jpa]</li>
+  <li>copier les packages [dao, exception, jpa]
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D6000000ECF1E2ADB0.png" style="display:inline-block; margin:4px;width:3.96cm;height:4.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D6000000ECF1E2ADB0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>Les erreurs signalées ci-dessus viennent du fait que la couche [DAO] copiée utilise Spring et que les bibliothèques Spring ne font plus partie du projet.</p>
@@ -1534,11 +1593,16 @@
 <h4 id="6232-les-ejb-employedao-et-indemnitedao">6.2.3.2. Les EJB [EmployeDao] et [IndemniteDao]</h4>
 <p>On répète la même démarche pour les autres éléments de la couche [DAO] :</p>
 <ul>
-<li>interfaces <em>IEmployeDaoLocal</em>, <em>IEmployeDaoRemote</em> dérivées de <em>IEmployeDao</em></li>
-<li>EJB <em>EmployeDao</em> implémentant ces deux interfaces</li>
-<li>interfaces <em>IIndemniteDaoLocal</em>, <em>IIndemniteDaoRemote</em> dérivées de <em>IIndemniteDao</em></li>
-<li>EJB <em>IndemniteDao</em> implémentant ces deux interfaces</li>
+  <li>interfaces <i>IEmployeDaoLocal</i>, <i>IEmployeDaoRemote</i> dérivées de <i>IEmployeDao</i>
+  </li>
+  <li>EJB <i>EmployeDao</i> implémentant ces deux interfaces
+  </li>
+  <li>interfaces <i>IIndemniteDaoLocal</i>, <i>IIndemniteDaoRemote</i> dérivées de <i>IIndemniteDao</i>
+  </li>
+  <li>EJB <i>IndemniteDao</i> implémentant ces deux interfaces
+  </li>
 </ul>
+
 <p>Ceci fait, il n&#x27;y a plus d&#x27;erreurs dans le projet [2].</p>
 <p><a id="refheading87467112820228"></a></p>
 <h4 id="6233-la-classe-pamexception">6.2.3.3. La classe [PamException]</h4>
@@ -1566,16 +1630,22 @@
 <p>La ligne 5 est ajoutée. Pour avoir les bons <em>import</em> faire [Fix imports].</p>
 <p>Pour comprendre l&#x27;annotation de la ligne 5, il faut se rappeler que chaque méthode des EJB de notre couche [DAO] :</p>
 <ul>
-<li>s&#x27;exécute dans une transaction démarrée et terminée par le conteneur EJB</li>
-<li>lance une exception de type [PamException] dès que quelque chose se passe mal</li>
+  <li>s&#x27;exécute dans une transaction démarrée et terminée par le conteneur EJB
+  </li>
+  <li>lance une exception de type [PamException] dès que quelque chose se passe mal
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000470000000B72EA1F2C0.png" style="display:inline-block; margin:4px;width:15.028cm;height:2.422cm;" class="odt-zoomable" data-zoom-src="images/1000000000000470000000B72EA1F2C0.png" /></td></tr></table>
 
 <p>Lorsque la couche [metier] appelle une méthode M de la couche [DAO], cet appel est intercepté par le conteneur EJB. Tout se passe comme s&#x27;il y avait une classe intermédiaire entre la couche [metier] et la couche [DAO], ici appelée [Proxy EJB], interceptant tous les appels vers la couche [DAO]. Lorsque l&#x27;appel à la méthode M de la couche [DAO] est interceptée, le Proxy EJB démarre une transaction puis passe la main à la méthode M de la couche [DAO] qui s&#x27;exécute alors dans cette transaction. La méthode M se termine avec ou sans exception.</p>
 <ul>
-<li>si la méthode M se termine sans exception, l&#x27;exécution revient au proxy EJB qui termine la transaction en la validant par un <em>commit</em>. Le flux d&#x27;exécution est ensuite rendu à la méthode appelante de la couche [metier]</li>
-<li>si la méthode M se termine avec exception, l&#x27;exécution revient au proxy EJB qui termine la transaction en l&#x27;invalidant par un <em>rollback</em>. De plus il encapsule cette exception dans un type <strong>EJBException</strong>. Le flux d&#x27;exécution est ensuite rendu à la méthode appelante de la couche [metier] qui reçoit donc une <strong>EJBException</strong>. L&#x27;annotation de la ligne 5 ci-dessus empêche cette encapsulation. La couche [metier] recevra donc une <strong>PamException</strong>. De plus, l&#x27;attribut <strong>rollback=true</strong> indique au proxy EJB que lorsqu&#x27;il reçoit une <em>PamException</em>, il doit invalider la transaction.</li>
+  <li>si la méthode M se termine sans exception, l&#x27;exécution revient au proxy EJB qui termine la transaction en la validant par un <i>commit</i>. Le flux d&#x27;exécution est ensuite rendu à la méthode appelante de la couche [metier]
+  </li>
+  <li>si la méthode M se termine avec exception, l&#x27;exécution revient au proxy EJB qui termine la transaction en l&#x27;invalidant par un <i>rollback</i>. De plus il encapsule cette exception dans un type <b>EJBException</b>. Le flux d&#x27;exécution est ensuite rendu à la méthode appelante de la couche [metier] qui reçoit donc une <b>EJBException</b>. L&#x27;annotation de la ligne 5 ci-dessus empêche cette encapsulation. La couche [metier] recevra donc une <b>PamException</b>. De plus, l&#x27;attribut <b>rollback=true</b> indique au proxy EJB que lorsqu&#x27;il reçoit une <i>PamException</i>, il doit invalider la transaction.
+  </li>
 </ul>
+
 <p><a id="refheading87469112820228"></a></p>
 <h4 id="6234-test-de-la-couche-dao">6.2.3.4. Test de la couche [DAO]</h4>
 <p>Notre couche [DAO] implémentée par des EJB peut être testée. Nous commençons par copier le package [dao] de [Test Packages] du projet [mv-pam-springhibernate] dans le projet en cours de construction [1] :</p>
@@ -1624,35 +1694,52 @@
 <a id="__codelineno-18-20" name="__codelineno-18-20"></a><span class="p">...</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 3-5 : des références sur les interfaces locales des EJB de la couche [DAO]</li>
-<li>ligne 7 :  @BeforeClass annote la méthode exécutée au démarrage du test JUnit</li>
-<li>lignes 10-13 : initialisation du conteneur OpenEJB. Cette initialisation est propriétaire et change avec chaque conteneur EJB.</li>
-<li>ligne 13 : on a un contexte JNDI (Java Naming and Directory Interface) qui permet d&#x27;accéder aux EJB via des noms. Avec OpenEJB, l&#x27;interface locale d&#x27;un EJB <strong>E</strong> est désignée par <strong>ELocal</strong> et l&#x27;interface distante par <strong>ERemote</strong>.</li>
-<li>lignes 15-17 : on demande au contexte JNDI, une référence sur les interfaces locales des EJB [EmployeDao, CotisationDao, IndemniteDao]. </li>
+  <li>lignes 3-5 : des références sur les interfaces locales des EJB de la couche [DAO]
+  </li>
+  <li>ligne 7 :  @BeforeClass annote la méthode exécutée au démarrage du test JUnit
+  </li>
+  <li>lignes 10-13 : initialisation du conteneur OpenEJB. Cette initialisation est propriétaire et change avec chaque conteneur EJB.
+  </li>
+  <li>ligne 13 : on a un contexte JNDI (Java Naming and Directory Interface) qui permet d&#x27;accéder aux EJB via des noms. Avec OpenEJB, l&#x27;interface locale d&#x27;un EJB <b>E</b> est désignée par <b>ELocal</b> et l&#x27;interface distante par <b>ERemote</b>.
+  </li>
+  <li>lignes 15-17 : on demande au contexte JNDI, une référence sur les interfaces locales des EJB [EmployeDao, CotisationDao, IndemniteDao]. 
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017300000148C6D36956.png" style="display:inline-block; margin:4px;width:4.909cm;height:4.339cm;" class="odt-zoomable" data-zoom-src="images/100000000000017300000148C6D36956.png" /></td></tr></table>
 
 <p>On construit le projet (Build), on lance le serveur MySQL si besoin est, on exécute le test <em>JUnitInitDBLocal</em>. On rappelle que le fichier [persistence.xml] a été configuré pour recréer les tables à chaque exécution. Avant l&#x27;exécution du test, il est préférable de supprimer les éventuelles tables de la base MySQL [dbpam_eclipselink].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052700000200AD27A588.png" style="display:inline-block; margin:4px;width:17.45cm;height:6.773cm;" class="odt-zoomable" data-zoom-src="images/100000000000052700000200AD27A588.png" /></td></tr></table>
 
 <ul>
-<li>en [1], dans l&#x27;onglet [Services], on supprime les tables de la connexion Netbeans établie au paragraphe <a href="#connexion-nb-dbpam-eclipselink">6.2.1</a>.</li>
-<li>en [2], la base [dbpam_eclipselink] n&#x27;a plus de tables</li>
-<li>en [3], le projet est construit</li>
-<li>en [4], le test <em>JUnitInitDBLocal</em> est exécuté</li>
+  <li>en [1], dans l&#x27;onglet [Services], on supprime les tables de la connexion Netbeans établie au paragraphe <a href="#connexion-nb-dbpam-eclipselink">6.2.1</a>.
+  </li>
+  <li>en [2], la base [dbpam_eclipselink] n&#x27;a plus de tables
+  </li>
+  <li>en [3], le projet est construit
+  </li>
+  <li>en [4], le test <i>JUnitInitDBLocal</i> est exécuté
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F8000000DEA88C0AF8.png" style="display:inline-block; margin:4px;width:16.828cm;height:2.937cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F8000000DEA88C0AF8.png" /></td></tr></table>
 
 <ul>
-<li>en [5], le test a été réussi</li>
-<li>en [6], on rafraîchit la connexion Netbeans</li>
-<li>en [7], on voit les 4 tables créées par la couche JPA. Le test avait pour but de les remplir. On visualise le contenu de l&#x27;une d&#x27;entre-elles</li>
+  <li>en [5], le test a été réussi
+  </li>
+  <li>en [6], on rafraîchit la connexion Netbeans
+  </li>
+  <li>en [7], on voit les 4 tables créées par la couche JPA. Le test avait pour but de les remplir. On visualise le contenu de l&#x27;une d&#x27;entre-elles
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D9000000CE96037FAD.png" style="display:inline-block; margin:4px;width:13.032cm;height:2.725cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D9000000CE96037FAD.png" /></td></tr></table>
 
 <ul>
-<li>en [8], le contenu de la table [EMPLOYES]</li>
+  <li>en [8], le contenu de la table [EMPLOYES]
+  </li>
 </ul>
+
 <p>Le conteneur OpenEJB a affiché des logs dans la console :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
@@ -1711,13 +1798,20 @@
 <a id="__codelineno-19-28" name="__codelineno-19-28"></a><span class="nx">Infos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Deployed</span><span class="w"> </span><span class="nx">Application</span><span class="p">(</span><span class="nx">path</span><span class="o">=</span><span class="nx">D</span><span class="o">:</span><span class="err">\</span><span class="nx">data</span><span class="err">\</span><span class="nx">istia</span><span class="o">-</span><span class="mf">1112</span><span class="err">\</span><span class="nx">netbeans</span><span class="err">\</span><span class="nx">glassfish</span><span class="err">\</span><span class="nx">mv</span><span class="o">-</span><span class="nx">pam</span><span class="err">\</span><span class="nx">tmp</span><span class="err">\</span><span class="nx">mv</span><span class="o">-</span><span class="nx">pam</span><span class="o">-</span><span class="nx">openejb</span><span class="o">-</span><span class="nx">eclipselink</span><span class="err">\</span><span class="nx">classpath</span><span class="p">.</span><span class="nx">ear</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 2-3 : les deux noms JNDI de l&#x27;EJB [CotisationDaoLocal],</li>
-<li>lignes 4-5 : les deux noms JNDI de l&#x27;EJB [CotisationDaoRemote],</li>
-<li>lignes 7-8 :les deux noms JNDI de l&#x27;EJB [EmployeDaoLocal],</li>
-<li>lignes 9-10 :les deux noms JNDI de l&#x27;EJB [EmployeDaoRemote],</li>
-<li>lignes 12-13 :les deux noms JNDI de l&#x27;EJB [IndemniteDaoLocal],</li>
-<li>lignes 14-15 :les deux noms JNDI de l&#x27;EJB [EmployeDaoRemote].</li>
+  <li>lignes 2-3 : les deux noms JNDI de l&#x27;EJB [CotisationDaoLocal],
+  </li>
+  <li>lignes 4-5 : les deux noms JNDI de l&#x27;EJB [CotisationDaoRemote],
+  </li>
+  <li>lignes 7-8 :les deux noms JNDI de l&#x27;EJB [EmployeDaoLocal],
+  </li>
+  <li>lignes 9-10 :les deux noms JNDI de l&#x27;EJB [EmployeDaoRemote],
+  </li>
+  <li>lignes 12-13 :les deux noms JNDI de l&#x27;EJB [IndemniteDaoLocal],
+  </li>
+  <li>lignes 14-15 :les deux noms JNDI de l&#x27;EJB [EmployeDaoRemote].
+  </li>
 </ul>
+
 <p>Nous refaisons le même test, en utilisant cette fois-ci l&#x27;interface distante des EJB.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C7000001326C4BFCD3.png" style="display:inline-block; margin:4px;width:6.02cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C7000001326C4BFCD3.png" /></td></tr></table>
 
@@ -1839,23 +1933,34 @@
 <a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="p">...</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 1 : l&#x27;annotation @Stateless fait de la classe un EJB</li>
-<li>ligne 2 : chaque méthode de la classe s&#x27;exécutera dans une transaction</li>
-<li>ligne 3 : l&#x27;EJB [Metier] implémente les deux interfaces <strong>locale</strong> et <strong>distante</strong> que nous venons de définir</li>
-<li>ligne 7 : l&#x27;EJB [Metier] va utiliser l&#x27;EJB [CotisationDao] via l&#x27;interface locale de celui-ci. Cela signifie que les couches [metier] et [DAO] doivent s&#x27;exécuter dans la même JVM.</li>
-<li>ligne 6 : l&#x27;annotation @EJB fait en sorte que le conteneur EJB injecte lui-même la référence sur l&#x27;interface locale de l&#x27;EJB [CotisationDao]. L&#x27;autre façon que nous avons rencontrée est d&#x27;utiliser un contexte JNDI.</li>
-<li>lignes 8-11 : le même mécanisme est utilisé pour les deux autres EJB de la couche [DAO].</li>
+  <li>ligne 1 : l&#x27;annotation @Stateless fait de la classe un EJB
+  </li>
+  <li>ligne 2 : chaque méthode de la classe s&#x27;exécutera dans une transaction
+  </li>
+  <li>ligne 3 : l&#x27;EJB [Metier] implémente les deux interfaces <b>locale</b> et <b>distante</b> que nous venons de définir
+  </li>
+  <li>ligne 7 : l&#x27;EJB [Metier] va utiliser l&#x27;EJB [CotisationDao] via l&#x27;interface locale de celui-ci. Cela signifie que les couches [metier] et [DAO] doivent s&#x27;exécuter dans la même JVM.
+  </li>
+  <li>ligne 6 : l&#x27;annotation @EJB fait en sorte que le conteneur EJB injecte lui-même la référence sur l&#x27;interface locale de l&#x27;EJB [CotisationDao]. L&#x27;autre façon que nous avons rencontrée est d&#x27;utiliser un contexte JNDI.
+  </li>
+  <li>lignes 8-11 : le même mécanisme est utilisé pour les deux autres EJB de la couche [DAO].
+  </li>
 </ul>
+
 <p><a id="refheading87475112820228"></a></p>
 <h4 id="6242-test-de-la-couche-metier">6.2.4.2. Test de la couche [metier]</h4>
 <p>Notre couche [metier] implémentée par un EJB peut être testée. Nous commençons par copier le package [metier] de [Test Packages] du projet [mv-pam-spring-hibernate] dans le projet en cours de construction [1] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E700000177971F3B97.png" style="display:inline-block; margin:4px;width:16.603cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E700000177971F3B97.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le résultat de la copie</li>
-<li>en [2], on supprime le 1er test</li>
-<li>en [3], le test restant est renommé [JUnitMetierLocal]</li>
+  <li>en [1], le résultat de la copie
+  </li>
+  <li>en [2], on supprime le 1er test
+  </li>
+  <li>en [3], le test restant est renommé [JUnitMetierLocal]
+  </li>
 </ul>
+
 <p>La classe [JUnitMetierLocal] devient la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
@@ -1904,10 +2009,14 @@
 <a id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 4 : une référence sur l&#x27;interface locale de l&#x27;EJB [Metier]</li>
-<li>lignes 8-12 : configuration du conteneur OpenEJB identique à celle faite dans le test de la couche [DAO]</li>
-<li>lignes 15-19 : on demande au contexte JNDI de la ligne 12, des références sur les 3 EJB de la couche [DAO] et sur l&#x27;EJB de la couche [metier]. Les EJB de la couche [DAO] vont servir à initialiser la base, l&#x27;EJB de la couche [metier] à faire des tests de calculs de salaire.</li>
+  <li>ligne 4 : une référence sur l&#x27;interface locale de l&#x27;EJB [Metier]
+  </li>
+  <li>lignes 8-12 : configuration du conteneur OpenEJB identique à celle faite dans le test de la couche [DAO]
+  </li>
+  <li>lignes 15-19 : on demande au contexte JNDI de la ligne 12, des références sur les 3 EJB de la couche [DAO] et sur l&#x27;EJB de la couche [metier]. Les EJB de la couche [DAO] vont servir à initialiser la base, l&#x27;EJB de la couche [metier] à faire des tests de calculs de salaire.
+  </li>
 </ul>
+
 <p>L&#x27;exécution du test [JUnitMetierLocal] donne le résultat suivant [1] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000344000000EE7ECFD50B.png" style="display:inline-block; margin:4px;width:11.06cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/1000000000000344000000EE7ECFD50B.png" /></td></tr></table>
 
@@ -1993,10 +2102,14 @@
 <a id="__codelineno-25-40" name="__codelineno-25-40"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 4 et 19 : on utilise l&#x27;interface distante de l&#x27;EJB [Metier].</li>
-<li>lignes 15-17 : on utilise les interfaces distantes de la couche [DAO]</li>
-<li>lignes 34-35 : parce qu&#x27;avec les interfaces distantes, les objets échangés entre le client et le serveur le sont par valeur, il faut récupérer le résultat rendu par la méthode <em>create(Indemnite i)</em>. Ce n&#x27;était pas obligatoire avec les interfaces locales où là les objets sont passés par référence.</li>
+  <li>lignes 4 et 19 : on utilise l&#x27;interface distante de l&#x27;EJB [Metier].
+  </li>
+  <li>lignes 15-17 : on utilise les interfaces distantes de la couche [DAO]
+  </li>
+  <li>lignes 34-35 : parce qu&#x27;avec les interfaces distantes, les objets échangés entre le client et le serveur le sont par valeur, il faut récupérer le résultat rendu par la méthode <i>create(Indemnite i)</i>. Ce n&#x27;était pas obligatoire avec les interfaces locales où là les objets sont passés par référence.
+  </li>
 </ul>
+
 <p>Ceci fait, le projet peut être construit et le test [JUnitMetierRemote] exécuté :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF0000006F7FAD6E41.png" style="display:inline-block; margin:4px;width:4.72cm;height:2.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF0000006F7FAD6E41.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 

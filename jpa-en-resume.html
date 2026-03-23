@@ -1103,8 +1103,10 @@
 <h1 id="4-jpa-en-resume">4. JPA en résumé</h1>
 <p>Nous nous proposons d&#x27;introduire JPA (Java Persistence API) avec quelques exemples. JPA est développé dans le cours :</p>
 <ul>
-<li><strong>Persistance Java 5 par la pratique</strong> : [<a href="http://tahe.developpez.com/java/jpa">http://tahe.developpez.com/java/jpa</a>] - donne les outils pour construire la couche d&#x27;accès aux données avec <strong>JPA</strong></li>
+  <li><b>Persistance Java 5 par la pratique</b> : [<a href="http://tahe.developpez.com/java/jpa">http://tahe.developpez.com/java/jpa</a>] - donne les outils pour construire la couche d&#x27;accès aux données avec <b>JPA</b>
+  </li>
 </ul>
+
 <p><a id="refheading2816931991350288"></a></p>
 <h2 id="41-la-place-de-jpa-dans-une-architecture-en-couches">4.1. La place de JPA dans une architecture en couches</h2>
 <p>Le lecteur est invité à relire le début de ce document (paragraphe <a href="architecture-dune-application-java-en-couches.html#architecture-en-couches">2</a>) qui explique le rôle de la couche JPA dans une architecture en couches. La couche JPA s&#x27;insère dans les couches d&#x27;acès aux données :</p>
@@ -1124,25 +1126,25 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">clé primaire de la table</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clé primaire de la table</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">version de la ligne dans la table. A chaque fois que la personne est modifiée, son n° de version est incrémenté.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">version de la ligne dans la table. A chaque fois que la personne est modifiée, son n° de version est incrémenté.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>NOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">nom de la personne</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nom de la personne</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PRENOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">son prénom</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">son prénom</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>DATENAISSANCE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">sa date de naissance</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">sa date de naissance</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MARIE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">entier 0 (non marié) ou 1 (marié)</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">entier 0 (non marié) ou 1 (marié)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>NBENFANTS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">nombre d&#x27;enfants de la personne</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nombre d&#x27;enfants de la personne</div></td></tr></table>
 
 <p><a id="refheading2817011991350288"></a></p>
 <h4 id="4212-lentite-personne">4.2.1.2. L&#x27;entité [Personne]</h4>
@@ -1151,9 +1153,12 @@
 
 <p>La couche JPA [5] doit faire un pont entre le monde relationnel de la base de données [7] et le monde objet [4] manipulé par les programmes Java [3]. Ce pont est fait par configuration et il y a deux façons de le faire :</p>
 <ol>
-<li>avec des fichiers XML. C&#x27;était quasiment l&#x27;unique façon de faire jusqu&#x27;à l&#x27;avènement du JDK 1.5</li>
-<li>avec des annotations Java depuis le JDK 1.5</li>
+  <li>avec des fichiers XML. C&#x27;était quasiment l&#x27;unique façon de faire jusqu&#x27;à l&#x27;avènement du JDK 1.5
+  </li>
+  <li>avec des annotations Java depuis le JDK 1.5
+  </li>
 </ol>
+
 <p>Dans ce document, nous utiliserons exclusivement la seconde méthode.</p>
 <p>L&#x27;objet [Personne] image de la table [personne] présentée précédemment pourrait être le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1215,33 +1220,44 @@
 <p>La configuration se fait à l&#x27;aide d&#x27;annotations Java <strong>@Annotation</strong>. Les annotations Java sont soit exploitées par le compilateur, soit par des outils spécialisés au moment de l&#x27;exécution. En-dehors de l&#x27;annotation de la ligne 3 destinée au compilateur, toutes les annotations sont ici destinées à l&#x27;implémentation JPA utilisée, Hibernate ou Toplink. Elles seront donc exploitées à l&#x27;exécution. En l&#x27;absence des outils capables de les interpréter, ces annotations sont ignorées. Ainsi la classe [Personne] ci-dessus pourrait être exploitée dans un contexte hors JPA.</p>
 <p>Il faut distinguer deux cas d&#x27;utilisation des annotations JPA dans une classe C associée à une table T :</p>
 <ol>
-<li>la table T existe déjà : les annotations JPA doivent alors reproduire l&#x27;existant (nom et définition des colonnes, contraintes d&#x27;intégrité, clés étrangères, clés primaires, ...)</li>
-<li>la table T n&#x27;existe pas et elle va être créée d&#x27;après les annotations trouvées dans la classe C.</li>
+  <li>la table T existe déjà : les annotations JPA doivent alors reproduire l&#x27;existant (nom et définition des colonnes, contraintes d&#x27;intégrité, clés étrangères, clés primaires, ...)
+  </li>
+  <li>la table T n&#x27;existe pas et elle va être créée d&#x27;après les annotations trouvées dans la classe C.
+  </li>
 </ol>
+
 <p>Le cas 2 est le plus facile à gérer. A l&#x27;aide des annotations JPA, nous indiquons la structure de la table T que nous voulons. Le cas 1 est souvent plus complexe. La table T a pu être construite, il y a longtemps, en-dehors de tout contexte JPA. Sa structure peut alors être mal adaptée au pont relationnel / objet de JPA. Pour simplifier, nous nous plaçons dans le cas 2 où la table T associée à la classe C va être créée d&#x27;après les annotations JPA de la classe C.</p>
 <p>Commentons les annotations JPA de la classe [Personne] :</p>
 <ul>
-<li>ligne 4 : l&#x27;annotation <strong>@Entity</strong> est la première annotation indispensable. Elle se place avant la ligne qui déclare la classe et indique que la classe en question doit être gérée par la couche de persistance JPA. En l&#x27;absence de cette annotation, toutes les autres annotations JPA seraient ignorées.</li>
-<li>ligne 5 : l&#x27;annotation <strong>@Table</strong> désigne la table de la base de données dont la classe est une représentation. Son principal argument est <strong>name</strong> qui désigne le nom de la table. En l&#x27;absence de cet argument, la table portera le nom de la classe, ici [Personne]. Dans notre exemple, l&#x27;annotation <strong>@Table</strong> est donc superflue.</li>
-<li>ligne 8 : l&#x27;annotation <strong>@Id</strong> sert à désigner le champ dans la classe qui est image de la clé primaire de la table. Cette annotation est obligatoire. Elle indique ici que le champ <em>id</em> de la ligne 11 est l&#x27;image de la clé primaire de la table.</li>
-<li>ligne 9 : l&#x27;annotation <strong>@Column</strong> sert à faire le lien entre un champ de la classe et la colonne de la table dont le champ est l&#x27;image. L&#x27;attribut <strong>name</strong> indique le nom de la colonne dans la table. En l&#x27;absence de cet attribut, la colonne porte le même nom que le champ. Dans notre exemple, l&#x27;argument <strong>name</strong> n&#x27;était donc pas obligatoire. L&#x27;argument <strong>nullable=false</strong> indique que la colonne associée au champ ne peut avoir la valeur NULL et que donc le champ doit avoir nécessairement une valeur.</li>
-<li>ligne 10 : l&#x27;annotation @<strong>GeneratedValue</strong> indique comment est générée la clé primaire lorsqu&#x27;elle est générée automatiquement par le SGBD. Ce sera le cas dans tous nos exemples. Ce n&#x27;est pas obligatoire. Ainsi notre personne pourrait avoir un n° étudiant qui servirait de clé primaire et qui ne serait pas généré par le SGBD mais fixé par l&#x27;application. Dans ce cas, l&#x27;annotation @<strong>GeneratedValue</strong> serait absente. L&#x27;argument <strong>strategy</strong> indique comment est générée la clé primaire lorsqu&#x27;elle est générée par le SGBD. Les SGBD n&#x27;ont pas tous la même technique de génération des valeurs de clé primaire. Par exemple :</li>
+  <li>ligne 4 : l&#x27;annotation <b>@Entity</b> est la première annotation indispensable. Elle se place avant la ligne qui déclare la classe et indique que la classe en question doit être gérée par la couche de persistance JPA. En l&#x27;absence de cette annotation, toutes les autres annotations JPA seraient ignorées.
+  </li>
+  <li>ligne 5 : l&#x27;annotation <b>@Table</b> désigne la table de la base de données dont la classe est une représentation. Son principal argument est <b>name</b> qui désigne le nom de la table. En l&#x27;absence de cet argument, la table portera le nom de la classe, ici [Personne]. Dans notre exemple, l&#x27;annotation <b>@Table</b> est donc superflue.
+  </li>
+  <li>ligne 8 : l&#x27;annotation <b>@Id</b> sert à désigner le champ dans la classe qui est image de la clé primaire de la table. Cette annotation est obligatoire. Elle indique ici que le champ <i>id</i> de la ligne 11 est l&#x27;image de la clé primaire de la table.
+  </li>
+  <li>ligne 9 : l&#x27;annotation <b>@Column</b> sert à faire le lien entre un champ de la classe et la colonne de la table dont le champ est l&#x27;image. L&#x27;attribut <b>name</b> indique le nom de la colonne dans la table. En l&#x27;absence de cet attribut, la colonne porte le même nom que le champ. Dans notre exemple, l&#x27;argument <b>name</b> n&#x27;était donc pas obligatoire. L&#x27;argument <b>nullable=false</b> indique que la colonne associée au champ ne peut avoir la valeur NULL et que donc le champ doit avoir nécessairement une valeur.
+  </li>
+  <li>ligne 10 : l&#x27;annotation @<b>GeneratedValue</b> indique comment est générée la clé primaire lorsqu&#x27;elle est générée automatiquement par le SGBD. Ce sera le cas dans tous nos exemples. Ce n&#x27;est pas obligatoire. Ainsi notre personne pourrait avoir un n° étudiant qui servirait de clé primaire et qui ne serait pas généré par le SGBD mais fixé par l&#x27;application. Dans ce cas, l&#x27;annotation @<b>GeneratedValue</b> serait absente. L&#x27;argument <b>strategy</b> indique comment est générée la clé primaire lorsqu&#x27;elle est générée par le SGBD. Les SGBD n&#x27;ont pas tous la même technique de génération des valeurs de clé primaire. Par exemple :
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Firebird
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">utilise un générateur de valeurs appelée avant chaque insertion</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">utilise un générateur de valeurs appelée avant chaque insertion</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>SQL server
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">le champ clé primaire est défini comme ayant le type <i>Identity</i>. On a un résultat similaire au générateur de valeurs de Firebird, si ce n&#x27;est que la valeur de la clé n&#x27;est connue qu&#x27;après l&#x27;insertion de la ligne.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">le champ clé primaire est défini comme ayant le type <i>Identity</i>. On a un résultat similaire au générateur de valeurs de Firebird, si ce n&#x27;est que la valeur de la clé n&#x27;est connue qu&#x27;après l&#x27;insertion de la ligne.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Oracle
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">utilise un objet appelé SEQUENCE qui là encore jouele rôle d&#x27;un générateur de valeurs</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">utilise un objet appelé SEQUENCE qui là encore jouele rôle d&#x27;un générateur de valeurs</div></td></tr></table>
 
-<p>La couche JPA doit générer des ordres SQL différents selon les SGBD pour créer le générateur de valeurs. On lui indique par configuration le type de SGBD qu&#x27;elle a à gérer. Du coup, elle peut savoir quelle est la stratégie habituelle de génération de valeurs de clé primaire de ce SGBD. L&#x27;argument <strong>strategy = GenerationType.</strong><strong><em>AUTO</em></strong><em> </em>indique à la couche JPA qu&#x27;elle doit utiliser cette stratégie habituelle. Cette technique a fonctionné dans tous les exemples de ce document pour les sept SGBD utilisés.</p>
+<p>La couche JPA doit générer des ordres SQL différents selon les SGBD pour créer le générateur de valeurs. On lui indique par configuration le type de SGBD qu&#x27;elle a à gérer. Du coup, elle peut savoir quelle est la stratégie habituelle de génération de valeurs de clé primaire de ce SGBD. L&#x27;argument <strong>strategy = GenerationType.</strong><strong><em>AUTO</em></strong> indique à la couche JPA qu&#x27;elle doit utiliser cette stratégie habituelle. Cette technique a fonctionné dans tous les exemples de ce document pour les sept SGBD utilisés.</p>
 <ul>
-<li>ligne 14 : l&#x27;annotation @<strong>Version</strong> désigne le champ qui sert à gérer les accès concurrents à une même ligne de la table.</li>
+  <li>ligne 14 : l&#x27;annotation @<b>Version</b> désigne le champ qui sert à gérer les accès concurrents à une même ligne de la table.
+  </li>
 </ul>
+
 <p>Pour comprendre ce problème d&#x27;accès concurrents à une même ligne de la table [personne], supposons qu&#x27;une application web permette la mise à jour d&#x27;une personne et examinons le cas suivant :</p>
 <p>Au temps T1, un utilisateur U1 entre en modification d’une personne P.  A ce moment, le nombre d’enfants est 0. Il passe ce nombre à 1 mais avant qu’il ne valide sa modification, un utilisateur U2 entre en modification de la même personne P. Puisque U1 n’a pas encore validé sa modification, U2 voit sur son écran le nombre d’enfants à 0. U2 passe le nom de la personne P en majuscules. Puis U1 et U2 valident leurs modifications dans cet ordre. C’est la modification de U2 qui va gagner : dans la base, le nom va passer en majuscules et le nombre d’enfants va rester à zéro alors même que U1 croit l’avoir changé en 1.</p>
 <p>La notion de version de personne nous aide à résoudre ce problème. On reprend le même cas d’usage :</p>
@@ -1249,23 +1265,34 @@
 <p>La couche [DAO] de l&#x27;application cliente peut gérer elle-même la version de la classe [Personne]. A chaque fois qu&#x27;il y aura une modification d&#x27;un objet P, la version de cet objet sera incrémentée de 1 dans la table. L&#x27;annotation <strong>@Version</strong> permet de transférer cette gestion à la couche JPA. Le champ concerné n&#x27;a nul besoin de s&#x27;appeler <em>version</em> comme dans l&#x27;exemple. Il peut porter un nom quelconque.</p>
 <p>Les champs correspondant aux annotations <strong>@Id</strong> et <strong>@Version</strong> sont des champs présents à cause de la persistance. On n&#x27;en aurait pas besoin si la classe [Personne] n&#x27;avait pas besoin d&#x27;être persistée. On voit donc qu&#x27;un objet n&#x27;a pas la même représentation selon qu&#x27;il a besoin ou non d&#x27;être persisté.</p>
 <ul>
-<li>ligne 17 : de nouveau l&#x27;annotation <strong>@Column</strong> pour donner des informations sur la colonne de la table [personne] associée au champ <em>nom</em> de la classe <em>Personne</em>.  On trouve ici deux nouveaux arguments :<ul>
-<li><strong>unique=true</strong> indique que le nom d&#x27;une personne doit être unique. Cela va se traduire dans la base de données par l&#x27;ajout d&#x27;une contrainte d&#x27;unicité sur la colonne NOM de la table [personne].</li>
-<li><strong>length=30</strong> fixe à 30 le nombre de caractères de la colonne NOM. Cela signifie que le type de cette colonne sera VARCHAR(30).</li>
+  <li>ligne 17 : de nouveau l&#x27;annotation <b>@Column</b> pour donner des informations sur la colonne de la table [personne] associée au champ <i>nom</i> de la classe <i>Personne</i>.  On trouve ici deux nouveaux arguments :
+    <ul>
+      <li><b>unique=true</b> indique que le nom d&#x27;une personne doit être unique. Cela va se traduire dans la base de données par l&#x27;ajout d&#x27;une contrainte d&#x27;unicité sur la colonne NOM de la table [personne].
+      </li>
+      <li><b>length=30</b> fixe à 30 le nombre de caractères de la colonne NOM. Cela signifie que le type de cette colonne sera VARCHAR(30).
+      </li>
+    </ul>
+  </li>
+  <li>ligne 24 : l&#x27;annotation <b>@Temporal</b> sert à indiquer quel type SQL donner à une colonne / champ de type date / heure. Le type  <i>TemporalType.DATE</i> désigne une date seule sans heure associée. Les autres types possibles sont <i>TemporalType.TIME</i> pour coder une heure et <i>TemporalType.TIMESTAMP</i> pour coder une date avec heure.
+  </li>
 </ul>
-</li>
-<li>ligne 24 : l&#x27;annotation <strong>@Temporal</strong> sert à indiquer quel type SQL donner à une colonne / champ de type date / heure. Le type  <em>TemporalType.DATE</em> désigne une date seule sans heure associée. Les autres types possibles sont <em>TemporalType.TIME</em> pour coder une heure et <em>TemporalType.TIMESTAMP</em> pour coder une date avec heure.</li>
-</ul>
+
 <p>Commentons maintenant le reste du code de la classe [Personne] :</p>
 <ul>
-<li>ligne 6 : la classe implémente l&#x27;interface <em>Serializable</em>. La <em>sérialisation</em> d&#x27;un objet consiste à le transformer en une suite de bits. La <em>désérialisation</em> est l&#x27;opération inverse. La sérialisation / désérialisation est notamment utilisée dans les applications client / serveur où des objets sont échangés via le réseau. Les applications clientes ou serveur sont ignorantes de cette opération qui est faite de façon transparente par les JVM. Pour qu&#x27;elle soit possible, il faut cependant que les classes des objets échangés soit &quot; taguées &quot; avec le mot clé <em>Serializable</em>.</li>
-<li>ligne 37 : un constructeur de la classe. On notera que les champs <strong>id</strong> et <strong>version</strong> ne font pas partie des paramètres. En effet, ces deux champs sont gérés par la couche JPA et non par l&#x27;application.</li>
-<li>lignes 51 et au-delà : les méthodes <strong>get</strong> et <strong>set</strong> de chacun des champs de la classe. Il est à noter que les annotations JPA peuvent être placées sur les méthodes <strong>get</strong> des champs au lieu d&#x27;être placées sur les champs eux-mêmes. La place des annotations indique le mode que doit utiliser JPA pour accéder aux champs :<ul>
-<li>si les annotations sont mises au niveau champ, JPA accèdera directement aux champs pour les lire ou les écrire</li>
-<li>si les annotations sont mises au niveau <strong>get</strong>, JPA accèdera aux champs via les méthodes get / set pour les lire ou les écrire</li>
+  <li>ligne 6 : la classe implémente l&#x27;interface <i>Serializable</i>. La <i>sérialisation</i> d&#x27;un objet consiste à le transformer en une suite de bits. La <i>désérialisation</i> est l&#x27;opération inverse. La sérialisation / désérialisation est notamment utilisée dans les applications client / serveur où des objets sont échangés via le réseau. Les applications clientes ou serveur sont ignorantes de cette opération qui est faite de façon transparente par les JVM. Pour qu&#x27;elle soit possible, il faut cependant que les classes des objets échangés soit &quot; taguées &quot; avec le mot clé <i>Serializable</i>.
+  </li>
+  <li>ligne 37 : un constructeur de la classe. On notera que les champs <b>id</b> et <b>version</b> ne font pas partie des paramètres. En effet, ces deux champs sont gérés par la couche JPA et non par l&#x27;application.
+  </li>
+  <li>lignes 51 et au-delà : les méthodes <b>get</b> et <b>set</b> de chacun des champs de la classe. Il est à noter que les annotations JPA peuvent être placées sur les méthodes <b>get</b> des champs au lieu d&#x27;être placées sur les champs eux-mêmes. La place des annotations indique le mode que doit utiliser JPA pour accéder aux champs :
+    <ul>
+      <li>si les annotations sont mises au niveau champ, JPA accèdera directement aux champs pour les lire ou les écrire
+      </li>
+      <li>si les annotations sont mises au niveau <b>get</b>, JPA accèdera aux champs via les méthodes get / set pour les lire ou les écrire
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>C&#x27;est la position de l&#x27;annotation <strong>@Id</strong> qui fixe la position des annotations JPA d&#x27;une classe. Placée au niveau champ, elle indique un accès direct aux champs et placée au niveau <em>get</em>, un accès aux champs via les <em>get</em> et <em>set</em>. Les autres annotations doivent alors être placées de la même façon que l&#x27;annotation @<strong>Id</strong>.</p>
 <p><a id="refheading2817031991350288"></a></p>
 <h3 id="422-configuration-de-la-couche-jpa">4.2.2. Configuration de la couche JPA</h3>
@@ -1273,11 +1300,16 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000078F0000013FA34124A8.png" style="display:inline-block; margin:4px;width:17.999cm;height:2.967cm;" class="odt-zoomable" data-zoom-src="images/100000000000078F0000013FA34124A8.png" /></td></tr></table>
 
 <ul>
-<li>en [7] : la base de données qui sera générée à partir des annotations de l&#x27;entité [Personne] ainsi que de configurations complémentaires faites dans un fichier appelé [persistence.xml]</li>
-<li>en [5, 6] : une couche JPA implémentée par Hibernate</li>
-<li>en [4] : l&#x27;entité [Personne]</li>
-<li>en [3] : un programme de test de type console</li>
+  <li>en [7] : la base de données qui sera générée à partir des annotations de l&#x27;entité [Personne] ainsi que de configurations complémentaires faites dans un fichier appelé [persistence.xml]
+  </li>
+  <li>en [5, 6] : une couche JPA implémentée par Hibernate
+  </li>
+  <li>en [4] : l&#x27;entité [Personne]
+  </li>
+  <li>en [3] : un programme de test de type console
+  </li>
 </ul>
+
 <p>La configuration de la couche JPA est assurée par le fichier [META-INF/persistence.xml] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000069F000001D765E35341.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.001cm;" class="odt-zoomable" data-zoom-src="images/100000000000069F000001D765E35341.png" /></td></tr></table>
 
@@ -1321,45 +1353,74 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007610000011ECE500FB4.png" style="display:inline-block; margin:4px;width:17.999cm;height:2.723cm;" class="odt-zoomable" data-zoom-src="images/10000000000007610000011ECE500FB4.png" /></td></tr></table>
 
 <ul>
-<li>le fichier [persistence.xml] va configurer les couches [4, 5, 6]</li>
-<li>[4] : implémentation Hibernate de JPA</li>
-<li>[5] : Hibernate accède à la base de données via un pool de connexions. Un pool de connexions est une réserve de connexions ouvertes avec le SGBD. Un SGBD est accédé par de multiples utilisateurs alors même que pour des raisons de performances, il ne peut dépasser un nombre limite N de connexions ouvertes simultanément. Un code bien écrit ouvre une connexion avec le SGBD un minimum de temps : il émet des ordres SQL et ferme la connexion. Il va faire cela de façon répétée, à chaque fois qu&#x27;il a besoin de travailler avec la base. Le coût d&#x27;ouverture / fermeture d&#x27;une connexion n&#x27;est pas négligeable et c&#x27;est là qu&#x27;intervient le pool de connexions. Celui-ci va au démarrage de l&#x27;application ouvrir N1 connexions avec le SGBD. C&#x27;est à lui que l&#x27;application demandera une connexion ouverte lorsqu&#x27;elle en aura besoin. Celle-ci sera rendue au pool dès que l&#x27;application n&#x27;en aura plus besoin, de préférence le plus vite possible. La connexion n&#x27;est pas fermée et reste disponible pour l&#x27;utilisateur suivant. Un pool de connexions est donc un système de partage de connexions ouvertes.</li>
-<li>[6] : le pilote JDBC du SGBD utilisé</li>
+  <li>le fichier [persistence.xml] va configurer les couches [4, 5, 6]
+  </li>
+  <li>[4] : implémentation Hibernate de JPA
+  </li>
+  <li>[5] : Hibernate accède à la base de données via un pool de connexions. Un pool de connexions est une réserve de connexions ouvertes avec le SGBD. Un SGBD est accédé par de multiples utilisateurs alors même que pour des raisons de performances, il ne peut dépasser un nombre limite N de connexions ouvertes simultanément. Un code bien écrit ouvre une connexion avec le SGBD un minimum de temps : il émet des ordres SQL et ferme la connexion. Il va faire cela de façon répétée, à chaque fois qu&#x27;il a besoin de travailler avec la base. Le coût d&#x27;ouverture / fermeture d&#x27;une connexion n&#x27;est pas négligeable et c&#x27;est là qu&#x27;intervient le pool de connexions. Celui-ci va au démarrage de l&#x27;application ouvrir N1 connexions avec le SGBD. C&#x27;est à lui que l&#x27;application demandera une connexion ouverte lorsqu&#x27;elle en aura besoin. Celle-ci sera rendue au pool dès que l&#x27;application n&#x27;en aura plus besoin, de préférence le plus vite possible. La connexion n&#x27;est pas fermée et reste disponible pour l&#x27;utilisateur suivant. Un pool de connexions est donc un système de partage de connexions ouvertes.
+  </li>
+  <li>[6] : le pilote JDBC du SGBD utilisé
+  </li>
 </ul>
+
 <p>Maintenant voyons comment le fichier [persistence.xml] configure les couches [4, 5, 6] ci-dessus :</p>
 <ul>
-<li>ligne 2 : la balise racine du fichier XML est &lt;persistence&gt;.</li>
-<li>ligne 3 : &lt;persistence-unit&gt; sert à définir une unité de persistance. Il peut y avoir plusieurs unités de persistance. Chacune d&#x27;elles a un nom (attribut <strong>name</strong>) et un type de transactions (attribut <strong>transaction-type</strong>). L&#x27;application aura accès à l&#x27;unité de persistance via le nom de celle-ci, ici <strong>jpa</strong>. Le type de transaction RESOURCE_LOCAL indique que l&#x27;application gère elle-même les transactions avec le SGBD. Ce sera le cas ici. Lorsque l&#x27;application s&#x27;exécute dans un conteneur EJB3, elle peut utiliser le service de transactions de celui-ci. Dans ce cas, on mettra <strong>transaction-type=JTA</strong> (Java Transaction API). JTA est la valeur par défaut lorsque l&#x27;attribut <strong>transaction-type</strong> est absent.</li>
-<li>ligne 5 : la balise &lt;provider&gt; sert à définir <span style="color: #000000">une classe implémentant l&#x27;interface [</span><span style="color: #000000">javax.persistence.spi.PersistenceProvider], interface qui permet à l&#x27;application d&#x27;initialiser la couche de persistance. Parce qu&#x27;on utilise une implémentation JPA / Hibernate, la classe utilisée ici est une classe d&#x27;Hibernate.</span></li>
-<li><span style="color: #000000">ligne 6 : la balise &lt;properties&gt; introduit des propriétés propres au </span><em><span style="color: #000000">provider</span></em><span style="color: #000000"> particulier choisi. Ainsi selon qu&#x27;on a choisi Hibernate, Toplink, Kodo, ... on aura des propriétés différentes. Celles qui suivent sont propres à Hibernate.</span></li>
-<li><span style="color: #000000">ligne 8 : demande à Hibernate d&#x27;explorer le </span><em><span style="color: #000000">classpath</span></em><span style="color: #000000"> du projet pour y trouver les classes ayant l&#x27;annotation </span><strong><span style="color: #000000">@Entity</span></strong><span style="color: #000000"> afin de les gérer. Les classes </span><strong><span style="color: #000000">@Entity</span></strong><span style="color: #000000"> peuvent également être déclarées par des balises </span><em><span style="color: #000000">&lt;class&gt;nom_de_la_classe&lt;/class&gt;</span></em><span style="color: #000000">, directement sous la balise &lt;persistence-unit&gt;. C&#x27;est ce que nous ferons avec le </span><em><span style="color: #000000">provider</span></em><span style="color: #000000"> JPA / Toplink.</span></li>
-<li><span style="color: #000000">les lignes 10-12, ici mises en commentaires configurent les logs console d&#x27;Hibernate :</span><ul>
-<li><span style="color: #000000">ligne 10 : pour afficher ou non les ordres SQL émis par Hibernate sur le SGBD. Ceci est très utile lors de la phase d&#x27;apprentissage. A cause du pont relationnel / objet, l&#x27;application travaille sur des objets persistants sur lesquels elle applique des opérations de type [persist, merge, remove]. Il est très intéressant de savoir quels sont les ordres SQL réellement émis sur ces opérations. En les étudiant, peu à peu on en vient à deviner les ordres SQL qu&#x27;Hibernate va générer lorsqu&#x27;on fait telle opération sur les objets persistants et le pont relationnel / objet commence à prendre consistance dans l&#x27;esprit.</span></li>
-<li><span style="color: #000000">ligne 11 : les ordres SQL affichés sur la console peuvent être formatés joliment pour rendre leur lecture plus aisée</span></li>
-<li><span style="color: #000000">ligne 12 : les ordres SQL affichés seront de plus commentés</span></li>
+  <li>ligne 2 : la balise racine du fichier XML est &lt;persistence&gt;.
+  </li>
+  <li>ligne 3 : &lt;persistence-unit&gt; sert à définir une unité de persistance. Il peut y avoir plusieurs unités de persistance. Chacune d&#x27;elles a un nom (attribut <b>name</b>) et un type de transactions (attribut <b>transaction-type</b>). L&#x27;application aura accès à l&#x27;unité de persistance via le nom de celle-ci, ici <b>jpa</b>. Le type de transaction RESOURCE_LOCAL indique que l&#x27;application gère elle-même les transactions avec le SGBD. Ce sera le cas ici. Lorsque l&#x27;application s&#x27;exécute dans un conteneur EJB3, elle peut utiliser le service de transactions de celui-ci. Dans ce cas, on mettra <b>transaction-type=JTA</b> (Java Transaction API). JTA est la valeur par défaut lorsque l&#x27;attribut <b>transaction-type</b> est absent.
+  </li>
+  <li>ligne 5 : la balise &lt;provider&gt; sert à définir <span style="color: #000000">une classe implémentant l&#x27;interface [</span><span style="color: #000000">javax.persistence.spi.PersistenceProvider], interface qui permet à l&#x27;application d&#x27;initialiser la couche de persistance. Parce qu&#x27;on utilise une implémentation JPA / Hibernate, la classe utilisée ici est une classe d&#x27;Hibernate.</span>
+  </li>
+  <li><span style="color: #000000">ligne 6 : la balise &lt;properties&gt; introduit des propriétés propres au </span><i><span style="color: #000000">provider</span></i><span style="color: #000000"> particulier choisi. Ainsi selon qu&#x27;on a choisi Hibernate, Toplink, Kodo, ... on aura des propriétés différentes. Celles qui suivent sont propres à Hibernate.</span>
+  </li>
+  <li><span style="color: #000000">ligne 8 : demande à Hibernate d&#x27;explorer le </span><i><span style="color: #000000">classpath</span></i><span style="color: #000000"> du projet pour y trouver les classes ayant l&#x27;annotation </span><b><span style="color: #000000">@Entity</span></b><span style="color: #000000"> afin de les gérer. Les classes </span><b><span style="color: #000000">@Entity</span></b><span style="color: #000000"> peuvent également être déclarées par des balises </span><i><span style="color: #000000">&lt;class&gt;nom_de_la_classe&lt;/class&gt;</span></i><span style="color: #000000">, directement sous la balise &lt;persistence-unit&gt;. C&#x27;est ce que nous ferons avec le </span><i><span style="color: #000000">provider</span></i><span style="color: #000000"> JPA / Toplink.</span>
+  </li>
+  <li><span style="color: #000000">les lignes 10-12, ici mises en commentaires configurent les logs console d&#x27;Hibernate :</span>
+    <ul>
+      <li><span style="color: #000000">ligne 10 : pour afficher ou non les ordres SQL émis par Hibernate sur le SGBD. Ceci est très utile lors de la phase d&#x27;apprentissage. A cause du pont relationnel / objet, l&#x27;application travaille sur des objets persistants sur lesquels elle applique des opérations de type [persist, merge, remove]. Il est très intéressant de savoir quels sont les ordres SQL réellement émis sur ces opérations. En les étudiant, peu à peu on en vient à deviner les ordres SQL qu&#x27;Hibernate va générer lorsqu&#x27;on fait telle opération sur les objets persistants et le pont relationnel / objet commence à prendre consistance dans l&#x27;esprit.</span>
+      </li>
+      <li><span style="color: #000000">ligne 11 : les ordres SQL affichés sur la console peuvent être formatés joliment pour rendre leur lecture plus aisée</span>
+      </li>
+      <li><span style="color: #000000">ligne 12 : les ordres SQL affichés seront de plus commentés</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">les lignes 15-19 définissent la couche JDBC </span>(couche [6] dans l&#x27;architecture) <span style="color: #000000">:</span>
+    <ul>
+      <li><span style="color: #000000">ligne 15 : la classe du pilote JDBC du SGBD, ici MySQL5</span>
+      </li>
+      <li><span style="color: #000000">ligne 16 : l&#x27;url de la base de données utilisée</span>
+      </li>
+      <li><span style="color: #000000">lignes 17, 18 : l&#x27;utilisateur de la connexion et son mot de passe</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 22 : Hibernate a besoin de connaître le SGBD qu&#x27;il a en face de lui. En effet, les SGBD ont tous des extensions SQL propriétaires, une façon propre de gérer la génération automatique des valeurs d&#x27;une clé primaire, ... qui font qu&#x27;Hibernate a besoin de connaître le SGBD avec qui il travaille afin de lui envoyer les ordres SQL que celui-ci comprendra. </span>[MySQL5InnoDBDialect] désigne le SGBD MySQL5 avec des tables de type InnoDB qui supportent les transactions.
+  </li>
+  <li>les lignes 24-28 configurent le pool de connexions c3p0 (couche [5] dans l&#x27;architecture) :
+    <ul>
+      <li>lignes 24, 25 : le nombre minimal (défaut 3) et maximal de connexions (défaut 15) dans le pool. Le nombre initial de connexions par défaut est 3.
+      </li>
+      <li>ligne 26 : durée maximale en milli-secondes d&#x27;attente d&#x27;une demande de connexion de la part du client. Passé ce délai, c3p0 lui renverra une exception. 
+      </li>
+      <li>ligne 27 : pour accéder à la BD, Hibernate utilise des ordres SQL préparés (PreparedStatement) que c3p0 peut mettre en cache. Cela signifie que si l&#x27;application demande une seconde fois un ordre SQL préparé déjà en cache, celui-ci n&#x27;aura pas besoin d&#x27;être préparé (la préparation d&#x27;un ordre SQL a un coût) et celui qui est en cache sera utilisé. Ici, on indique le nombre maximal d&#x27;ordres SQL préparés que le cache peut contenir, toutes connexions confondues (un ordre SQL préparé appartient à une connexion).
+      </li>
+      <li>ligne 28 : fréquence de vérification en milli-secondes de la validité des connexions. Une connexion du pool peut devenir invalide pour diverses raisons (le pilote JDBC invalide la connexion parce qu&#x27;elle est trop longue, le pilote JDBC présente des &quot; bugs &quot;, ...).
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 20 : on demande ici, qu&#x27;à l&#x27;initialisation de l&#x27;unité de persistance, la base de données image des objets </span><b><span style="color: #000000">@Entity</span></b><span style="color: #000000"> soit générée. Hibernate a désormais tous les outils pour émettre les ordres SQL de génération des tables de la base de données :</span>
+    <ul>
+      <li><span style="color: #000000">la configuration des objets @Entity lui permet de connaître les tables à générer</span>
+      </li>
+      <li><span style="color: #000000">les lignes 15-18 et 24-28 lui permettent d&#x27;obtenir une connexion avec le SGBD</span>
+      </li>
+      <li><span style="color: #000000">la ligne 22 lui permet de savoir quel dialecte SQL utiliser pour générer les tables</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><span style="color: #000000">les lignes 15-19 définissent la couche JDBC </span>(couche [6] dans l&#x27;architecture) <span style="color: #000000">:</span><ul>
-<li><span style="color: #000000">ligne 15 : la classe du pilote JDBC du SGBD, ici MySQL5</span></li>
-<li><span style="color: #000000">ligne 16 : l&#x27;url de la base de données utilisée</span></li>
-<li><span style="color: #000000">lignes 17, 18 : l&#x27;utilisateur de la connexion et son mot de passe</span></li>
-</ul>
-</li>
-<li><span style="color: #000000">ligne 22 : Hibernate a besoin de connaître le SGBD qu&#x27;il a en face de lui. En effet, les SGBD ont tous des extensions SQL propriétaires, une façon propre de gérer la génération automatique des valeurs d&#x27;une clé primaire, ... qui font qu&#x27;Hibernate a besoin de connaître le SGBD avec qui il travaille afin de lui envoyer les ordres SQL que celui-ci comprendra. </span>[MySQL5InnoDBDialect] désigne le SGBD MySQL5 avec des tables de type InnoDB qui supportent les transactions.</li>
-<li>les lignes 24-28 configurent le pool de connexions c3p0 (couche [5] dans l&#x27;architecture) :<ul>
-<li>lignes 24, 25 : le nombre minimal (défaut 3) et maximal de connexions (défaut 15) dans le pool. Le nombre initial de connexions par défaut est 3.</li>
-<li>ligne 26 : durée maximale en milli-secondes d&#x27;attente d&#x27;une demande de connexion de la part du client. Passé ce délai, c3p0 lui renverra une exception. </li>
-<li>ligne 27 : pour accéder à la BD, Hibernate utilise des ordres SQL préparés (PreparedStatement) que c3p0 peut mettre en cache. Cela signifie que si l&#x27;application demande une seconde fois un ordre SQL préparé déjà en cache, celui-ci n&#x27;aura pas besoin d&#x27;être préparé (la préparation d&#x27;un ordre SQL a un coût) et celui qui est en cache sera utilisé. Ici, on indique le nombre maximal d&#x27;ordres SQL préparés que le cache peut contenir, toutes connexions confondues (un ordre SQL préparé appartient à une connexion).</li>
-<li>ligne 28 : fréquence de vérification en milli-secondes de la validité des connexions. Une connexion du pool peut devenir invalide pour diverses raisons (le pilote JDBC invalide la connexion parce qu&#x27;elle est trop longue, le pilote JDBC présente des &quot; bugs &quot;, ...).</li>
-</ul>
-</li>
-<li><span style="color: #000000">ligne 20 : on demande ici, qu&#x27;à l&#x27;initialisation de l&#x27;unité de persistance, la base de données image des objets </span><strong><span style="color: #000000">@Entity</span></strong><span style="color: #000000"> soit générée. Hibernate a désormais tous les outils pour émettre les ordres SQL de génération des tables de la base de données :</span><ul>
-<li><span style="color: #000000">la configuration des objets @Entity lui permet de connaître les tables à générer</span></li>
-<li><span style="color: #000000">les lignes 15-18 et 24-28 lui permettent d&#x27;obtenir une connexion avec le SGBD</span></li>
-<li><span style="color: #000000">la ligne 22 lui permet de savoir quel dialecte SQL utiliser pour générer les tables</span></li>
-</ul>
-</li>
-</ul>
+
 <p><span style="color: #000000">Ainsi le fichier [persistence.xml] utilisé ici recrée une base neuve à chaque nouvelle exécution de l&#x27;application. Les tables sont recréées (</span><em><span style="color: #000000">create table</span></em><span style="color: #000000">) après avoir été détruites (</span><em><span style="color: #000000">drop table</span></em><span style="color: #000000">) si elles existaient. On notera que ce n&#x27;est évidemment pas à faire avec une base en production...</span></p>
 <p><a id="refheading2817051991350288"></a></p>
 <h3 id="423-exemple-2-relation-un-a-plusieurs">4.2.3. Exemple 2 : relation un-à-plusieurs</h3>
@@ -1368,7 +1429,7 @@
 <h4 id="4231-le-schema-de-la-base-de-donnees">4.2.3.1. Le schéma de la base de données</h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>1</b></p><img src="images/10000000000000D6000000F5F8985F82.png" style="display:inline-block; margin:4px;width:3.96cm;height:4.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D6000000F5F8985F82.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>2</b></p><div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/10000000000000D6000000F5F8985F82.png" style="display:inline-block; margin:4px;width:3.96cm;height:4.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D6000000F5F8985F82.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>2</b></div><div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">alter</span><span style="color:#000000"> </span><span style="color:#800000">table</span><span style="color:#000000"> jpa06_article </span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">drop</span><span style="color:#000000"> </span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">foreign</span><span style="color:#000000"> </span><span style="color:#800000">key</span><span style="color:#000000"> FKFFBDD9D8ECCE8750;</span></span>
@@ -1400,8 +1461,10 @@
 </code></pre></div></td></tr></table>
 
 <ul>
-<li>en [1], la base de données et en [2], sa DDL (MySQL5)</li>
+  <li>en [1], la base de données et en [2], sa DDL (MySQL5)
+  </li>
 </ul>
+
 <p>Un <strong>article</strong> A(id, version, nom) appartient exactement à une catégorie C(id, version, nom). Une <strong>catégorie</strong> C peut contenir 0, 1 ou plusieurs articles. On a une relation <strong>un-à-plusieurs</strong> (Categorie -&gt; Article) et la relation inverse <strong>plusieurs-à-un</strong> (Article -&gt; Categorie). Cette relation est matérialisée par la clé étrangère que possède la table [article] sur la table [categorie] (lignes 24-28 de la DDL).</p>
 <p><a id="refheading2817091991350288"></a></p>
 <h4 id="4232-les-objets-entity-representant-la-base-de-donnees">4.2.3.2. Les objets @Entity représentant la base de données</h4>
@@ -1448,16 +1511,24 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 9-11 : clé primaire de l&#x27;@Entity</li>
-<li>lignes 13-15 : son n° de version</li>
-<li>lignes 17-18 : nom de l&#x27;article</li>
-<li>lignes 20-25 : relation <strong>plusieurs-à-un</strong> qui relie l&#x27;@Entity <em>Article</em> à l&#x27;@Entity <em>Categorie</em> :<ul>
-<li>ligne 23 : l&#x27;annotation  <strong>ManyToOne</strong>. Le <strong>Many</strong> se rapport à l&#x27;@Entity <em>Article</em> dans lequel on se trouve et le <strong>One</strong> à l&#x27;@Entity C<em>ategorie</em> (ligne 25). Une catégorie (One) peut avoir plusieurs articles (Many).</li>
-<li>ligne 24 : l&#x27;annotation  <strong>ManyToOne</strong> définit la colonne clé étrangère dans la table [article]. Elle s&#x27;appellera (<em>name</em>) <em>categorie_id</em> et chaque ligne devra avoir une valeur dans cette colonne (<em>nullable=false</em>).</li>
-<li>ligne 25 : la catégorie à laquelle appartient l&#x27;article. Lorsqu&#x27;un article sera mis dans le contexte de persistance, on demande à ce que sa catégorie n&#x27;y soit pas mise immédiatement (<em>fetch=FetchType.LAZY</em>, ligne 23). On ne sait pas si cette demande a un sens. On verra.</li>
+  <li>lignes 9-11 : clé primaire de l&#x27;@Entity
+  </li>
+  <li>lignes 13-15 : son n° de version
+  </li>
+  <li>lignes 17-18 : nom de l&#x27;article
+  </li>
+  <li>lignes 20-25 : relation <b>plusieurs-à-un</b> qui relie l&#x27;@Entity <i>Article</i> à l&#x27;@Entity <i>Categorie</i> :
+    <ul>
+      <li>ligne 23 : l&#x27;annotation  <b>ManyToOne</b>. Le <b>Many</b> se rapport à l&#x27;@Entity <i>Article</i> dans lequel on se trouve et le <b>One</b> à l&#x27;@Entity C<i>ategorie</i> (ligne 25). Une catégorie (One) peut avoir plusieurs articles (Many).
+      </li>
+      <li>ligne 24 : l&#x27;annotation  <b>ManyToOne</b> définit la colonne clé étrangère dans la table [article]. Elle s&#x27;appellera (<i>name</i>) <i>categorie_id</i> et chaque ligne devra avoir une valeur dans cette colonne (<i>nullable=false</i>).
+      </li>
+      <li>ligne 25 : la catégorie à laquelle appartient l&#x27;article. Lorsqu&#x27;un article sera mis dans le contexte de persistance, on demande à ce que sa catégorie n&#x27;y soit pas mise immédiatement (<i>fetch=FetchType.LAZY</i>, ligne 23). On ne sait pas si cette demande a un sens. On verra.
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>Une catégorie est représentée par l&#x27;<strong>@Entity</strong> [Categorie] suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> entites;</span></span>
@@ -1507,23 +1578,36 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 8-11 : la clé primaire de l&#x27;@Entity</li>
-<li>lignes 12-14 : sa version</li>
-<li>lignes 16-17 : le nom de la catégorie</li>
-<li>lignes 19-24 : l&#x27;ensemble (set) des articles de la catégorie<ul>
-<li>ligne 23 : l&#x27;annotation <strong>@OneToMany</strong> désigne une relation <strong>un-à-plusieurs</strong>. Le <strong>One</strong> désigne l&#x27;@Entity [Categorie] dans laquelle on se trouve, le <strong>Many</strong> le type [Article] de la ligne 24 : une (One) catégorie a plusieurs (Many) articles.</li>
-<li>ligne 23 : l&#x27;annotation est l&#x27;inverse (<em>mappedBy</em>) de l&#x27;annotation <strong>ManyToOne</strong> placée sur le champ <em>categorie</em> de l&#x27;@Entity <em>Article</em> : <strong>mappedBy=categorie</strong>. La relation  <strong>ManyToOne</strong> placée sur le champ <em>categorie</em> de l&#x27;@Entity <em>Article</em> est la <strong>relation principale</strong>. Elle est indispensable. Elle matérialise la relation de clé étrangère qui lie l&#x27;@Entity <em>Article</em> à l&#x27;@Entity <em>Categorie</em>. La relation  <strong>OneToMany</strong> placée sur le champ <em>articles</em> de l&#x27;@Entity <em>Categorie</em> est la <strong>relation inverse</strong>. Elle n&#x27;est pas indispensable. C&#x27;est une commodité pour obtenir les articles d&#x27;une catégorie. Sans cette commodité, ces articles seraient obtenus par une requête JPQL.</li>
-<li>ligne 23 : <strong>cascadeType.ALL</strong> demande à que les opérations (persist, merge, remove) faites sur une @Entity <em>Categorie</em> soient cascadées sur ses articles.</li>
-<li>ligne 24 : les articles d&#x27;une catégorie seront placés dans un objet de type <strong>Set&lt;Article&gt;</strong>. Le type <strong>Set</strong> n&#x27;accepte pas les doublons. Ainsi on ne peut mettre deux fois le même article dans l&#x27;objet <strong>Set&lt;Article&gt;</strong>. Que veut dire &quot;le même article&quot; ? Pour dire que l&#x27;article <strong>a</strong> est le même que l&#x27;article <strong>b</strong>, Java utilise l&#x27;expression <strong>a.equals(b)</strong>. Dans la classe <strong>Object</strong>, mère de toutes les classes, <strong>a.equals(b)</strong> est vraie si <strong>a==b</strong>, c.a.d. si les objets <em>a</em> et <em>b</em> ont le même emplacement mémoire. On pourrait vouloir dire que les articles a et b sont les mêmes s&#x27;ils ont le même nom. Dans ce cas, le développeur doit redéfinir deux méthodes dans la classe [Article] :</li>
+  <li>lignes 8-11 : la clé primaire de l&#x27;@Entity
+  </li>
+  <li>lignes 12-14 : sa version
+  </li>
+  <li>lignes 16-17 : le nom de la catégorie
+  </li>
+  <li>lignes 19-24 : l&#x27;ensemble (set) des articles de la catégorie
+    <ul>
+      <li>ligne 23 : l&#x27;annotation <b>@OneToMany</b> désigne une relation <b>un-à-plusieurs</b>. Le <b>One</b> désigne l&#x27;@Entity [Categorie] dans laquelle on se trouve, le <b>Many</b> le type [Article] de la ligne 24 : une (One) catégorie a plusieurs (Many) articles.
+      </li>
+      <li>ligne 23 : l&#x27;annotation est l&#x27;inverse (<i>mappedBy</i>) de l&#x27;annotation <b>ManyToOne</b> placée sur le champ <i>categorie</i> de l&#x27;@Entity <i>Article</i> : <b>mappedBy=categorie</b>. La relation  <b>ManyToOne</b> placée sur le champ <i>categorie</i> de l&#x27;@Entity <i>Article</i> est la <b>relation principale</b>. Elle est indispensable. Elle matérialise la relation de clé étrangère qui lie l&#x27;@Entity <i>Article</i> à l&#x27;@Entity <i>Categorie</i>. La relation  <b>OneToMany</b> placée sur le champ <i>articles</i> de l&#x27;@Entity <i>Categorie</i> est la <b>relation inverse</b>. Elle n&#x27;est pas indispensable. C&#x27;est une commodité pour obtenir les articles d&#x27;une catégorie. Sans cette commodité, ces articles seraient obtenus par une requête JPQL.
+      </li>
+      <li>ligne 23 : <b>cascadeType.ALL</b> demande à que les opérations (persist, merge, remove) faites sur une @Entity <i>Categorie</i> soient cascadées sur ses articles.
+      </li>
+      <li>ligne 24 : les articles d&#x27;une catégorie seront placés dans un objet de type <b>Set&lt;Article&gt;</b>. Le type <b>Set</b> n&#x27;accepte pas les doublons. Ainsi on ne peut mettre deux fois le même article dans l&#x27;objet <b>Set&lt;Article&gt;</b>. Que veut dire &quot;le même article&quot; ? Pour dire que l&#x27;article <b>a</b> est le même que l&#x27;article <b>b</b>, Java utilise l&#x27;expression <b>a.equals(b)</b>. Dans la classe <b>Object</b>, mère de toutes les classes, <b>a.equals(b)</b> est vraie si <b>a==b</b>, c.a.d. si les objets <i>a</i> et <i>b</i> ont le même emplacement mémoire. On pourrait vouloir dire que les articles a et b sont les mêmes s&#x27;ils ont le même nom. Dans ce cas, le développeur doit redéfinir deux méthodes dans la classe [Article] :
+      </li>
+    </ul>
+  </li>
+  <li><b>equals</b> : qui doit rendre vrai si les deux articles ont le même nom
+  </li>
+  <li><b>hashCode</b> : doit rendre une valeur entière identique pour deux objets [Article] que la méthode <b>equals</b> considère comme égaux. Ici, la valeur sera donc construite à partir du nom de l&#x27;article. La valeur rendue par <b>hashCode</b> peut être un entier quelconque. Elle est utilisée dans différents conteneurs d&#x27;objets, notamment les dictionnaires (Hashtable).
+  </li>
 </ul>
-</li>
-<li><strong>equals</strong> : qui doit rendre vrai si les deux articles ont le même nom</li>
-<li><strong>hashCode</strong> : doit rendre une valeur entière identique pour deux objets [Article] que la méthode <strong>equals</strong> considère comme égaux. Ici, la valeur sera donc construite à partir du nom de l&#x27;article. La valeur rendue par <strong>hashCode</strong> peut être un entier quelconque. Elle est utilisée dans différents conteneurs d&#x27;objets, notamment les dictionnaires (Hashtable).</li>
-</ul>
+
 <p>La relation <strong>OneToMany</strong> peut utiliser d&#x27;autres types que le <strong>Set</strong> pour stocker le <strong>Many</strong>, des objets <strong>List</strong>, par exemple. Nous n&#x27;aborderons pas ces cas dans ce document. Le lecteur les trouvera dans [<a href="http://tahe.developpez.com/java/jpa"><strong>ref1</strong></a>].</p>
 <ul>
-<li>ligne 38 : la méthode [addArticle] nous permet d&#x27;ajouter un article à une catégorie. La méthode prend soin de mettre à jour les deux extrémités de la relation <em>OneToMany</em> qui lie [Categorie] à [Article].</li>
+  <li>ligne 38 : la méthode [addArticle] nous permet d&#x27;ajouter un article à une catégorie. La méthode prend soin de mettre à jour les deux extrémités de la relation <i>OneToMany</i> qui lie [Categorie] à [Article].
+  </li>
 </ul>
+
 <p><a id="refheading319131812363491"></a></p>
 <h2 id="43-lapi-de-la-couche-jpa">4.3. L&#x27;API de la couche JPA</h2>
 <p>Explicitons l&#x27;environnement d&#x27;exécution d&#x27;un client JPA :</p>
@@ -1531,35 +1615,40 @@
 
 <p>Nous savons que le couche JPA [2] crée un pont objet [3] / relationnel [4]. On appelle &quot; contexte de persistance &quot; l&#x27;ensemble des objets gérés par la couche JPA dans le cadre de ce pont objet / relationnel. Pour accéder aux données du contexte de persistance, un client JPA [1] doit passer par la couche JPA [2] :</p>
 <ol>
-<li>il peut créer un objet et demander à la couche JPA de le rendre persistant. L&#x27;objet fait alors partie du contexte de persistance.</li>
-<li>il peut demander à la couche [JPA] une référence d&#x27;un objet persistant existant.</li>
-<li>il peut modifier un objet persistant obtenu de la couche JPA.</li>
-<li>il peut demander à la couche JPA de supprimer un objet du contexte de persistance.</li>
+  <li>il peut créer un objet et demander à la couche JPA de le rendre persistant. L&#x27;objet fait alors partie du contexte de persistance.
+  </li>
+  <li>il peut demander à la couche [JPA] une référence d&#x27;un objet persistant existant.
+  </li>
+  <li>il peut modifier un objet persistant obtenu de la couche JPA.
+  </li>
+  <li>il peut demander à la couche JPA de supprimer un objet du contexte de persistance.
+  </li>
 </ol>
+
 <p>La couche JPA présente au client une interface appelée [EntityManager] qui, comme son nom l&#x27;indique permet de gérer les objets @Entity du contexte de persistance. Nous présentons ci-dessous, les principales méthodes de cette interface :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>void persist(Object entity)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">met <i>entity</i> dans le contexte de persistance</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">met <i>entity</i> dans le contexte de persistance</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>void remove(Object entity)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">enlève <i>entity</i> du contexte de persistance</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">enlève <i>entity</i> du contexte de persistance</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&lt;T&gt; T merge(T entity)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">fusionne un objet <i>entity</i> du client non géré par le contexte de persistance</p><p style="margin:0;">avec l&#x27;objet <i>entity</i> du contexte de persistance ayant la même clé primaire.</p><p style="margin:0;">Le résultat rendu est l&#x27;objet <i>entity</i> du contexte de persistance.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">fusionne un objet <i>entity</i> du client non géré par le contexte de persistance</div><div style="margin:0 0 0.5em 0">avec l&#x27;objet <i>entity</i> du contexte de persistance ayant la même clé primaire.</div><div style="margin:0 0 0.5em 0">Le résultat rendu est l&#x27;objet <i>entity</i> du contexte de persistance.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&lt;T&gt; T find(Class&lt;T&gt; entityClass,
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Object primaryKey)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">met dans le contexte de persistance, un objet cherché dans la base de données</p><p style="margin:0;">via sa clé primaire. Le type T de l&#x27;objet permet à la couche JPA</p><p style="margin:0;">de savoir quelle table requêter. L&#x27;objet persistant ainsi créé est rendu au client.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">met dans le contexte de persistance, un objet cherché dans la base de données</div><div style="margin:0 0 0.5em 0">via sa clé primaire. Le type T de l&#x27;objet permet à la couche JPA</div><div style="margin:0 0 0.5em 0">de savoir quelle table requêter. L&#x27;objet persistant ainsi créé est rendu au client.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Query createQuery(String queryText)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">crée un objet <b>Query</b> à partir d&#x27;une requête JPQL (Java Persistence</p><p style="margin:0;">Query Language). Une requête JPQL est analogue à une requête SQL si</p><p style="margin:0;">ce n&#x27;est qu&#x27;on requête des objets plutôt que des tables. </p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">crée un objet <b>Query</b> à partir d&#x27;une requête JPQL (Java Persistence</div><div style="margin:0 0 0.5em 0">Query Language). Une requête JPQL est analogue à une requête SQL si</div><div style="margin:0 0 0.5em 0">ce n&#x27;est qu&#x27;on requête des objets plutôt que des tables. </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Query createNativeQuery(String queryText)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">méthode analogue à la précédente, si ce n&#x27;est que <i>queryText</i> est un</p><p style="margin:0;">rdre SQL et non JPQL.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">méthode analogue à la précédente, si ce n&#x27;est que <i>queryText</i> est un</div><div style="margin:0 0 0.5em 0">rdre SQL et non JPQL.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Query createNamedQuery(String name)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">méthode identique à <i>createQuery</i>, si ce n&#x27;est que l&#x27;ordre JPQL <i>queryText</i> a</p><p style="margin:0;">été externalisé dans un fichier de configuration et associé à un nom.</p><p style="margin:0;">C&#x27;est ce nom qui est le paramètre de la méthode.</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">méthode identique à <i>createQuery</i>, si ce n&#x27;est que l&#x27;ordre JPQL <i>queryText</i> a</div><div style="margin:0 0 0.5em 0">été externalisé dans un fichier de configuration et associé à un nom.</div><div style="margin:0 0 0.5em 0">C&#x27;est ce nom qui est le paramètre de la méthode.</div></td></tr></table>
 
 <p>Un objet <strong>EntityManager</strong> a un cycle de vie qui n&#x27;est pas forcément celui de l&#x27;application. Il a un début et une fin. Ainsi un client JPA peut travailler successivement avec différents objets <em>EntityManager</em>. Le contexte de persistance associé à un <em>EntityManager</em> a le même cycle de vie que lui. Ils sont indissociables l&#x27;un de l&#x27;autre. Lorsqu&#x27;un objet <em>EntityManager</em> est fermé, son contexte de persistance est si nécessaire synchronisé avec la base de données puis il n&#x27;existe plus. Il faut créer un nouvel <em>EntityManager</em> pour avoir de nouveau un contexte de persistance.</p>
 <p>Le client JPA peut créer un <em>EntityManager</em> et donc un contexte de persistance avec l&#x27;instruction suivante :</p>
@@ -1568,8 +1657,10 @@
 </code></pre></div>
 
 <ul>
-<li><strong>javax.persistence.Persistence</strong> est une classe statique permettant d&#x27;obtenir une fabrique (factory) d&#x27;objets <em>EntityManager</em>. Cette fabrique est liée à une unité de persistance précise. On se rappelle que le fichier de configuration [META-INF/persistence.xml] permet de définir des unités de persistance et que celles-ci ont un nom :</li>
+  <li><b>javax.persistence.Persistence</b> est une classe statique permettant d&#x27;obtenir une fabrique (factory) d&#x27;objets <i>EntityManager</i>. Cette fabrique est liée à une unité de persistance précise. On se rappelle que le fichier de configuration [META-INF/persistence.xml] permet de définir des unités de persistance et que celles-ci ont un nom :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">persistence-unit </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;elections-dao-jpa-mysql-01PU&quot; </span><span style="color:#7f007f">transaction-type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;RESOURCE_LOCAL&quot;</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
@@ -1581,37 +1672,50 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>void close()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">le contexte de persistance est fermé. Force la synchronisation du contexte de persistance avec la base de données : </p><p style="margin:0;">&bull; si un objet du contexte n&#x27;est pas présent dans la base, il y est mis par une opération SQL INSERT)</p><p style="margin:0;">&bull; si un objet du contexte est présent dans la base et qu&#x27;il a été modifié depuis qu&#x27;il a été lu, une opération SQL UPDATE est faite pour persister la modification</p><p style="margin:0;">&bull; si un objet du contexte a été marqué comme &quot; supprimé &quot; à l&#x27;issue d&#x27;une opération <i>remove</i> sur lui, une opération SQL DELETE est faite pour le supprimer de la base.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">le contexte de persistance est fermé. Force la synchronisation du contexte de persistance avec la base de données : </div><ul>
+  <li>si un objet du contexte n&#x27;est pas présent dans la base, il y est mis par une opération SQL INSERT)
+  </li>
+  <li>si un objet du contexte est présent dans la base et qu&#x27;il a été modifié depuis qu&#x27;il a été lu, une opération SQL UPDATE est faite pour persister la modification
+  </li>
+  <li>si un objet du contexte a été marqué comme &quot; supprimé &quot; à l&#x27;issue d&#x27;une opération <i>remove</i> sur lui, une opération SQL DELETE est faite pour le supprimer de la base.
+  </li>
+</ul></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>void clear()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">le contexte de persistance est vidé de tous ses objets mais pas fermé.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">le contexte de persistance est vidé de tous ses objets mais pas fermé.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>void flush()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">le contexte de persistance est synchronisé avec la base de données de la façon décrite pour <i>close()</i></p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">le contexte de persistance est synchronisé avec la base de données de la façon décrite pour <i>close()</i></div></td></tr></table>
 
 <p>Le client JPA peut forcer la synchronisation du contexte de persistance avec la base de données avec la méthode [EntityManager].<em>flush</em> précédente. La synchronisation peut être explicite ou implicite. Dans le premier cas, c&#x27;est au client de faire des opérations <em>flush</em> lorsqu&#x27;il veut faire des synchronisations, sinon celle-ci se font à certains moments que nous allons préciser. Le mode de synchronisation est géré par les méthodes suivantes de l&#x27;interface [EntityManager] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>void setFlushMode(FlushModeType
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>flushMode)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Il y a deux valeurs possibles pour <i>flushmode</i> :</p><p style="margin:0;"><b>FlushModeType.AUTO</b> (défaut): la synchronisation a lieu avant</p><p style="margin:0;">chaque requête SELECT faite sur la base.</p><p style="margin:0;"><b>FlushModeType.COMMIT</b> : la synchronisation n&#x27;a lieu qu&#x27;à</p><p style="margin:0;">la fin des transactions sur la base.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Il y a deux valeurs possibles pour <i>flushmode</i> :</div><div style="margin:0 0 0.5em 0"><b>FlushModeType.AUTO</b> (défaut): la synchronisation a lieu avant</div><div style="margin:0 0 0.5em 0">chaque requête SELECT faite sur la base.</div><div style="margin:0 0 0.5em 0"><b>FlushModeType.COMMIT</b> : la synchronisation n&#x27;a lieu qu&#x27;à</div><div style="margin:0 0 0.5em 0">la fin des transactions sur la base.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>FlushModeType getFlushMode()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">rend le mode actuel de synchronisation</p></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">rend le mode actuel de synchronisation</div></td></tr></table>
 
 <p>Résumons. En mode <strong>FlushModeType.AUTO</strong> qui est le mode par défaut, le contexte de persistance sera synchronisé avec la base de données aux moments suivants :</p>
 <ol>
-<li>avant chaque opération SELECT sur la base</li>
-<li>à la fin d&#x27;une transaction sur la base</li>
-<li>à la suite d&#x27;une opération <em>flush</em> ou <em>close</em> sur le contexte de persistance</li>
+  <li>avant chaque opération SELECT sur la base
+  </li>
+  <li>à la fin d&#x27;une transaction sur la base
+  </li>
+  <li>à la suite d&#x27;une opération <i>flush</i> ou <i>close</i> sur le contexte de persistance
+  </li>
 </ol>
+
 <p>En mode <strong>FlushModeType.COMMIT</strong>, c&#x27;est la même chose sauf pour l&#x27;opération 1 qui n&#x27;a pas lieu. Le mode normal d&#x27;interaction avec la couche JPA est un mode transactionnel. Le client fait diverses opérations sur le contexte de persistance, à l&#x27;intérieur d&#x27;une transaction. Dans ce cas, les moments de synchronisation du contexte de persistance avec la base de données sont les cas 1 et 2 ci-dessus en mode AUTO, et le cas 2 uniquement en mode COMMIT.</p>
 <p>Terminons par l&#x27;API de l&#x27;interface <strong>Query</strong>, interface qui permet d&#x27;émettre des ordres JPQL sur le contexte de persistance ou bien des ordres SQL directement sur la base pour y retrouver des données. L&#x27;interface <strong>Query</strong> est  la suivante :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C50000035949EAA0AF.png" style="display:inline-block; margin:4px;width:12.767cm;height:11.338cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C50000035949EAA0AF.png" /></td></tr></table>
 
 <ul>
-<li>1 - la méthode <strong>getResultList</strong> execute un SELECT qui ramène plusieurs objets. Ceux-ci seront obtenus dans un objet <em>List</em>. Cet objet est une interface. Celle-ci offre un objet <em>Iterator</em> qui permet de parcourir les éléments de la liste L sous la forme suivante :</li>
+  <li>1 - la méthode <b>getResultList</b> execute un SELECT qui ramène plusieurs objets. Ceux-ci seront obtenus dans un objet <i>List</i>. Cet objet est une interface. Celle-ci offre un objet <i>Iterator</i> qui permet de parcourir les éléments de la liste L sous la forme suivante :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">        Iterator iterator = L.iterator();</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">while</span><span style="color:#000000"> (iterator.hasNext()) {</span></span>
@@ -1628,11 +1732,16 @@
 </code></pre></div>
 
 <ul>
-<li>2 - la méthode <strong>getSingleResult</strong> exécute un ordre JPQL / SQL SELECT qui ramène un unique objet.</li>
-<li>3 - la méthode <strong>executeUpdate</strong> exécute un ordre SQL <strong>update</strong> ou <strong>delete</strong> et rend le nombre de lignes affectées l&#x27;opération.</li>
-<li>4 - la méthode <strong>setParameter(String, Object)</strong> permet de donner une valeur à un paramètre nommé d&#x27;un ordre JPQL paramétré</li>
-<li>5 - la méthode <strong>setParameter(int, Object)</strong> mais le paramètre n&#x27;est pas désigné par son nom mais par sa position dans l&#x27;ordre JPQL.</li>
+  <li>2 - la méthode <b>getSingleResult</b> exécute un ordre JPQL / SQL SELECT qui ramène un unique objet.
+  </li>
+  <li>3 - la méthode <b>executeUpdate</b> exécute un ordre SQL <b>update</b> ou <b>delete</b> et rend le nombre de lignes affectées l&#x27;opération.
+  </li>
+  <li>4 - la méthode <b>setParameter(String, Object)</b> permet de donner une valeur à un paramètre nommé d&#x27;un ordre JPQL paramétré
+  </li>
+  <li>5 - la méthode <b>setParameter(int, Object)</b> mais le paramètre n&#x27;est pas désigné par son nom mais par sa position dans l&#x27;ordre JPQL.
+  </li>
 </ul>
+
 <p><a id="refheading2817111991350288"></a>
 <a id="jpql"></a></p>
 <h2 id="44-les-requetes-jpql">4.4. Les requêtes JPQL</h2>
@@ -1649,24 +1758,36 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013B0000009140E8B0E1.png" style="display:inline-block; margin:4px;width:5.83cm;height:2.679cm;" class="odt-zoomable" data-zoom-src="images/100000000000013B0000009140E8B0E1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001830000006A63E8B6FD.png" style="display:inline-block; margin:4px;width:7.17cm;height:1.96cm;" class="odt-zoomable" data-zoom-src="images/10000000000001830000006A63E8B6FD.png" /></td></tr></table>
 
 <ul>
-<li>ID : n° identifiant le médecin - clé primaire de la table</li>
-<li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.</li>
-<li>NOM : le nom du médecin</li>
-<li>PRENOM : son prénom</li>
-<li>TITRE : son titre (Melle, Mme, Mr)</li>
+  <li>ID : n° identifiant le médecin - clé primaire de la table
+  </li>
+  <li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.
+  </li>
+  <li>NOM : le nom du médecin
+  </li>
+  <li>PRENOM : son prénom
+  </li>
+  <li>TITRE : son titre (Melle, Mme, Mr)
+  </li>
 </ul>
+
 <p><a id="refheading73510604163464"></a></p>
 <h3 id="442-la-table-clients">4.4.2. La table [CLIENTS]</h3>
 <p>Les clients des différents médecins sont enregistrés dans la table [CLIENTS] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015C0000009211F9EF53.png" style="display:inline-block; margin:4px;width:6.451cm;height:2.701cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C0000009211F9EF53.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001720000006D8D331F7F.png" style="display:inline-block; margin:4px;width:6.849cm;height:2.02cm;" class="odt-zoomable" data-zoom-src="images/10000000000001720000006D8D331F7F.png" /></td></tr></table>
 
 <ul>
-<li>ID : n° identifiant le client - clé primaire de la table</li>
-<li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.</li>
-<li>NOM : le nom du client</li>
-<li>PRENOM : son prénom</li>
-<li>TITRE : son titre (Melle, Mme, Mr)</li>
+  <li>ID : n° identifiant le client - clé primaire de la table
+  </li>
+  <li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.
+  </li>
+  <li>NOM : le nom du client
+  </li>
+  <li>PRENOM : son prénom
+  </li>
+  <li>TITRE : son titre (Melle, Mme, Mr)
+  </li>
 </ul>
+
 <p><a id="refheading73512604163464"></a></p>
 <h3 id="443-la-table-creneaux">4.4.3. La table [CRENEAUX]</h3>
 <p>Elle liste les créneaux horaires où les RV sont possibles : </p>
@@ -1675,14 +1796,22 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005500000014368DD02F7.png" style="display:inline-block; margin:4px;width:17.992cm;height:4.274cm;" class="odt-zoomable" data-zoom-src="images/10000000000005500000014368DD02F7.png" /></td></tr></table>
 
 <ul>
-<li>ID : n° identifiant le créneau horaire - clé primaire de la table (ligne 8)</li>
-<li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.</li>
-<li>ID_MEDECIN : n° identifiant le médecin auquel appartient ce créneau – clé étrangère sur la colonne MEDECINS(ID).</li>
-<li>HDEBUT : heure début créneau</li>
-<li>MDEBUT : minutes début créneau</li>
-<li>HFIN : heure fin créneau</li>
-<li>MFIN : minutes fin créneau</li>
+  <li>ID : n° identifiant le créneau horaire - clé primaire de la table (ligne 8)
+  </li>
+  <li>VERSION : n° identifiant la version de la ligne dans la table. Ce nombre est incrémenté de 1 à chaque fois qu&#x27;une modification est apportée à la ligne.
+  </li>
+  <li>ID_MEDECIN : n° identifiant le médecin auquel appartient ce créneau – clé étrangère sur la colonne MEDECINS(ID).
+  </li>
+  <li>HDEBUT : heure début créneau
+  </li>
+  <li>MDEBUT : minutes début créneau
+  </li>
+  <li>HFIN : heure fin créneau
+  </li>
+  <li>MFIN : minutes fin créneau
+  </li>
 </ul>
+
 <p>La seconde ligne de la table [CRENEAUX] (cf [1] ci-dessus) indique, par exemple, que le créneau n° 2 commence à 8 h 20 et se termine à 8 h 40 et appartient au médecin n° 1 (Mme Marie PELISSIER).</p>
 <p><a id="refheading73514604163464"></a></p>
 <h3 id="444-la-table-rv">4.4.4. La table [RV]</h3>
@@ -1690,11 +1819,16 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F9000000DD94C415D4.png" style="display:inline-block; margin:4px;width:16.842cm;height:2.925cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F9000000DD94C415D4.png" /></td></tr></table>
 
 <ul>
-<li>ID : n° identifiant le RV de façon unique – clé primaire</li>
-<li>JOUR : jour du RV</li>
-<li>ID_CRENEAU : créneau horaire du RV - clé étrangère sur le champ [ID] de la table [CRENEAUX] – fixe à la fois le créneau horaire et le médecin concerné.</li>
-<li>ID_CLIENT : n° du client pour qui est faite la réservation – clé étrangère sur le champ [ID] de la table [CLIENTS]</li>
+  <li>ID : n° identifiant le RV de façon unique – clé primaire
+  </li>
+  <li>JOUR : jour du RV
+  </li>
+  <li>ID_CRENEAU : créneau horaire du RV - clé étrangère sur le champ [ID] de la table [CRENEAUX] – fixe à la fois le créneau horaire et le médecin concerné.
+  </li>
+  <li>ID_CLIENT : n° du client pour qui est faite la réservation – clé étrangère sur le champ [ID] de la table [CLIENTS]
+  </li>
 </ul>
+
 <p>Cette table a une <a id="unicitejourcreneau"></a>contrainte d&#x27;unicité sur les valeurs des colonnes jointes (JOUR, ID_CRENEAU) :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ALTER TABLE RV ADD CONSTRAINT UNQ1_RV UNIQUE (JOUR, ID_CRENEAU);
 </code></pre></div>
@@ -1707,32 +1841,46 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000398000001CEFFA63581.png" style="display:inline-block; margin:4px;width:12.171cm;height:6.112cm;" class="odt-zoomable" data-zoom-src="images/1000000000000398000001CEFFA63581.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on clique sur l&#x27;icône de [WampServer] et on choisit l&#x27;option [PhpMyAdmin] [2],</li>
-<li>en [3], dans la fenêtre sui s&#x27;est ouverte, on sélectionne le lien [Bases de données],</li>
+  <li>en [1], on clique sur l&#x27;icône de [WampServer] et on choisit l&#x27;option [PhpMyAdmin] [2],
+  </li>
+  <li>en [3], dans la fenêtre sui s&#x27;est ouverte, on sélectionne le lien [Bases de données],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000375000000E98BDA40C4.png" style="display:inline-block; margin:4px;width:11.709cm;height:3.083cm;" class="odt-zoomable" data-zoom-src="images/1000000000000375000000E98BDA40C4.png" /></td></tr></table>
 
 <ul>
-<li>en [2], on crée une base de données dont on a donné le nom [4] et l&#x27;encodage [5],</li>
-<li>en [7], la base a été créée. On clique sur son lien,</li>
+  <li>en [2], on crée une base de données dont on a donné le nom [4] et l&#x27;encodage [5],
+  </li>
+  <li>en [7], la base a été créée. On clique sur son lien,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005330000015A3EFB137B.png" style="display:inline-block; margin:4px;width:17.609cm;height:4.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000005330000015A3EFB137B.png" /></td></tr></table>
 
 <ul>
-<li>en [8], on importe un fichier SQL,</li>
-<li>qu&#x27;on désigne dans le système de fichiers avec le bouton [9],</li>
+  <li>en [8], on importe un fichier SQL,
+  </li>
+  <li>qu&#x27;on désigne dans le système de fichiers avec le bouton [9],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042A0000011BA676E00F.png" style="display:inline-block; margin:4px;width:14.102cm;height:3.745cm;" class="odt-zoomable" data-zoom-src="images/100000000000042A0000011BA676E00F.png" /></td></tr></table>
 
 <ul>
-<li>en [11], on sélectionne le script SQL et en [12] on l&#x27;exécute,</li>
-<li>en [13], les quatre tables de la base ont été créées. On suit l&#x27;un des liens,</li>
+  <li>en [11], on sélectionne le script SQL et en [12] on l&#x27;exécute,
+  </li>
+  <li>en [13], les quatre tables de la base ont été créées. On suit l&#x27;un des liens,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000433000000E72F9BAB43.png" style="display:inline-block; margin:4px;width:14.222cm;height:3.057cm;" class="odt-zoomable" data-zoom-src="images/1000000000000433000000E72F9BAB43.png" /></td></tr></table>
 
 <ul>
-<li>en [14], le contenu de la table.</li>
+  <li>en [14], le contenu de la table.
+  </li>
 </ul>
+
 <p>Par la suite, nous ne reviendrons plus sur cette base. Mais le lecteur est invité à suivre son évolution au fil des programmes surtout lorsque ça ne marche pas.</p>
 <p><a id="refheading73522604163464"></a>
 <a id="generationautomatique"></a></p>
@@ -1748,14 +1896,19 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AD0000015C64A1FE16.png" style="display:inline-block; margin:4px;width:15.836cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AD0000015C64A1FE16.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on construit un projet Maven de type [Java Application] [2],</li>
-<li>en [3], on donne un nom au projet,</li>
+  <li>en [1], on construit un projet Maven de type [Java Application] [2],
+  </li>
+  <li>en [3], on donne un nom au projet,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002060000012078EE17C3.png" style="display:inline-block; margin:4px;width:6.853cm;height:3.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000002060000012078EE17C3.png" /></td></tr></table>
 
 <ul>
-<li>en [4], le projet généré.</li>
+  <li>en [4], le projet généré.
+  </li>
 </ul>
+
 <p><a id="refheading74291604163464"></a></p>
 <h3 id="448-generation-de-la-couche-jpa">4.4.8. Génération de la couche [JPA]</h3>
 <p>Revenons à l&#x27;architecture que nous devons construire :</p>
@@ -1766,23 +1919,34 @@
 <a id="refheading74293604163464"></a></p>
 <h3 id="449-creation-dune-connexion-netbeans-a-la-base-de-donnees">4.4.9. Création d&#x27;une connexion Netbeans à la base de données</h3>
 <ul>
-<li>lancer le SGBD MySQL 5 afin que la BD soit disponible,</li>
-<li>créer une connexion Netbeans sur la base [dbrdvmedecins2],</li>
+  <li>lancer le SGBD MySQL 5 afin que la BD soit disponible,
+  </li>
+  <li>créer une connexion Netbeans sur la base [dbrdvmedecins2],
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048000000208AB041AAD.png" style="display:inline-block; margin:4px;width:15.24cm;height:6.879cm;" class="odt-zoomable" data-zoom-src="images/100000000000048000000208AB041AAD.png" /></td></tr></table>
 
 <ul>
-<li>dans l&#x27;onglet [Services] [1], dans la branche [Databases] [2], sélectionner le pilote JDBC MySQL [3],</li>
-<li>puis sélectionner l&#x27;option [4] &quot;Connect Using&quot; permettant de créer une connexion avec une base MySQL,</li>
-<li>en [5], donner les informations qui sont demandées. En [6], le nom de la base, en [7] l&#x27;utilisateur de la base et son mot de passe,</li>
-<li>en [8], on peut tester les informations qu&#x27;on a fournies,</li>
-<li>en [9], le message attendu lorsque celles-ci sont bonnes,</li>
+  <li>dans l&#x27;onglet [Services] [1], dans la branche [Databases] [2], sélectionner le pilote JDBC MySQL [3],
+  </li>
+  <li>puis sélectionner l&#x27;option [4] &quot;Connect Using&quot; permettant de créer une connexion avec une base MySQL,
+  </li>
+  <li>en [5], donner les informations qui sont demandées. En [6], le nom de la base, en [7] l&#x27;utilisateur de la base et son mot de passe,
+  </li>
+  <li>en [8], on peut tester les informations qu&#x27;on a fournies,
+  </li>
+  <li>en [9], le message attendu lorsque celles-ci sont bonnes,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C700000272EF24AB86.png" style="display:inline-block; margin:4px;width:6.02cm;height:8.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C700000272EF24AB86.png" /></td></tr></table>
 
 <ul>
-<li>en [10], la connexion est créée. On y voit les quatre tables de la base de données connectée.</li>
+  <li>en [10], la connexion est créée. On y voit les quatre tables de la base de données connectée.
+  </li>
 </ul>
+
 <p><a id="refheading74295604163464"></a></p>
 <h3 id="4410-creation-dune-unite-de-persistance">4.4.10. Création d&#x27;une unité de persistance</h3>
 <p>Revenons à l&#x27;architecture en cours de construction :</p>
@@ -1790,27 +1954,41 @@
 
 <p>Nous sommes en train de construire la couche [JPA]. La configuration de celle-ci est faite dans un fichier [persistence.xml] dans lequel on définit des unités de persistance. Chacune d&#x27;elles a besoin des informations suivantes :</p>
 <ul>
-<li>les caractéristiques JDBC d&#x27;accès à la base (URL, utilisateur, mot de passe),</li>
-<li>les classes qui seront les images des tables de la base de données,</li>
-<li>l&#x27;implémentation JPA utilisée. En effet, JPA est une spécification implémentée par divers produits. Ici, nous utiliserons Hibernate.</li>
+  <li>les caractéristiques JDBC d&#x27;accès à la base (URL, utilisateur, mot de passe),
+  </li>
+  <li>les classes qui seront les images des tables de la base de données,
+  </li>
+  <li>l&#x27;implémentation JPA utilisée. En effet, JPA est une spécification implémentée par divers produits. Ici, nous utiliserons Hibernate.
+  </li>
 </ul>
+
 <p>Netbeans peut générer ce fichier de persistance via l&#x27;utilisation d&#x27;un assistant.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C9000001DF67B10527.png" style="display:inline-block; margin:4px;width:16.207cm;height:6.338cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C9000001DF67B10527.png" /></td></tr></table>
 
 <ul>
-<li>cliquer droit sur le projet et choisir la création d&#x27;une unité de persistance [1],</li>
-<li>en [2], créer une unité de persistance,</li>
+  <li>cliquer droit sur le projet et choisir la création d&#x27;une unité de persistance [1],
+  </li>
+  <li>en [2], créer une unité de persistance,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C9000001DF67B10527.png" style="display:inline-block; margin:4px;width:16.207cm;height:6.338cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C9000001DF67B10527.png" /></td></tr></table>
 
 <ul>
-<li>en [3], donner un nom à l&#x27;unité de persistance que l&#x27;on crée,</li>
-<li>en [4], choisir l&#x27;implémentation JPA Hibernate (JPA 2.0),</li>
-<li>en [5], indiquer que les tables de la BD sont déjà créées et que donc on ne les crée pas. On valide l&#x27;assistant,</li>
-<li>en [6], le nouveau projet,</li>
-<li>en [7], le fichier [persistence.xml] a été généré dans le dossier [META-INF],</li>
-<li>en [8], de nouvelles dépendances ont été ajoutées au projet Maven.</li>
+  <li>en [3], donner un nom à l&#x27;unité de persistance que l&#x27;on crée,
+  </li>
+  <li>en [4], choisir l&#x27;implémentation JPA Hibernate (JPA 2.0),
+  </li>
+  <li>en [5], indiquer que les tables de la BD sont déjà créées et que donc on ne les crée pas. On valide l&#x27;assistant,
+  </li>
+  <li>en [6], le nouveau projet,
+  </li>
+  <li>en [7], le fichier [persistence.xml] a été généré dans le dossier [META-INF],
+  </li>
+  <li>en [8], de nouvelles dépendances ont été ajoutées au projet Maven.
+  </li>
 </ul>
+
 <p>Le fichier [META-INF/persistence.xml] généré est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -1830,10 +2008,14 @@
 
 <p>Il reprend les informations données dans l&#x27;assistant :</p>
 <ul>
-<li>ligne 3 : le nom de l&#x27;unité de persistance,</li>
-<li>ligne 3 : le type de transactions avec la base de données. Ici, RESOURCE_LOCAL indique que l&#x27;application va gérer elle-même ses transactions,</li>
-<li>lignes 6-9 : les propriétés JDBC de la source de données.</li>
+  <li>ligne 3 : le nom de l&#x27;unité de persistance,
+  </li>
+  <li>ligne 3 : le type de transactions avec la base de données. Ici, RESOURCE_LOCAL indique que l&#x27;application va gérer elle-même ses transactions,
+  </li>
+  <li>lignes 6-9 : les propriétés JDBC de la source de données.
+  </li>
 </ul>
+
 <p>Dans l&#x27;onglet [Design], on peut avoir une vue globale du fichier [persistence.xml] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003560000023079007E3C.png" style="display:inline-block; margin:4px;width:11.298cm;height:7.408cm;" class="odt-zoomable" data-zoom-src="images/10000000000003560000023079007E3C.png" /></td></tr></table>
 
@@ -1857,9 +2039,12 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 11 : on demande à voir les ordres SQL émis par Hibernate,</li>
-<li>ligne 12 : cette propriété permet d&#x27;avoir un affichage formaté de ceux-ci.</li>
+  <li>ligne 11 : on demande à voir les ordres SQL émis par Hibernate,
+  </li>
+  <li>ligne 12 : cette propriété permet d&#x27;avoir un affichage formaté de ceux-ci.
+  </li>
 </ul>
+
 <p>Des dépendances ont été ajoutées au projet. Le fichier [pom.xml] est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -1949,26 +2134,37 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000327000000D7E44F6763.png" style="display:inline-block; margin:4px;width:10.677cm;height:2.845cm;" class="odt-zoomable" data-zoom-src="images/1000000000000327000000D7E44F6763.png" /></td></tr></table>
 
 <ul>
-<li>en [1], on crée des entités JPA à partir d&#x27;une base de données,</li>
+  <li>en [1], on crée des entités JPA à partir d&#x27;une base de données,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025E00000124320F6366.png" style="display:inline-block; margin:4px;width:8.017cm;height:3.863cm;" class="odt-zoomable" data-zoom-src="images/100000000000025E00000124320F6366.png" /></td></tr></table>
 
 <ul>
-<li>en [2], on sélectionne la connexion [dbrdvmedecins2] créée précédemment,</li>
-<li>en [3], on sélectionne toutes les tables de la base de données associée,</li>
+  <li>en [2], on sélectionne la connexion [dbrdvmedecins2] créée précédemment,
+  </li>
+  <li>en [3], on sélectionne toutes les tables de la base de données associée,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C00000020363C74C49.png" style="display:inline-block; margin:4px;width:12.7cm;height:6.814cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C00000020363C74C49.png" /></td></tr></table>
 
 <ul>
-<li>en [4], on donne un nom aux classes Java associées aux quatre tables,</li>
-<li>ainsi qu&#x27;un nom de paquetage [5],</li>
-<li>en [6], JPA rassemble des lignes de tables de BD dans des collections. Nous choisissons la liste comme collection,</li>
+  <li>en [4], on donne un nom aux classes Java associées aux quatre tables,
+  </li>
+  <li>ainsi qu&#x27;un nom de paquetage [5],
+  </li>
+  <li>en [6], JPA rassemble des lignes de tables de BD dans des collections. Nous choisissons la liste comme collection,
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001790000015CD5A17B40.png" style="display:inline-block; margin:4px;width:4.988cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000001790000015CD5A17B40.png" /></td></tr></table>
 
 <ul>
-<li>en [7], les classes Java créées par l&#x27;assistant.</li>
+  <li>en [7], les classes Java créées par l&#x27;assistant.
+  </li>
 </ul>
+
 <p><a id="refheading74299604163464"></a></p>
 <h3 id="4412-les-entites-jpa-generees">4.4.12. Les entités JPA générées</h3>
 <p>L&#x27;entité [Medecin] est l&#x27;image de la table [medecins]. La classe Java est truffée d&#x27;annotations qui rendent le code peu lisible au premier abord. Si on ne garde que ce qui est essentiel à la compréhension du rôle de l&#x27;entité, on obtient le code suivant :</p>
@@ -2025,19 +2221,32 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 4, l&#x27;annotation @<strong>Entity</strong> fait de la classe [Medecin], une entité JPA, c.a.d. une classe liée à une table de BD via l&#x27;API JPA,</li>
-<li>ligne 5, le nom de la table de BD associée à l&#x27;entité JPA. Chaque champ de la table fait l&#x27;objet d&#x27;un champ dans la classe Java,</li>
-<li>ligne 6, la classe implémente l&#x27;interface <strong>Serializable</strong>. Ceci est nécessaire dans les applications client / serveur, où les entités sont sérialisées entre le client et le serveur.</li>
-<li>lignes 10-11 : le champ <strong>id</strong> de la classe [Medecin] correspond au champ [ID] (ligne 10) de la table [medecins],</li>
-<li>lignes 13-14 : le champ <strong>titre</strong> de la classe [Medecin] correspond au champ [TITRE] (ligne 13) de la table [medecins],</li>
-<li>lignes 16-17 : le champ <strong>nom</strong> de la classe [Medecin] correspond au champ [NOM] (ligne 16) de la table [medecins],</li>
-<li>lignes 19-20 : le champ <strong>version</strong> de la classe [Medecin] correspond au champ [VERSION] (ligne 19) de la table [medecins]. Ici, l&#x27;assistant ne reconnaît pas le fait que la colonne est en fait un colonne de <strong>version</strong> qui doit être incrémentée à chaque modification de la ligne à laquelle elle appartient.  Pour lui donner ce rôle, il faut ajouter l&#x27;annotation @<strong>Version</strong>. Nous le ferons dans une prochaine étape,</li>
-<li>lignes 22-23 : le champ <strong>prenom</strong> de la classe [Medecin] correspond au champ [PRENOM] de la table [medecins],</li>
-<li>lignes 10-11 : le champ <strong>id</strong> correspond à la clé primaire [ID] de la table. Les annotations des lignes 8-9 précisent ce point,</li>
-<li>ligne 8 : l&#x27;annotation <strong>@Id</strong> indique que le champ annoté est associé à la <strong>clé primaire</strong> de la table,</li>
-<li>ligne 9 : la couche [JPA] va générer la clé primaire des lignes qu&#x27;elle insèrera dans la table [Medecins]. Il y a plusieurs stratégies possibles. Ici la stratégie <em>GenerationType.IDENTITY</em> indique que la couche JPA va utiliser le mode <em>auto_increment</em> de la table MySQL,</li>
-<li>lignes 25-26 : la table [creneaux] a une clé étrangère sur la table [medecins]. Un créneau appartient à un médecin. Inversement, un médecin a plusieurs créneaux qui lui sont associés. On a donc une relation <strong>un</strong> (médecin) <strong>à plusieurs</strong> (créneaux), une relation qualifiée par l&#x27;annotation <strong>@OneToMany</strong> par JPA (ligne 25). Le champ de la ligne 26 contiendra tous les créneaux du médecin. Ceci sans programmation. Pour comprendre totalement la ligne 25, il nous faut présenter la classe [Creneau].</li>
+  <li>ligne 4, l&#x27;annotation @<b>Entity</b> fait de la classe [Medecin], une entité JPA, c.a.d. une classe liée à une table de BD via l&#x27;API JPA,
+  </li>
+  <li>ligne 5, le nom de la table de BD associée à l&#x27;entité JPA. Chaque champ de la table fait l&#x27;objet d&#x27;un champ dans la classe Java,
+  </li>
+  <li>ligne 6, la classe implémente l&#x27;interface <b>Serializable</b>. Ceci est nécessaire dans les applications client / serveur, où les entités sont sérialisées entre le client et le serveur.
+  </li>
+  <li>lignes 10-11 : le champ <b>id</b> de la classe [Medecin] correspond au champ [ID] (ligne 10) de la table [medecins],
+  </li>
+  <li>lignes 13-14 : le champ <b>titre</b> de la classe [Medecin] correspond au champ [TITRE] (ligne 13) de la table [medecins],
+  </li>
+  <li>lignes 16-17 : le champ <b>nom</b> de la classe [Medecin] correspond au champ [NOM] (ligne 16) de la table [medecins],
+  </li>
+  <li>lignes 19-20 : le champ <b>version</b> de la classe [Medecin] correspond au champ [VERSION] (ligne 19) de la table [medecins]. Ici, l&#x27;assistant ne reconnaît pas le fait que la colonne est en fait un colonne de <b>version</b> qui doit être incrémentée à chaque modification de la ligne à laquelle elle appartient.  Pour lui donner ce rôle, il faut ajouter l&#x27;annotation @<b>Version</b>. Nous le ferons dans une prochaine étape,
+  </li>
+  <li>lignes 22-23 : le champ <b>prenom</b> de la classe [Medecin] correspond au champ [PRENOM] de la table [medecins],
+  </li>
+  <li>lignes 10-11 : le champ <b>id</b> correspond à la clé primaire [ID] de la table. Les annotations des lignes 8-9 précisent ce point,
+  </li>
+  <li>ligne 8 : l&#x27;annotation <b>@Id</b> indique que le champ annoté est associé à la <b>clé primaire</b> de la table,
+  </li>
+  <li>ligne 9 : la couche [JPA] va générer la clé primaire des lignes qu&#x27;elle insèrera dans la table [Medecins]. Il y a plusieurs stratégies possibles. Ici la stratégie <i>GenerationType.IDENTITY</i> indique que la couche JPA va utiliser le mode <i>auto_increment</i> de la table MySQL,
+  </li>
+  <li>lignes 25-26 : la table [creneaux] a une clé étrangère sur la table [medecins]. Un créneau appartient à un médecin. Inversement, un médecin a plusieurs créneaux qui lui sont associés. On a donc une relation <b>un</b> (médecin) <b>à plusieurs</b> (créneaux), une relation qualifiée par l&#x27;annotation <b>@OneToMany</b> par JPA (ligne 25). Le champ de la ligne 26 contiendra tous les créneaux du médecin. Ceci sans programmation. Pour comprendre totalement la ligne 25, il nous faut présenter la classe [Creneau].
+  </li>
 </ul>
+
 <p>Celle-ci est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> rdvmedecins.jpa;</span></span>
@@ -2102,14 +2311,20 @@
 
 <p>Nous ne commentons que les nouvelles annotations :</p>
 <ul>
-<li>nous avons dit que la table [creneaux] avait une clé étrangère vers la table [medecins] : un créneau est associé à un médecin. Plusieurs créneaux peuvent être asssociés au même médecin. On a une relation de la table [creneaux] vers la table [medecins] qui est qualifiée de <strong>plusieurs</strong> (créneaux) <strong>à un</strong> (médecin). C&#x27;est l&#x27;annotation <strong>@ManyToOne</strong> de la ligne 32 qui sert à qualifier la clé étrangère,</li>
-<li>la ligne 31 avec l&#x27;annotation <strong>@JoinColumn</strong> précise la relation de clé étrangère : la colonne [ID_MEDECIN] de la table [creneaux] est clé étrangère sur la colonne [ID] de la table [medecins],</li>
-<li>ligne 33 : une référence sur le médecin propriétaire du créneau. On l&#x27;obtient là encore sans programmation.</li>
+  <li>nous avons dit que la table [creneaux] avait une clé étrangère vers la table [medecins] : un créneau est associé à un médecin. Plusieurs créneaux peuvent être asssociés au même médecin. On a une relation de la table [creneaux] vers la table [medecins] qui est qualifiée de <b>plusieurs</b> (créneaux) <b>à un</b> (médecin). C&#x27;est l&#x27;annotation <b>@ManyToOne</b> de la ligne 32 qui sert à qualifier la clé étrangère,
+  </li>
+  <li>la ligne 31 avec l&#x27;annotation <b>@JoinColumn</b> précise la relation de clé étrangère : la colonne [ID_MEDECIN] de la table [creneaux] est clé étrangère sur la colonne [ID] de la table [medecins],
+  </li>
+  <li>ligne 33 : une référence sur le médecin propriétaire du créneau. On l&#x27;obtient là encore sans programmation.
+  </li>
 </ul>
+
 <p>Le lien de clé étrangère entre l&#x27;entité [Creneau] et l&#x27;entité [Medecin] est donc matérialisé par deux annotations :</p>
 <ul>
-<li>dans l&#x27;entité [Creneau] :</li>
+  <li>dans l&#x27;entité [Creneau] :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">JoinColumn(name = </span><span style="color:#2a00ff">&quot;ID_MEDECIN&quot;</span><span style="color:#000000">, referencedColumnName = </span><span style="color:#2a00ff">&quot;ID&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#646464">@</span><span style="color:#000000">ManyToOne(optional = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">)</span></span>
@@ -2117,8 +2332,10 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">dans l&#x27;entité [Medecin] :</span></li>
+  <li><span style="color: #000000">dans l&#x27;entité [Medecin] :</span>
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#646464">@</span><span style="color:#000000">OneToMany(cascade = CascadeType.ALL, mappedBy = </span><span style="color:#2a00ff">&quot;idMedecin&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;Creneau&gt; creneauList;</span></span>
@@ -2126,10 +2343,14 @@
 
 <p><span style="color: #000000">Les deux annotations reflètent la même relation : celle de la clé étrangère de la table [creneaux] vers la table [medecins]. On dit qu&#x27;elles sont </span><strong><span style="color: #000000">inverses</span></strong><span style="color: #000000"> l&#x27;une de l&#x27;autre. Seule la relation </span><strong><span style="color: #000000">@ManyToOne</span></strong><span style="color: #000000"> est indispensable. Elle qualifie sans ambiguïté la relation de clé étrangère. La relation </span><strong><span style="color: #000000">@OneToMany</span></strong><span style="color: #000000"> est facultative. Si elle est présente, elle se contente de référencer la relation </span><strong><span style="color: #000000">@ManyToOne</span></strong><span style="color: #000000"> à laquelle elle est associée. C&#x27;est le sens de l&#x27;attribut </span><strong><span style="color: #000000">mappedBy</span></strong><span style="color: #000000"> de la ligne 1 de l&#x27;entité [Medecin]. La valeur de cet attribut est le nom du champ de l&#x27;entité [Creneau] qui a l&#x27;annotation </span><strong><span style="color: #000000">@ManyToOne</span></strong><span style="color: #000000"> qui spécifie la clé étrangère. Toujours dans cette même ligne 1 de l&#x27;entité [Medecin], l&#x27;attribut </span><strong><span style="color: #000000">cascade=CascadeType.ALL</span></strong><span style="color: #000000"> fixe le comportement de l&#x27;entité [Medecin] vis à vis de l&#x27;entité [Creneau] :</span></p>
 <ul>
-<li><span style="color: #000000">si on insère une nouvelle entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être insérées elles-aussi,</span></li>
-<li><span style="color: #000000">si on modifie une entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être modifiées elles-aussi,</span></li>
-<li><span style="color: #000000">si on supprime une entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être supprimées elles-aussi.</span></li>
+  <li><span style="color: #000000">si on insère une nouvelle entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être insérées elles-aussi,</span>
+  </li>
+  <li><span style="color: #000000">si on modifie une entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être modifiées elles-aussi,</span>
+  </li>
+  <li><span style="color: #000000">si on supprime une entité [Medecin] dans la base, alors les entités [Creneau] du champ de la ligne 2 doivent être supprimées elles-aussi.</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous donnons le code des deux autres entités sans commentaires particuliers puisqu&#x27;elles n&#x27;introduisent pas de nouvelles notations.</span></p>
 <p><span style="color: #000000">L&#x27;entité [</span><strong><span style="color: #000000">Client</span></strong><span style="color: #000000">]</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2183,8 +2404,10 @@
 </code></pre></div>
 
 <ul>
-<li>les lignes 24-25 reflètent la relation de clé étrangère entre la table [rv] et la table [clients].</li>
+  <li>les lignes 24-25 reflètent la relation de clé étrangère entre la table [rv] et la table [clients].
+  </li>
 </ul>
+
 <p>L&#x27;entité [<strong>Rv</strong>] :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> rdvmedecins.jpa;</span></span>
@@ -2235,18 +2458,28 @@
 </code></pre></div>
 
 <ul>
-<li>la ligne 13 qualifie le champ jour de type Java <em>Date</em>. On indique que dans la table [rv], la colonne [JOUR] (ligne 12) est de type date (sans heure),</li>
-<li>lignes 16-18 : qualifient la relation de clé étrangère qu&#x27;a la table [rv] vers la table [creneaux],</li>
-<li>lignes 20-22 : qualifient la relation de clé étrangère qu&#x27;a la table [rv] vers la table [clients].</li>
+  <li>la ligne 13 qualifie le champ jour de type Java <i>Date</i>. On indique que dans la table [rv], la colonne [JOUR] (ligne 12) est de type date (sans heure),
+  </li>
+  <li>lignes 16-18 : qualifient la relation de clé étrangère qu&#x27;a la table [rv] vers la table [creneaux],
+  </li>
+  <li>lignes 20-22 : qualifient la relation de clé étrangère qu&#x27;a la table [rv] vers la table [clients].
+  </li>
 </ul>
+
 <p>La génération automatique des entités JPA nous permet d&#x27;obtenir une base de travail. Parfois elle est suffisante, parfois pas. C&#x27;est le cas ici :</p>
 <ul>
-<li>il faut ajouter l&#x27;annotation @<strong>Version</strong> aux différents champs <strong>version</strong> des entités,</li>
-<li>il faut écrire des méthodes <strong>toString</strong> plus explicites que celles générées,</li>
-<li>les entités [Medecin] et [Client] sont analogues. On va les faire dériver d&#x27;une classe [<strong>Personne</strong>],</li>
-<li>on va supprimer les relations @<strong>OneToMany</strong> inverses des relations @<strong>ManyToOne</strong>. Elles ne sont pas indispensables et elles amènent des complications de programmation,</li>
-<li>on supprime la validation @<strong>NotNull</strong> sur les clés primaires. Lorsqu&#x27;on persiste une entité JPA avec MySQL, l&#x27;entité au départ a une clé primaire <em>null</em>. Ce n&#x27;est qu&#x27;après persistance dans la base, que la clé primaire de l&#x27;élément persisté a une valeur.</li>
+  <li>il faut ajouter l&#x27;annotation @<b>Version</b> aux différents champs <b>version</b> des entités,
+  </li>
+  <li>il faut écrire des méthodes <b>toString</b> plus explicites que celles générées,
+  </li>
+  <li>les entités [Medecin] et [Client] sont analogues. On va les faire dériver d&#x27;une classe [<b>Personne</b>],
+  </li>
+  <li>on va supprimer les relations @<b>OneToMany</b> inverses des relations @<b>ManyToOne</b>. Elles ne sont pas indispensables et elles amènent des complications de programmation,
+  </li>
+  <li>on supprime la validation @<b>NotNull</b> sur les clés primaires. Lorsqu&#x27;on persiste une entité JPA avec MySQL, l&#x27;entité au départ a une clé primaire <i>null</i>. Ce n&#x27;est qu&#x27;après persistance dans la base, que la clé primaire de l&#x27;élément persisté a une valeur.
+  </li>
 </ul>
+
 <p>Avec ces spécifications, les différentes classes deviennent les suivantes :</p>
 <p>La classe <strong>Personne</strong> est utilisée pour représenter les médecins et les clients :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2294,8 +2527,10 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 6 : on notera que la classe [Personne] n&#x27;est pas elle-même une entité (@Entity). Elle va être la classe parent d&#x27;entités. L&#x27;annotation @<strong>MappedSuperClass</strong> désigne cette situation.</li>
+  <li>ligne 6 : on notera que la classe [Personne] n&#x27;est pas elle-même une entité (@Entity). Elle va être la classe parent d&#x27;entités. L&#x27;annotation @<b>MappedSuperClass</b> désigne cette situation.
+  </li>
 </ul>
+
 <p>L&#x27;entité [<strong>Client</strong>] encapsule les lignes de la table [clients]. Elle dérive de la classe [Personne] précédente :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> rdvmedecins.jpa;</span></span>
@@ -2330,10 +2565,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 6 : la classe [Client] est une entité Jpa,</li>
-<li>ligne 7 : elle est associée à la table [clients],</li>
-<li>ligne 8 : elle dérive de la classe [Personne].</li>
+  <li>ligne 6 : la classe [Client] est une entité Jpa,
+  </li>
+  <li>ligne 7 : elle est associée à la table [clients],
+  </li>
+  <li>ligne 8 : elle dérive de la classe [Personne].
+  </li>
 </ul>
+
 <p>L&#x27;entité [<strong>Medecin</strong>] qui encapsule les lignes de la table [medecins] suit le même modèle :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> rdvmedecins.jpa;</span></span>
@@ -2437,8 +2676,10 @@
 </code></pre></div>
 
 <ul>
-<li>les lignes 40-42 modélisent la relation &quot;plusieurs à un&quot; qui existe entre la table [creneaux] et la table [medecins] de la base de données : un médecin a plusieurs créneaux, un créneau appartient à un seul médecin.</li>
+  <li>les lignes 40-42 modélisent la relation &quot;plusieurs à un&quot; qui existe entre la table [creneaux] et la table [medecins] de la base de données : un médecin a plusieurs créneaux, un créneau appartient à un seul médecin.
+  </li>
 </ul>
+
 <p>L&#x27;entité [<strong>Rv</strong>] encapsule les lignes de la table [rv] :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> rdvmedecins.jpa;</span></span>
@@ -2495,8 +2736,10 @@
 </code></pre></div>
 
 <ul>
-<li>les lignes 27-29 modélisent la relation &quot;plusieurs à un&quot; qui existe entre la table [rv] et la table [clients] (un client peut apparaître dans plusieurs Rv) de la base de données et les lignes 23-25 la relation &quot;plusieurs à un&quot; qui existe entre la table [rv] et la table [creneaux] (un créneau peut apparaître dans plusieurs Rv).</li>
+  <li>les lignes 27-29 modélisent la relation &quot;plusieurs à un&quot; qui existe entre la table [rv] et la table [clients] (un client peut apparaître dans plusieurs Rv) de la base de données et les lignes 23-25 la relation &quot;plusieurs à un&quot; qui existe entre la table [rv] et la table [creneaux] (un créneau peut apparaître dans plusieurs Rv).
+  </li>
 </ul>
+
 <p><a id="refheading2817131991350288"></a></p>
 <h3 id="4413-le-code-dacces-aux-donnees">4.4.13. Le code d&#x27;accès aux données</h3>
 <p>Nous allons ajouter maintenant au projet, le code d&#x27;accès aux données via la couche JPA :</p>
@@ -2549,8 +2792,10 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 12 : création de l&#x27;<em>EntityManagerFactory</em> associé à l&#x27;unité de persistance que nous avons créée précédemment. le paramètre de la méthode  <em><span style="color: #000000">createEntityManagerFactory</span></em><span style="color: #000000"> est le nom de cette unité de persistance :</span></li>
+  <li>ligne 12 : création de l&#x27;<i>EntityManagerFactory</i> associé à l&#x27;unité de persistance que nous avons créée précédemment. le paramètre de la méthode  <i><span style="color: #000000">createEntityManagerFactory</span></i><span style="color: #000000"> est le nom de cette unité de persistance :</span>
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#800080">&lt;persistence-unit</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">name</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">mv-rdvmedecins-jpql-hibernatePU</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">transaction-type</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">RESOURCE_LOCAL</span><span style="color:#800080">&quot;&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">...</span></span>
@@ -2558,25 +2803,39 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 14 : création de l&#x27;</span><em><span style="color: #000000">EntityManager</span></em><span style="color: #000000"> qui gère la couche de persistance,</span></li>
-<li><span style="color: #000000">ligne 19 : saisie d&#x27;une requête JPQL </span><em><span style="color: #000000">select</span></em><span style="color: #000000">,</span></li>
-<li><span style="color: #000000">lignes 23-28 : affichage du résultat de la requête,</span></li>
-<li><span style="color: #000000">ligne 20 : la saisie s&#x27;arrête lorsque l&#x27;utilisateur tape *.</span></li>
+  <li><span style="color: #000000">ligne 14 : création de l&#x27;</span><i><span style="color: #000000">EntityManager</span></i><span style="color: #000000"> qui gère la couche de persistance,</span>
+  </li>
+  <li><span style="color: #000000">ligne 19 : saisie d&#x27;une requête JPQL </span><i><span style="color: #000000">select</span></i><span style="color: #000000">,</span>
+  </li>
+  <li><span style="color: #000000">lignes 23-28 : affichage du résultat de la requête,</span>
+  </li>
+  <li><span style="color: #000000">ligne 20 : la saisie s&#x27;arrête lorsque l&#x27;utilisateur tape *.</span>
+  </li>
 </ul>
+
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong><span style="color: #000000">Question</span></strong><span style="color: #000000"> : donner les requêtes JPQL permettant d&#x27;obtenir les informations suivantes :</span></p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <ul>
-<li>liste des médecins dans l&#x27;orde décroissant de leurs noms</li>
-<li>liste des médecins dont titre=&#x27;Mr&#x27;</li>
-<li>liste des créneaux horaires de Mme Pelissier</li>
-<li>liste des Rv pris dans l&#x27;ordre croissant des jours</li>
-<li>liste des clients (nom) ayant pris RV avec Mme PELISSIER le 24/08/2006</li>
-<li>nombre de clients de Mme PELISSIER le 24/08/2006</li>
-<li>les clients n&#x27;ayant pas pris de Rdv</li>
-<li>les médecins n&#x27;ayant pas de Rdv</li>
+  <li>liste des médecins dans l&#x27;orde décroissant de leurs noms
+  </li>
+  <li>liste des médecins dont titre=&#x27;Mr&#x27;
+  </li>
+  <li>liste des créneaux horaires de Mme Pelissier
+  </li>
+  <li>liste des Rv pris dans l&#x27;ordre croissant des jours
+  </li>
+  <li>liste des clients (nom) ayant pris RV avec Mme PELISSIER le 24/08/2006
+  </li>
+  <li>nombre de clients de Mme PELISSIER le 24/08/2006
+  </li>
+  <li>les clients n&#x27;ayant pas pris de Rdv
+  </li>
+  <li>les médecins n&#x27;ayant pas de Rdv
+  </li>
 </ul>
+
 <p><span style="color: #000000">On s&#x27;inspirera de l&#x27;exemple du paragraphe </span><strong><span style="color: #000000">2.7</span></strong><span style="color: #000000"> de [</span><a href="http://tahe.developpez.com/java/jpa"><strong><span style="color: #000000">ref1</span></strong></a><span style="color: #000000">]. Voici un exemple d&#x27;exécution :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
@@ -2609,10 +2868,14 @@
 <a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="n">Client</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="n">Melle</span><span class="p">,</span><span class="n">Brigitte</span><span class="p">,</span><span class="n">BISTROU</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><span style="color: #000000">ligne 2 : la requête JPQL,</span></li>
-<li><span style="color: #000000">lignes 3-11 : la requête SQL correspondante,</span></li>
-<li><span style="color: #000000">lignes 12-15 : le résultat de la requête JPQL.</span></li>
+  <li><span style="color: #000000">ligne 2 : la requête JPQL,</span>
+  </li>
+  <li><span style="color: #000000">lignes 3-11 : la requête SQL correspondante,</span>
+  </li>
+  <li><span style="color: #000000">lignes 12-15 : le résultat de la requête JPQL.</span>
+  </li>
 </ul>
+
 <p><a id="refheading2817151991350288"></a></p>
 <h2 id="45-liens-entre-contexte-de-persistance-et-sgbd">4.5. Liens entre contexte de persistance et SGBD</h2>
 <p><a id="refheading2817171991350288"></a></p>
@@ -3252,7 +3515,7 @@
 <a id="__codelineno-29-90" name="__codelineno-29-90"></a><span class="n">BUILD</span> <span class="n">SUCCESSFUL</span> <span class="p">(</span><span class="n">total</span> <span class="n">time</span><span class="p">:</span> <span class="mi">3</span> <span class="n">seconds</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>Question </strong>: faites le lien entre le code Java et les résultats affichés.</p>
+<p><strong>Question</strong> : faites le lien entre le code Java et les résultats affichés.</p>
 <hr style="border:0; border-top:0.06pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 

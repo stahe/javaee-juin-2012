@@ -889,11 +889,16 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005070000011F70FB01BD.png" style="display:inline-block; margin:4px;width:17.027cm;height:3.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000005070000011F70FB01BD.png" /></td></tr></table>
 
 <ul>
-<li>la couche [ui] s&#x27;exécutera dans un environnement Java SE (Standard Edition)</li>
-<li>les couches [metier, DAO, JPA] s&#x27;exécuteront dans un environnement Java EE (Enterprise Edition) sur un serveur Glassfish v3</li>
-<li>le client communiquera avec le serveur via un réseau tcp-ip. Les échanges réseau sont transparents pour le développeur, si ce n&#x27;est qu&#x27;il doit être quand même conscient que le client et le serveur s&#x27;échangent des objets sérialisés pour communiquer et non des références d&#x27;objets. Le protocole réseau utilisé pour ces échanges s&#x27;appelle RMI (Remote Method Invocation), un protocole utilisable uniquement entre deux applications Java.</li>
-<li>l&#x27;implémentation JPA utilisée sur le serveur Glassfish sera EclipseLink.</li>
+  <li>la couche [ui] s&#x27;exécutera dans un environnement Java SE (Standard Edition)
+  </li>
+  <li>les couches [metier, DAO, JPA] s&#x27;exécuteront dans un environnement Java EE (Enterprise Edition) sur un serveur Glassfish v3
+  </li>
+  <li>le client communiquera avec le serveur via un réseau tcp-ip. Les échanges réseau sont transparents pour le développeur, si ce n&#x27;est qu&#x27;il doit être quand même conscient que le client et le serveur s&#x27;échangent des objets sérialisés pour communiquer et non des références d&#x27;objets. Le protocole réseau utilisé pour ces échanges s&#x27;appelle RMI (Remote Method Invocation), un protocole utilisable uniquement entre deux applications Java.
+  </li>
+  <li>l&#x27;implémentation JPA utilisée sur le serveur Glassfish sera EclipseLink.
+  </li>
 </ul>
+
 <p><a id="refheading87483112820228"></a>
 <a id="serveur-ejb-sunas9"></a></p>
 <h2 id="71-la-partie-serveur-de-lapplication-client-serveur-pam">7.1. La partie serveur de l&#x27;application client / serveur PAM</h2>
@@ -909,34 +914,49 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042B00000112DF5EEDFF.png" style="display:inline-block; margin:4px;width:14.116cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/100000000000042B00000112DF5EEDFF.png" /></td></tr></table>
 
 <ul>
-<li>en [1], nouveau projet</li>
-<li>en [2], choisir la catégorie <em>Maven</em> et en [3] le type <em>EJB Module</em>. Il s&#x27;agit en effet de construire un projet qui sera hébergé et exécuté par un conteneur EJB, celui du serveur Glassfish.</li>
+  <li>en [1], nouveau projet
+  </li>
+  <li>en [2], choisir la catégorie <i>Maven</i> et en [3] le type <i>EJB Module</i>. Il s&#x27;agit en effet de construire un projet qui sera hébergé et exécuté par un conteneur EJB, celui du serveur Glassfish.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B1000000BE212BF282.png" style="display:inline-block; margin:4px;width:15.889cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B1000000BE212BF282.png" /></td></tr></table>
 
 <ul>
-<li>avec le bouton [4a], choisir le dossier parent du dossier du projet ou taper son nom directement en [4b].</li>
-<li>en [5], donner un nom au projet</li>
-<li>en [6], choisir le serveur d&#x27;application sur lequel il sera exécuté. Celui choisi ici est l&#x27;un de ceux visibles dans l&#x27;onglet [Runtime / Servers], ici Glassfish v3.</li>
-<li>en [7], choisir la version de Java EE.</li>
+  <li>avec le bouton [4a], choisir le dossier parent du dossier du projet ou taper son nom directement en [4b].
+  </li>
+  <li>en [5], donner un nom au projet
+  </li>
+  <li>en [6], choisir le serveur d&#x27;application sur lequel il sera exécuté. Celui choisi ici est l&#x27;un de ceux visibles dans l&#x27;onglet [Runtime / Servers], ici Glassfish v3.
+  </li>
+  <li>en [7], choisir la version de Java EE.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000441000000CF1BC9628C.png" style="display:inline-block; margin:4px;width:14.407cm;height:2.739cm;" class="odt-zoomable" data-zoom-src="images/1000000000000441000000CF1BC9628C.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le nouveau projet. Il diffère d&#x27;un projet Java classique par quelques points :<ul>
-<li>une branche [Other Sources] [2] est automatiquement créée. Elle contiendra notamment le fichier [persistence.xml] qui configure la couche JPA,</li>
-<li>si on construit le projet (Build), on voit apparaître [3] une dépendance [javaee-api-6.0]. Elle est de type <em>provided</em> car elle est fournie à l&#x27;exécution par le conteneur EJB de Glassfish.</li>
+  <li>en [1], le nouveau projet. Il diffère d&#x27;un projet Java classique par quelques points :
+    <ul>
+      <li>une branche [Other Sources] [2] est automatiquement créée. Elle contiendra notamment le fichier [persistence.xml] qui configure la couche JPA,
+      </li>
+      <li>si on construit le projet (Build), on voit apparaître [3] une dépendance [javaee-api-6.0]. Elle est de type <i>provided</i> car elle est fournie à l&#x27;exécution par le conteneur EJB de Glassfish.
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><a id="refheading87489112820228"></a>
 <a id="creation-jdbc-dbpam-debut"></a></p>
 <h4 id="7112-configuration-de-la-couche-de-persistance">7.1.1.2. Configuration de la couche de persistance</h4>
 <p>Par configuration de la couche de persistance, nous entendons l&#x27;écriture du fichier [persistence.xml] qui définit :</p>
 <ul>
-<li>l&#x27;implémentation JPA à utiliser</li>
-<li>la définition de la source de données exploitée par la couche JPA. Celle-ci sera une source JDBC gérée par le serveur Glassfish.</li>
+  <li>l&#x27;implémentation JPA à utiliser
+  </li>
+  <li>la définition de la source de données exploitée par la couche JPA. Celle-ci sera une source JDBC gérée par le serveur Glassfish.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000001159EE7A0EC.png" style="display:inline-block; margin:4px;width:17.212cm;height:3.665cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000001159EE7A0EC.png" /></td></tr></table>
 
 <p>On pourra procéder comme suit. Tout d&#x27;abord, dans l&#x27;onglet [Runtime / Databases], on créera [1] une connexion sur la base MySQL5 / dbpam_eclipselink :</p>
@@ -946,26 +966,40 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034F00000170EF770EC6.png" style="display:inline-block; margin:4px;width:11.206cm;height:4.868cm;" class="odt-zoomable" data-zoom-src="images/100000000000034F00000170EF770EC6.png" /></td></tr></table>
 
 <ul>
-<li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération</li>
-<li>en [2], le projet EJB</li>
-<li>en [3], on sélectionne la catégorie [Glassfish]</li>
-<li>en [4], on veut créer une ressource JDBC</li>
+  <li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération
+  </li>
+  <li>en [2], le projet EJB
+  </li>
+  <li>en [3], on sélectionne la catégorie [Glassfish]
+  </li>
+  <li>en [4], on veut créer une ressource JDBC
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005090000026169D80A60.png" style="display:inline-block; margin:4px;width:17.053cm;height:8.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000005090000026169D80A60.png" /></td></tr></table>
 
 <ul>
-<li>en [5], indiquer que la ressource JDBC va utiliser un nouveau pool de connexions. On rappelle qu&#x27;un  pool de connexions est un  pool de connexions ouvertes qui sert à accélérer les échanges de l&#x27;application avec la base de données.</li>
-<li>en [6], donner un nom JNDI à la ressource JDBC créée. Ce nom peut être quelconque mais il a souvent la forme <em>jdbc/nom</em>. Ce nom JNDI sera utilisé dans le fichier [persistence.xml] pour désigner la source de données que l&#x27;implémentation JPA doit utiliser.</li>
-<li>en [7], donner un nom qui peut être quelconque au pool de connexions qui va être créé</li>
-<li>dans la liste déroulante [8], choisir la connexion JDBC créée précédemment sur la base MySQL / dbpam_eclipselink.</li>
-<li>en [9], un récapitulatif des propriétés du pool de connexions - on ne touche à rien</li>
+  <li>en [5], indiquer que la ressource JDBC va utiliser un nouveau pool de connexions. On rappelle qu&#x27;un  pool de connexions est un  pool de connexions ouvertes qui sert à accélérer les échanges de l&#x27;application avec la base de données.
+  </li>
+  <li>en [6], donner un nom JNDI à la ressource JDBC créée. Ce nom peut être quelconque mais il a souvent la forme <i>jdbc/nom</i>. Ce nom JNDI sera utilisé dans le fichier [persistence.xml] pour désigner la source de données que l&#x27;implémentation JPA doit utiliser.
+  </li>
+  <li>en [7], donner un nom qui peut être quelconque au pool de connexions qui va être créé
+  </li>
+  <li>dans la liste déroulante [8], choisir la connexion JDBC créée précédemment sur la base MySQL / dbpam_eclipselink.
+  </li>
+  <li>en [9], un récapitulatif des propriétés du pool de connexions - on ne touche à rien
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044B000002C11F4E266A.png" style="display:inline-block; margin:4px;width:14.54cm;height:9.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000044B000002C11F4E266A.png" /></td></tr></table>
 
 <ul>
-<li>en [10], on peut préciser plusieurs des propriétés du pool de connexions - on laisse les valeurs par défaut</li>
-<li>en [11], à l&#x27;issue de l&#x27;assistant de création d&#x27;une ressource JDBC pour le module EJB, un fichier [glassfish-resources.xml] a été créée dans la branche [Other Sources]. Le contenu de ce fichier est le suivant :</li>
+  <li>en [10], on peut préciser plusieurs des propriétés du pool de connexions - on laisse les valeurs par défaut
+  </li>
+  <li>en [11], à l&#x27;issue de l&#x27;assistant de création d&#x27;une ressource JDBC pour le module EJB, un fichier [glassfish-resources.xml] a été créée dans la branche [Other Sources]. Le contenu de ce fichier est le suivant :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">resources</span> <span style="color:#808080">PUBLIC</span> <span style="color:#008080">&quot;-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN&quot;</span> <span style="color:#3f7f5f">&quot;http://glassfish.org/dtds/glassfish-resources_1_5.dtd&quot;</span><span style="color:#008080">&gt;</span></span>
@@ -986,21 +1020,33 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003590000014335F1E419.png" style="display:inline-block; margin:4px;width:11.338cm;height:4.274cm;" class="odt-zoomable" data-zoom-src="images/10000000000003590000014335F1E419.png" /></td></tr></table>
 
 <ul>
-<li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération</li>
-<li>en [2], le projet EJB</li>
-<li>en [3], on sélectionne la catégorie [Persistence]</li>
-<li>en [4], on veut créer une unité de persistance</li>
+  <li>en [1], créer un nouveau fichier – on s&#x27;assurera que le projet EJB est sélectionné avant de faire cette opération
+  </li>
+  <li>en [2], le projet EJB
+  </li>
+  <li>en [3], on sélectionne la catégorie [Persistence]
+  </li>
+  <li>en [4], on veut créer une unité de persistance
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000480000000FE2467F337.png" style="display:inline-block; margin:4px;width:15.24cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/1000000000000480000000FE2467F337.png" /></td></tr></table>
 
 <ul>
-<li>en [5], donner un nom à l&#x27;unité de persistance</li>
-<li>en [6], plusieurs implémentations JPA sont proposées. On choisira ici [EclipseLink]. D&#x27;autres implémentations sont utilisables à condition de mettre les bibliothèques qui les implémentent avec celles du serveur Glassfish.</li>
-<li>dans  la liste déroulante [7], choisir la source de données JDBC [jdbc/dbpam_eclipselink] qui vient d&#x27;être créée.</li>
-<li>en [8], indiquer que les transactions sont gérées par le conteneur EJB</li>
-<li>en [9], indiquer qu&#x27;aucune opération ne doit être faite sur la source de données lors du déploiement du module EJB sur le serveur. En effet, le module EJB va utiliser une base [dbpam_eclipselink] déjà créée.</li>
-<li>à la fin de l&#x27;assistant, un fichier [persistence.xml] a été créé [10]. Son contenu est le suivant :</li>
+  <li>en [5], donner un nom à l&#x27;unité de persistance
+  </li>
+  <li>en [6], plusieurs implémentations JPA sont proposées. On choisira ici [EclipseLink]. D&#x27;autres implémentations sont utilisables à condition de mettre les bibliothèques qui les implémentent avec celles du serveur Glassfish.
+  </li>
+  <li>dans  la liste déroulante [7], choisir la source de données JDBC [jdbc/dbpam_eclipselink] qui vient d&#x27;être créée.
+  </li>
+  <li>en [8], indiquer que les transactions sont gérées par le conteneur EJB
+  </li>
+  <li>en [9], indiquer qu&#x27;aucune opération ne doit être faite sur la source de données lors du déploiement du module EJB sur le serveur. En effet, le module EJB va utiliser une base [dbpam_eclipselink] déjà créée.
+  </li>
+  <li>à la fin de l&#x27;assistant, un fichier [persistence.xml] a été créé [10]. Son contenu est le suivant :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="odt-code-line"><span style="color:#800080">&lt;persistence</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">version</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">2.0</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://java.sun.com/xml/ns/persistence</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xmlns:xsi</span><span style="color:#800080">=&quot;</span><span style="color:#000080">http://www.w3.org/2001/XMLSchema-instance</span><span style="color:#800080">&quot;</span><span style="font-style:italic;color:#008080"> </span><span style="color:#808000">xsi:schemaLocation</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd</span><span style="color:#800080">&quot;&gt;</span></span>
@@ -1013,11 +1059,16 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 3 : le nom de l&#x27;unité de persistance [<span style="color: #0000ff">mv-pam-ejb-metier-dao-eclipselinkPU</span>] et le type de transactions (JTA pour un conteneur EJB)</li>
-<li>ligne 5 : le nom JNDI de la source de données utilisée par la couche de persistance : jdbc/dbpam_eclipselink</li>
-<li>ligne 6 : les entités JPA ne sont pas précisées. Elles seront cherchées dans le Classpath du module EJB.</li>
-<li>le nom de l&#x27;implémentation JPA (Hibernate, EclipseLink, ...) utilisée n&#x27;est pas indiquée. Dans ce cas, Glassfish v3 utilise par défaut <em>EclipseLink</em>.</li>
+  <li>ligne 3 : le nom de l&#x27;unité de persistance [<span style="color: #0000ff">mv-pam-ejb-metier-dao-eclipselinkPU</span>] et le type de transactions (JTA pour un conteneur EJB)
+  </li>
+  <li>ligne 5 : le nom JNDI de la source de données utilisée par la couche de persistance : jdbc/dbpam_eclipselink
+  </li>
+  <li>ligne 6 : les entités JPA ne sont pas précisées. Elles seront cherchées dans le Classpath du module EJB.
+  </li>
+  <li>le nom de l&#x27;implémentation JPA (Hibernate, EclipseLink, ...) utilisée n&#x27;est pas indiquée. Dans ce cas, Glassfish v3 utilise par défaut <i>EclipseLink</i>.
+  </li>
 </ul>
+
 <p><a id="refheading87491112820228"></a>
 <a id="deploiement-ejb-sun"></a></p>
 <h4 id="7113-insertion-des-couches-jpa-dao-metier">7.1.1.3. Insertion des couches [jpa, DAO, metier]</h4>
@@ -1028,40 +1079,57 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000183000000CCE314B124.png" style="display:inline-block; margin:4px;width:5.121cm;height:2.699cm;" class="odt-zoomable" data-zoom-src="images/1000000000000183000000CCE314B124.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le résultat de la copie des paquetages [jpa, dao, metier, exception] du projet [mv-pam-openejb-eclipselink] dans le module EJB [mv-pam-ejb-metier-dao-jpa-eclipselink]</li>
+  <li>en [1], le résultat de la copie des paquetages [jpa, dao, metier, exception] du projet [mv-pam-openejb-eclipselink] dans le module EJB [mv-pam-ejb-metier-dao-jpa-eclipselink]
+  </li>
 </ul>
+
 <p><a id="refheading87493112820228"></a></p>
 <h4 id="7114-configuration-du-serveur-glassfish">7.1.1.4. Configuration du serveur Glassfish</h4>
 <p>Il nous reste à configurer le serveur Glassfish sur deux points :</p>
 <ul>
-<li>la couche JPA est implémentée par EclipseLink. Il faut nous assurer que  le serveur Glassfish a les bibliothèques de cette implémentation JPA.</li>
-<li>la source de données est une base MySQL. Il faut nous assurer que  le serveur Glassfish a le pilote JDBC de ce SGBD.</li>
+  <li>la couche JPA est implémentée par EclipseLink. Il faut nous assurer que  le serveur Glassfish a les bibliothèques de cette implémentation JPA.
+  </li>
+  <li>la source de données est une base MySQL. Il faut nous assurer que  le serveur Glassfish a le pilote JDBC de ce SGBD.
+  </li>
 </ul>
+
 <p>On peut découvrir l&#x27;absence de ces bibliothèques lors du déploiement du module EJB. Voici une façon de procéder parmi d&#x27;autres pour ajouter des bibliothèques manquantes au serveur Glassfish :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F70000026122F484E5.png" style="display:inline-block; margin:4px;width:16.815cm;height:8.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F70000026122F484E5.png" /></td></tr></table>
 
 <ul>
-<li>en [1], visualiser les propriétés du serveur Glassfish</li>
-<li>en [2], noter le dossier des domaines du serveur. Nous le notons par la suite &lt;domains&gt;</li>
-<li>dans le dossier &lt;domains&gt;\domain1\lib, mettre les bibliothèques manquantes. Dans l&#x27;exemple, les bibliothèques d&#x27;Hibernate (lib / hibernate-tools) et le pilote JDBC de MySQL (lib / divers) ont été rajoutés. Par défaut, le serveur Glassfish a les bibliothèques d&#x27;EclipseLink. On ne rajoutera donc que le pilote JDBC de MySQL.</li>
+  <li>en [1], visualiser les propriétés du serveur Glassfish
+  </li>
+  <li>en [2], noter le dossier des domaines du serveur. Nous le notons par la suite &lt;domains&gt;
+  </li>
+  <li>dans le dossier &lt;domains&gt;\domain1\lib, mettre les bibliothèques manquantes. Dans l&#x27;exemple, les bibliothèques d&#x27;Hibernate (lib / hibernate-tools) et le pilote JDBC de MySQL (lib / divers) ont été rajoutés. Par défaut, le serveur Glassfish a les bibliothèques d&#x27;EclipseLink. On ne rajoutera donc que le pilote JDBC de MySQL.
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002AD000000D1538BBF7F.png" style="display:inline-block; margin:4px;width:9.063cm;height:2.766cm;" class="odt-zoomable" data-zoom-src="images/10000000000002AD000000D1538BBF7F.png" /></td></tr></table>
 
 <ul>
-<li>en [1], dans l&#x27;onglet [Services], nous lançons le serveur Glassfish v3</li>
-<li>en [2], il est actif</li>
+  <li>en [1], dans l&#x27;onglet [Services], nous lançons le serveur Glassfish v3
+  </li>
+  <li>en [2], il est actif
+  </li>
 </ul>
+
 <p><a id="refheading87495112820228"></a></p>
 <h4 id="7115-deploiement-du-module-ejb">7.1.1.5. Déploiement du module EJB</h4>
 <p>Nous déployons maintenant le module EJB sur le serveur Glassfish :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DF000001981F243F13.png" style="display:inline-block; margin:4px;width:16.498cm;height:5.398cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DF000001981F243F13.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le module EJB est déployé</li>
-<li>en [2], l&#x27;arborescence du serveur Glassfish est rafraîchie</li>
-<li>en [3], après déploiement, le module EJB apparaît dans la branche [Applications] du serveur Glassfish</li>
-<li>en [4], la ressource JDBC [jdbc / dbpam_eclipselink] a été créée sur le serveur Glassfish. On rappelle que nous l&#x27;avions définie paragraphe <a href="#ressource-glassfish-jdbc-dbpam-eclipselink">7.1.1.2</a>.</li>
+  <li>en [1], le module EJB est déployé
+  </li>
+  <li>en [2], l&#x27;arborescence du serveur Glassfish est rafraîchie
+  </li>
+  <li>en [3], après déploiement, le module EJB apparaît dans la branche [Applications] du serveur Glassfish
+  </li>
+  <li>en [4], la ressource JDBC [jdbc / dbpam_eclipselink] a été créée sur le serveur Glassfish. On rappelle que nous l&#x27;avions définie paragraphe <a href="#ressource-glassfish-jdbc-dbpam-eclipselink">7.1.1.2</a>.
+  </li>
 </ul>
+
 <p>Lors du déploiement, le serveur Glassfish logue dans la console des informations intéressantes :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1091,9 +1159,12 @@
 </code></pre></div></td></tr></table></div>
 <p>On notera aux lignes </p>
 <ul>
-<li>3, 6, 8 et 11 les noms portables JNDI des EJB déployés. Java EE 6 a introduit la notion de nom JNDI portable. Cela dénote un nom JNDI reconnu par tous les serveurs Java EE 6. Avec Java EE 5, les noms JNDI sont spécifiques au serveur utilisé.</li>
-<li>4, 7, 9, 12 : les noms JNDI des EJB déployés sous une forme spécifique à Glassfish v3.</li>
+  <li>3, 6, 8 et 11 les noms portables JNDI des EJB déployés. Java EE 6 a introduit la notion de nom JNDI portable. Cela dénote un nom JNDI reconnu par tous les serveurs Java EE 6. Avec Java EE 5, les noms JNDI sont spécifiques au serveur utilisé.
+  </li>
+  <li>4, 7, 9, 12 : les noms JNDI des EJB déployés sous une forme spécifique à Glassfish v3.
+  </li>
 </ul>
+
 <p>Ces noms seront utiles à l&#x27;application console que nous allons écrire pour utiliser le module EJB déployé.</p>
 <p><a id="refheading87497112820228"></a></p>
 <h2 id="72-client-console-version-1">7.2. Client console - version 1</h2>
@@ -1106,8 +1177,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C6000000D896CA4C59.png" style="display:inline-block; margin:4px;width:6.006cm;height:2.858cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C6000000D896CA4C59.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le projet du client</li>
+  <li>en [1], le projet du client
+  </li>
 </ul>
+
 <p>Dans le fichier [pom.xml], nous ajoutons les dépendances suivantes :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -1161,9 +1234,12 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 31-35 : la dépendance sur la bibliothèque [gf-client] qui permet à un client Classfish de communiquer avec un serveur distant,</li>
-<li>lignes 36-41 : la dépendance sur le projet Maven du module EJB. Nous voulons récupérer ici les définitions des entités JPA et celles des différentes interfaces ainsi que celle de la classe d&#x27;exception [PamException],</li>
+  <li>lignes 31-35 : la dépendance sur la bibliothèque [gf-client] qui permet à un client Classfish de communiquer avec un serveur distant,
+  </li>
+  <li>lignes 36-41 : la dépendance sur le projet Maven du module EJB. Nous voulons récupérer ici les définitions des entités JPA et celles des différentes interfaces ainsi que celle de la classe d&#x27;exception [PamException],
+  </li>
 </ul>
+
 <p>A partir du projet [mv-pam-openejb-eclipselink], nous copions la classe [MainRemote] :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B30000011473145345.png" style="display:inline-block; margin:4px;width:5.756cm;height:3.651cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B30000011473145345.png" /></td></tr></table>
 
@@ -1191,17 +1267,22 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 6 : initialisation du contexte JNDI du serveur Glassfish.</li>
-<li>ligne 8 : on demande à ce contexte JNDI une référence sur l&#x27;interface distante de la couche [metier]. D&#x27;après les logs de Glassfish, on sait que l&#x27;interface distante de la couche [metier] a deux noms possibles :</li>
+  <li>ligne 6 : initialisation du contexte JNDI du serveur Glassfish.
+  </li>
+  <li>ligne 8 : on demande à ce contexte JNDI une référence sur l&#x27;interface distante de la couche [metier]. D&#x27;après les logs de Glassfish, on sait que l&#x27;interface distante de la couche [metier] a deux noms possibles :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nl">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">EJB5181</span><span class="p">:</span><span class="n">Portable</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">istia</span><span class="p">.</span><span class="na">st_mv</span><span class="o">-</span><span class="n">pam</span><span class="o">-</span><span class="n">ejb</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">eclipselink_ejb_1</span><span class="mf">.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierLocal</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">:</span><span class="n">global</span><span class="o">/</span><span class="n">istia</span><span class="p">.</span><span class="na">st_mv</span><span class="o">-</span><span class="n">pam</span><span class="o">-</span><span class="n">ejb</span><span class="o">-</span><span class="n">metier</span><span class="o">-</span><span class="n">dao</span><span class="o">-</span><span class="n">eclipselink_ejb_1</span><span class="mf">.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">/</span><span class="n">Metier</span><span class="o">!</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="o">]</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nl">Infos</span><span class="p">:</span><span class="w"> </span><span class="n">EJB5182</span><span class="p">:</span><span class="n">Glassfish</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="p">(</span><span class="n">Non</span><span class="o">-</span><span class="n">portable</span><span class="p">)</span><span class="w"> </span><span class="n">JNDI</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EJB</span><span class="w"> </span><span class="n">Metier</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="err">#</span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="p">,</span><span class="w"> </span><span class="n">metier</span><span class="p">.</span><span class="na">IMetierRemote</span><span class="o">]</span>
 </code></pre></div></td></tr></table></div>
 <p>Ligne 1, le nom JNDI utilisable avec tout serveur d&#x27;applications JAVA EE 6. Ligne 2, le nom JNDI spécifique à Glassfish. Dans le code, ligne 9, nous utilisons le nom JNDI portable.</p>
 <ul>
-<li>le reste du code ne change pas</li>
+  <li>le reste du code ne change pas
+  </li>
 </ul>
+
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000168000000EEEA939045.png" style="display:inline-block; margin:4px;width:4.763cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/1000000000000168000000EEEA939045.png" /></td></tr></table>
 
 <p>En [1], on configure le projet pour qu&#x27;il exécute la classe [MainRemote] avec des arguments. Si tout va bien, l&#x27;exécution du projet donne le résultat suivant :</p>
@@ -1299,9 +1380,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B000000F5B9DEAA47.png" style="display:inline-block; margin:4px;width:17.503cm;height:3.242cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B000000F5B9DEAA47.png" /></td></tr></table>
 
 <ul>
-<li>en [1], le nouveau projet</li>
-<li>en [2], le fichier [spring-config-client.xml] de configuration de Spring. Son contenu est le suivant :</li>
+  <li>en [1], le nouveau projet
+  </li>
+  <li>en [2], le fichier [spring-config-client.xml] de configuration de Spring. Son contenu est le suivant :
+  </li>
 </ul>
+
 <p>Le fichier de configuration de Spring est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
@@ -1331,9 +1415,12 @@
 
 <p>Nous utilisons ici une balise &lt;jee&gt; (ligne 14) apparue avec Spring 2.0. L&#x27;usage de cette balise nécessite la définition du schéma auquel elle appartient, lignes 4, 10 et 11.</p>
 <ul>
-<li>ligne 14 : la balise &lt;jee:jndi-lookup&gt; permet d&#x27;obtenir la référence d&#x27;un objet auprès d&#x27;un service JNDI. Ici, on associe le bean nommé &quot; metier &quot; à la ressource JNDI associée à l&#x27;EJB [Metier]. Le nom JNDI utilisé ici est le nom portable (Java EE 6) de l&#x27;EJB.</li>
-<li>le contenu du fichier [jndi.properties] devient le contenu de la balise &lt;jee:environment&gt; (ligne 15) qui sert à définir les paramètres de connexion au service JNDI.</li>
+  <li>ligne 14 : la balise &lt;jee:jndi-lookup&gt; permet d&#x27;obtenir la référence d&#x27;un objet auprès d&#x27;un service JNDI. Ici, on associe le bean nommé &quot; metier &quot; à la ressource JNDI associée à l&#x27;EJB [Metier]. Le nom JNDI utilisé ici est le nom portable (Java EE 6) de l&#x27;EJB.
+  </li>
+  <li>le contenu du fichier [jndi.properties] devient le contenu de la balise &lt;jee:environment&gt; (ligne 15) qui sert à définir les paramètres de connexion au service JNDI.
+  </li>
 </ul>
+
 <p>La classe principale [MainRemote] évolue de la façon suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
